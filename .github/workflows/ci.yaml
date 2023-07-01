@@ -1,0 +1,45 @@
+name: Build & Publish
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with: 
+        path: code
+    - name: Checkout site
+      uses: actions/checkout@v2
+      with: 
+        token: ${{ secrets.WEBSITE_TOKEN }}
+        repository: Cloudbook_web
+        ref: main
+        path: site
+    - name: Clean website
+      run: |
+        pushd site
+        git rm -rf .
+        popd
+    - name: Copy site
+      run: |
+        pushd site
+        cp -rvf ../docs/* . 
+        popd
+        ls -la site/ 
+    - name: Publish
+      run: |
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git config --global user.name "github-actions"
+        pushd site 
+        git add . 
+        git commit -m "jekyll build from Action ${GITHUB_SHA}" 
+        git push origin main
+        popd
