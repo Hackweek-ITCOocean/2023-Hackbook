@@ -1,5 +1,5 @@
 
-## Cloud Hackathon: Transitioning Earthdata Workflows to the Cloud
+## ITCOocean Hackathon: Introduction to Machine-Learning with Ocean Remote-Sensing Data
 
 ![banner](https://user-images.githubusercontent.com/2915555/133526401-b79abf6c-ab0d-438d-9927-da39b7c17b96.jpg)
 
