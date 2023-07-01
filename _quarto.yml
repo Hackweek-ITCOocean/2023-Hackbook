@@ -1,59 +1,64 @@
 project: 
   type: website
-
+  output-dir: docs
+  render:
+    - "*.*"
+    - "!nasa-tutorials/*.ipynb"
 website:
   page-navigation: true  
-  title: "2021 Cloud Hackathon"
-  site-url: https://nasa-openscapes.github.io/2021-Cloud-Hackathon
+  title: "2023 ITCOocean Hackweek"
+  site-url: https://Hackweek-ITCOocean.github.io/2023-Cloudbook
   
-  repo-url: https://github.com/nasa-openscapes/2021-Cloud-Hackathon
+  repo-url: https://github.com/Hackweek-ITCOocean/2023-Cloudbook
   repo-actions: [edit, issue]
   
-  page-footer: "PODAAC, NSIDC DAAC and LPDAAC (2021). 2021 Cloud Hackathon" 
+  page-footer: "ITCOocean (2023). 2023 Hackweek" 
  
   sidebar:
-    logo: https://user-images.githubusercontent.com/2915555/133525653-2a2278b1-1015-4350-b2a5-160d125aaaf7.png
+    logo: assets/images/incois-logos.png
     pinned: true
     align: center
     tools: 
       - icon: globe
-        href: https://nasa-openscapes.github.io
-        text: "NASA-Openscapes website"
+        href: https://Hackweek-ITCOocean.github.io
+        text: "Hackweek ITCOocean"
       - icon: github
-        href: https://github.com/nasa-openscapes/2021-Cloud-Hackathon
-        text: "2021 Cloud Hackathon repo"
+        href: https://github.com/Hackweek-ITCOocean/2023-Cloudbook
+        text: "2023 Hackweek Tutorials"
     
     style: "docked"
     search: true
-    collapse-level: 2
+    collapse-level: 1
+    toc-expand: false
     contents:
       - section: "Welcome"
         contents:
           - index.md
-          - cloud-paradigm.md
           - team.md
       - section: "Logistics"
         contents:
           - logistics/index.md
           - logistics/schedule.md
-          - logistics/prerequisites.md
-          - logistics/github-workflows.md
-      - section: "Tutorials"
+      - section: "Week 1 tutorials"
+        contents:
+          - week1-tutorials/01-AM-intro-to-regional-data.md
+          - week1-tutorials/01-PM-software.md
+          - week1-tutorials/02-AM-online-databases.md
+          - week1-tutorials/02-PM-git-and-github.md
+          - week1-tutorials/03-AM-raster-and-nc-in-R.md
+          - week1-tutorials/03-PM-spatial-maps-in-R.md
+          - week1-tutorials/04-AM-spatial-maps-in-R.md
+          - week1-tutorials/04-PM-intro-to-sdms.md
+          - week1-tutorials/05-AM-guest-lectures.md
+          - week1-tutorials/05-PM-project-brainstorming.md
+      - section: "Week 2 tutorials"
         contents: 
-          - tutorials/index.md
-          - tutorials/00_Setup.md  ## tutorial 0
-          - tutorials/01_Data_Discovery_CMR.ipynb ## tutorial 1
-          - tutorials/02_Data_Discovery_CMR-STAC_API.ipynb ## tutorial 2
-          - tutorials/03_Xarray.ipynb ## tutorial 3
-          - tutorials/04_NASA_Earthdata_Authentication.ipynb ## tutorial 4
-          - tutorials/05_Data_Access_Direct_S3.ipynb ## tutorial 5
-          - tutorials/06_S6_OPeNDAP_Access_Gridding.ipynb ## tutorial 6
-          - tutorials/07_Harmony_Subsetting.ipynb ## tutorial 7
-          - tutorials/08_On-Prem_Cloud.ipynb ## tutorial 8
-          - tutorials/09_Zarr_Access.ipynb ## tutorial 9
-      - section: "Tutorial Templates"
-        contents: 
-          - tutorials-templates/index.md 
+          - week2-tutorials/01-AM-preparing-data.md
+          - week2-tutorials/01-PM-project-pitches.md
+          - week2-tutorials/02-AM-sdm-part1.md
+          - week2-tutorials/03-AM-sdm-part2.md
+          - week2-tutorials/04-AM-guest-lectures.md
+          - week2-tutorials/05-PM-project-presentations.md
       - section: "Projects"
         contents:
           - projects/index.md
@@ -61,13 +66,6 @@ website:
       - section: "Further Resources"
         contents:
           - further-resources.md
-      - section: "Pre-Hackathon-Clinic"
-        contents:
-          - clinic/index.md
-          - clinic/jupyterhub.md
-          - clinic/notebooks.md
-          - clinic/github.md
-          - clinic/earthdata.md
 
 format:
   html:

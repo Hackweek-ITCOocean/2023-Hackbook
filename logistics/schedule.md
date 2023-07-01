@@ -2,14 +2,9 @@
 title: Schedule
 ---
 
-**The 2021 Cloud Hackathon will take place November 15-19 from 9am-1pm PST [(UTC-8)](https://www.timeanddate.com/time/zones/pst) each day**.   
+**11-22 September 11-22 2023**
 
-An optional pre-hackathon clinic will be held on November 9 from 8-10am PST, and the recording will be made available to all hackathon participants to review on their own.
-
-All Cloud Hackathon activities are **virtual**. We will engage primarily with this group and schedule via Zoom and Slack; see [prerequisites & getting help](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/logistics/prerequisites.html).
-
-**Zoom links** will be posted on the `2021-nasacloudhack-general` Slack channel
- 
+<!--
 ## Hackathon Day 1: November 15
 
 ```{.include}
@@ -106,12 +101,22 @@ _schedule-day5.md
 _closing-day5.md
 ``` 
 
-## Pre-Hackathon Clinic: November 9
+-->
 
-This Clinic is optional and we will share a recording that participants can review ahead of time. 
+## Draft schedule
 
+![](images/draft-schedule.png){width=80% fig-alt="schedule"}
 
-```{.include}
-_schedule-clinic.md
-```
+## Pre-course clinic: learn basics of R
+
+It is important that you come into the course with a basic understanding of R. There are many free courses. 
+
+* If you have never used R or RStudio and have not done much programming, start with this 4 hour course: Basics of R and installing RStudio https://www.udemy.com/course/r-basics/
+
+* If you know the basics of R but have never done modeling, then you can start with this 2.5 hour course that covers basic linear regression with R and plotting with ggplot2: https://www.udemy.com/course/machlearn1
+
+* For a longer free course, you can do this one. Note this is 20 hours. You do NOT need to do this whole course before the hackweek! https://www.codecademy.com/learn/learn-r
+
+* One of the best free R courses is https://www.coursera.org/learn/r-programming. You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material.
+
 
