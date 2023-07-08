@@ -9,8 +9,10 @@ author: "International Training Centre for Operational Oceanography (ITCOocean),
 
 Welcome to the Sept 2023 training course on **Machine Learning based Species Distribution Modelling** hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.
 
-The course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from **September 11-22, 2023.** The event is free to attend, but an application is required. 
-Please see the [course announcement](https://incois.gov.in/ITCOocean/itco097.jsp) for details on the course and application.
+The course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from **September 11-22, 2023.** The event is free to attend, but an application is required. *The application period for the 2023 course has closed.*
+Please see the [course announcement](https://incois.gov.in/ITCOocean/itco097.jsp).
+
+![](assets/images/banner.png)
 
 ## Overview
 

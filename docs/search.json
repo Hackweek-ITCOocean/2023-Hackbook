@@ -25,14 +25,14 @@
     "href": "index.html",
     "title": "Machine Learning based Species Distribution Modelling",
     "section": "",
-    "text": "Welcome to the Sept 2023 training course on Machine Learning based Species Distribution Modelling hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.\nThe course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from September 11-22, 2023. The event is free to attend, but an application is required. Please see the course announcement for details on the course and application."
+    "text": "Welcome to the Sept 2023 training course on Machine Learning based Species Distribution Modelling hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.\nThe course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from September 11-22, 2023. The event is free to attend, but an application is required. The application period for the 2023 course has closed. Please see the course announcement."
   },
   {
     "objectID": "index.html#welcome",
     "href": "index.html#welcome",
     "title": "Machine Learning based Species Distribution Modelling",
     "section": "",
-    "text": "Welcome to the Sept 2023 training course on Machine Learning based Species Distribution Modelling hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.\nThe course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from September 11-22, 2023. The event is free to attend, but an application is required. Please see the course announcement for details on the course and application."
+    "text": "Welcome to the Sept 2023 training course on Machine Learning based Species Distribution Modelling hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.\nThe course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from September 11-22, 2023. The event is free to attend, but an application is required. The application period for the 2023 course has closed. Please see the course announcement."
   },
   {
     "objectID": "index.html#overview",
@@ -389,14 +389,21 @@
     "href": "team.html",
     "title": "Our Team",
     "section": "",
-    "text": "Links: NOAA Fisheries, webpage\n\n\n\n\nLinks: INCOIS, OceanExpert page\n\n\n\n\nLinks: INCOIS, ResearchGate page"
+    "text": "NOAA Fisheries and University of Washington, USA\nLinks: NOAA Fisheries, webpage\n\n\n\n\nINCOIS\nLinks: INCOIS, OceanExpert page\n\n\n\n\nINCOIS\nLinks: INCOIS, ResearchGate page"
   },
   {
-    "objectID": "team.html#main-instructors-and-support",
-    "href": "team.html#main-instructors-and-support",
+    "objectID": "team.html#instructors",
+    "href": "team.html#instructors",
     "title": "Our Team",
     "section": "",
-    "text": "Links: NOAA Fisheries, webpage\n\n\n\n\nLinks: INCOIS, OceanExpert page\n\n\n\n\nLinks: INCOIS, ResearchGate page"
+    "text": "NOAA Fisheries and University of Washington, USA\nLinks: NOAA Fisheries, webpage\n\n\n\n\nINCOIS\nLinks: INCOIS, OceanExpert page\n\n\n\n\nINCOIS\nLinks: INCOIS, ResearchGate page"
+  },
+  {
+    "objectID": "team.html#support",
+    "href": "team.html#support",
+    "title": "Our Team",
+    "section": "Support",
+    "text": "Support\n\n\nJiarui Yu\n\nML tutorials; University of Washington, CS/Applied Math, 2023 Varanasi Intern\n\n\nMinh Phan\n\nIndian Ocean database for hackweek, data access tutorials. University of Washington, CS/Applied Math, 2023 Varanasi Intern"
   },
   {
     "objectID": "week1-tutorials/01-AM-intro-to-regional-data.html",
