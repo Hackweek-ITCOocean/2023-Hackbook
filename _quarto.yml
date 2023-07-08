@@ -39,7 +39,7 @@ website:
         contents:
           - logistics/index.md
           - logistics/schedule.md
-      - section: "Week 1 tutorials"
+      - section: "Week 1"
         contents:
           - week1-tutorials/01-AM-intro-to-regional-data.md
           - week1-tutorials/01-PM-software.md
@@ -51,7 +51,7 @@ website:
           - week1-tutorials/04-PM-intro-to-sdms.md
           - week1-tutorials/05-AM-guest-lectures.md
           - week1-tutorials/05-PM-project-brainstorming.md
-      - section: "Week 2 tutorials"
+      - section: "Week 2"
         contents: 
           - week2-tutorials/01-AM-preparing-data.md
           - week2-tutorials/01-PM-project-pitches.md
@@ -59,6 +59,9 @@ website:
           - week2-tutorials/03-AM-sdm-part2.md
           - week2-tutorials/04-AM-guest-lectures.md
           - week2-tutorials/05-PM-project-presentations.md
+      - section: "Tutorials"
+        contents:
+          - notebooks/01_NASA_Earthdata_Authentication.ipynb
       - section: "Projects"
         contents:
           - projects/index.md
