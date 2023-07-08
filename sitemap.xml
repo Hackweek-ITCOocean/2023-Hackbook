@@ -1,163 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/index.html</loc>
-    <lastmod>2022-11-22T14:27:10.762Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/r-and-python.html</loc>
+    <lastmod>2023-07-08T02:46:02.401Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/further-resources.html</loc>
-    <lastmod>2022-11-22T14:27:11.922Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/jupyterhub.html</loc>
+    <lastmod>2023-07-08T02:46:00.837Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/projects/index.html</loc>
-    <lastmod>2022-11-22T14:27:12.382Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/github.html</loc>
+    <lastmod>2023-07-08T02:45:59.653Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/projects/hackathon-projects.html</loc>
-    <lastmod>2022-11-22T14:27:12.818Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/earthdata.html</loc>
+    <lastmod>2023-07-08T02:45:58.697Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/cloud-paradigm.html</loc>
-    <lastmod>2022-11-22T14:27:13.186Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/04-AM-guest-lectures.html</loc>
+    <lastmod>2023-07-08T02:45:57.449Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/index.html</loc>
-    <lastmod>2022-11-22T14:27:13.554Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/02-AM-sdm-part1.html</loc>
+    <lastmod>2023-07-08T02:45:56.589Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/09_Zarr_Access.html</loc>
-    <lastmod>2022-11-22T14:27:14.366Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/01-AM-preparing-data.html</loc>
+    <lastmod>2023-07-08T02:45:55.685Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/06_S6_OPeNDAP_Access_Gridding.html</loc>
-    <lastmod>2022-11-22T14:27:15.238Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/notebooks.html</loc>
+    <lastmod>2023-07-08T02:45:54.697Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/01_Data_Discovery_CMR.html</loc>
-    <lastmod>2022-11-22T14:27:15.838Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/index.html</loc>
+    <lastmod>2023-07-08T02:45:52.937Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/00_Setup.html</loc>
-    <lastmod>2022-11-22T14:27:16.446Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/github-workflows.html</loc>
+    <lastmod>2023-07-08T02:45:51.981Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/03_Xarray_hvplot.html</loc>
-    <lastmod>2022-11-22T14:27:18.222Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/05-PM-project-brainstorming.html</loc>
+    <lastmod>2023-07-08T02:45:50.673Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/04_NASA_Earthdata_Authentication.html</loc>
-    <lastmod>2022-11-22T14:27:18.854Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/04-PM-intro-to-sdms.html</loc>
+    <lastmod>2023-07-08T02:45:49.733Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/Additional_Resources__Data_Access__Direct_S3_Access__PODAAC_ECCO_SSH.html</loc>
-    <lastmod>2022-11-22T14:27:21.119Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/03-PM-spatial-maps-in-R.html</loc>
+    <lastmod>2023-07-08T02:45:48.829Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/02_Data_Discovery_CMR-STAC_API.html</loc>
-    <lastmod>2022-11-22T14:27:22.759Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/02-PM-git-and-github.html</loc>
+    <lastmod>2023-07-08T02:45:47.925Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/Additional_Resources__Direct_S3_Access__gdalvrt.html</loc>
-    <lastmod>2022-11-22T14:27:25.503Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/01-PM-software.html</loc>
+    <lastmod>2023-07-08T02:45:47.045Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/07_Harmony_Subsetting.html</loc>
-    <lastmod>2022-11-22T14:27:26.287Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/team.html</loc>
+    <lastmod>2023-07-08T02:45:46.165Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/03_Xarray.html</loc>
-    <lastmod>2022-11-22T14:27:26.795Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/projects/hackathon-projects.html</loc>
+    <lastmod>2023-07-08T02:45:45.173Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/08_On-Prem_Cloud.html</loc>
-    <lastmod>2022-11-22T14:27:27.575Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/notebooks/03_Xarray_hvplot.html</loc>
+    <lastmod>2023-07-08T02:45:42.445Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/05_Data_Access_Direct_S3.html</loc>
-    <lastmod>2022-11-22T14:27:30.531Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/notebooks/01_NASA_Earthdata_Authentication.html</loc>
+    <lastmod>2023-07-08T02:45:39.197Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials/Additional_Resources__Direct_S3_Access__rioxarray_clipping.html</loc>
-    <lastmod>2022-11-22T14:27:33.343Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/nasa-tutorials/00_Setup.html</loc>
+    <lastmod>2023-07-08T02:45:37.841Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/index.html</loc>
-    <lastmod>2022-11-22T14:27:33.759Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/logistics/index.html</loc>
+    <lastmod>2023-07-08T02:45:36.377Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/06_S6_OPeNDAP_Access_Gridding_template.html</loc>
-    <lastmod>2022-11-22T14:27:34.659Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/further-resources.html</loc>
+    <lastmod>2023-07-08T02:45:35.165Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/09_Zarr_Access.html</loc>
-    <lastmod>2022-11-22T14:27:35.151Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/cloud-paradigm.html</loc>
+    <lastmod>2023-07-08T02:45:32.861Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/01_Data_Discovery_CMR.html</loc>
-    <lastmod>2022-11-22T14:27:35.703Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/index.html</loc>
+    <lastmod>2023-07-08T02:45:35.889Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/04_NASA_Earthdata_Authentication.html</loc>
-    <lastmod>2022-11-22T14:27:36.331Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/logistics/schedule.html</loc>
+    <lastmod>2023-07-08T02:45:36.861Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/02_Data_Discovery_CMR-STAC_API.html</loc>
-    <lastmod>2022-11-22T14:27:36.903Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/nasa-tutorials/index.html</loc>
+    <lastmod>2023-07-08T02:45:38.301Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/07_Harmony_Subsetting.html</loc>
-    <lastmod>2022-11-22T14:27:37.499Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/notebooks/03_Xarray.html</loc>
+    <lastmod>2023-07-08T02:45:40.001Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/03_Xarray.html</loc>
-    <lastmod>2022-11-22T14:27:37.995Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/notebooks/09_Zarr_Access.html</loc>
+    <lastmod>2023-07-08T02:45:44.753Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/08_On-Prem_Cloud.html</loc>
-    <lastmod>2022-11-22T14:27:38.559Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/projects/index.html</loc>
+    <lastmod>2023-07-08T02:45:45.697Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/tutorials-templates/05_Data_Access_Direct_S3.html</loc>
-    <lastmod>2022-11-22T14:27:39.103Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/01-AM-intro-to-regional-data.html</loc>
+    <lastmod>2023-07-08T02:45:46.613Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/clinic/index.html</loc>
-    <lastmod>2022-11-22T14:27:39.495Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/02-AM-online-databases.html</loc>
+    <lastmod>2023-07-08T02:45:47.485Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/clinic/jupyterhub.html</loc>
-    <lastmod>2022-11-22T14:27:39.987Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/03-AM-raster-and-nc-in-R.html</loc>
+    <lastmod>2023-07-08T02:45:48.397Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/clinic/github.html</loc>
-    <lastmod>2022-11-22T14:27:40.379Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/04-AM-spatial-maps-in-R.html</loc>
+    <lastmod>2023-07-08T02:45:49.285Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/clinic/earthdata.html</loc>
-    <lastmod>2022-11-22T14:27:41.015Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/05-AM-guest-lectures.html</loc>
+    <lastmod>2023-07-08T02:45:50.205Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/clinic/notebooks.html</loc>
-    <lastmod>2022-11-22T14:27:41.635Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/earthdata.html</loc>
+    <lastmod>2023-07-08T02:45:51.457Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/logistics/index.html</loc>
-    <lastmod>2022-11-22T14:27:42.083Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/github.html</loc>
+    <lastmod>2023-07-08T02:45:52.485Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/logistics/schedule.html</loc>
-    <lastmod>2022-11-22T14:27:42.615Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/jupyterhub.html</loc>
+    <lastmod>2023-07-08T02:45:53.697Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/logistics/github-workflows.html</loc>
-    <lastmod>2022-11-22T14:27:43.119Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week1-tutorials/r-and-python.html</loc>
+    <lastmod>2023-07-08T02:45:55.241Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/logistics/prerequisites.html</loc>
-    <lastmod>2022-11-22T14:27:43.551Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/01-PM-project-pitches.html</loc>
+    <lastmod>2023-07-08T02:45:56.125Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa-openscapes.github.io/2021-Cloud-Hackathon/team.html</loc>
-    <lastmod>2022-11-22T14:27:43.947Z</lastmod>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/03-AM-sdm-part2.html</loc>
+    <lastmod>2023-07-08T02:45:57.029Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/05-PM-project-presentations.html</loc>
+    <lastmod>2023-07-08T02:45:57.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/github-workflows.html</loc>
+    <lastmod>2023-07-08T02:45:59.169Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/index.html</loc>
+    <lastmod>2023-07-08T02:46:00.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Cloudbook/week2-tutorials/notebooks.html</loc>
+    <lastmod>2023-07-08T02:46:01.869Z</lastmod>
   </url>
 </urlset>
