@@ -11,9 +11,9 @@ execute:
 website:
   page-navigation: true  
   title: "2023 ITCOocean Hackweek"
-  site-url: https://Hackweek-ITCOocean.github.io/2023-Cloudbook
+  site-url: https://Hackweek-ITCOocean.github.io/2023-Hackbook
   
-  repo-url: https://github.com/Hackweek-ITCOocean/2023-Cloudbook
+  repo-url: https://github.com/Hackweek-ITCOocean/2023-Hackbook
   repo-actions: [edit, issue]
   
   page-footer: "ITCOocean (2023). 2023 Hackweek" 
@@ -27,7 +27,7 @@ website:
         href: https://Hackweek-ITCOocean.github.io
         text: "Hackweek ITCOocean"
       - icon: github
-        href: https://github.com/Hackweek-ITCOocean/2023-Cloudbook
+        href: https://github.com/Hackweek-ITCOocean/2023-Hackbook
         text: "2023 Hackweek Tutorials"
     
     style: "docked"
