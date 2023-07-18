@@ -326,6 +326,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
  <span class="menu-text">Python-notebooks/01_earthaccess_Downloader.ipynb</span>
   </li>
+          <li class="sidebar-item">
+ <span class="menu-text">Python-notebooks/01_ERA5_S3_Downloader.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">Python-notebooks/01_ERDDAP_Downloader.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">Python-notebooks/01_MOTU_Downloader.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">Python-notebooks/01_Combining_Data.ipynb</span>
+  </li>
       </ul>
   </li>
       </ul>
@@ -379,30 +391,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#introduction-command-line-terminalshell" id="toc-introduction-command-line-terminalshell" class="nav-link" data-scroll-target="#introduction-command-line-terminalshell">Introduction :: Command Line (Terminal/Shell)</a>
-  <ul class="collapse">
-  <li><a href="#shell-basics" id="toc-shell-basics" class="nav-link" data-scroll-target="#shell-basics">Shell Basics</a></li>
-  <li><a href="#shell-more-details" id="toc-shell-more-details" class="nav-link" data-scroll-target="#shell-more-details">Shell: More Details</a></li>
-  </ul></li>
-  <li><a href="#introduction-version-control-git-and-github" id="toc-introduction-version-control-git-and-github" class="nav-link" data-scroll-target="#introduction-version-control-git-and-github">Introduction :: Version Control (Git and Github)</a>
-  <ul class="collapse">
-  <li><a href="#what-is-version-control-git-github-and-how-to-set-it-up" id="toc-what-is-version-control-git-github-and-how-to-set-it-up" class="nav-link" data-scroll-target="#what-is-version-control-git-github-and-how-to-set-it-up">What is version control, git, github, and how to set it up?</a></li>
-  <li><a href="#step-1-create-a-github-account" id="toc-step-1-create-a-github-account" class="nav-link" data-scroll-target="#step-1-create-a-github-account">Step 1: Create a github account</a></li>
-  <li><a href="#step-2-fork-a-repository" id="toc-step-2-fork-a-repository" class="nav-link" data-scroll-target="#step-2-fork-a-repository">Step 2: Fork a repository</a></li>
-  <li><a href="#step-3-clone-the-repository-that-you-just-forked" id="toc-step-3-clone-the-repository-that-you-just-forked" class="nav-link" data-scroll-target="#step-3-clone-the-repository-that-you-just-forked">Step 3: Clone the repository that you just forked</a></li>
-  <li><a href="#step-4.-creating-new-file-and-tracking-changes" id="toc-step-4.-creating-new-file-and-tracking-changes" class="nav-link" data-scroll-target="#step-4.-creating-new-file-and-tracking-changes">Step 4. Creating new file and tracking changes</a></li>
-  <li><a href="#step-5.-create-access-token-on-github.com" id="toc-step-5.-create-access-token-on-github.com" class="nav-link" data-scroll-target="#step-5.-create-access-token-on-github.com">Step 5. Create access token on github.com</a></li>
-  <li><a href="#summary-git-commands" id="toc-summary-git-commands" class="nav-link" data-scroll-target="#summary-git-commands">Summary: Git Commands</a></li>
-  <li><a href="#git-more-details" id="toc-git-more-details" class="nav-link" data-scroll-target="#git-more-details">Git: More Details</a></li>
-  <li><a href="#cloning-our-repository-using-the-git-jupyter-lab-extension." id="toc-cloning-our-repository-using-the-git-jupyter-lab-extension." class="nav-link" data-scroll-target="#cloning-our-repository-using-the-git-jupyter-lab-extension.">Cloning our repository using the <strong>git Jupyter lab extension</strong>.</a></li>
-  </ul></li>
+  <li><a href="#introduction-command-line-terminalshell" id="toc-introduction-command-line-terminalshell" class="nav-link" data-scroll-target="#introduction-command-line-terminalshell">Introduction :: Command Line (Terminal/Shell)</a></li>
+  <li><a href="#introduction-version-control-git-and-github" id="toc-introduction-version-control-git-and-github" class="nav-link" data-scroll-target="#introduction-version-control-git-and-github">Introduction :: Version Control (Git and Github)</a></li>
   <li><a href="#introduction-programming-in-python" id="toc-introduction-programming-in-python" class="nav-link" data-scroll-target="#introduction-programming-in-python">Introduction :: Programming in Python</a></li>
-  <li><a href="#introduction-programming-in-python-1" id="toc-introduction-programming-in-python-1" class="nav-link" data-scroll-target="#introduction-programming-in-python-1">Introduction :: Programming in Python</a>
-  <ul class="collapse">
-  <li><a href="#python-learning-resources" id="toc-python-learning-resources" class="nav-link" data-scroll-target="#python-learning-resources">Python Learning Resources</a></li>
-  </ul></li>
+  <li><a href="#introduction-programming-in-python-1" id="toc-introduction-programming-in-python-1" class="nav-link" data-scroll-target="#introduction-programming-in-python-1">Introduction :: Programming in Python</a></li>
   <li><a href="#introduction-geospatial-fundamentals-optional" id="toc-introduction-geospatial-fundamentals-optional" class="nav-link" data-scroll-target="#introduction-geospatial-fundamentals-optional">Introduction :: Geospatial Fundamentals (Optional)</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Hackweek-ITCOocean/2023-Cloudbook/edit/main/week2-tutorials/notebooks.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Cloudbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
