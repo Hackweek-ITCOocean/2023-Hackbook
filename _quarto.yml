@@ -6,7 +6,7 @@ project:
     - "!nasa-tutorials/*.ipynb"
 
 execute:
-  freeze: auto
+  freeze: true
   
 website:
   page-navigation: true  
