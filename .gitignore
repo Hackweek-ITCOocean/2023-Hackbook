@@ -10,4 +10,5 @@
 /.quarto/
 /_site/
 /_freeze/
+/Python-notebooks/
 .DS_Store
