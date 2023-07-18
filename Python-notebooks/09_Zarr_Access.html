@@ -323,12 +323,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">00. Authentication for NASA Earthdata</a>
+  <a href="../Python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">Written by NASA Openscapes mentors</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Python-notebooks/01_earthaccess_Downloader.html" class="sidebar-item-text sidebar-link">Download data from Earth Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_ERA5_S3_Downloader.html" class="sidebar-item-text sidebar-link">Download Copernicus ERA5 Data with S3 without logging in</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_ERDDAP_Downloader.html" class="sidebar-item-text sidebar-link">Download data from NOAA ERDDAP using GRIDDAP</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_MOTU_Downloader.html" class="sidebar-item-text sidebar-link">Download sliced data using MOTU-Client in Copernicus</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_Combining_Data.html" class="sidebar-item-text sidebar-link">Combine, clean, and export the data</a>
   </div>
 </li>
       </ul>
@@ -378,22 +398,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#zarr-access-for-netcdf4-files" id="toc-zarr-access-for-netcdf4-files" class="nav-link active" data-scroll-target="#zarr-access-for-netcdf4-files">09. Zarr Access for NetCDF4 files</a>
   <ul class="collapse">
   <li><a href="#timing" id="toc-timing" class="nav-link" data-scroll-target="#timing">Timing:</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
-  <ul class="collapse">
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  </ul></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
-  <ul class="collapse">
-  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set up</a></li>
-  <li><a href="#find-urls-for-the-dataset-and-aoi" id="toc-find-urls-for-the-dataset-and-aoi" class="nav-link" data-scroll-target="#find-urls-for-the-dataset-and-aoi">Find URLs for the dataset and AOI</a></li>
-  <li><a href="#open-and-view-our-aoi-without-downloading-a-whole-file" id="toc-open-and-view-our-aoi-without-downloading-a-whole-file" class="nav-link" data-scroll-target="#open-and-view-our-aoi-without-downloading-a-whole-file">Open and view our AOI without downloading a whole file</a></li>
-  <li><a href="#aggregate-and-analyze-30-files" id="toc-aggregate-and-analyze-30-files" class="nav-link" data-scroll-target="#aggregate-and-analyze-30-files">Aggregate and analyze 30 files</a></li>
-  <li><a href="#supplemental-whats-happening-here" id="toc-supplemental-whats-happening-here" class="nav-link" data-scroll-target="#supplemental-whats-happening-here">Supplemental: What’s happening here?</a></li>
-  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/Hackweek-ITCOocean/2023-Cloudbook/blob/main/Python-notebooks/09_Zarr_Access.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Cloudbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>

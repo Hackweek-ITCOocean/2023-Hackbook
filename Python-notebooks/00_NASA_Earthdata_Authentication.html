@@ -321,12 +321,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link active">00. Authentication for NASA Earthdata</a>
+  <a href="../Python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link active">Written by NASA Openscapes mentors</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Python-notebooks/01_earthaccess_Downloader.html" class="sidebar-item-text sidebar-link">Download data from Earth Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_ERA5_S3_Downloader.html" class="sidebar-item-text sidebar-link">Download Copernicus ERA5 Data with S3 without logging in</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_ERDDAP_Downloader.html" class="sidebar-item-text sidebar-link">Download data from NOAA ERDDAP using GRIDDAP</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_MOTU_Downloader.html" class="sidebar-item-text sidebar-link">Download sliced data using MOTU-Client in Copernicus</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_Combining_Data.html" class="sidebar-item-text sidebar-link">Combine, clean, and export the data</a>
   </div>
 </li>
       </ul>
@@ -376,17 +396,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#authentication-for-nasa-earthdata" id="toc-authentication-for-nasa-earthdata" class="nav-link active" data-scroll-target="#authentication-for-nasa-earthdata">00. Authentication for NASA Earthdata</a>
   <ul class="collapse">
-  <li><a href="#written-by-nasa-openscapes-mentors" id="toc-written-by-nasa-openscapes-mentors" class="nav-link" data-scroll-target="#written-by-nasa-openscapes-mentors">Written by NASA Openscapes mentors</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
-  <ul class="collapse">
-  <li><a href="#earthdata-login" id="toc-earthdata-login" class="nav-link" data-scroll-target="#earthdata-login">Earthdata Login</a></li>
-  <li><a href="#authentication-via-netrc-file" id="toc-authentication-via-netrc-file" class="nav-link" data-scroll-target="#authentication-via-netrc-file">Authentication via netrc File</a></li>
-  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#import-required-packages" id="toc-import-required-packages" class="nav-link" data-scroll-target="#import-required-packages">Import Required Packages</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/Hackweek-ITCOocean/2023-Cloudbook/blob/main/Python-notebooks/00_NASA_Earthdata_Authentication.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Cloudbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -395,11 +407,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="authentication-for-nasa-earthdata" class="level1">
-<h1>00. Authentication for NASA Earthdata</h1>
-<section id="written-by-nasa-openscapes-mentors" class="level3">
-<h3 class="anchored" data-anchor-id="written-by-nasa-openscapes-mentors">Written by NASA Openscapes mentors</h3>
-</section>
+<p>Authentication for NASA Earthdata ### Written by NASA Openscapes mentors</p>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>This notebook creates a hidden <code>.netrc</code> file (<code>_netrc</code> for Window OS) with Earthdata login credentials in your home directory. This file is needed to access NASA Earthdata assets from a scripting environment like Python.</p>
@@ -471,7 +479,6 @@ password &lt;PASSWORD&gt;</code></pre>
 </div>
 
 
-</section>
 </section>
 </section>
 
