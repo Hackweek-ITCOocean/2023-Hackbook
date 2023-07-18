@@ -4,6 +4,10 @@ project:
   render:
     - "*.*"
     - "!nasa-tutorials/*.ipynb"
+
+execute:
+  freeze: auto
+  
 website:
   page-navigation: true  
   title: "2023 ITCOocean Hackweek"
@@ -59,9 +63,12 @@ website:
           - week2-tutorials/03-AM-sdm-part2.md
           - week2-tutorials/04-AM-guest-lectures.md
           - week2-tutorials/05-PM-project-presentations.md
-      - section: "Tutorials"
+      - section: "Python Tutorials"
         contents:
-          - notebooks/01_NASA_Earthdata_Authentication.ipynb
+          - section: "Data Access"
+            contents:
+              - Python-notebooks/00_NASA_Earthdata_Authentication.ipynb
+              - Python-notebooks/01_earthaccess_Downloader.ipynb
       - section: "Projects"
         contents:
           - projects/index.md
