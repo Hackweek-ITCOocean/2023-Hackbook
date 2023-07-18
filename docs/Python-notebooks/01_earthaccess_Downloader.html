@@ -92,7 +92,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../projects/index.html" rel="next">
+<link href="../Python-notebooks/01_ERA5_S3_Downloader.html" rel="next">
 <link href="../Python-notebooks/00_NASA_Earthdata_Authentication.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -325,12 +325,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">00. Authentication for NASA Earthdata</a>
+  <a href="../Python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">Written by NASA Openscapes mentors</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Python-notebooks/01_earthaccess_Downloader.html" class="sidebar-item-text sidebar-link active">Download data from Earth Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_ERA5_S3_Downloader.html" class="sidebar-item-text sidebar-link">Download Copernicus ERA5 Data with S3 without logging in</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_ERDDAP_Downloader.html" class="sidebar-item-text sidebar-link">Download data from NOAA ERDDAP using GRIDDAP</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_MOTU_Downloader.html" class="sidebar-item-text sidebar-link">Download sliced data using MOTU-Client in Copernicus</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-notebooks/01_Combining_Data.html" class="sidebar-item-text sidebar-link">Combine, clean, and export the data</a>
   </div>
 </li>
       </ul>
@@ -380,10 +400,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#download-data-from-earth-data" id="toc-download-data-from-earth-data" class="nav-link active" data-scroll-target="#download-data-from-earth-data">Download data from Earth Data</a>
   <ul class="collapse">
-  <li><a href="#written-by-minh-phan" id="toc-written-by-minh-phan" class="nav-link" data-scroll-target="#written-by-minh-phan">Written by Minh Phan</a></li>
   <li><a href="#authorize-credentials" id="toc-authorize-credentials" class="nav-link" data-scroll-target="#authorize-credentials">Authorize credentials</a></li>
   <li><a href="#import-necessary-libraries" id="toc-import-necessary-libraries" class="nav-link" data-scroll-target="#import-necessary-libraries">Import necessary libraries</a></li>
   <li><a href="#stream-data-to-your-local-machine-using-earthaccess-library" id="toc-stream-data-to-your-local-machine-using-earthaccess-library" class="nav-link" data-scroll-target="#stream-data-to-your-local-machine-using-earthaccess-library">Stream data to your local machine using earthaccess library</a></li>
@@ -422,13 +441,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="stream-data-to-your-local-machine-using-earthaccess-library" class="level2">
 <h2 class="anchored" data-anchor-id="stream-data-to-your-local-machine-using-earthaccess-library">Stream data to your local machine using earthaccess library</h2>
 <p>Earthaccess library streamlines your downloading, slicing, and searching for granules easier than ever. For cloud-hosted datasets (which is what this tutorial best works with), we choose to download granules to the local machine instead of streaming them to the working Python scripts as some users may not be physically available in the us-west region for streaming to be effective. Local downloading may result in heavy file sizes, but is consistent, and we am also providing some tweaks to save as much as you can, especially if your research interest area requires a long temporal range and does not cover globally.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Log in using .netrc file</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>auth <span class="op">=</span> earthaccess.login(strategy<span class="op">=</span><span class="st">"netrc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>You're now authenticated with NASA Earthdata Login
-Using token with expiration date: 08/18/2023
-Using .netrc file for EDL</code></pre>
+<pre><code>No .netrc found in /home/rstudio</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>FileNotFoundError: [Errno 2] No such file or directory: '/home/rstudio/.netrc'</code></pre>
 </div>
 </div>
 </section>
@@ -436,81 +456,81 @@ Using .netrc file for EDL</code></pre>
 <h2 class="anchored" data-anchor-id="download-granules-for-an-extended-period-of-time">Download granules for an extended period of time</h2>
 <p>You can consult the <a href="https://earthdata.readthedocs.io/en/latest/tutorials/demo/">earthacess library website</a> or their <a href="https://github.com/nsidc/earthaccess/tree/main/notebooks">notebooks</a> for code snippets on how to browse and look up collections. For this notebook, we mainly focus on the downloading aspect. First, we need to get the list of granules to download.</p>
 <div class="cell" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EarthAccess's approach to collecting granules</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> earthaccess.search_data(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    short_name<span class="op">=</span><span class="st">'OSCAR_L4_OC_FINAL_V2.0'</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    cloud_hosted<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    bounding_box <span class="op">=</span> (<span class="dv">60</span>, <span class="dv">5</span>, <span class="dv">80</span>, <span class="dv">25</span>),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    temporal<span class="op">=</span>(<span class="st">"2000-01"</span>, <span class="st">"2001-12"</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EarthAccess's approach to collecting granules</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> earthaccess.search_data(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    short_name<span class="op">=</span><span class="st">'OSCAR_L4_OC_FINAL_V2.0'</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    cloud_hosted<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    bounding_box <span class="op">=</span> (<span class="dv">60</span>, <span class="dv">5</span>, <span class="dv">80</span>, <span class="dv">25</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    temporal<span class="op">=</span>(<span class="st">"2000-01"</span>, <span class="st">"2001-12"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Granules found: 335</code></pre>
 </div>
 </div>
 <p>Since earthacess does not support spatial slicing, we developed a method to download, slice, combine, and export data yearly, then finally delete temporary downloaded files to save disk space. Assumed that you already knew the temporal, spatial range of the dataset of your chosen, we first download the data by year into a temporary folder, then slice the data and then export the combined data to another folder.</p>
 <div class="cell" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Our approach</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> download_granules_by_year(short_name, month_start, month_end, lat1<span class="op">=</span><span class="dv">5</span>, lat2<span class="op">=</span><span class="dv">25</span>, lon1<span class="op">=</span><span class="dv">60</span>, lon2<span class="op">=</span><span class="dv">80</span>):</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> year <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">int</span>(month_start[:<span class="dv">4</span>]), <span class="bu">int</span>(month_end[:<span class="dv">4</span>])<span class="op">+</span><span class="dv">1</span>):      </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Collecting granules'</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        granules <span class="op">=</span> earthaccess.granule_query().short_name(short_name).temporal(<span class="ss">f'</span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">'</span>,<span class="ss">f'</span><span class="sc">{</span>year<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">-01'</span>).get(<span class="dv">366</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        MAIN_FOLDER <span class="op">=</span> <span class="st">'demonstrated data/earth_data'</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        TEMP_FOLDER <span class="op">=</span> <span class="st">'temp'</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        path_temp_folder <span class="op">=</span> os.path.join(MAIN_FOLDER, TEMP_FOLDER)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        path_processed_folder <span class="op">=</span> os.path.join(MAIN_FOLDER, short_name)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># create folder to store data</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> os.path.exists(path_temp_folder):</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            os.makedirs(path_temp_folder)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> os.path.exists(path_processed_folder):</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>            os.makedirs(path_processed_folder)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        files <span class="op">=</span> earthaccess.download(granules, path_temp_folder)</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># grab first file in directory to examine lat and lon values</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        first_file <span class="op">=</span> os.listdir(path_temp_folder)[<span class="dv">0</span>]</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># get bounding box</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        lat1_idx, lat2_idx, lon1_idx, lon2_idx <span class="op">=</span> get_bounding_box(os.path.join(path_temp_folder, first_file), lat1, lat2, lon1, lon2)</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># combine files together </span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">## for this example collection, coordinate names are 'lat' and 'lon' while their underlying indices are 'latitude' and 'longitude', respectively</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="co">## may or may not be applicable for other datasets on the site.</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">## if dataset coordinates are slice-able, use:</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">### data = xr.open_mfdataset(f'{path_temp_folder}/*.nc').sel(lat=slice(lat1, lat2+1), longitude=slice(lon1, lon2+1))</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Slicing...'</span>)</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> xr.open_mfdataset(<span class="ss">f'</span><span class="sc">{</span>path_temp_folder<span class="sc">}</span><span class="ss">/*.nc'</span>).isel(latitude<span class="op">=</span><span class="bu">slice</span>(lat1_idx, lat2_idx<span class="op">+</span><span class="dv">1</span>), longitude<span class="op">=</span><span class="bu">slice</span>(lon1_idx, lon2_idx<span class="op">+</span><span class="dv">1</span>))</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>        data.to_netcdf(<span class="ss">f'</span><span class="sc">{</span>path_processed_folder<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">.nc'</span>)</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># delete files in the temporary folder</span></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Deleting temporary files...'</span>)</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>        files <span class="op">=</span> glob.glob(<span class="ss">f'</span><span class="sc">{</span>path_temp_folder<span class="sc">}</span><span class="ss">/*.*'</span>)</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> f <span class="kw">in</span> files:</span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>            os.remove(f)</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_bounding_box(file_path, lat1<span class="op">=</span><span class="dv">0</span>, lat2<span class="op">=</span><span class="dv">30</span>, lon1<span class="op">=</span><span class="dv">60</span>, lon2<span class="op">=</span><span class="dv">80</span>):</span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="co">    The dataset we experimented did not have indexed coordinates, </span></span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="co">    so we resorted to slicing using index positions</span></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    ds <span class="op">=</span> xr.open_dataset(file_path)</span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># modify depending on name of latitude and longitude coordinates</span></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    lat_vals <span class="op">=</span> ds.lat.values</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    lon_vals <span class="op">=</span> ds.lon.values</span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    lat1_idx <span class="op">=</span> np.where(lat_vals<span class="op">==</span>lat1)[<span class="dv">0</span>][<span class="dv">0</span>]</span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    lat2_idx <span class="op">=</span> np.where(lat_vals<span class="op">==</span>lat2)[<span class="dv">0</span>][<span class="dv">0</span>]</span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>    lon1_idx <span class="op">=</span> np.where(lon_vals<span class="op">==</span>lon1)[<span class="dv">0</span>][<span class="dv">0</span>]</span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>    lon2_idx <span class="op">=</span> np.where(lon_vals<span class="op">==</span>lon2)[<span class="dv">0</span>][<span class="dv">0</span>]</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> lat1_idx, lat2_idx, lon1_idx, lon2_idx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Our approach</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> download_granules_by_year(short_name, month_start, month_end, lat1<span class="op">=</span><span class="dv">5</span>, lat2<span class="op">=</span><span class="dv">25</span>, lon1<span class="op">=</span><span class="dv">60</span>, lon2<span class="op">=</span><span class="dv">80</span>):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> year <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">int</span>(month_start[:<span class="dv">4</span>]), <span class="bu">int</span>(month_end[:<span class="dv">4</span>])<span class="op">+</span><span class="dv">1</span>):      </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Collecting granules'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        granules <span class="op">=</span> earthaccess.granule_query().short_name(short_name).temporal(<span class="ss">f'</span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">'</span>,<span class="ss">f'</span><span class="sc">{</span>year<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">-01'</span>).get(<span class="dv">366</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        MAIN_FOLDER <span class="op">=</span> <span class="st">'demonstrated data/earth_data'</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        TEMP_FOLDER <span class="op">=</span> <span class="st">'temp'</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        path_temp_folder <span class="op">=</span> os.path.join(MAIN_FOLDER, TEMP_FOLDER)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        path_processed_folder <span class="op">=</span> os.path.join(MAIN_FOLDER, short_name)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># create folder to store data</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> os.path.exists(path_temp_folder):</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>            os.makedirs(path_temp_folder)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> os.path.exists(path_processed_folder):</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>            os.makedirs(path_processed_folder)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        files <span class="op">=</span> earthaccess.download(granules, path_temp_folder)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># grab first file in directory to examine lat and lon values</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        first_file <span class="op">=</span> os.listdir(path_temp_folder)[<span class="dv">0</span>]</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># get bounding box</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        lat1_idx, lat2_idx, lon1_idx, lon2_idx <span class="op">=</span> get_bounding_box(os.path.join(path_temp_folder, first_file), lat1, lat2, lon1, lon2)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># combine files together </span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">## for this example collection, coordinate names are 'lat' and 'lon' while their underlying indices are 'latitude' and 'longitude', respectively</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        <span class="co">## may or may not be applicable for other datasets on the site.</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">## if dataset coordinates are slice-able, use:</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">### data = xr.open_mfdataset(f'{path_temp_folder}/*.nc').sel(lat=slice(lat1, lat2+1), longitude=slice(lon1, lon2+1))</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Slicing...'</span>)</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> xr.open_mfdataset(<span class="ss">f'</span><span class="sc">{</span>path_temp_folder<span class="sc">}</span><span class="ss">/*.nc'</span>).isel(latitude<span class="op">=</span><span class="bu">slice</span>(lat1_idx, lat2_idx<span class="op">+</span><span class="dv">1</span>), longitude<span class="op">=</span><span class="bu">slice</span>(lon1_idx, lon2_idx<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>        data.to_netcdf(<span class="ss">f'</span><span class="sc">{</span>path_processed_folder<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">.nc'</span>)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># delete files in the temporary folder</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Deleting temporary files...'</span>)</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>        files <span class="op">=</span> glob.glob(<span class="ss">f'</span><span class="sc">{</span>path_temp_folder<span class="sc">}</span><span class="ss">/*.*'</span>)</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> f <span class="kw">in</span> files:</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>            os.remove(f)</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_bounding_box(file_path, lat1<span class="op">=</span><span class="dv">0</span>, lat2<span class="op">=</span><span class="dv">30</span>, lon1<span class="op">=</span><span class="dv">60</span>, lon2<span class="op">=</span><span class="dv">80</span>):</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co">    The dataset we experimented did not have indexed coordinates, </span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co">    so we resorted to slicing using index positions</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>    ds <span class="op">=</span> xr.open_dataset(file_path)</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># modify depending on name of latitude and longitude coordinates</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>    lat_vals <span class="op">=</span> ds.lat.values</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>    lon_vals <span class="op">=</span> ds.lon.values</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>    lat1_idx <span class="op">=</span> np.where(lat_vals<span class="op">==</span>lat1)[<span class="dv">0</span>][<span class="dv">0</span>]</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>    lat2_idx <span class="op">=</span> np.where(lat_vals<span class="op">==</span>lat2)[<span class="dv">0</span>][<span class="dv">0</span>]</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>    lon1_idx <span class="op">=</span> np.where(lon_vals<span class="op">==</span>lon1)[<span class="dv">0</span>][<span class="dv">0</span>]</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>    lon2_idx <span class="op">=</span> np.where(lon_vals<span class="op">==</span>lon2)[<span class="dv">0</span>][<span class="dv">0</span>]</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> lat1_idx, lat2_idx, lon1_idx, lon2_idx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-tags="[]">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>download_granules_by_year(short_name<span class="op">=</span><span class="st">'OSCAR_L4_OC_FINAL_V2.0'</span>,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                          month_start<span class="op">=</span><span class="st">'2000-01'</span>, month_end<span class="op">=</span><span class="st">'2001-12'</span>, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                          lat1<span class="op">=</span><span class="dv">5</span>, lat2<span class="op">=</span><span class="dv">25</span>, lon1<span class="op">=</span><span class="dv">60</span>, lon2<span class="op">=</span><span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>download_granules_by_year(short_name<span class="op">=</span><span class="st">'OSCAR_L4_OC_FINAL_V2.0'</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                          month_start<span class="op">=</span><span class="st">'2000-01'</span>, month_end<span class="op">=</span><span class="st">'2001-12'</span>, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                          lat1<span class="op">=</span><span class="dv">5</span>, lat2<span class="op">=</span><span class="dv">25</span>, lon1<span class="op">=</span><span class="dv">60</span>, lon2<span class="op">=</span><span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Collecting granules
  Getting 366 granules, approx download size: 0.0 GB</code></pre>
@@ -560,20 +580,20 @@ Collecting granules
 <h2 class="anchored" data-anchor-id="combine-files-together">Combine files together</h2>
 <p>Now that we have all netcdf4 files in one place, all spatially sliced, combining the rest of the data is a piece of cake! Note that some of the data will be overlap in the process of combing data every year earlier, so it’s best practice to remove duplicates (if any)</p>
 <div class="cell" data-tags="[]" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> xr.open_mfdataset(<span class="st">'demonstrated data/earth_data/OSCAR_L4_OC_FINAL_V2.0/*.nc'</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert CFTimeIndex to datetimeindex</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>combined[<span class="st">'time'</span>] <span class="op">=</span> combined.indexes[<span class="st">'time'</span>].to_datetimeindex()</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>unique_time_idxs <span class="op">=</span> np.unique(combined.time, return_index<span class="op">=</span><span class="va">True</span>)[<span class="dv">1</span>]</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> combined.isel(time<span class="op">=</span>unique_time_idxs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> xr.open_mfdataset(<span class="st">'demonstrated data/earth_data/OSCAR_L4_OC_FINAL_V2.0/*.nc'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert CFTimeIndex to datetimeindex</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>combined[<span class="st">'time'</span>] <span class="op">=</span> combined.indexes[<span class="st">'time'</span>].to_datetimeindex()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>unique_time_idxs <span class="op">=</span> np.unique(combined.time, return_index<span class="op">=</span><span class="va">True</span>)[<span class="dv">1</span>]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> combined.isel(time<span class="op">=</span>unique_time_idxs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/tmp/ipykernel_46/264036009.py:4: RuntimeWarning: Converting a CFTimeIndex with dates from a non-standard calendar, 'julian', to a pandas.DatetimeIndex, which uses dates from the standard calendar.  This may lead to subtle errors in operations that depend on the length of time between dates.
   combined['time'] = combined.indexes['time'].to_datetimeindex()</code></pre>
 </div>
 </div>
 <div class="cell" data-tags="[]" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>combined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>combined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
@@ -1637,12 +1657,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../Python-notebooks/00_NASA_Earthdata_Authentication.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">00. Authentication for NASA Earthdata</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Written by NASA Openscapes mentors</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../projects/index.html" class="pagination-link">
-        <span class="nav-page-text">Projects Overview</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Python-notebooks/01_ERA5_S3_Downloader.html" class="pagination-link">
+        <span class="nav-page-text">Download Copernicus ERA5 Data with S3 without logging in</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
