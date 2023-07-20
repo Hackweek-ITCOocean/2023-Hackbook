@@ -67,12 +67,12 @@ website:
         contents:
           - section: "Data Access"
             contents:
-              - Python-notebooks/00_NASA_Earthdata_Authentication.ipynb
-              - Python-notebooks/01_earthaccess_Downloader.ipynb
-              - Python-notebooks/01_ERA5_S3_Downloader.ipynb
-              - Python-notebooks/01_ERDDAP_Downloader.ipynb
-              - Python-notebooks/01_MOTU_Downloader.ipynb
-              - Python-notebooks/01_Combining_Data.ipynb
+              - python-notebooks/00_NASA_Earthdata_Authentication.ipynb
+              - python-notebooks/01_earthaccess_Downloader.ipynb
+              - python-notebooks/01_ERA5_S3_Downloader.ipynb
+              - python-notebooks/01_ERDDAP_Downloader.ipynb
+              - python-notebooks/01_MOTU_Downloader.ipynb
+              - python-notebooks/01_Combining_Data.ipynb
       - section: "Projects"
         contents:
           - projects/index.md
