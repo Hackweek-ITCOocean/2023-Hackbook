@@ -69,16 +69,16 @@ INCOIS
 
 ![](assets/images/uw-logo.png){width=75% fig-alt="picture of UW"}
 
-ML tutorials; University of Washington, CS/Applied Math, 2023 Varanasi Intern
+[GitHub](https://github.com/NaNa7Miiii): ML tutorials; University of Washington, CS/Applied Math, 2023 Varanasi Intern
 
 </div>
 
 <div>
 ### Minh Phan
 
-![](assets/images/uw-logo.png){width=75% fig-alt="picture of UW"}
+![](assets/images/minh.jpeg){width=75% fig-alt="Minh Phan"}
 
-Indian Ocean database for hackweek, data access tutorials. University of Washington, CS/Applied Math, 2023 Varanasi Intern
+[GitHub](https://github.com/minhphan03): Indian Ocean database for hackweek, data access tutorials. University of Washington, CS/Applied Math, 2023 Varanasi Intern
 </div>
 
 </div>

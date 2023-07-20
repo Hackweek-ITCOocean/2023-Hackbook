@@ -72,7 +72,21 @@ website:
               - python-notebooks/01_ERA5_S3_Downloader.ipynb
               - python-notebooks/01_ERDDAP_Downloader.ipynb
               - python-notebooks/01_MOTU_Downloader.ipynb
-              - python-notebooks/01_Combining_Data.ipynb
+          - section: "Using Data"
+            contents:
+              - python-notebooks/02_Using_Data.ipynb
+              - python-notebooks/02_Graphing_Data.ipynb
+              - python-notebooks/02_Zarr_Access_netCDF.ipynb
+              - python-notebooks/02_Xarray_hvplot.ipynb
+              - python-notebooks/02_Xarray_hvplot.ipynb              
+          - section: "Machine Learning"
+            contents:
+          - section: "Applications"
+            contents:
+          - section: "IO Zarr Database"
+            contents:
+              - python-notebooks/04_Combining_Data.ipynb
+              - python-notebooks/04_Appending_Data.ipynb
       - section: "Projects"
         contents:
           - projects/index.md
