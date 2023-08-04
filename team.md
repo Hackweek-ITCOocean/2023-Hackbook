@@ -31,7 +31,11 @@ title: Our Team
 <div>
 ### Dr. Eli Holmes
 
-![](assets/images/Eli.png){width=75% fig-alt="picture of Eli Holmes"}
+<img src="assets/images/Eli.png" alt="Eli Holmes" style="width:75%; ; border-radius: 50%;">
+
+<!--
+ ![](assets/images/Eli.png){width=75% fig-alt="picture of Eli Holmes"}
+-->
 
 [NOAA Fisheries](https://www.fisheries.noaa.gov/) and [University of Washington](https://fish.uw.edu/), USA.
 
@@ -41,7 +45,11 @@ title: Our Team
 <div>
 ### Dr. Nimit Kumar
 
+<img src="assets/images/nimit.png" alt="Nimit Kumar" style="width:75%; ; border-radius: 50%;">
+
+<!--
 ![](assets/images/nimit.png){width=75% fig-alt="picture of Nimit Kumar"}
+-->
 
 [INCOIS](https://incois.gov.in/)
 
@@ -51,7 +59,11 @@ title: Our Team
 <div>
 ### Dr. TVS Uday Bhaskar
 
-![](assets/images/Uday.jpeg){width=75% fig-alt="picture of Uday Bhaskar"}
+<img src="assets/images/Uday.jpeg" alt="Udaya Bhaskar" style="width:75%; ; border-radius: 50%;">
+
+<!--
+![](assets/images/Uday.jpeg){width=75% fig-alt="Uday Bhaskar"}
+-->
 
 [INCOIS](https://incois.gov.in/)
 
@@ -67,7 +79,11 @@ title: Our Team
 <div>
 ### Jiarui Yu
 
-![](assets/images/uw-logo.png){width=75% fig-alt="picture of UW"}
+<img src="assets/images/jiarui.jpeg" alt="Jiarui Yu" style="width:75%; ; border-radius: 50%;">
+
+<!--
+![](assets/images/jiarui.jpeg){width=75% fig-alt="Jiarui Yu"}
+-->
 
 Machine-learning tutorials; rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern
 
@@ -78,7 +94,11 @@ Machine-learning tutorials; rising senior University of Washington, Applied & Co
 <div>
 ### Minh Phan
 
+<img src="assets/images/minh.jpeg" alt="Minh Phan" style="width:75%; ; border-radius: 50%;">
+
+<!--
 ![](assets/images/minh.jpeg){width=75% fig-alt="Minh Phan"}
+-->
 
 Indian Ocean database for hackweek, data access tutorials. rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern
 
