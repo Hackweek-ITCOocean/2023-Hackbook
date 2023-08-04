@@ -43,6 +43,14 @@ website:
         contents:
           - logistics/index.md
           - logistics/schedule.md
+      - section: "Set-up and prerequisites"
+        contents:
+          - setup/index.md
+          - setup/prerequisites.md
+          - setup/jupyterhub.md
+          - setup/notebooks.md
+          - setup/github.md
+          - setup/earthdata.md
       - section: "Week 1"
         contents:
           - week1-tutorials/01-AM-intro-to-regional-data.md

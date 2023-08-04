@@ -1,1 +1,1 @@
-Sitemap: https://Hackweek-ITCOocean.github.io/2023-Cloudbook/sitemap.xml
+Sitemap: https://Hackweek-ITCOocean.github.io/2023-Hackbook/sitemap.xml

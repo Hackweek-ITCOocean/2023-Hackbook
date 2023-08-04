@@ -69,7 +69,7 @@ INCOIS
 
 ![](assets/images/uw-logo.png){width=75% fig-alt="picture of UW"}
 
-[GitHub](https://github.com/NaNa7Miiii): ML tutorials; University of Washington, CS/Applied Math, 2023 Varanasi Intern
+[GitHub](https://github.com/NaNa7Miiii) [Linkedin](https://www.linkedin.com/in/jiarui-yu-0b0ab522b/): Machine-learning tutorials; rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern
 
 </div>
 
@@ -78,7 +78,7 @@ INCOIS
 
 ![](assets/images/minh.jpeg){width=75% fig-alt="Minh Phan"}
 
-[GitHub](https://github.com/minhphan03): Indian Ocean database for hackweek, data access tutorials. University of Washington, CS/Applied Math, 2023 Varanasi Intern
+[GitHub](https://github.com/minhphan03)  [Linkedin](https://www.linkedin.com/in/minhphan0612/): Indian Ocean database for hackweek, data access tutorials. rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern
 </div>
 
 </div>

@@ -107,16 +107,3 @@ _closing-day5.md
 
 ![](images/draft-schedule.png){width=80% fig-alt="schedule"}
 
-## Pre-course clinic: learn basics of R
-
-It is important that you come into the course with a basic understanding of R. There are many free courses. 
-
-* If you have never used R or RStudio and have not done much programming, start with this 4 hour course: Basics of R and installing RStudio https://www.udemy.com/course/r-basics/
-
-* If you know the basics of R but have never done modeling, then you can start with this 2.5 hour course that covers basic linear regression with R and plotting with ggplot2: https://www.udemy.com/course/machlearn1
-
-* For a longer free course, you can do this one. Note this is 20 hours. You do NOT need to do this whole course before the hackweek! https://www.codecademy.com/learn/learn-r
-
-* One of the best free R courses is https://www.coursera.org/learn/r-programming. You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material.
-
-
