@@ -33,9 +33,9 @@ title: Our Team
 
 ![](assets/images/Eli.png){width=75% fig-alt="picture of Eli Holmes"}
 
-NOAA Fisheries and University of Washington, USA
+[NOAA Fisheries](https://www.fisheries.noaa.gov/) and [University of Washington](https://fish.uw.edu/), USA.
 
-**Links:** [NOAA Fisheries](fisheries.noaa.gov), [webpage](https://eeholmes.github.io/)
+**Links:** [webpage](https://eeholmes.github.io/) &#x2022;  [GitHub](https://github.com/eeholmes)
 </div>
 
 <div>
@@ -43,9 +43,9 @@ NOAA Fisheries and University of Washington, USA
 
 ![](assets/images/nimit.png){width=75% fig-alt="picture of Nimit Kumar"}
 
-INCOIS
+[INCOIS](https://incois.gov.in/)
 
-**Links:** [INCOIS](https://incois.gov.in/), [OceanExpert page](https://oceanexpert.org/expert/Nimit)
+**Links:** [OceanExpert page](https://oceanexpert.org/expert/Nimit)
 </div>
 
 <div>
@@ -53,9 +53,9 @@ INCOIS
 
 ![](assets/images/Uday.jpeg){width=75% fig-alt="picture of Uday Bhaskar"}
 
-INCOIS
+[INCOIS](https://incois.gov.in/)
 
-**Links:** [INCOIS](https://incois.gov.in/), [ResearchGate page](https://www.researchgate.net/profile/Tvs-Udaya-Bhaskar)
+**Links:** [ResearchGate page](https://www.researchgate.net/profile/Tvs-Udaya-Bhaskar)
 </div>
 
 </div>
@@ -69,7 +69,9 @@ INCOIS
 
 ![](assets/images/uw-logo.png){width=75% fig-alt="picture of UW"}
 
-[GitHub](https://github.com/NaNa7Miiii) [Linkedin](https://www.linkedin.com/in/jiarui-yu-0b0ab522b/): Machine-learning tutorials; rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern
+Machine-learning tutorials; rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern
+
+**Links:** [GitHub](https://github.com/NaNa7Miiii) &#x2022;  [Linkedin](https://www.linkedin.com/in/jiarui-yu-0b0ab522b/)
 
 </div>
 
@@ -78,7 +80,9 @@ INCOIS
 
 ![](assets/images/minh.jpeg){width=75% fig-alt="Minh Phan"}
 
-[GitHub](https://github.com/minhphan03)  [Linkedin](https://www.linkedin.com/in/minhphan0612/): Indian Ocean database for hackweek, data access tutorials. rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern
+Indian Ocean database for hackweek, data access tutorials. rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern
+
+**Links:** [GitHub](https://github.com/minhphan03) &#x2022;  [Linkedin](https://www.linkedin.com/in/minhphan0612/)
 </div>
 
 </div>

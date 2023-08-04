@@ -46,7 +46,6 @@ website:
       - section: "Set-up and prerequisites"
         contents:
           - setup/index.md
-          - setup/prerequisites.md
           - setup/jupyterhub.md
           - setup/notebooks.md
           - setup/github.md
