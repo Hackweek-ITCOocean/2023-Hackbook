@@ -319,7 +319,119 @@
     "href": "team.html#support",
     "title": "Our Team",
     "section": "Support",
-    "text": "Support\n\n\nJiarui Yu\n\nGitHub: ML tutorials; University of Washington, CS/Applied Math, 2023 Varanasi Intern\n\n\nMinh Phan\n\nGitHub: Indian Ocean database for hackweek, data access tutorials. University of Washington, CS/Applied Math, 2023 Varanasi Intern"
+    "text": "Support\n\n\nJiarui Yu\n\nGitHub Linkedin: Machine-learning tutorials; rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern\n\n\nMinh Phan\n\nGitHub Linkedin: Indian Ocean database for hackweek, data access tutorials. rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern"
+  },
+  {
+    "objectID": "setup/notebooks.html",
+    "href": "setup/notebooks.html",
+    "title": "Notebooks, Python, Git",
+    "section": "",
+    "text": "In this session, we will provide a brief introduction to:\n\nCommand line (terminal/shell)\nVersion Control (code management using git)\nProgramming in Python (using Jupyter Notebook)\nGeospatial Fundamentals (optional, self-study)\n\nYou will need a working knowledge of git and terminal for this hackathon. We will provide an overview of these topics and also share resources for self-paced learning."
+  },
+  {
+    "objectID": "setup/notebooks.html#summary",
+    "href": "setup/notebooks.html#summary",
+    "title": "Notebooks, Python, Git",
+    "section": "",
+    "text": "In this session, we will provide a brief introduction to:\n\nCommand line (terminal/shell)\nVersion Control (code management using git)\nProgramming in Python (using Jupyter Notebook)\nGeospatial Fundamentals (optional, self-study)\n\nYou will need a working knowledge of git and terminal for this hackathon. We will provide an overview of these topics and also share resources for self-paced learning."
+  },
+  {
+    "objectID": "setup/notebooks.html#introduction-command-line-terminalshell",
+    "href": "setup/notebooks.html#introduction-command-line-terminalshell",
+    "title": "Notebooks, Python, Git",
+    "section": "Introduction :: Command Line (Terminal/Shell)",
+    "text": "Introduction :: Command Line (Terminal/Shell)\n\nShell Basics\n\nWhat is Terminal or Shell?\nNavigating Files and Directories\nWorking with Files and Directories\n\n\n\nShell: More Details\nDetailed self-paced lesson on shell: Shell Lesson from Software Carpentry"
+  },
+  {
+    "objectID": "setup/notebooks.html#introduction-version-control-git-and-github",
+    "href": "setup/notebooks.html#introduction-version-control-git-and-github",
+    "title": "Notebooks, Python, Git",
+    "section": "Introduction :: Version Control (Git and Github)",
+    "text": "Introduction :: Version Control (Git and Github)\n\nWhat is version control, git, github, and how to set it up?\nVersion control is managing and tracking changes to your documents (program source code, images, websites, data files, etc.). git is a popular tool used for version control of software code. github.com is popular platform that provides remote server hosting for git repositories. A repository is a collection of various files that you are tracking for changes and versions (think of it as a directory with files that are being tracked for changes, using git for taking snapshots of versions as you are developing).\nThis section is a step-by-step guide to set up git on your 2i2c JupyterHub instance (referred to as 2i2c JupyterHub in these instruction). We will also configure git to use your github.com account for managing your repositories hosted on github.com. There are 5 main steps with substeps, includes instruction for addressing github’s new approach for token authentication.\n\n\nStep 1: Create a github account\nTo complete the setup, you will need an account on github.com. If you don’t have an account, please visit github.com, create an account (free) and come back to this guide for setting up git.\n\n\nStep 2: Fork a repository\nA fork is a copy of a repository from another github account (for example NASA-Openscapes account) to your github account (for example, my account virdi) that then you have permission to edit. To help you finish this setup correctly, we have created a demo repository on Openscapes github account named check_github_setup. You can fork this repository into your github account following these steps:\n\nLog in to your github.com account\nGo to the demo repository at NASA-Openscapes github\n\nClick on the fork icon in the top right corner, as shown in the image below and click your user name if prompted to do so\n\n\n\n\nStep 3: Clone the repository that you just forked\nNow you have a fork of the demo repository in your github account that we can clone it in your 2i2c instance. In the code below, commands beginning with git is a git command for version control and synching; commands that don’t start with git are bash/linux/command line commands.\n\nStart your 2i2c JupyterHub and open a terminal\nFile &gt;&gt; New &gt;&gt; Terminal\nMake sure you are in your home directory by usingpwd command and verifying the output as below\n/home/jovyan\n\nConfigure git with your name and email address.\ngit config --global user.name \"Makhan Virdi\"\ngit config --global user.email \"Makhan.Virdi@gmail.com\"\nNote: This name and email could be different from your github.com credentials. Remember git is a program that keeps track of your changes locally (on 2i2c JupyterHub or your own computer) and github.com is a platform to host your repositories. However, since your changes are tracked by git, the email/name used in git configuration will show up next to your contributions on github.com when you push your repository to github.com (git push is discussed in a later step).\nConfigure git to store your github credentials to avoid having to enter your github username and token each time you push changes to your repository(in Step 5, we will describe how to use github token instead of a password)\ngit config --global credential.helper store\nCopy link for the demo repository from your github account. Click the green “Code” button and copy the link as shown.\n\nClone the repository using git clone command in the terminal\nTo clone a repository from github, copy the link for the repository (previous step) and use git clone:\ngit clone https://github.com/YOUR-GITHUB-USERNAME/check_github_setup\nNote: Replace YOUR-GITHUB-USERNAME here with your github.com username. For example, it is virdi for my github.com account as seen in this image.\n\nUse ls (list files) to verify the existence of the repository that you just cloned\n\nChange directory to the cloned repository using cd check_github_setup and check the current directory using pwd command (present working directory)\n\nCheck status of your git repository to confirm git set up using git status\n\nYou are all set with using git on your 2i2c JupyterHub! But the collaborative power of git through github needs some additional setup.\nIn the next step, we will create a new file in this repository, track changes to this file, and link it with your github.com account.\n\n\n\nStep 4. Creating new file and tracking changes\n\nIn the left panel on your 2i2c JupyterHub, click on the “directory” icon and then double click on “check_github_setup” directory.\n\n\nOnce you are in the check_github_setup directory, create a new file using the text editor in your 2i2c JupyterHub (File &gt;&gt; New &gt;&gt; Text File).\n\nName the file lastname.txt. For example, virdi.txt for me (use your last name). Add some content to this file (for example, I added this to my virdi.txt file: my last name is virdi).\n\nNow you should have a new file (lastname.txt) in the git repository directory check_github_setup\nCheck if git can see that you have added a new file using git status. Git reports that you have a new file that is not tracked by git yet, and suggests adding that file to the git tracking system.\n\nAs seen in this image, git suggests adding that file so it can be tracked for changes. You can add file to git for tracking changes using git add. Then, you can commit changes to this file’s content using git commit as shown in the image.\ngit add virdi.txt\ngit status\ngit commit -m \"adding a new file\"\ngit status\n\nAs seen in the image above, git is suggesting to push the change that you just committed to the remote server at github.com (so that your collaborators can also see what changes you made).\nNote: DO NOT execute push yet. Before we push to github.com, let’s configure git further and store our github.com credentials to avoid entering the credentials every time we invoke git push. For doing so, we need to create a token on github.com to be used in place of your github.com password.\n\n\n\nStep 5. Create access token on github.com\n\nGo to your github account and create a new “personal access token”: https://github.com/settings/tokens/new\n\n\n\nGenerate Personal Access Token on github.com\n\n\nEnter a description in “Note” field as seen above, select “repo” checkbox, and scroll to the bottom and click the green button “Generate Token”. Once generated, copy the token (or save it in a text file for reference).\nIMPORTANT: You will see this token only once, so be sure to copy this. If you do not copy your token at this stage, you will need to generate a new token.\n\nTo push (transfer) your changes to github, use git push in terminal. It requires you to enter your github credentials. You will be prompted to enter your github username and “password”. When prompted for your “password”, DO NOT use your github password, use the github token that was copied in the previous step.\ngit push\n\nNote: When you paste your token in the terminal window, windows users will press Ctrl+V and mac os users will press Cmd+V. If it does not work, try generating another token and use the copy icon next to the token to copy the token. Then, paste using your computer’s keyboard shortcut for paste.\nNow your password is stored in ~/.git-credentials and you will not be prompted again unless the Github token expires. You can check the presence of this git-credentials file using Terminal. Here the ~ character represents your home directory (/home/jovyan/).\nls -la ~\nThe output looks like this:\ndrwxr-xr-x 13 jovyan jovyan 6144 Oct 22 17:35 .\ndrwxr-xr-x  1 root   root   4096 Oct  4 16:21 ..\n-rw-------  1 jovyan jovyan 1754 Oct 29 18:30 .bash_history\ndrwxr-xr-x  4 jovyan jovyan 6144 Oct 29 16:38 .config\n-rw-------  1 jovyan jovyan   66 Oct 22 17:35 .git-credentials\n-rw-r--r--  1 jovyan jovyan   84 Oct 22 17:14 .gitconfig\ndrwxr-xr-x 10 jovyan jovyan 6144 Oct 21 16:19 2021-Cloud-Hackathon\nYou can also verify your git configuration\n(notebook) jovyan@jupyter-virdi:~$ git config -l\nThe output should have credential.helper = store:\nuser.email        = Makhan.Virdi@gmail.com\nuser.name         = Makhan Virdi\ncredential.helper = store\n\nNow we are all set to collaborate with github on the JupyterHub during the Cloud Hackathon!\n\n\nSummary: Git Commands\n\nCommonly used git commands (modified from source)\n\n\nGit Command\nDescription\n\n\n\n\ngit status\nShows the current state of the repository: the current working branch, files in the staging area, etc.\n\n\ngit add\nAdds a new, previously untracked file to version control and marks already tracked files to be committed with the next commit\n\n\ngit commit\nSaves the current state of the repository and creates an entry in the log\n\n\ngit log\nShows the history for the repository\n\n\ngit diff\nShows content differences between commits, branches, individual files and more\n\n\ngit clone\nCopies a repository to your local environment, including all the history\n\n\ngit pull\nGets the latest changes of a previously cloned repository\n\n\ngit push\nPushes your local changes to the remote repository, sharing them with others\n\n\n\n\n\nGit: More Details\nLesson: For a more detailed self-paced lesson on git, visit Git Lesson from Software Carpentry\nCheatsheet: Frequently used git commands\nDangit, Git!?!: If you are stuck after a git mishap, there are ready-made solutions to common problems at Dangit, Git!?!\n\n\nCloning our repository using the git Jupyter lab extension.\nIf we’re already familiar with git commands and feel more confortable using a GUI our Jupyterhub deployment comes with a git extension. This plugin allows us to operate with git using a simple user interface.\nFor example we can clone our repository using the extension.\n\n\n\ngit extension"
+  },
+  {
+    "objectID": "setup/notebooks.html#introduction-programming-in-python",
+    "href": "setup/notebooks.html#introduction-programming-in-python",
+    "title": "Notebooks, Python, Git",
+    "section": "Introduction :: Programming in Python",
+    "text": "Introduction :: Programming in Python\nSwitch to Jupyter Notebook for an introduction to programming in Python\n\nVariables (and mathematical operations)\nData Structures (list, tuple, dict)\nFlow Control using loops (for, while)\nConditionals (if, else, elif)\nFunctions\nErrors and Exceptions (understanding and handling errors)\nUsing modules (libraries, packages)\n\npandas: high-performance, easy-to-use data structures and data analysis tools\nrioxarray: based on the rasterio package for working with rasters and xarray\n\n\n\nPython Learning Resources\nSelf-paced lesson on Programming with Python from Software Carpentry"
+  },
+  {
+    "objectID": "setup/notebooks.html#introduction-geospatial-fundamentals-optional",
+    "href": "setup/notebooks.html#introduction-geospatial-fundamentals-optional",
+    "title": "Notebooks, Python, Git",
+    "section": "Introduction :: Geospatial Fundamentals (Optional)",
+    "text": "Introduction :: Geospatial Fundamentals (Optional)\nDetailed self-paced lesson on Fundamentals of Geospatial Raster and Vector Data with Python from Data Carpentry\nThe end!"
+  },
+  {
+    "objectID": "setup/index.html",
+    "href": "setup/index.html",
+    "title": "Set-up Overview",
+    "section": "",
+    "text": "For the course, we be mainly using a browser based platform (JupyterHub) for coding and projects. JupyterHub and JupyterLab is a standard platform for “big data geoscience” and working on this platform will prepare you for using the tools and notebooks developed by this research community. The JupyterHub will allow you to work on projects without having to install anything on personal computers. We will also cover installation on your personal computer."
+  },
+  {
+    "objectID": "setup/index.html#prerequisites",
+    "href": "setup/index.html#prerequisites",
+    "title": "Set-up Overview",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nFor the course, we require that you complete a short (and free) intro course to R and RStudio so you have a basic understanding of R and have R and RStudio installed.\n\nR courses"
+  },
+  {
+    "objectID": "setup/index.html#pre-course-clinic-learn-basics-of-r",
+    "href": "setup/index.html#pre-course-clinic-learn-basics-of-r",
+    "title": "Set-up Overview",
+    "section": "Pre-course clinic: learn basics of R",
+    "text": "Pre-course clinic: learn basics of R\nIt is important that you come into the course with a basic understanding of R and RStudio. Before\n\nIf you have never used R or RStudio and have not done much programming, start with this 4 hour course: Basics of R and installing RStudio https://www.udemy.com/course/r-basics/\nIf you know the basics of R but have never done modeling, then you can start with this 2.5 hour course that covers basic linear regression with R and plotting with ggplot2: https://www.udemy.com/course/machlearn1\nhttps://www.ucl.ac.uk/short-courses/search-courses/statistical-computing-r-programming-language-gentle-introduction\nFor a longer free course, you can do this one. Note this is 20 hours. You do NOT need to do this whole course before the hackweek! https://www.codecademy.com/learn/learn-r\nOne of the best free R courses is https://www.coursera.org/learn/r-programming. You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material.\n\n\nInstall R and RStudio Desktop\n\nR: https://cran.r-project.org/\n\nInstall the latest version of R that you can for your operating system. Preferably you want version 4.3+ but at the least you need version 4.1.\nIf you have R already installed, update to the newest version (4.3)\n\nRStudio Desktop: https://posit.co/download/rstudio-desktop/\n\nInstall the most recent version you can. Update your version if you have an old version installed."
+  },
+  {
+    "objectID": "setup/index.html#topics-covered",
+    "href": "setup/index.html#topics-covered",
+    "title": "Set-up Overview",
+    "section": "Topics covered",
+    "text": "Topics covered\n\nSetting up GitHub and Slack accounts\nJupyter Hub with 2i2c\nJupyter Notebooks with R and Python\nGitHub: forking, cloning, pulling, committing, pushing\nInstalling R and RStudio on your computer\nOptional: Installing Docker to run the course images"
+  },
+  {
+    "objectID": "setup/index.html#before-the-clinic",
+    "href": "setup/index.html#before-the-clinic",
+    "title": "Set-up Overview",
+    "section": "Before the Clinic",
+    "text": "Before the Clinic\nPlease follow the set up prerequisites before the Clinic."
+  },
+  {
+    "objectID": "setup/earthdata.html",
+    "href": "setup/earthdata.html",
+    "title": "Earthdata Login",
+    "section": "",
+    "text": "The following was borrowed from the excellent SnowEx Hackathon 2021\n\n\nNASA data are stored at one of several Distributed Active Archive Centers (DAACs). If you’re interested in available data for a given area and time of interest, the Earthdata Search portal provides a convenient web interface.\n\n\n\nEach participant will need a login. We will be teaching you ways to programmatically access NASA data from within your Python scripts. You will need to enter your Earthdata username and password in order for this to work.\n\n\n\nIf you do not already have an Earthdata login, then navigate to the Earthdata Login page, a username and password, and then record this somewhere for use during the tutorials:\n\n\n\nearthdata-login\n\n\n\n\n\nIf you use web interfaces to retrieve nasa data such as Earthdata Search you are prompted to login. We will be using software to retrieve data from NASA Servers during the hackweek, so you must store your credentials on the JupyterHub as explained in this documentation. Run the following commands on the JupyterHub in a terminal replacing your Earthdata login username and password:\necho \"machine urs.earthdata.nasa.gov login EARTHDATA_LOGIN password EARTHDATA_PASSWORD\" &gt; ~/.netrc\nchmod 0600 .netrc"
+  },
+  {
+    "objectID": "setup/earthdata.html#overview",
+    "href": "setup/earthdata.html#overview",
+    "title": "Earthdata Login",
+    "section": "",
+    "text": "NASA data are stored at one of several Distributed Active Archive Centers (DAACs). If you’re interested in available data for a given area and time of interest, the Earthdata Search portal provides a convenient web interface."
+  },
+  {
+    "objectID": "setup/earthdata.html#why-do-i-need-an-earthdata-login",
+    "href": "setup/earthdata.html#why-do-i-need-an-earthdata-login",
+    "title": "Earthdata Login",
+    "section": "",
+    "text": "Each participant will need a login. We will be teaching you ways to programmatically access NASA data from within your Python scripts. You will need to enter your Earthdata username and password in order for this to work."
+  },
+  {
+    "objectID": "setup/earthdata.html#getting-an-earthdata-login",
+    "href": "setup/earthdata.html#getting-an-earthdata-login",
+    "title": "Earthdata Login",
+    "section": "",
+    "text": "If you do not already have an Earthdata login, then navigate to the Earthdata Login page, a username and password, and then record this somewhere for use during the tutorials:\n\n\n\nearthdata-login"
+  },
+  {
+    "objectID": "setup/earthdata.html#configure-programmatic-access-to-nasa-servers",
+    "href": "setup/earthdata.html#configure-programmatic-access-to-nasa-servers",
+    "title": "Earthdata Login",
+    "section": "",
+    "text": "If you use web interfaces to retrieve nasa data such as Earthdata Search you are prompted to login. We will be using software to retrieve data from NASA Servers during the hackweek, so you must store your credentials on the JupyterHub as explained in this documentation. Run the following commands on the JupyterHub in a terminal replacing your Earthdata login username and password:\necho \"machine urs.earthdata.nasa.gov login EARTHDATA_LOGIN password EARTHDATA_PASSWORD\" &gt; ~/.netrc\nchmod 0600 .netrc"
   },
   {
     "objectID": "python-notebooks/04_Appending_Data.html",
@@ -763,13 +875,6 @@
     "text": "Draft schedule"
   },
   {
-    "objectID": "logistics/schedule.html#pre-course-clinic-learn-basics-of-r",
-    "href": "logistics/schedule.html#pre-course-clinic-learn-basics-of-r",
-    "title": "Schedule",
-    "section": "Pre-course clinic: learn basics of R",
-    "text": "Pre-course clinic: learn basics of R\nIt is important that you come into the course with a basic understanding of R. There are many free courses.\n\nIf you have never used R or RStudio and have not done much programming, start with this 4 hour course: Basics of R and installing RStudio https://www.udemy.com/course/r-basics/\nIf you know the basics of R but have never done modeling, then you can start with this 2.5 hour course that covers basic linear regression with R and plotting with ggplot2: https://www.udemy.com/course/machlearn1\nFor a longer free course, you can do this one. Note this is 20 hours. You do NOT need to do this whole course before the hackweek! https://www.codecademy.com/learn/learn-r\nOne of the best free R courses is https://www.coursera.org/learn/r-programming. You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material."
-  },
-  {
     "objectID": "nasa-tutorials/index.html",
     "href": "nasa-tutorials/index.html",
     "title": "Tutorials Overview",
@@ -1055,6 +1160,111 @@
     "title": "Combine, clean, and export the data",
     "section": "Export data",
     "text": "Export data\n\nfinal_ds.to_zarr('demonstrated data/final-sample.zarr')\n\n&lt;xarray.backends.zarr.ZarrStore at 0x7f6285f2ec10&gt;"
+  },
+  {
+    "objectID": "setup/github.html",
+    "href": "setup/github.html",
+    "title": "GitHub",
+    "section": "",
+    "text": "The following was borrowed from the excellent SnowEx Hackathon 2021\n\n\nGitHub is a hosting service for Git repositories, enabling us to share code across teams in a web environment.\n\n\n\nThere are three reasons you are required to have a GitHub account for the hackweek:\n\nYour GitHub accounts will give you access to the hackweek cloud computing resources\nAll hackweek tutorials will be shared on GitHub\nAll project teams will use GitHub to collaborate and work together on their code\n\n\n\n\nGo to GitHub.\n\n\n\ngithub-signup\n\n\nNext, enter your email address and click on the green ‘Sing up for GitHub’ button. You will need to answer a few required questions in the following dialogs. Be sure to save your password somewhere safe because you will need it later! The steps for doing this are also well documented on this GitHub help page.\n\n\n\nrepos-tab\n\n\nEach repository is a container for a specific subset of material for this event. For example, there is a repository for the public-facing website you used to register for this event {{website_url}}. We’ll also create new repositories for each project."
+  },
+  {
+    "objectID": "setup/github.html#what-is-github",
+    "href": "setup/github.html#what-is-github",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub is a hosting service for Git repositories, enabling us to share code across teams in a web environment."
+  },
+  {
+    "objectID": "setup/github.html#why-do-i-need-a-github-account",
+    "href": "setup/github.html#why-do-i-need-a-github-account",
+    "title": "GitHub",
+    "section": "",
+    "text": "There are three reasons you are required to have a GitHub account for the hackweek:\n\nYour GitHub accounts will give you access to the hackweek cloud computing resources\nAll hackweek tutorials will be shared on GitHub\nAll project teams will use GitHub to collaborate and work together on their code"
+  },
+  {
+    "objectID": "setup/github.html#creating-a-github-account",
+    "href": "setup/github.html#creating-a-github-account",
+    "title": "GitHub",
+    "section": "",
+    "text": "Go to GitHub.\n\n\n\ngithub-signup\n\n\nNext, enter your email address and click on the green ‘Sing up for GitHub’ button. You will need to answer a few required questions in the following dialogs. Be sure to save your password somewhere safe because you will need it later! The steps for doing this are also well documented on this GitHub help page.\n\n\n\nrepos-tab\n\n\nEach repository is a container for a specific subset of material for this event. For example, there is a repository for the public-facing website you used to register for this event {{website_url}}. We’ll also create new repositories for each project."
+  },
+  {
+    "objectID": "setup/jupyterhub.html",
+    "href": "setup/jupyterhub.html",
+    "title": "NASA Openscapes Cloud Environment",
+    "section": "",
+    "text": "Summary of what we’ll cover:"
+  },
+  {
+    "objectID": "setup/jupyterhub.html#why-are-we-using-a-cloud-environment",
+    "href": "setup/jupyterhub.html#why-are-we-using-a-cloud-environment",
+    "title": "NASA Openscapes Cloud Environment",
+    "section": "Why are we using a cloud environment?",
+    "text": "Why are we using a cloud environment?\n“Anyone working with large-scale Earth System data today faces the same general problems:\n\nThe data we want to work with are huge (typical analyses involve several TB at least)\nThe data we need are produced and distributed by many different organizations (NASA, NOAA, ESGF, Copernicus, etc.)\nWe want to apply a wide range of different analysis methodologies to the data, from simple statistics to signal processing to machine learning.\n\nThe community is waking up to the idea that we can’t simply expect scientists to download all this data to their personal computers for processing.”\nRyan Abernathey, Pangeo Project.\n\n\n\nDownload-based workflow. From Abernathey, Ryan (2020): Data Access Modes in Science"
+  },
+  {
+    "objectID": "setup/jupyterhub.html#openscapes-hub-and-cloud-infrastructure",
+    "href": "setup/jupyterhub.html#openscapes-hub-and-cloud-infrastructure",
+    "title": "NASA Openscapes Cloud Environment",
+    "section": "Openscapes Hub and Cloud Infrastructure",
+    "text": "Openscapes Hub and Cloud Infrastructure\nThere is no cloud, it’s someone else’s computer\nGo to https://openscapes.2i2c.cloud/hub/. You will be asked to log in with your GitHub Account\n\n\n\nOpenscapes JupyterHub Login\n\n\nOnce we are logged with our Github account we need to select our server type. There are different hardware configurations for each profile, for the duration of the Hackweek we’ll use small instances, the option at the top.\n\n\n\nMachine Profiles\n\n\nAfter we select our server type and click on start, Jupyterhub will allocate our instance using Amazon Web Services (AWS). This may take several minutes. While we wait, we’ll get set up with GitHub and a brief overview.\n\n\n\nJupyterhub Spawning"
+  },
+  {
+    "objectID": "setup/jupyterhub.html#jupyter-ecosystem",
+    "href": "setup/jupyterhub.html#jupyter-ecosystem",
+    "title": "NASA Openscapes Cloud Environment",
+    "section": "Jupyter Ecosystem",
+    "text": "Jupyter Ecosystem\n\nSource: Project Pythia"
+  },
+  {
+    "objectID": "setup/jupyterhub.html#pythonconda-environments",
+    "href": "setup/jupyterhub.html#pythonconda-environments",
+    "title": "NASA Openscapes Cloud Environment",
+    "section": "Python/Conda environments",
+    "text": "Python/Conda environments\nname: nsidc\nchannels:\n  - conda-forge\ndependencies:\n  - ipykernel\n  - awscli~=1.21.4\n  - requests\n  - pip\n\nHow do I get my code in and out of the Openscapes hub?\nWhen you start your own server you will have access to your own virtual drive space. No other users will be able to see or access your data files. You can easily upload files to your virtual drive space and save files from the hub back to another location, such as GitHub or your own local laptop drive.\nHere we’ll show you how to pull (copy) some files from GitHub into your virtual drive space using git. This will be a common task during the hackweek: at the start of each tutorial we’ll ask you to “fork” (create your own copy of in your GitHub account) and “clone” (make a copy of in a computing environment, such as your local computer or Openscapes instance) the GitHub repository corresponding to the specific tutorial being taught into your Openscapes drive space.\n\n\n\nterminal-button\n\n\nThis will open a new terminal tab in your JupyterLab interface:\n\n\n\nterminal-tab\n\n\nNow you can issue any Linux commands to manage your local file system.\nYou may also upload files from your local system using the upload button (up-pointing arrow) on the top left of the JupyterHub navigation panel. Similarly, you may download files to your local system by right-clicking the file and selecting download (down-pointing arrow).\nSimple, example GitHub/git/local-workspace workflows for getting a tutorial started in your Openscapes instance and working on a group project are provided. The getting started on a tutorial workflow briefly reviews much of the information in this preliminary exercise along with steps for making and saving notes or other changes as you work through the tutorial and keeping it updated with the original, master copy. The basic git workflow for a project serves as a reminder of the git workflow for working on a group project while minimizing code conflicts that could result from multiple people making changes to the same files simultaneously."
+  },
+  {
+    "objectID": "setup/jupyterhub.html#how-do-i-end-my-openscapes-session",
+    "href": "setup/jupyterhub.html#how-do-i-end-my-openscapes-session",
+    "title": "NASA Openscapes Cloud Environment",
+    "section": "How do I end my Openscapes session?",
+    "text": "How do I end my Openscapes session?\nWhen you are finished working for the day it is important to explicitly log out of your Openscapes session. The reason for this is it will save money and is a good habit to be in. When you keep a session active it uses up AWS resources and keeps a series of virtual machines deployed.\nStopping the server happens automatically when you log out, so navigate to “File -&gt; Log Out” and click “Log Out”!\n\n\n\nhub-control-panel-button\n\n\n\nWill I lose all of my work?\nLogging out will NOT cause any of your work to be lost or deleted. It simply shuts down some resources. It would be equivalent to turning off your desktop computer at the end of the day."
+  },
+  {
+    "objectID": "setup/jupyterhub.html#references",
+    "href": "setup/jupyterhub.html#references",
+    "title": "NASA Openscapes Cloud Environment",
+    "section": "References",
+    "text": "References\n\nProject Pythia\nWhy Jupyter is data scientists’ computational notebook of choice\nClosed Platforms vs. Open Architectures for Cloud-Native Earth System Analytics\nIntroduction to Geospatial Concepts\n2i2c user storage\nSnowEX Hackweek"
+  },
+  {
+    "objectID": "setup/jupyterhub.html#faq",
+    "href": "setup/jupyterhub.html#faq",
+    "title": "NASA Openscapes Cloud Environment",
+    "section": "FAQ",
+    "text": "FAQ\nfrom participants during our first Clinic\nI have an empty ‘shared’ folder. That’s expected. There shouldn’t be anything in the ‘shared/’ folder\nAfter the 3 months are up, what do we do with our work on the server? You’ll have them since you can back everything up with GitHub. We can follow up with more details of what happens on the 2i2c side\nCan we use Matlab with JupyterHub? You can also use Octave kernel as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so jupyter-matlab-proxy\nWhy do we have the same home directory as /home/jovyan? /home/jovyan is the default home directory for ‘jupyter’ based images/dockers. It is the historic home directory for Jupyter deployments.\n/home/jovyan is the default home directory for jupyter-based deployments\nCan other users see the .git-credentials file in my /home/jovyan folder? No, other users can not see your creds\nHow to exit 2i2c’s terminal text editor? esc to get to the command, and then :w to save, :q to quit."
+  },
+  {
+    "objectID": "setup/prerequisites.html",
+    "href": "setup/prerequisites.html",
+    "title": "Prerequisites",
+    "section": "",
+    "text": "Before the course, please do the following (20 minutes). All software is free.\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Follow optional advice on choosing your username\nPlease provide your GitHub username here; this will allow us to add you to the cloud hackathon workspace.\nRemember your username and password; you will need to be logged in during the workshop!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the workshop!\n\nSlack\n\nJoin our Slack workspace (invite sent via email). In the 2023-projects channel, suggest a project idea/use case, and mention if you are looking for teammates to join. Read through other entries and comment on those of interest to you. On the last day of week 1, we will hold a project pitchfest where you will present ideas to the group."
+  },
+  {
+    "objectID": "setup/prerequisites.html#prerequisites",
+    "href": "setup/prerequisites.html#prerequisites",
+    "title": "Prerequisites",
+    "section": "",
+    "text": "Before the course, please do the following (20 minutes). All software is free.\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Follow optional advice on choosing your username\nPlease provide your GitHub username here; this will allow us to add you to the cloud hackathon workspace.\nRemember your username and password; you will need to be logged in during the workshop!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the workshop!\n\nSlack\n\nJoin our Slack workspace (invite sent via email). In the 2023-projects channel, suggest a project idea/use case, and mention if you are looking for teammates to join. Read through other entries and comment on those of interest to you. On the last day of week 1, we will hold a project pitchfest where you will present ideas to the group."
+  },
+  {
+    "objectID": "setup/prerequisites.html#getting-help",
+    "href": "setup/prerequisites.html#getting-help",
+    "title": "Prerequisites",
+    "section": "Getting help",
+    "text": "Getting help\nWe will use Slack as a platform for discussions and questions, since the conversations are preserved beyond a single call and since it’s easier to reply and have threaded conversations and post screenshots.\n\nSlack\nYou will be invited to the Hackweek-ITCOocean Slack organization. New to Slack? See this Quick Start Guide. We have three private Slack channels for the course:\n2023-general: General channel is for announcements and general questions and communications.\n2023-projects: Projects channel is for for participants to pitch project ideas and discuss projects with the whole course group. As teams form you can have direct messages with your team (and we can create new channels as needed).\n2023-help: Help channel is the place to get troubleshooting help: please paste error messages and post screenshots and we will help you by replying to your post.\nTo create a screenshot:\n\nOn your Mac - Screenshot\nOn your PC - Snipping Tool"
   },
   {
     "objectID": "week1-tutorials/01-AM-intro-to-regional-data.html",

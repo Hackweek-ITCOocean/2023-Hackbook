@@ -2,218 +2,242 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/r-and-python.html</loc>
-    <lastmod>2023-07-20T17:36:35.807Z</lastmod>
+    <lastmod>2023-08-04T04:07:15.056Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/jupyterhub.html</loc>
-    <lastmod>2023-07-20T17:36:34.483Z</lastmod>
+    <lastmod>2023-08-04T04:07:13.659Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/github.html</loc>
-    <lastmod>2023-07-20T17:36:33.403Z</lastmod>
+    <lastmod>2023-08-04T04:07:12.527Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/earthdata.html</loc>
-    <lastmod>2023-07-20T17:36:32.551Z</lastmod>
+    <lastmod>2023-08-04T04:07:11.603Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/04-AM-guest-lectures.html</loc>
-    <lastmod>2023-07-20T17:36:31.479Z</lastmod>
+    <lastmod>2023-08-04T04:07:10.499Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/02-AM-sdm-part1.html</loc>
-    <lastmod>2023-07-20T17:36:30.707Z</lastmod>
+    <lastmod>2023-08-04T04:07:09.643Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/01-AM-preparing-data.html</loc>
-    <lastmod>2023-07-20T17:36:29.899Z</lastmod>
+    <lastmod>2023-08-04T04:07:08.831Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/notebooks.html</loc>
-    <lastmod>2023-07-20T17:36:29.035Z</lastmod>
+    <lastmod>2023-08-04T04:07:07.899Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/index.html</loc>
-    <lastmod>2023-07-20T17:36:27.519Z</lastmod>
+    <lastmod>2023-08-04T04:07:06.323Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/github-workflows.html</loc>
-    <lastmod>2023-07-20T17:36:26.667Z</lastmod>
+    <lastmod>2023-08-04T04:07:05.439Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/05-PM-project-brainstorming.html</loc>
-    <lastmod>2023-07-20T17:36:25.575Z</lastmod>
+    <lastmod>2023-08-04T04:07:04.263Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/04-PM-intro-to-sdms.html</loc>
-    <lastmod>2023-07-20T17:36:24.775Z</lastmod>
+    <lastmod>2023-08-04T04:07:03.415Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/03-PM-spatial-maps-in-R.html</loc>
-    <lastmod>2023-07-20T17:36:24.011Z</lastmod>
+    <lastmod>2023-08-04T04:07:02.551Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/02-PM-git-and-github.html</loc>
-    <lastmod>2023-07-20T17:36:23.207Z</lastmod>
+    <lastmod>2023-08-04T04:07:01.651Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/01-PM-software.html</loc>
-    <lastmod>2023-07-20T17:36:22.427Z</lastmod>
+    <lastmod>2023-08-04T04:07:00.759Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/team.html</loc>
-    <lastmod>2023-07-20T17:36:21.663Z</lastmod>
+    <lastmod>2023-08-04T04:06:59.911Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/setup/notebooks.html</loc>
+    <lastmod>2023-08-04T04:06:58.883Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/setup/index.html</loc>
+    <lastmod>2023-08-04T04:06:57.147Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/setup/earthdata.html</loc>
+    <lastmod>2023-08-04T04:06:56.127Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/04_Appending_Data.html</loc>
-    <lastmod>2023-07-20T17:36:19.407Z</lastmod>
+    <lastmod>2023-08-04T04:06:53.295Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/02_Xarray_hvplot.html</loc>
-    <lastmod>2023-07-20T17:36:14.839Z</lastmod>
+    <lastmod>2023-08-04T04:06:48.043Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/02_Using_Data.html</loc>
-    <lastmod>2023-07-20T17:36:12.211Z</lastmod>
+    <lastmod>2023-08-04T04:06:44.907Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/01_earthaccess_Downloader.html</loc>
-    <lastmod>2023-07-20T17:35:59.187Z</lastmod>
+    <lastmod>2023-08-04T04:06:28.687Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/01_MOTU_Downloader.html</loc>
-    <lastmod>2023-07-20T17:35:57.647Z</lastmod>
+    <lastmod>2023-08-04T04:06:26.763Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/01_ERA5_S3_Downloader.html</loc>
-    <lastmod>2023-07-20T17:35:56.242Z</lastmod>
+    <lastmod>2023-08-04T04:06:25.047Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/projects/upwelling_ml/intro.html</loc>
-    <lastmod>2023-07-20T17:35:54.890Z</lastmod>
+    <lastmod>2023-08-04T04:06:23.411Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/projects/hackathon-projects.html</loc>
-    <lastmod>2023-07-20T17:35:53.966Z</lastmod>
+    <lastmod>2023-08-04T04:06:22.375Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/nasa-tutorials/00_Setup.html</loc>
-    <lastmod>2023-07-20T17:35:53.142Z</lastmod>
+    <lastmod>2023-08-04T04:06:21.367Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/logistics/index.html</loc>
-    <lastmod>2023-07-20T17:35:51.886Z</lastmod>
+    <lastmod>2023-08-04T04:06:20.019Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/further-resources.html</loc>
-    <lastmod>2023-07-20T17:35:50.826Z</lastmod>
+    <lastmod>2023-08-04T04:06:18.743Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/cloud-paradigm.html</loc>
-    <lastmod>2023-07-20T17:35:48.698Z</lastmod>
+    <lastmod>2023-08-04T04:06:16.471Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/index.html</loc>
-    <lastmod>2023-07-20T17:35:51.462Z</lastmod>
+    <lastmod>2023-08-04T04:06:19.475Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/logistics/schedule.html</loc>
-    <lastmod>2023-07-20T17:35:52.306Z</lastmod>
+    <lastmod>2023-08-04T04:06:20.431Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/nasa-tutorials/index.html</loc>
-    <lastmod>2023-07-20T17:35:53.554Z</lastmod>
+    <lastmod>2023-08-04T04:06:21.911Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/projects/index.html</loc>
-    <lastmod>2023-07-20T17:35:54.438Z</lastmod>
+    <lastmod>2023-08-04T04:06:22.935Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/00_NASA_Earthdata_Authentication.html</loc>
-    <lastmod>2023-07-20T17:35:55.642Z</lastmod>
+    <lastmod>2023-08-04T04:06:24.315Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/01_ERDDAP_Downloader.html</loc>
-    <lastmod>2023-07-20T17:35:56.798Z</lastmod>
+    <lastmod>2023-08-04T04:06:25.715Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/01_OPeNDAP_Downloader.html</loc>
-    <lastmod>2023-07-20T17:35:58.119Z</lastmod>
+    <lastmod>2023-08-04T04:06:27.351Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/02_Graphing_Data.html</loc>
-    <lastmod>2023-07-20T17:36:06.279Z</lastmod>
+    <lastmod>2023-08-04T04:06:37.527Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/02_Xarray.html</loc>
-    <lastmod>2023-07-20T17:36:12.859Z</lastmod>
+    <lastmod>2023-08-04T04:06:45.671Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/02_Zarr_Access_netCDF.html</loc>
-    <lastmod>2023-07-20T17:36:16.747Z</lastmod>
+    <lastmod>2023-08-04T04:06:50.295Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/python-notebooks/04_Combining_Data.html</loc>
-    <lastmod>2023-07-20T17:36:21.255Z</lastmod>
+    <lastmod>2023-08-04T04:06:55.395Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/setup/github.html</loc>
+    <lastmod>2023-08-04T04:06:56.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/setup/jupyterhub.html</loc>
+    <lastmod>2023-08-04T04:06:57.943Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/setup/prerequisites.html</loc>
+    <lastmod>2023-08-04T04:06:59.435Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/01-AM-intro-to-regional-data.html</loc>
-    <lastmod>2023-07-20T17:36:22.043Z</lastmod>
+    <lastmod>2023-08-04T04:07:00.355Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/02-AM-online-databases.html</loc>
-    <lastmod>2023-07-20T17:36:22.815Z</lastmod>
+    <lastmod>2023-08-04T04:07:01.247Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/03-AM-raster-and-nc-in-R.html</loc>
-    <lastmod>2023-07-20T17:36:23.627Z</lastmod>
+    <lastmod>2023-08-04T04:07:02.139Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/04-AM-spatial-maps-in-R.html</loc>
-    <lastmod>2023-07-20T17:36:24.395Z</lastmod>
+    <lastmod>2023-08-04T04:07:03.007Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/05-AM-guest-lectures.html</loc>
-    <lastmod>2023-07-20T17:36:25.195Z</lastmod>
+    <lastmod>2023-08-04T04:07:03.859Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/earthdata.html</loc>
-    <lastmod>2023-07-20T17:36:26.251Z</lastmod>
+    <lastmod>2023-08-04T04:07:04.971Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/github.html</loc>
-    <lastmod>2023-07-20T17:36:27.123Z</lastmod>
+    <lastmod>2023-08-04T04:07:05.903Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/jupyterhub.html</loc>
-    <lastmod>2023-07-20T17:36:28.159Z</lastmod>
+    <lastmod>2023-08-04T04:07:06.987Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week1-tutorials/r-and-python.html</loc>
-    <lastmod>2023-07-20T17:36:29.507Z</lastmod>
+    <lastmod>2023-08-04T04:07:08.415Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/01-PM-project-pitches.html</loc>
-    <lastmod>2023-07-20T17:36:30.287Z</lastmod>
+    <lastmod>2023-08-04T04:07:09.235Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/03-AM-sdm-part2.html</loc>
-    <lastmod>2023-07-20T17:36:31.091Z</lastmod>
+    <lastmod>2023-08-04T04:07:10.091Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/05-PM-project-presentations.html</loc>
-    <lastmod>2023-07-20T17:36:31.867Z</lastmod>
+    <lastmod>2023-08-04T04:07:10.911Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/github-workflows.html</loc>
-    <lastmod>2023-07-20T17:36:32.975Z</lastmod>
+    <lastmod>2023-08-04T04:07:12.067Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/index.html</loc>
-    <lastmod>2023-07-20T17:36:33.799Z</lastmod>
+    <lastmod>2023-08-04T04:07:12.951Z</lastmod>
   </url>
   <url>
     <loc>https://Hackweek-ITCOocean.github.io/2023-Hackbook/week2-tutorials/notebooks.html</loc>
-    <lastmod>2023-07-20T17:36:35.347Z</lastmod>
+    <lastmod>2023-08-04T04:07:14.571Z</lastmod>
   </url>
 </urlset>
