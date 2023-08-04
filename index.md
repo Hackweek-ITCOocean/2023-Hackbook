@@ -64,24 +64,3 @@ In the two to three weeks leading up to the course, participants are encouraged 
 
 The 2023 ITCOocean Hackweek is a safe learning space and all participants are required to abide by our [Code of Conduct]().
 
-## Acknowledgements
-
-Thank you to the open science community that has created software, teaching resources, and workflows that we have been able to build heavily from! These include: 
-
-- [NASA Openscapes](https://nasa-openscapes.github.io)
-- [OceanHackWeek](https://oceanhackweek.org)
-- [SnowEx Hackweek](https://snowex.hackweek.io/)
-- [eScience Institute, University of Washington](https://guidebook.hackweek.io/intro.html)
-- [ICESat-2 Hackweek](https://icesat-2-2022.hackweek.io/)
-
-
-## Support
-
-Thank you to our supporters!
-
-INCOIS - funding
-
-![](https://www.fisheries.noaa.gov/themes/custom/noaa_components/images/NOAA_FISHERIES_logoH.png){height=100px}
-![](https://2i2c.org/media/logo.svg){height=100px}
-![](https://www.esipfed.org/wp-content/uploads/2019/09/esip-logo-uptodate.transparent-background.png){height=100px}
-![](https://jupyter.org/assets/homepage/hublogo.svg){height=100px}

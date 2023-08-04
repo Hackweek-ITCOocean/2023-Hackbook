@@ -41,6 +41,7 @@ website:
             href: index.md
           - team.md
           - data.md
+          - support.md
       - section: "Logistics"
         contents:
           - logistics/index.md

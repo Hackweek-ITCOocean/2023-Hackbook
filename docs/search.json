@@ -63,20 +63,6 @@
     "text": "Code of Conduct\nThe 2023 ITCOocean Hackweek is a safe learning space and all participants are required to abide by our Code of Conduct."
   },
   {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Machine Learning based Species Distribution Modelling",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThank you to the open science community that has created software, teaching resources, and workflows that we have been able to build heavily from! These include:\n\nNASA Openscapes\nOceanHackWeek\nSnowEx Hackweek\neScience Institute, University of Washington\nICESat-2 Hackweek"
-  },
-  {
-    "objectID": "index.html#support",
-    "href": "index.html#support",
-    "title": "Machine Learning based Species Distribution Modelling",
-    "section": "Support",
-    "text": "Support\nThank you to our supporters!\nINCOIS - funding"
-  },
-  {
     "objectID": "logistics/index.html",
     "href": "logistics/index.html",
     "title": "Logistics overview",
@@ -943,6 +929,20 @@
     "title": "Prerequisites",
     "section": "",
     "text": "Before the course, please do the following (20 minutes). All software is free.\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Follow optional advice on choosing your username\nPlease provide your GitHub username here; this will allow us to add you to the cloud hackathon workspace.\nRemember your username and password; you will need to be logged in during the workshop!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the workshop!\n\nSlack\n\nJoin our Slack workspace (invite sent via email). In the 2023-general channel, introduce yourself to the group.\n\n\n\n\nWe will use Slack as a platform for discussions and questions, since the conversations are preserved and everyone can see the answers and discussions.\nYou will be invited to the Hackweek-ITCOocean Slack organization. New to Slack? See this Quick Start Guide. We have three private Slack channels for the course:\n2023-general: General channel is for announcements and general questions and communications.\n2023-projects: Projects channel is for for participants to pitch project ideas and discuss projects with the whole course group. As teams form you can have direct messages with your team (and we can create new channels as needed).\n2023-help: Help channel is the place to get troubleshooting help: please paste error messages and post screenshots and we will help you by replying to your post."
+  },
+  {
+    "objectID": "support.html",
+    "href": "support.html",
+    "title": "Acknowledgements",
+    "section": "",
+    "text": "Thank you to the open science community that has created software, teaching resources, and workflows that we have been able to build off of and be inspired by. These include:"
+  },
+  {
+    "objectID": "support.html#financial-support",
+    "href": "support.html#financial-support",
+    "title": "Acknowledgements",
+    "section": "Financial support",
+    "text": "Financial support\nThank you! A NOAA International Fellowship supported Eli Holmes’ visit. 2i2c provided the JupyterHub infrastructure. ESIPfed provided funding for the JupyterHub via their ESIP Lab funds."
   },
   {
     "objectID": "team.html",
