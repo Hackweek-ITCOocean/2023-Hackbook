@@ -305,21 +305,21 @@
     "href": "team.html",
     "title": "Our Team",
     "section": "",
-    "text": "NOAA Fisheries and University of Washington, USA\nLinks: NOAA Fisheries, webpage\n\n\n\n\nINCOIS\nLinks: INCOIS, OceanExpert page\n\n\n\n\nINCOIS\nLinks: INCOIS, ResearchGate page"
+    "text": "NOAA Fisheries and University of Washington, USA.\nLinks: webpage • GitHub\n\n\n\n\nINCOIS\nLinks: OceanExpert page\n\n\n\n\nINCOIS\nLinks: ResearchGate page"
   },
   {
     "objectID": "team.html#instructors",
     "href": "team.html#instructors",
     "title": "Our Team",
     "section": "",
-    "text": "NOAA Fisheries and University of Washington, USA\nLinks: NOAA Fisheries, webpage\n\n\n\n\nINCOIS\nLinks: INCOIS, OceanExpert page\n\n\n\n\nINCOIS\nLinks: INCOIS, ResearchGate page"
+    "text": "NOAA Fisheries and University of Washington, USA.\nLinks: webpage • GitHub\n\n\n\n\nINCOIS\nLinks: OceanExpert page\n\n\n\n\nINCOIS\nLinks: ResearchGate page"
   },
   {
     "objectID": "team.html#support",
     "href": "team.html#support",
     "title": "Our Team",
     "section": "Support",
-    "text": "Support\n\n\nJiarui Yu\n\nGitHub Linkedin: Machine-learning tutorials; rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern\n\n\nMinh Phan\n\nGitHub Linkedin: Indian Ocean database for hackweek, data access tutorials. rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern"
+    "text": "Support\n\n\nJiarui Yu\n\nMachine-learning tutorials; rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern\nLinks: GitHub • Linkedin\n\n\nMinh Phan\n\nIndian Ocean database for hackweek, data access tutorials. rising senior University of Washington, Applied & Computational Mathematical Sciences (ACMS), 2023 UW Varanasi Intern\nLinks: GitHub • Linkedin"
   },
   {
     "objectID": "setup/notebooks.html",
@@ -366,37 +366,30 @@
   {
     "objectID": "setup/index.html",
     "href": "setup/index.html",
-    "title": "Set-up Overview",
+    "title": "Set-up",
     "section": "",
-    "text": "For the course, we be mainly using a browser based platform (JupyterHub) for coding and projects. JupyterHub and JupyterLab is a standard platform for “big data geoscience” and working on this platform will prepare you for using the tools and notebooks developed by this research community. The JupyterHub will allow you to work on projects without having to install anything on personal computers. We will also cover installation on your personal computer."
+    "text": "Google Form with Participant Information\nBefore the course, please do the following and send us the information with the link above. All software and accounts are free."
   },
   {
-    "objectID": "setup/index.html#prerequisites",
-    "href": "setup/index.html#prerequisites",
-    "title": "Set-up Overview",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nFor the course, we require that you complete a short (and free) intro course to R and RStudio so you have a basic understanding of R and have R and RStudio installed.\n\nR courses"
+    "objectID": "setup/index.html#user-accounts",
+    "href": "setup/index.html#user-accounts",
+    "title": "Set-up",
+    "section": "User accounts",
+    "text": "User accounts\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Follow optional advice on choosing your username\nRemember your username and password; you will need to be logged in during the workshop!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the workshop!\n\nSlack\n\nJoin our Slack workspace (invite sent via email). In the 2023-general channel, introduce yourself to the group."
   },
   {
-    "objectID": "setup/index.html#pre-course-clinic-learn-basics-of-r",
-    "href": "setup/index.html#pre-course-clinic-learn-basics-of-r",
-    "title": "Set-up Overview",
-    "section": "Pre-course clinic: learn basics of R",
-    "text": "Pre-course clinic: learn basics of R\nIt is important that you come into the course with a basic understanding of R and RStudio. Before\n\nIf you have never used R or RStudio and have not done much programming, start with this 4 hour course: Basics of R and installing RStudio https://www.udemy.com/course/r-basics/\nIf you know the basics of R but have never done modeling, then you can start with this 2.5 hour course that covers basic linear regression with R and plotting with ggplot2: https://www.udemy.com/course/machlearn1\nhttps://www.ucl.ac.uk/short-courses/search-courses/statistical-computing-r-programming-language-gentle-introduction\nFor a longer free course, you can do this one. Note this is 20 hours. You do NOT need to do this whole course before the hackweek! https://www.codecademy.com/learn/learn-r\nOne of the best free R courses is https://www.coursera.org/learn/r-programming. You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material.\n\n\nInstall R and RStudio Desktop\n\nR: https://cran.r-project.org/\n\nInstall the latest version of R that you can for your operating system. Preferably you want version 4.3+ but at the least you need version 4.1.\nIf you have R already installed, update to the newest version (4.3)\n\nRStudio Desktop: https://posit.co/download/rstudio-desktop/\n\nInstall the most recent version you can. Update your version if you have an old version installed."
+    "objectID": "setup/index.html#install-r-and-rstudio-desktop",
+    "href": "setup/index.html#install-r-and-rstudio-desktop",
+    "title": "Set-up",
+    "section": "Install R and RStudio Desktop",
+    "text": "Install R and RStudio Desktop\nFor the course, we will mainly be using a browser based platform (JupyterHub) for coding and projects. JupyterHub and JupyterLab is a standard platform for “big data geoscience” and working on this platform will prepare you for using the tools and notebooks developed by this research community. However we also want you to be able to run R and RStudio on your own computer.\n\nR: https://cran.r-project.org/\n\nInstall the latest version of R that you can for your operating system. Preferably you want version 4.3+ but at the least you need version 4.1.\nIf you have R already installed, update to the newest version (4.3)\n\nRStudio Desktop: https://posit.co/download/rstudio-desktop/\n\nInstall the most recent version you can. Update your version if you have an old version installed."
   },
   {
-    "objectID": "setup/index.html#topics-covered",
-    "href": "setup/index.html#topics-covered",
-    "title": "Set-up Overview",
-    "section": "Topics covered",
-    "text": "Topics covered\n\nSetting up GitHub and Slack accounts\nJupyter Hub with 2i2c\nJupyter Notebooks with R and Python\nGitHub: forking, cloning, pulling, committing, pushing\nInstalling R and RStudio on your computer\nOptional: Installing Docker to run the course images"
-  },
-  {
-    "objectID": "setup/index.html#before-the-clinic",
-    "href": "setup/index.html#before-the-clinic",
-    "title": "Set-up Overview",
-    "section": "Before the Clinic",
-    "text": "Before the Clinic\nPlease follow the set up prerequisites before the Clinic."
+    "objectID": "setup/index.html#do-an-intro-to-r-course",
+    "href": "setup/index.html#do-an-intro-to-r-course",
+    "title": "Set-up",
+    "section": "Do an intro to R course",
+    "text": "Do an intro to R course\nFor the course and hackweek, we require that you complete a short introduction course to R and RStudio–unless you already have R experience. This way you will be ready to start working with the course scripts and tutorials on day 1. These will only take you a 2-3 hours and will make your course experience much more worthwhile.\nAny of these is sufficient. Note, if you already program in R, you do not need to do this.\n\nW3Schools Basic R\nBasics of R and installing RStudio\nYouTube: R for Beginners\nFor a longer free course, CodeAcademy has a good Intro to R. Note this is 20 hours. You do NOT need to do this whole course before the hackweek!\nIf you know the basics of R but have never done modeling, then you can start with this 2.5 hour course that covers basic linear regression with R and plotting with ggplot2:\nOne of the best free R courses is Coursera’s Learn R. You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material.\n\n\nSlack\nWe will use Slack as a platform for discussions and questions, since the conversations are preserved and everyone can see the answers and discussions.\nYou will be invited to the Hackweek-ITCOocean Slack organization. New to Slack? See this Quick Start Guide. We have three private Slack channels for the course:\n2023-general: General channel is for announcements and general questions and communications.\n2023-projects: Projects channel is for for participants to pitch project ideas and discuss projects with the whole course group. As teams form you can have direct messages with your team (and we can create new channels as needed).\n2023-help: Help channel is the place to get troubleshooting help: please paste error messages and post screenshots and we will help you by replying to your post."
   },
   {
     "objectID": "setup/earthdata.html",
@@ -1250,21 +1243,14 @@
     "href": "setup/prerequisites.html",
     "title": "Prerequisites",
     "section": "",
-    "text": "Before the course, please do the following (20 minutes). All software is free.\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Follow optional advice on choosing your username\nPlease provide your GitHub username here; this will allow us to add you to the cloud hackathon workspace.\nRemember your username and password; you will need to be logged in during the workshop!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the workshop!\n\nSlack\n\nJoin our Slack workspace (invite sent via email). In the 2023-projects channel, suggest a project idea/use case, and mention if you are looking for teammates to join. Read through other entries and comment on those of interest to you. On the last day of week 1, we will hold a project pitchfest where you will present ideas to the group."
+    "text": "Before the course, please do the following (20 minutes). All software is free.\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Follow optional advice on choosing your username\nPlease provide your GitHub username here; this will allow us to add you to the cloud hackathon workspace.\nRemember your username and password; you will need to be logged in during the workshop!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the workshop!\n\nSlack\n\nJoin our Slack workspace (invite sent via email). In the 2023-general channel, introduce yourself to the group.\n\n\n\n\nWe will use Slack as a platform for discussions and questions, since the conversations are preserved and everyone can see the answers and discussions.\nYou will be invited to the Hackweek-ITCOocean Slack organization. New to Slack? See this Quick Start Guide. We have three private Slack channels for the course:\n2023-general: General channel is for announcements and general questions and communications.\n2023-projects: Projects channel is for for participants to pitch project ideas and discuss projects with the whole course group. As teams form you can have direct messages with your team (and we can create new channels as needed).\n2023-help: Help channel is the place to get troubleshooting help: please paste error messages and post screenshots and we will help you by replying to your post."
   },
   {
     "objectID": "setup/prerequisites.html#prerequisites",
     "href": "setup/prerequisites.html#prerequisites",
     "title": "Prerequisites",
     "section": "",
-    "text": "Before the course, please do the following (20 minutes). All software is free.\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Follow optional advice on choosing your username\nPlease provide your GitHub username here; this will allow us to add you to the cloud hackathon workspace.\nRemember your username and password; you will need to be logged in during the workshop!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the workshop!\n\nSlack\n\nJoin our Slack workspace (invite sent via email). In the 2023-projects channel, suggest a project idea/use case, and mention if you are looking for teammates to join. Read through other entries and comment on those of interest to you. On the last day of week 1, we will hold a project pitchfest where you will present ideas to the group."
-  },
-  {
-    "objectID": "setup/prerequisites.html#getting-help",
-    "href": "setup/prerequisites.html#getting-help",
-    "title": "Prerequisites",
-    "section": "Getting help",
-    "text": "Getting help\nWe will use Slack as a platform for discussions and questions, since the conversations are preserved beyond a single call and since it’s easier to reply and have threaded conversations and post screenshots.\n\nSlack\nYou will be invited to the Hackweek-ITCOocean Slack organization. New to Slack? See this Quick Start Guide. We have three private Slack channels for the course:\n2023-general: General channel is for announcements and general questions and communications.\n2023-projects: Projects channel is for for participants to pitch project ideas and discuss projects with the whole course group. As teams form you can have direct messages with your team (and we can create new channels as needed).\n2023-help: Help channel is the place to get troubleshooting help: please paste error messages and post screenshots and we will help you by replying to your post.\nTo create a screenshot:\n\nOn your Mac - Screenshot\nOn your PC - Snipping Tool"
+    "text": "Before the course, please do the following (20 minutes). All software is free.\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Follow optional advice on choosing your username\nPlease provide your GitHub username here; this will allow us to add you to the cloud hackathon workspace.\nRemember your username and password; you will need to be logged in during the workshop!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the workshop!\n\nSlack\n\nJoin our Slack workspace (invite sent via email). In the 2023-general channel, introduce yourself to the group.\n\n\n\n\nWe will use Slack as a platform for discussions and questions, since the conversations are preserved and everyone can see the answers and discussions.\nYou will be invited to the Hackweek-ITCOocean Slack organization. New to Slack? See this Quick Start Guide. We have three private Slack channels for the course:\n2023-general: General channel is for announcements and general questions and communications.\n2023-projects: Projects channel is for for participants to pitch project ideas and discuss projects with the whole course group. As teams form you can have direct messages with your team (and we can create new channels as needed).\n2023-help: Help channel is the place to get troubleshooting help: please paste error messages and post screenshots and we will help you by replying to your post."
   },
   {
     "objectID": "week1-tutorials/01-AM-intro-to-regional-data.html",
