@@ -60,44 +60,6 @@ Hackweeks are widely used in data science to teach new skills in an immersive pe
 
 In the two to three weeks leading up to the course, participants are encouraged to review background resources that will facilitate a more effective experience. 
 
-### Indian Ocean and Bay of Bengal Data
-
-Students will learn how to access remote-sensing data in the cloud (meaning on-line), but we have also prepared an "analysis ready" data set for students. This will be available on a shared drive and we will introduce the students to the techniques for accessing large datasets without loading them into memory.
-
-### Bounding box
-
-* latitude: -12deg to 32deg
-* longitude: 42deg to 102deg
-* grid: 0.25 deg
-* centers: 0, 0.25, 0.5., 0.75
-
-### Datasets: ERA5
-
-* u wind
-* v wind
-* wind speed
-* wind direction
-* air temperature @ 2m
-* sea surface temperature
-
-### Copernicus
-
-* sea level anomaly
-* chlorophyll concentration
-
-### SRTM30_PLUS
-
-* Bathymetry
-
-**References**
-
-* https://topex.ucsd.edu/WWW_html/srtm30_plus.html
-* https://coastwatch.pfeg.noaa.gov/erddap/griddap/usgsCeSrtm30v6.html
-
-### 1-km MUR SST
-
-* sea surface temperature
-
 ## Code of Conduct 
 
 The 2023 ITCOocean Hackweek is a safe learning space and all participants are required to abide by our [Code of Conduct]().
@@ -113,5 +75,13 @@ Thank you to the open science community that has created software, teaching reso
 - [ICESat-2 Hackweek](https://icesat-2-2022.hackweek.io/)
 
 
-  
-This online book is made with [quarto](https://quarto.org). 
+## Support
+
+Thank you to our supporters!
+
+INCOIS - funding
+
+![](https://www.fisheries.noaa.gov/themes/custom/noaa_components/images/NOAA_FISHERIES_logoH.png){height=100px}
+![](https://2i2c.org/media/logo.svg){height=100px}
+![](https://www.esipfed.org/wp-content/uploads/2019/09/esip-logo-uptodate.transparent-background.png){height=100px}
+![](https://jupyter.org/assets/homepage/hublogo.svg){height=100px}

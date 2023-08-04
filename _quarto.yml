@@ -37,8 +37,10 @@ website:
     contents:
       - section: "Welcome"
         contents:
-          - index.md
+          - text: "Overview"
+            href: index.md
           - team.md
+          - data.md
       - section: "Logistics"
         contents:
           - logistics/index.md
