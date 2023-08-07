@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2023 ITCOocean Hackweek - NASA Openscapes Cloud Environment</title>
+<title>2023 ITCOocean Hackweek - ITCOocean Cloud Environment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,7 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../setup/notebooks.html" rel="next">
+<link href="../setup/rstudio.md" rel="next">
 <link href="../setup/index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../setup/index.html">Set-up and prerequisites</a></li><li class="breadcrumb-item"><a href="../setup/jupyterhub.html">NASA Openscapes Cloud Environment</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../setup/index.html">Set-up</a></li><li class="breadcrumb-item"><a href="../setup/jupyterhub.html">JupyterHub</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Set-up and prerequisites</span></a>
+ <span class="menu-text">Set-up</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -216,19 +216,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../setup/jupyterhub.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">NASA Openscapes Cloud Environment</span></a>
+ <span class="menu-text">JupyterHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/notebooks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notebooks, Python, Git</span></a>
+  <a href="../setup/rstudio.md" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R - RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub</span></a>
+  <a href="../setup/jupyter-notebooks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python - Jupyter Notebooks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -532,12 +532,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#why-are-we-using-a-cloud-environment" id="toc-why-are-we-using-a-cloud-environment" class="nav-link active" data-scroll-target="#why-are-we-using-a-cloud-environment">Why are we using a cloud environment?</a></li>
-  <li><a href="#openscapes-hub-and-cloud-infrastructure" id="toc-openscapes-hub-and-cloud-infrastructure" class="nav-link" data-scroll-target="#openscapes-hub-and-cloud-infrastructure">Openscapes Hub and Cloud Infrastructure</a></li>
-  <li><a href="#jupyter-ecosystem" id="toc-jupyter-ecosystem" class="nav-link" data-scroll-target="#jupyter-ecosystem">Jupyter Ecosystem</a></li>
-  <li><a href="#pythonconda-environments" id="toc-pythonconda-environments" class="nav-link" data-scroll-target="#pythonconda-environments">Python/Conda environments</a></li>
-  <li><a href="#how-do-i-end-my-openscapes-session" id="toc-how-do-i-end-my-openscapes-session" class="nav-link" data-scroll-target="#how-do-i-end-my-openscapes-session">How do I end my Openscapes session?</a></li>
+  <li><a href="#jupyterhub-infrastructure" id="toc-jupyterhub-infrastructure" class="nav-link" data-scroll-target="#jupyterhub-infrastructure">JupyterHub Infrastructure</a></li>
+  <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a></li>
+  <li><a href="#shared-folders" id="toc-shared-folders" class="nav-link" data-scroll-target="#shared-folders">Shared folders</a></li>
+  <li><a href="#open-a-jupyter-notebook" id="toc-open-a-jupyter-notebook" class="nav-link" data-scroll-target="#open-a-jupyter-notebook">Open a Jupyter Notebook</a></li>
+  <li><a href="#open-a-jupyter-notebook-1" id="toc-open-a-jupyter-notebook-1" class="nav-link" data-scroll-target="#open-a-jupyter-notebook-1">Open a Jupyter Notebook</a></li>
+  <li><a href="#end-your-session" id="toc-end-your-session" class="nav-link" data-scroll-target="#end-your-session">End your session</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a></li>
+  <li><a href="#pythonconda-environments" id="toc-pythonconda-environments" class="nav-link" data-scroll-target="#pythonconda-environments">Python/Conda environments</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/edit/main/setup/jupyterhub.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -546,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NASA Openscapes Cloud Environment</h1>
+<h1 class="title">ITCOocean Cloud Environment</h1>
 </div>
 
 
@@ -561,18 +565,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p><img src="./img/openscapes-2i2c-logo.png" class="img-fluid"></p>
+<p><img src="./img/jhub-logo.png" class="img-fluid"></p>
 <p><strong>Summary of what we’ll cover:</strong></p>
 <ul>
 <li>What’s a cloud environment and why we are using it.</li>
 <li>Learn about the Jupyter ecosystem and our cloud infrastructure.</li>
-<li>Start/Stop our Openscapes server and get familiar with Jupyterlab and installed programs</li>
-<li>How to update our environments</li>
-<li>NASA Earthdata Login and security in the cloud.</li>
+<li>Open a Jupyter Notebook</li>
+<li>Open RStudio</li>
+<li>Start/Stop your JupyterHub server</li>
 </ul>
-<blockquote class="blockquote">
-<p><strong>Note</strong>: Some sections of this document have been taken from previous hackweeks organized by the University of Washington eScience Institute.</p>
-</blockquote>
 <section id="why-are-we-using-a-cloud-environment" class="level2">
 <h2 class="anchored" data-anchor-id="why-are-we-using-a-cloud-environment">Why are we using a cloud environment?</h2>
 <p>“Anyone working with large-scale Earth System data today faces the same general problems:</p>
@@ -590,24 +591,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="openscapes-hub-and-cloud-infrastructure" class="level2">
-<h2 class="anchored" data-anchor-id="openscapes-hub-and-cloud-infrastructure">Openscapes Hub and Cloud Infrastructure</h2>
-<p><em>There is no cloud, it’s someone else’s computer</em></p>
-<p>Go to <a href="https://openscapes.2i2c.cloud/hub/" class="uri">https://openscapes.2i2c.cloud/hub/</a>. You will be asked to log in with your GitHub Account</p>
+<section id="jupyterhub-infrastructure" class="level2">
+<h2 class="anchored" data-anchor-id="jupyterhub-infrastructure">JupyterHub Infrastructure</h2>
+<p>Go to <a href="https://itcoocean.2i2c.cloud/" class="uri">https://itcoocean.2i2c.cloud/</a>. Click “Login to continue”. You will be asked to log in with your GitHub Account, if you are not logged in already.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./img/openscapes-hub.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Openscapes JupyterHub Login</figcaption>
+<p><img src="./img/jhub.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">ITCOocean JupyterHub Login</figcaption>
 </figure>
 </div>
-<p>Once we are logged with our Github account we need to select our server type. There are different hardware configurations for each profile, for the duration of the Hackweek we’ll use small instances, the option at the top.</p>
+<section id="image-type-python-or-r" class="level3">
+<h3 class="anchored" data-anchor-id="image-type-python-or-r">Image type: Python or R</h3>
+<p>Next you select your image type. We have two different R images and two Python images. The default is “Geospatial R with SDM”. This is an image with geospatial libraries and species distribution libraries.</p>
+</section>
+<section id="virtual-machine-size" class="level3">
+<h3 class="anchored" data-anchor-id="virtual-machine-size">Virtual Machine size</h3>
+<p>You’ll see something similar to this that allows you to choose a large virtual machine if your project needs it. For the tutorials, you will only need the Small Virtual Machine. Please only choose the large machines if you run out of RAM as the larger machines cost us more.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/servers.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Machine Profiles</figcaption>
 </figure>
 </div>
-<p>After we select our server type and click on start, Jupyterhub will allocate our instance using Amazon Web Services (AWS). This may take several minutes. While we wait, we’ll get set up with GitHub and a brief overview.</p>
+</section>
+<section id="start-up" class="level3">
+<h3 class="anchored" data-anchor-id="start-up">Start up</h3>
+<p>After we select our server type and click on start, JupyterHub will allocate our instance using Amazon Web Services (AWS). This may take several minutes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/spawning.png" class="img-fluid figure-img"></p>
@@ -615,56 +624,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="jupyter-ecosystem" class="level2">
-<h2 class="anchored" data-anchor-id="jupyter-ecosystem">Jupyter Ecosystem</h2>
-<p><img src="https://foundations.projectpythia.org/_images/remote-execution-model.gif" class="img-fluid"></p>
-<p>Source: Project Pythia</p>
 </section>
-<section id="pythonconda-environments" class="level2">
-<h2 class="anchored" data-anchor-id="pythonconda-environments">Python/Conda environments</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> nsidc</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ipykernel</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> awscli~=1.21.4</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> requests</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pip</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="how-do-i-get-my-code-in-and-out-of-the-openscapes-hub" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-i-get-my-code-in-and-out-of-the-openscapes-hub">How do I get my code in and out of the Openscapes hub?</h3>
-<p>When you start your own server you will have access to your own virtual drive space. No other users will be able to see or access your data files. You can easily upload files to your virtual drive space and save files from the hub back to another location, such as GitHub or your own local laptop drive.</p>
-<p>Here we’ll show you how to pull (copy) some files from GitHub into your virtual drive space using git. This will be a common task during the hackweek: at the start of each tutorial we’ll ask you to “fork” (create your own copy of in your GitHub account) and “clone” (make a copy of in a computing environment, such as your local computer or Openscapes instance) the GitHub repository corresponding to the specific tutorial being taught into your Openscapes drive space.</p>
+<section id="files" class="level2">
+<h2 class="anchored" data-anchor-id="files">Files</h2>
+<p>When you are in the hub, you will see a Launcher page:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/uwhackweek/jupyterbook-template/raw/main/book/img/terminal-button.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">terminal-button</figcaption>
+<p><img src="./img/jhub-launcher.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Jupyterhub Launcher</figcaption>
 </figure>
 </div>
-<p>This will open a new terminal tab in your JupyterLab interface:</p>
+</section>
+<section id="shared-folders" class="level2">
+<h2 class="anchored" data-anchor-id="shared-folders">Shared folders</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/uwhackweek/jupyterbook-template/raw/main/book/img/terminal.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">terminal-tab</figcaption>
+<p><img src="./img/shared-folder.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Shared folder</figcaption>
 </figure>
 </div>
-<p>Now you can issue any Linux commands to manage your local file system.</p>
-<p>You may also upload files from your local system using the upload button (up-pointing arrow) on the top left of the JupyterHub navigation panel. Similarly, you may download files to your local system by right-clicking the file and selecting download (down-pointing arrow).</p>
-<p>Simple, example GitHub/git/local-workspace workflows for getting a tutorial started in your Openscapes instance and working on a group project are provided. The <a href="https://icesat-2hackweek.github.io/learning-resources/tutorials/getting_started">getting started on a tutorial</a> workflow briefly reviews much of the information in this preliminary exercise along with steps for making and saving notes or other changes as you work through the tutorial and keeping it updated with the original, master copy. The <a href="https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow">basic git workflow for a project</a> serves as a reminder of the git workflow for working on a group project while minimizing code conflicts that could result from multiple people making changes to the same files simultaneously. <br></p>
+<p>On the left, you will see a folder called <code>shared</code>. These are read-only shared files that we have prepared for you. There are two main folders:</p>
+<ul>
+<li><code>data</code> The folder with data files</li>
+<li><code>tutorials</code> The folder with tutorials</li>
+<li><code>2023-Hackbook</code> The full Git repository with the files for https://hackweek-itcoocean.github.io/2023-Hackbook</li>
+</ul>
+<p>You will also see <code>shared-user</code>. This is a read-write folder for you to put files for everyone to see and use. You can create a team folder here for shared data and files. Note, everyone can see and change these so be careful to communicate with your team so multiple people don’t work on the same file at the same time. You can also create folders for each team member and agree not to change other team members files.</p>
+<section id="your-files" class="level3">
+<h3 class="anchored" data-anchor-id="your-files">Your files</h3>
+<p>When you start your server, you will have access to your own virtual drive space. No other users will be able to see or access your files. You can upload files to your virtual drive space and save files here. You can create folders to organize your files.</p>
+<p>There are a number of different ways to create new files. We will practice these together.</p>
 </section>
 </section>
-<section id="how-do-i-end-my-openscapes-session" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-i-end-my-openscapes-session">How do I end my Openscapes session?</h2>
-<p>When you are finished working for the day it is important to explicitly log out of your Openscapes session. The reason for this is it will save money and is a good habit to be in. When you keep a session active it uses up AWS resources and keeps a series of virtual machines deployed.</p>
+<section id="open-a-jupyter-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="open-a-jupyter-notebook">Open a Jupyter Notebook</h2>
+<p>Jupyter notebooks are a very common way to share Python code and tutorials. Because we are focusing on R in this course, we will not use Jupyter notebooks much but we have many Juptyer notebooks that you can experiment with in the <code>python-tutorials</code> folder.</p>
+<ul>
+<li>You can open a Jupyter Notebook by clicking on the “Python 3” box.</li>
+<li>Get an overview of Jupyter Lab: <a href="../setup/jupyter-notebooks.html">Intro to Jupyter Lab</a></li>
+</ul>
+</section>
+<section id="open-a-jupyter-notebook-1" class="level2">
+<h2 class="anchored" data-anchor-id="open-a-jupyter-notebook-1">Open a Jupyter Notebook</h2>
+</section>
+<section id="end-your-session" class="level2">
+<h2 class="anchored" data-anchor-id="end-your-session">End your session</h2>
+<p>When you are finished working for the day it is important to log out of the JupyterHub. When you keep a session active it uses up AWS resources (costs money) and keeps a series of virtual machines deployed.</p>
 <p>Stopping the server happens automatically when you log out, so navigate to “File -&gt; Log Out” and click “Log Out”!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/uwhackweek/jupyterbook-template/raw/main/book/img/hub-logout-button.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">hub-control-panel-button</figcaption>
-</figure>
-</div>
 <section id="will-i-lose-all-of-my-work" class="level3">
 <h3 class="anchored" data-anchor-id="will-i-lose-all-of-my-work">Will I lose all of my work?</h3>
 <p>Logging out will <strong>NOT</strong> cause any of your work to be lost or deleted. It simply shuts down some resources. It would be equivalent to turning off your desktop computer at the end of the day.</p>
+</section>
+<section id="github" class="level3">
+<h3 class="anchored" data-anchor-id="github">GitHub</h3>
+<p>GitHub allows you to store files in “repositories”, which is like a folder. This is a popular way that code is shared and there are many community resources shared on GitHub that you will want to be able to use in your JupyterHub. You can also link your own GitHub repositories to your JupyterHub.</p>
+<p>We will cover using GitHub in separate lectures</p>
+<ul>
+<li><a href="../setup/git-jupyter.html">Git in Jupyter Lab</a></li>
+<li><a href="git-rstudio.md">Git in RStudio</a></li>
+</ul>
 </section>
 </section>
 <section id="references" class="level2">
@@ -673,21 +691,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://foundations.projectpythia.org">Project Pythia</a></li>
 <li><a href="https://www.nature.com/articles/d41586-018-07196-1">Why Jupyter is data scientists’ computational notebook of choice</a></li>
 <li><a href="https://medium.com/pangeo/closed-platforms-vs-open-architectures-for-cloud-native-earth-system-analytics-1ad88708ebb6">Closed Platforms vs.&nbsp;Open Architectures for Cloud-Native Earth System Analytics</a></li>
-<li><a href="https://datacarpentry.org/organization-geospatial/">Introduction to Geospatial Concepts</a></li>
-<li><a href="https://infrastructure.2i2c.org/en/latest/topic/storage-layer.html">2i2c user storage</a></li>
-<li><a href="https://snowex-hackweek.github.io/website/intro.html">SnowEX Hackweek</a></li>
 </ul>
 </section>
 <section id="faq" class="level2">
 <h2 class="anchored" data-anchor-id="faq">FAQ</h2>
-<p><em>from participants during our first Clinic</em></p>
-<p><strong>I have an empty ‘<code>shared</code>’ folder</strong>. That’s expected. There shouldn’t be anything in the ‘<code>shared/</code>’ folder</p>
-<p><strong>After the 3 months are up, what do we do with our work on the server?</strong> You’ll have them since you can back everything up with GitHub. We can follow up with more details of what happens on the 2i2c side</p>
-<p><strong>Can we use Matlab with JupyterHub?</strong> You can also use <a href="https://datascience-enthusiast.com/Miscellaneous/Jupyter_R_Python_Julia_Octave.html">Octave kernel</a> as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so <a href="https://github.com/mathworks/jupyter-matlab-proxy">jupyter-matlab-proxy</a></p>
+<p><strong>I have an empty ‘<code>shared-user</code>’ folder</strong>. That’s expected. There shouldn’t be anything in the ‘<code>shared-user/</code>’ folder until participants put files there.</p>
+<p><strong>Can we use Matlab with JupyterHub?</strong> You can use <a href="https://datascience-enthusiast.com/Miscellaneous/Jupyter_R_Python_Julia_Octave.html">Octave kernel</a> as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so <a href="https://github.com/mathworks/jupyter-matlab-proxy">jupyter-matlab-proxy</a></p>
 <p><strong>Why do we have the same home directory as /home/jovyan?</strong> /home/jovyan is the default home directory for ‘jupyter’ based images/dockers. It is the historic home directory for Jupyter deployments.</p>
-<p><strong>/home/jovyan is the default home directory for <em>jupyter</em>-based deployments</strong></p>
-<p><strong>Can other users see the .git-credentials file in my /home/jovyan folder?</strong> No, other users can not see your creds</p>
+<p><strong>Can other users see the .git-credentials file in my /home/jovyan folder?</strong> No, other users can not see your credentials.</p>
 <p><strong>How to exit 2i2c’s terminal text editor?</strong> <code>esc</code> to get to the command, and then <code>:w</code> to save, <code>:q</code> to quit.</p>
+</section>
+<section id="pythonconda-environments" class="level2">
+<h2 class="anchored" data-anchor-id="pythonconda-environments">Python/Conda environments</h2>
+<p>Python users can create conda environments if they need to install modules. You create a <code>environments.yml</code> file like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> nsidc</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ipykernel</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> awscli~=1.21.4</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> requests</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pip</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!--
+And then in a terminal do
+```
+conda create -f environment.yml -n myenv
+conda select myenv
+```
+-->
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>Some sections of this document have been taken from hackweeks organized by the University of Washington eScience Institute and Openscapes.</p>
 
 
 </section>
@@ -1048,8 +1083,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../setup/notebooks.html" class="pagination-link">
-        <span class="nav-page-text">Notebooks, Python, Git</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../setup/rstudio.md" class="pagination-link">
+        <span class="nav-page-text">R - RStudio</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

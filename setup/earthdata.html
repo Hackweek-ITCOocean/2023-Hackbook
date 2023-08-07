@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../week1-tutorials/01-AM-intro-to-regional-data.html" rel="next">
-<link href="../setup/github.html" rel="prev">
+<link href="../setup/jupyter-notebooks.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../setup/index.html">Set-up and prerequisites</a></li><li class="breadcrumb-item"><a href="../setup/earthdata.html">Earthdata Login</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../setup/index.html">Set-up</a></li><li class="breadcrumb-item"><a href="../setup/earthdata.html">Earthdata Login</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Set-up and prerequisites</span></a>
+ <span class="menu-text">Set-up</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -182,19 +182,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../setup/jupyterhub.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NASA Openscapes Cloud Environment</span></a>
+ <span class="menu-text">JupyterHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/notebooks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notebooks, Python, Git</span></a>
+  <a href="../setup/rstudio.md" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R - RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub</span></a>
+  <a href="../setup/jupyter-notebooks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python - Jupyter Notebooks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -514,28 +514,20 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="earthdata-login" class="level1">
 <h1>Earthdata Login</h1>
-<p><em>The following was borrowed from the excellent <a href="https://snowex-hackweek.github.io/website/projects/index.html">SnowEx Hackathon 2021</a></em></p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>NASA data are stored at one of several Distributed Active Archive Centers (DAACs). If you’re interested in available data for a given area and time of interest, the <a href="https://earthdata.nasa.gov/">Earthdata Search</a> portal provides a convenient web interface.</p>
 </section>
 <section id="why-do-i-need-an-earthdata-login" class="level2">
 <h2 class="anchored" data-anchor-id="why-do-i-need-an-earthdata-login">Why do I need an Earthdata login?</h2>
-<p>Each participant will need a login. We will be teaching you ways to programmatically access NASA data from within your Python scripts. You will need to enter your Earthdata username and password in order for this to work.</p>
+<p>We will be teaching you ways to programmatically access NASA remote-sensing data from within your scripts. You will need to enter your Earthdata username and password in order for this to work.</p>
 </section>
 <section id="getting-an-earthdata-login" class="level2">
 <h2 class="anchored" data-anchor-id="getting-an-earthdata-login">Getting an Earthdata login</h2>
 <p>If you do not already have an Earthdata login, then navigate to the <a href="https://urs.earthdata.nasa.gov/">Earthdata Login</a> page, a username and password, and then record this somewhere for use during the tutorials:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://snowex-hackweek.github.io/website/_images/earthdata-login.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">earthdata-login</figcaption>
-</figure>
-</div>
 </section>
 <section id="configure-programmatic-access-to-nasa-servers" class="level2">
 <h2 class="anchored" data-anchor-id="configure-programmatic-access-to-nasa-servers">Configure programmatic access to NASA servers</h2>
-<p>If you use web interfaces to retrieve nasa data such as <a href="https://earthdata.nasa.gov/">Earthdata Search</a> you are prompted to login. We will be using software to retrieve data from NASA Servers during the hackweek, so you must store your credentials on the JupyterHub as explained in <a href="https://wiki.earthdata.nasa.gov/display/EL/How+To+Access+Data+With+cURL+And+Wget">this documentation</a>. Run the following commands on the JupyterHub in a terminal replacing your Earthdata login username and password:</p>
+<p>If you use web interfaces to retrieve nasa data such as <a href="https://earthdata.nasa.gov/">Earthdata Search</a> you are prompted to login. We will be using software to retrieve data from NASA Servers during the hackweek, so you must store your credentials on the JupyterHub. Run the following commands on the JupyterHub in a terminal replacing your Earthdata login username and password:</p>
 <pre class="shell"><code>echo "machine urs.earthdata.nasa.gov login EARTHDATA_LOGIN password EARTHDATA_PASSWORD" &gt; ~/.netrc
 chmod 0600 .netrc</code></pre>
 
@@ -894,8 +886,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../setup/github.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GitHub</span>
+      <a href="../setup/jupyter-notebooks.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python - Jupyter Notebooks</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
