@@ -1,83 +1,140 @@
 ---
-title: Notebooks, Python, Git
+title: Git - Jupyter Lab
 ---
 
 ## Summary
 
-In this session, we will provide a brief introduction to:
+In this tutorial, we will provide a brief introduction to:
 
 1.  Command line (**terminal**/shell)
-2.  Version Control (code management using **git**)
-3.  Programming in **Python** (using Jupyter Notebook)
-4.  Geospatial Fundamentals (optional, self-study)
+2.  Navigating around folders in Jupyter Lab
+3.  Version Control (code management using **git**)
+4.  Setting up Git in Jupyter Lab
+5.  The Git GUI in Jupyter Lab
+6.  Basic Git commands
 
-You will need a working knowledge of git and terminal for this hackathon. We will provide an overview of these topics and also share resources for self-paced learning.
+## Introduction :: Jupyter Lab
 
-## Introduction :: Command Line (Terminal/Shell)
+When you start the JupyterHub, you will be in Jupyter Lab. From there you can click on the RStudio box and open RStudio. However for this tutorial, we will stay in Juptyer Lab.
 
-### Shell Basics
+## Introduction :: Terminal/Shell
+
+Log into the JupyterHub. If you do not see this
+
+![](img/jhub-launcher.png)
+
+Then go to File \> New Launcher
+
+Click on the "Terminal" box to open a new terminal window.
+
+### Shell or Terminal Basics
 
 1.  [What is Terminal or Shell?](https://swcarpentry.github.io/shell-novice/01-intro/index.html)
 2.  [Navigating Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir/index.html)
 3.  [Working with Files and Directories](https://swcarpentry.github.io/shell-novice/03-create/index.html)
+4.  Optional: Detailed self-paced lesson on running scripts from the shell: [Shell Lesson from Software Carpentry](http://swcarpentry.github.io/shell-novice/)
 
-### Shell: More Details
+You will need only basic navigation skills for this course: `cd`, `ls` and `cat`
 
-Detailed self-paced lesson on shell: [Shell Lesson from Software Carpentry](http://swcarpentry.github.io/shell-novice/)
+-   `pwd` where am I
+-   `cd nameofdir` move into a directory
+-   `cd ..` move up a directory
+-   `ls` list the files in the current directory
+-   `ls -a` list the files including hidden files
+-   `ls -l` list the files with more info
+-   `cat filename` print out the contents of a file
 
-## Introduction :: Version Control (Git and Github)
+### Let's try
 
+```         
+ls
+ls -a
+cd shared
+ls
+cd shell-tutorial
+cat lesson1.sh
+cd ..
+cd ..
+```
+
+### Close the terminal
+
+Just click on the X in the terminal tab
+
+## Introduction :: File Navigation
+
+In the far left, you will see a line of icons. The top one is a folder and allows us to move around our file system.
+
+1.  Click on `shared`. Now you can see the files in the shared directory.
+
+2.  Click on `shell-tutorial`. Then click on `lesson1.sh`. The file opens. You won't be able to save changes here because you don't have write permission on this drive.
+
+3.  Click on the folder icon that looks like this. Click on the actual folder image. ![](img/folder-icon.png)
+
+    Now it should look like this folder / 
+    
+    This shows me doing this
+    
+    ![](img/folder-select.gif)
+    
+4. Create a new folder. 
+
+    * Next to the blue rectange with a +, is a grey folder with a +. Click that to create a new folder, called `lesson-scripts`.
+    * Then click on `lesson-scripts` to enter the folder
+    
+    ![](img/folder-create-folder.gif)
+    
+5. Create a new file
+
+    * Create with File > New > Text file
+    * The file will open and you can edit it.
+    * Save with File > Save Text
+    * Delete the file by right-clicking on it and clicking "Delete"
+
+## Introduction :: Version Control (Git)
 
 ### What is version control, git, github, and how to set it up?
 
-Version control is managing and tracking changes to your documents (program source code, images, websites, data files, etc.). `git` is a popular tool used for version control of software code. [github.com](https://github.com/) is popular platform that provides remote server hosting for git repositories. A repository is a collection of various files that you are tracking for changes and versions (think of it as a directory with files that are being tracked for changes, using `git` for taking snapshots of versions as you are developing).
+Version control is managing and tracking changes to your documents (program source code, images, websites, data files, etc.). `git` is a popular tool used for version control of software code. [github.com](https://github.com/) is popular platform that provides remote server hosting for git repositories. A repository is a collection of various files that you are tracking for changes and versions. Currently GitHub is the most popular platform for file sharing code and code packages.
 
+This section is a step-by-step guide to set up `git` on our [2i2c JupyterHub](itcoocean.2i2c.cloud). We will also configure `git` to use your [github.com](https://github.com/) account for managing your repositories hosted on [github.com](https://github.com/). There are 5 main steps.
 
-
-
-
-This section is a step-by-step guide to set up `git` on your [2i2c JupyterHub instance](openscapes.2i2c.cloud) (referred to as `2i2c JupyterHub` in these instruction). We will also configure `git` to use your [github.com](https://github.com/) account for managing your repositories hosted on [github.com](https://github.com/). There are 5 main steps with substeps, includes instruction for addressing github's new approach for [token authentication](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/).
-
-### Step 1: Create a github account
+### Step 1: Create a GitHub account
 
 To complete the setup, you will need an account on [github.com](https://github.com/). If you don't have an account, please visit [github.com](https://github.com/), create an account (free) and come back to this guide for setting up git.
 
-### Step 2: Fork a repository
+### Step 2: Clone a repository
 
-A **fork** is a copy of a repository from another github account (for example **NASA-Openscapes** account) to your github account (for example, my account **virdi**) that then you have permission to edit. To help you finish this setup correctly, we have created a demo repository on Openscapes github account named **check_github_setup**. You can **fork** this repository into your github account following these steps:
+We have created a demo repository for you to clone:
 
-1.  Log in to your [github.com](https://github.com/) account
+https://github.com/Hackweek-ITCOocean/Git-Lesson
 
-2.  Go to the demo repository at [NASA-Openscapes github](https://github.com/NASA-Openscapes/check_github_setup)
+1.  Start your [2i2c JupyterHub](https://itcoocean.2i2c.cloud)
 
-    ![Demo repository on NASA-Openscapes github](img/github-fork-1.png){width="520"}
+2.  Click on the Git icon
 
-3.  Click on the fork icon in the top right corner, as shown in the image below and click your user name if prompted to do so
+![](img/gitextension.png)
 
-    ![](img/github-fork-2.png){width="520"}
+3.  Click "Clone a Repository"
 
-### Step 3: Clone the repository that you just forked
+4.  Where is says "Enter the URI of the remote Git repository", paste in the URL https://github.com/Hackweek-ITCOocean/Git-Lesson
 
-Now you have a fork of the demo repository in your github account that we can `clone` it in your 2i2c instance. In the code below, commands beginning with `git` is a git command for version control and synching; commands that don't start with `git` are bash/linux/command line commands.
+5. The folder appears and you can enter the folder and edit and create files.
 
-1.  Start your [2i2c JupyterHub](https://openscapes.2i2c.cloud) and open a terminal
+> Your task: Create a file with your name and save to the Git-Lesson folder
 
-    `File >> New >> Terminal`
+## Step 3: 
 
-2.  Make sure you are in your **home directory** by using`pwd` command and verifying the output as below
+Configure git with your name and email address.
 
-    `/home/jovyan`
+````         
+``` bash
+git config --global user.name "Makhan Virdi"
+git config --global user.email "Makhan.Virdi@gmail.com"
+```
 
-    ![](img/terminal-pwd.png){width="520"}
-
-3.  Configure git with your name and email address.
-
-    ``` bash
-    git config --global user.name "Makhan Virdi"
-    git config --global user.email "Makhan.Virdi@gmail.com"
-    ```
-
-    **Note:** This name and email could be different from your github.com credentials. Remember `git` is a program that keeps track of your changes locally (on 2i2c JupyterHub or your own computer) and github.com is a platform to host your repositories. However, since your changes are tracked by `git`, the email/name used in git configuration will show up next to your contributions on github.com when you `push` your repository to github.com (`git push` is discussed in a later step).
+**Note:** This name and email could be different from your github.com credentials. Remember `git` is a program that keeps track of your changes locally (on 2i2c JupyterHub or your own computer) and github.com is a platform to host your repositories. However, since your changes are tracked by `git`, the email/name used in git configuration will show up next to your contributions on github.com when you `push` your repository to github.com (`git push` is discussed in a later step).
+````
 
 4.  Configure `git` to store your github credentials to avoid having to enter your github username and token each time you push changes to your repository(in [Step 5](#step-5.-create-access-token-on-github.com), we will describe how to use github token instead of a password)
 
@@ -93,7 +150,7 @@ Now you have a fork of the demo repository in your github account that we can `c
 
     To clone a repository from github, copy the link for the repository (previous step) and use `git clone`:
 
-    ```bash
+    ``` bash
     git clone https://github.com/YOUR-GITHUB-USERNAME/check_github_setup
     ```
 
@@ -166,7 +223,7 @@ Now you have a fork of the demo repository in your github account that we can `c
 
     ![](img/github-token-generated.png)
 
-3.  To push (transfer) your changes to github, use `git push` in terminal. It requires you to enter your github credentials. You will be prompted to enter your github username and "password". **When prompted for your "password", DO NOT use your github password, use the github token** that was copied in the previous step. 
+3.  To push (transfer) your changes to github, use `git push` in terminal. It requires you to enter your github credentials. You will be prompted to enter your github username and "password". **When prompted for your "password", DO NOT use your github password, use the github token** that was copied in the previous step.
 
     ``` bash
     git push
@@ -213,7 +270,7 @@ Now we are all set to collaborate with github on the JupyterHub during the Cloud
 ### Summary: Git Commands
 
 | Git Command  | Description                                                                                                                     |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------|
+|-------------|----------------------------------------------------------|
 | `git status` | Shows the current state of the repository: the current working branch, files in the staging area, *etc.*                        |
 | `git add`    | Adds a new, previously untracked file to version control and marks already tracked files to be committed with the next `commit` |
 | `git commit` | Saves the current state of the repository and creates an entry in the log                                                       |
@@ -233,7 +290,6 @@ Now we are all set to collaborate with github on the JupyterHub during the Cloud
 
 **Dangit, Git!?!**: If you are stuck after a git mishap, there are ready-made solutions to common problems at [Dangit, Git!?!](https://dangitgit.com/en)
 
-
 ### Cloning our repository using the [**git Jupyter lab extension**](https://github.com/jupyterlab/jupyterlab-git).
 
 If we're already familiar with git commands and feel more confortable using a GUI our Jupyterhub deployment comes with a git extension. This plugin allows us to operate with git using a simple user interface.
@@ -241,28 +297,3 @@ If we're already familiar with git commands and feel more confortable using a GU
 For example we can clone our repository using the extension.
 
 ![git extension](img/gitextension.png)
-
-
-## Introduction :: Programming in Python
-
-Switch to Jupyter Notebook for an introduction to programming in Python
-
--   Variables (and mathematical operations)
--   [Data Structures](https://swcarpentry.github.io/python-novice-inflammation/04-lists/index.html) (list, tuple, dict)
--   [Flow Control](https://swcarpentry.github.io/python-novice-inflammation/05-loop/index.html) using loops (for, while)
--   [Conditionals](https://swcarpentry.github.io/python-novice-inflammation/07-cond/index.html) (if, else, elif)
--   [Functions](https://swcarpentry.github.io/python-novice-inflammation/08-func/index.html)
--   [Errors and Exceptions](https://swcarpentry.github.io/python-novice-inflammation/09-errors/index.html) (understanding and handling errors)
--   Using modules (libraries, packages)
-    -   [pandas](https://pandas.pydata.org/docs/): high-performance, easy-to-use data structures and data analysis tools
-    -   [rioxarray](https://corteva.github.io/rioxarray/stable/): based on the rasterio package for working with rasters and [`xarray`](http://xarray.pydata.org/en/stable/)
-
-### Python Learning Resources
-
-Self-paced lesson on [Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/) from Software Carpentry
-
-## Introduction :: Geospatial Fundamentals (Optional)
-
-Detailed self-paced lesson on [Fundamentals of Geospatial Raster and Vector Data with Python](https://carpentries-incubator.github.io/geospatial-python/) from Data Carpentry
-
-The end! 

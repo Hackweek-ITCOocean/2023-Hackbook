@@ -46,12 +46,15 @@ website:
         contents:
           - logistics/index.md
           - logistics/schedule.md
-      - section: "Set-up and prerequisites"
+      - section: "Set-up"
         contents:
           - setup/index.md
-          - setup/jupyterhub.md
-          - setup/notebooks.md
-          - setup/github.md
+          - text: JupyterHub
+            href: setup/jupyterhub.md
+          - text: R - RStudio
+            href: setup/rstudio.md
+          - text: Python - Jupyter Notebooks
+            href: setup/jupyter-notebooks.md
           - setup/earthdata.md
       - section: "Week 1"
         contents:

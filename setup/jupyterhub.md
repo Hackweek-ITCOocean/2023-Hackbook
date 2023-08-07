@@ -1,19 +1,17 @@
 ---
-title: NASA Openscapes Cloud Environment
+title: ITCOocean Cloud Environment
 ---
 
-![](./img/openscapes-2i2c-logo.png)
+![](./img/jhub-logo.png)
 
 
 **Summary of what we'll cover:**
 
  * What's a cloud environment and why we are using it.
  * Learn about the Jupyter ecosystem and our cloud infrastructure.
- * Start/Stop our Openscapes server and get familiar with Jupyterlab and installed programs
- * How to update our environments
- * NASA Earthdata Login and security in the cloud.
-
-> **Note**: Some sections of this document have been taken from previous hackweeks organized by the University of Washington eScience Institute.
+ * Open a Jupyter Notebook
+ * Open RStudio
+ * Start/Stop your JupyterHub server
 
 
 ## Why are we using a cloud environment?
@@ -30,33 +28,105 @@ The community is waking up to the idea that we can’t simply expect scientists 
 
 ![Download-based workflow. From Abernathey, Ryan (2020): Data Access Modes in Science](https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/22017009/preview.jpg)
 
+## JupyterHub Infrastructure
 
+Go to <https://itcoocean.2i2c.cloud/>. Click "Login to continue". You will be asked to log in with your GitHub Account, if you are not logged in already.
 
-## Openscapes Hub and Cloud Infrastructure
+![ITCOocean JupyterHub Login](./img/jhub.png)
 
-*There is no cloud, it's someone else's computer*
+### Image type: Python or R
 
-Go to <https://openscapes.2i2c.cloud/hub/>. You will be asked to log in with your GitHub Account
+Next you select your image type. We have two different R images and two Python images. The default is "Geospatial R with SDM". This is an image with geospatial libraries and species distribution libraries.
 
-![Openscapes JupyterHub Login](./img/openscapes-hub.png)
+### Virtual Machine size
 
-Once we are logged with our Github account we need to select our server type. 
-There are different hardware configurations for each profile, for the duration of the Hackweek we'll use small instances, the option at the top.
+You'll see something similar to this that allows you to choose a large virtual machine if your project needs it. For the tutorials, you will only need the Small Virtual Machine. Please only choose the large machines if you run out of RAM as the larger machines cost us more.
 
 ![Machine Profiles](./img/servers.png)
 
-After we select our server type and click on start, Jupyterhub will allocate our instance using Amazon Web Services (AWS). This may take several minutes. While we wait, we'll get set up with GitHub and a brief overview.
+### Start up
+
+After we select our server type and click on start, JupyterHub will allocate our instance using Amazon Web Services (AWS). This may take several minutes. 
 
 ![Jupyterhub Spawning](./img/spawning.png)
 
 
-## Jupyter Ecosystem
+## Files
 
-![](https://foundations.projectpythia.org/_images/remote-execution-model.gif)
+When you are in the hub, you will see a Launcher page:
 
-Source: Project Pythia
+![Jupyterhub Launcher](./img/jhub-launcher.png)
+
+## Shared folders
+
+![Shared folder](./img/shared-folder.png)
+
+On the left, you will see a folder called `shared`. These are read-only shared files that we have prepared for you. There are two main folders:
+
+* `data` The folder with data files
+* `tutorials` The folder with tutorials
+* `2023-Hackbook` The full Git repository with the files for https://hackweek-itcoocean.github.io/2023-Hackbook
+
+You will also see `shared-user`. This is a read-write folder for you to put files for everyone to see and use. You can create a team folder here for shared data and files.  Note, everyone can see and change these so be careful to communicate with your team so multiple people don't work on the same file at the same time. You can also create folders for each team member and agree not to change other team members files.
+
+### Your files
+
+When you start your server, you will have access to your own virtual drive space. No other users will be able to see or access your files. You can upload files to your virtual drive space and save files here. You can create folders to organize your files.
+
+There are a number of different ways to create new files. We will practice these together.
+
+## Open a Jupyter Notebook
+
+Jupyter notebooks are a very common way to share Python code and tutorials. Because we are focusing on R in this course, we will not use Jupyter notebooks much but we have many Juptyer notebooks that you can experiment with in the `python-tutorials` folder.
+
+* You can open a Jupyter Notebook by clicking on the "Python 3" box.
+* Get an overview of Jupyter Lab: [Intro to Jupyter Lab](jupyter-notebooks.md)
+
+## Open a Jupyter Notebook
+
+
+## End your session
+
+When you are finished working for the day it is important to log out of the JupyterHub.  When you keep a session active it uses up AWS resources (costs money) and keeps a series of virtual machines deployed.
+
+Stopping the server happens automatically when you log out, so navigate to "File -> Log Out" and click "Log Out"!
+
+### Will I lose all of my work?
+
+Logging out will **NOT** cause any of your work to be lost or deleted. It simply shuts down some resources. It would be equivalent to turning off your desktop computer at the end of the day.
+
+### GitHub
+
+GitHub allows you to store files in "repositories", which is like a folder. This is a popular way that code is shared and there are many community resources shared on GitHub that you will want to be able to use in your JupyterHub. You can also link your own GitHub repositories to your JupyterHub.
+
+We will cover using GitHub in separate lectures
+
+* [Git in Jupyter Lab](git-jupyter.md)
+* [Git in RStudio](git-rstudio.md)
+
+
+## References
+
+ * [Project Pythia](https://foundations.projectpythia.org)
+ * [Why Jupyter is data scientists’ computational notebook of choice](https://www.nature.com/articles/d41586-018-07196-1)
+ * [Closed Platforms vs. Open Architectures for Cloud-Native Earth System Analytics](https://medium.com/pangeo/closed-platforms-vs-open-architectures-for-cloud-native-earth-system-analytics-1ad88708ebb6)
+
+## FAQ
+
+**I have an empty ‘`shared-user`’ folder**. That's expected. There shouldn't be anything in the ‘`shared-user/`’  folder until participants put files there.
+
+**Can we use Matlab with JupyterHub?** You can use [Octave kernel](https://datascience-enthusiast.com/Miscellaneous/Jupyter_R_Python_Julia_Octave.html) as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so [jupyter-matlab-proxy](https://github.com/mathworks/jupyter-matlab-proxy)
+
+
+**Why do we have the same home directory as /home/jovyan?** /home/jovyan is the default home directory for 'jupyter' based images/dockers. It is the historic home directory for Jupyter deployments. 
+
+**Can other users see the .git-credentials file in my /home/jovyan folder?** No, other users can not see your credentials.
+
+**How to exit 2i2c's terminal text editor?** `esc` to get to the command, and then `:w` to save, `:q` to quit. 
 
 ## Python/Conda environments
+
+Python users can create conda environments if they need to install modules. You create a `environments.yml` file like this:
 
 ```yaml
 name: nsidc
@@ -69,62 +139,15 @@ dependencies:
   - pip
 ```
 
-### How do I get my code in and out of the Openscapes hub?
+<!--
+And then in a terminal do
+```
+conda create -f environment.yml -n myenv
+conda select myenv
+```
+-->
 
-When you start your own server you will have access to your own virtual drive space. No other users will be able to see or access your data files. You can easily upload files to your virtual drive space and save files from the hub back to another location, such as GitHub or your own local laptop drive.
+## Acknowledgements
 
-Here we'll show you how to pull (copy) some files from GitHub into your virtual drive space using git. This will be a common task during the hackweek: at the start of each tutorial we'll ask you to "fork" (create your own copy of in your GitHub account) and "clone" (make a copy of in a computing environment, such as your local computer or Openscapes instance) the GitHub repository corresponding to the specific tutorial being taught into your Openscapes drive space.
+Some sections of this document have been taken from  hackweeks organized by the University of Washington eScience Institute and Openscapes.
 
-
-![terminal-button](https://github.com/uwhackweek/jupyterbook-template/raw/main/book/img/terminal-button.png)
-
-This will open a new terminal tab in your JupyterLab interface:
-
-![terminal-tab](https://github.com/uwhackweek/jupyterbook-template/raw/main/book/img/terminal.png)
-
-Now you can issue any Linux commands to manage your local file system.
-
-You may also upload files from your local system using the upload button (up-pointing arrow) on the top left of the JupyterHub navigation panel. Similarly, you may download files to your local system by right-clicking the file and selecting download (down-pointing arrow).
-
-Simple, example GitHub/git/local-workspace workflows for getting a tutorial started in your Openscapes instance and working on a group project are provided. The [getting started on a tutorial](https://icesat-2hackweek.github.io/learning-resources/tutorials/getting_started) workflow briefly reviews much of the information in this preliminary exercise along with steps for making and saving notes or other changes as you work through the tutorial and keeping it updated with the original, master copy. The [basic git workflow for a project](https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow) serves as a reminder of the git workflow for working on a group project while minimizing code conflicts that could result from multiple people making changes to the same files simultaneously.
-<br>
-
-## How do I end my Openscapes session? 
-
-When you are finished working for the day it is important to explicitly log out of your Openscapes session. The reason for this is it will save money and is a good habit to be in. When you keep a session active it uses up AWS resources and keeps a series of virtual machines deployed.
-
-Stopping the server happens automatically when you log out, so navigate to "File -> Log Out" and click "Log Out"!
-
-![hub-control-panel-button](https://github.com/uwhackweek/jupyterbook-template/raw/main/book/img/hub-logout-button.png)
-
-### Will I lose all of my work?
-
-Logging out will **NOT** cause any of your work to be lost or deleted. It simply shuts down some resources. It would be equivalent to turning off your desktop computer at the end of the day.
-
-## References
-
- * [Project Pythia](https://foundations.projectpythia.org)
- * [Why Jupyter is data scientists’ computational notebook of choice](https://www.nature.com/articles/d41586-018-07196-1)
- * [Closed Platforms vs. Open Architectures for Cloud-Native Earth System Analytics](https://medium.com/pangeo/closed-platforms-vs-open-architectures-for-cloud-native-earth-system-analytics-1ad88708ebb6)
- * [Introduction to Geospatial Concepts](https://datacarpentry.org/organization-geospatial/)
- * [2i2c user storage](https://infrastructure.2i2c.org/en/latest/topic/storage-layer.html)
- * [SnowEX Hackweek](https://snowex-hackweek.github.io/website/intro.html)
-
-## FAQ
-
-*from participants during our first Clinic*
-
-**I have an empty ‘`shared`’ folder**. That's expected. There shouldn't be anything in the ‘`shared/`’  folder
-
-**After the 3 months are up, what do we do with our work on the server?** You’ll have them since you can back everything up with GitHub. We can follow up with more details of what happens on the 2i2c side
-
-**Can we use Matlab with JupyterHub?** You can also use [Octave kernel](https://datascience-enthusiast.com/Miscellaneous/Jupyter_R_Python_Julia_Octave.html) as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so [jupyter-matlab-proxy](https://github.com/mathworks/jupyter-matlab-proxy)
-
-
-**Why do we have the same home directory as /home/jovyan?** /home/jovyan is the default home directory for 'jupyter' based images/dockers. It is the historic home directory for Jupyter deployments. 
-
-**/home/jovyan is the default home directory for *jupyter*-based deployments**
-
-**Can other users see the .git-credentials file in my /home/jovyan folder?** No, other users can not see your creds
-
-**How to exit 2i2c's terminal text editor?** `esc` to get to the command, and then `:w` to save, `:q` to quit. 
