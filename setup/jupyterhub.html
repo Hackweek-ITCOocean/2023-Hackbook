@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -63,7 +29,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../setup/rstudio.md" rel="next">
+<link href="../setup/rstudio.html" rel="next">
 <link href="../setup/index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -221,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/rstudio.md" class="sidebar-item-text sidebar-link">
+  <a href="../setup/rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R - RStudio</span></a>
   </div>
 </li>
@@ -229,6 +195,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../setup/jupyter-notebooks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python - Jupyter Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git - Jupyter Lab</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -536,11 +508,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a></li>
   <li><a href="#shared-folders" id="toc-shared-folders" class="nav-link" data-scroll-target="#shared-folders">Shared folders</a></li>
   <li><a href="#open-a-jupyter-notebook" id="toc-open-a-jupyter-notebook" class="nav-link" data-scroll-target="#open-a-jupyter-notebook">Open a Jupyter Notebook</a></li>
-  <li><a href="#open-a-jupyter-notebook-1" id="toc-open-a-jupyter-notebook-1" class="nav-link" data-scroll-target="#open-a-jupyter-notebook-1">Open a Jupyter Notebook</a></li>
+  <li><a href="#open-rstudio" id="toc-open-rstudio" class="nav-link" data-scroll-target="#open-rstudio">Open RStudio</a></li>
   <li><a href="#end-your-session" id="toc-end-your-session" class="nav-link" data-scroll-target="#end-your-session">End your session</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a></li>
-  <li><a href="#pythonconda-environments" id="toc-pythonconda-environments" class="nav-link" data-scroll-target="#pythonconda-environments">Python/Conda environments</a></li>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/edit/main/setup/jupyterhub.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -658,14 +629,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="open-a-jupyter-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="open-a-jupyter-notebook">Open a Jupyter Notebook</h2>
+<p>You can open a Jupyter Notebook by clicking on the “Python 3” box. In the Launcher tab:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/jhub-launcher.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Jupyterhub Launcher</figcaption>
+</figure>
+</div>
 <p>Jupyter notebooks are a very common way to share Python code and tutorials. Because we are focusing on R in this course, we will not use Jupyter notebooks much but we have many Juptyer notebooks that you can experiment with in the <code>python-tutorials</code> folder.</p>
-<ul>
-<li>You can open a Jupyter Notebook by clicking on the “Python 3” box.</li>
-<li>Get an overview of Jupyter Lab: <a href="../setup/jupyter-notebooks.html">Intro to Jupyter Lab</a></li>
-</ul>
+<p>Get an overview of Jupyter Lab: <a href="../setup/jupyter-notebooks.html">Intro to Jupyter Lab</a></p>
 </section>
-<section id="open-a-jupyter-notebook-1" class="level2">
-<h2 class="anchored" data-anchor-id="open-a-jupyter-notebook-1">Open a Jupyter Notebook</h2>
+<section id="open-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="open-rstudio">Open RStudio</h2>
+<ul>
+<li>You can open RStudio by clicking on the “RStudio” box. In the Launcher tab:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/jhub-launcher.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Jupyterhub Launcher</figcaption>
+</figure>
+</div>
+<p>We will be mainly using RStudio in this course.</p>
+<p>Get an overview of RStudio: <a href="../setup/rstudio.html">Intro to RStudio</a></p>
 </section>
 <section id="end-your-session" class="level2">
 <h2 class="anchored" data-anchor-id="end-your-session">End your session</h2>
@@ -678,9 +664,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="github" class="level3">
 <h3 class="anchored" data-anchor-id="github">GitHub</h3>
 <p>GitHub allows you to store files in “repositories”, which is like a folder. This is a popular way that code is shared and there are many community resources shared on GitHub that you will want to be able to use in your JupyterHub. You can also link your own GitHub repositories to your JupyterHub.</p>
-<p>We will cover using GitHub in separate lectures</p>
+<p>Being familiar with version control (making commits as you work), Git and GitHub is important skill for reproducible science because this is a part of the current workflow for sharing work with the wider community of scientists.</p>
+<p>We will cover using Git and GitHub in separate lectures</p>
 <ul>
-<li><a href="../setup/git-jupyter.html">Git in Jupyter Lab</a></li>
+<li><a href="git-jupyter.md">Git in Jupyter Lab</a></li>
 <li><a href="git-rstudio.md">Git in RStudio</a></li>
 </ul>
 </section>
@@ -699,26 +686,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Can we use Matlab with JupyterHub?</strong> You can use <a href="https://datascience-enthusiast.com/Miscellaneous/Jupyter_R_Python_Julia_Octave.html">Octave kernel</a> as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so <a href="https://github.com/mathworks/jupyter-matlab-proxy">jupyter-matlab-proxy</a></p>
 <p><strong>Why do we have the same home directory as /home/jovyan?</strong> /home/jovyan is the default home directory for ‘jupyter’ based images/dockers. It is the historic home directory for Jupyter deployments.</p>
 <p><strong>Can other users see the .git-credentials file in my /home/jovyan folder?</strong> No, other users can not see your credentials.</p>
-<p><strong>How to exit 2i2c’s terminal text editor?</strong> <code>esc</code> to get to the command, and then <code>:w</code> to save, <code>:q</code> to quit.</p>
-</section>
-<section id="pythonconda-environments" class="level2">
-<h2 class="anchored" data-anchor-id="pythonconda-environments">Python/Conda environments</h2>
-<p>Python users can create conda environments if they need to install modules. You create a <code>environments.yml</code> file like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> nsidc</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ipykernel</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> awscli~=1.21.4</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> requests</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pip</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<!--
-And then in a terminal do
-```
-conda create -f environment.yml -n myenv
-conda select myenv
-```
--->
+<p><strong>How to exit 2i2c’s terminal text editor?</strong> The default editor is <code>vi</code>. <code>esc</code> to get to the command, and then <code>:w</code> to save, <code>:q</code> to quit.</p>
 </section>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
@@ -1083,7 +1051,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../setup/rstudio.md" class="pagination-link">
+      <a href="../setup/rstudio.html" class="pagination-link">
         <span class="nav-page-text">R - RStudio</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
