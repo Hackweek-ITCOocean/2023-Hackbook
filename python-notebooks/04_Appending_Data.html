@@ -381,13 +381,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Written by NASA Openscapes mentors</span></a>
+ <span class="menu-text">Authentication for NASA Earthdata</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/01_earthaccess_Downloader.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Download data from Earth Data</span></a>
+ <span class="menu-text">NASA Earth Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -561,6 +561,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="written-by-minh-phan" class="level3">
+<h3 class="anchored" data-anchor-id="written-by-minh-phan">Written by Minh Phan</h3>
 <p>We can also add new data to our ZARR file as long as the additional dataset shape fits into our original dataset shape but one dimension. By this, we can add data along one dimension at a time, but other dimensions and all the variables (including metadata) must be identical in size. For example, if our dataset has size 100 lat x 100 lon x 200 time with five variables, the new dataset that we can append to must also have the exact five variables, and two of the dimensions be the same size (in the most logical case, we append along the time dimension, so our new data must have 100 lat x 100 lon).</p>
 <p>Sometimes, you are also recommended to rechunk the data after appending as unequal chunk sizes may cost computational operation time.</p>
 <div class="cell" data-tags="[]" data-execution_count="2">
@@ -570,6 +572,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>For demonstration purposes, I will not go through again process of creating another dataset, and instead provide an already cleaned dataset for us to practice on. Start by loading this cleaned dataset into our file, as well as the original dataset that we already exported (to compare and double check metadata before we export).</p>
 <p>To keep our original dataset intact, I made a copy of our original Zarr file. Please load it instead.</p>
+</section>
 <section id="load-in-data" class="level2">
 <h2 class="anchored" data-anchor-id="load-in-data">Load in data</h2>
 <div class="cell" data-execution_count="7">

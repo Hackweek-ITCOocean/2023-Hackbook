@@ -381,13 +381,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Written by NASA Openscapes mentors</span></a>
+ <span class="menu-text">Authentication for NASA Earthdata</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/01_earthaccess_Downloader.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Download data from Earth Data</span></a>
+ <span class="menu-text">NASA Earth Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -563,6 +563,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="written-by-minh-phan" class="level3">
+<h3 class="anchored" data-anchor-id="written-by-minh-phan">Written by Minh Phan</h3>
 <p>Most of our data is obtained from Copernicus, “the Earth Observation component of the European Union’s space programme, looking at our planet and its environment for the benefit of Europe’s citizens” (copernicus.eu). Copernicus data, aside from traditional download methods using ERDDAP, also offers downloading using MOTU Service, “a Web Server allowing to handle and extract oceanographic huge volumes of data, creating the connection between heterogeneous data providers and end-users” (help.marine.copernicus.eu), if available. More information on MOTU can be accessed <a href="https://help.marine.copernicus.eu/en/articles/4796533-what-are-the-motu-apis">here</a>.</p>
 <p>Make sure to register for a Copernicus account in order to access the data.</p>
 <div class="cell" data-tags="[]" data-execution_count="1">
@@ -576,6 +578,7 @@ Installing collected packages: motuclient
 Successfully installed motuclient-3.0.0</code></pre>
 </div>
 </div>
+</section>
 <section id="store-credentials-in-bash" class="level2">
 <h2 class="anchored" data-anchor-id="store-credentials-in-bash">Store credentials in bash</h2>
 <p>For security purposes, you can store your account credentials in your bash profile if you don’t want others to know yours. If you fork this notebook on your local machine and are sure that your credentials cannot be exposed anywhere else, you can skip the hassle of saving them to bash and set them as Python variables, then feed them to the prompt generator.</p>
