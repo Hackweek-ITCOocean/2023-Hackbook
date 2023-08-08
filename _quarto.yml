@@ -55,6 +55,7 @@ website:
             href: setup/rstudio.md
           - text: Python - Jupyter Notebooks
             href: setup/jupyter-notebooks.md
+          - setup/git.md
           - setup/earthdata.md
       - section: "Week 1"
         contents:

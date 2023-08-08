@@ -43,3 +43,28 @@ There are many Jupyter Notebooks that you can copy and run in our JupyterHub. No
 - [OceanHackWeek](https://oceanhackweek.org)
 - [ICESat-2 Hackweeks](https://icesat-2-2022.hackweek.io/intro.html)
 
+## Python/Conda environments
+
+Python users can create conda environments if they need to install modules. You create a `environments.yml` file like this:
+
+```yaml
+name: nsidc
+channels:
+  - conda-forge
+dependencies:
+  - ipykernel
+  - awscli~=1.21.4
+  - requests
+  - pip
+```
+
+<!--
+And then in a terminal do
+```
+conda env create -f environment.yml --name myenv
+conda activate myenv
+conda list
+```
+-->
+
+

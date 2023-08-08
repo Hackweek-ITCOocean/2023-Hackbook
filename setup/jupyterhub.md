@@ -77,13 +77,23 @@ There are a number of different ways to create new files. We will practice these
 
 ## Open a Jupyter Notebook
 
+You can open a Jupyter Notebook by clicking on the "Python 3" box. In the Launcher tab:
+
+![Jupyterhub Launcher](./img/jhub-launcher.png)
+
 Jupyter notebooks are a very common way to share Python code and tutorials. Because we are focusing on R in this course, we will not use Jupyter notebooks much but we have many Juptyer notebooks that you can experiment with in the `python-tutorials` folder.
 
-* You can open a Jupyter Notebook by clicking on the "Python 3" box.
-* Get an overview of Jupyter Lab: [Intro to Jupyter Lab](jupyter-notebooks.md)
+Get an overview of Jupyter Lab: [Intro to Jupyter Lab](jupyter-notebooks.md)
 
-## Open a Jupyter Notebook
+## Open RStudio
 
+* You can open RStudio by clicking on the "RStudio" box. In the Launcher tab:
+
+![Jupyterhub Launcher](./img/jhub-launcher.png)
+
+We will be mainly using RStudio in this course.
+
+Get an overview of RStudio: [Intro to RStudio](rstudio.md)
 
 ## End your session
 
@@ -97,9 +107,11 @@ Logging out will **NOT** cause any of your work to be lost or deleted. It simply
 
 ### GitHub
 
-GitHub allows you to store files in "repositories", which is like a folder. This is a popular way that code is shared and there are many community resources shared on GitHub that you will want to be able to use in your JupyterHub. You can also link your own GitHub repositories to your JupyterHub.
+GitHub allows you to store files in "repositories", which is like a folder. This is a popular way that code is shared and there are many community resources shared on GitHub that you will want to be able to use in your JupyterHub. You can also link your own GitHub repositories to your JupyterHub. 
 
-We will cover using GitHub in separate lectures
+Being familiar with version control (making commits as you work), Git and GitHub is important skill for reproducible science because this is a part of the current workflow for sharing work with the wider community of scientists.
+
+We will cover using Git and GitHub in separate lectures
 
 * [Git in Jupyter Lab](git-jupyter.md)
 * [Git in RStudio](git-rstudio.md)
@@ -122,30 +134,8 @@ We will cover using GitHub in separate lectures
 
 **Can other users see the .git-credentials file in my /home/jovyan folder?** No, other users can not see your credentials.
 
-**How to exit 2i2c's terminal text editor?** `esc` to get to the command, and then `:w` to save, `:q` to quit. 
+**How to exit 2i2c's terminal text editor?** The default editor is `vi`. `esc` to get to the command, and then `:w` to save, `:q` to quit. 
 
-## Python/Conda environments
-
-Python users can create conda environments if they need to install modules. You create a `environments.yml` file like this:
-
-```yaml
-name: nsidc
-channels:
-  - conda-forge
-dependencies:
-  - ipykernel
-  - awscli~=1.21.4
-  - requests
-  - pip
-```
-
-<!--
-And then in a terminal do
-```
-conda create -f environment.yml -n myenv
-conda select myenv
-```
--->
 
 ## Acknowledgements
 
