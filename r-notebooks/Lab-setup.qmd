@@ -1,0 +1,17 @@
+---
+title: Labs - Set up
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Set up
+
+You will need to create a directory called `sdm-lab` in your home directory, which is called `home/jovyan`.
+
+![Create a sdm-labs folder if you have not already](images/r-home-folders.png){width="189"}
+
+Create an RStudio project at the sdm-labs directory.
+
+File > New Project > Existing directory
+

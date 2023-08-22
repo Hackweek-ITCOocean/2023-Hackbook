@@ -1,0 +1,151 @@
+---
+title: Geospatial in R - lab 1
+---
+
+```{r message=FALSE}
+require(sf)
+require(mapview)
+require(readr)
+require(readxl)
+```
+
+In this lab, you will learn basic skills of working with points. We will store our points in dataframes. All our points dataframes will have these columns:
+
+* longitude (x dimension)
+* latitude (y dimension)
+
+But the columns names are often shortened to lon, lat or lng, latd or anything else.
+
+In addition they will have other info in other columns.
+
+## Create a data frame of points
+
+```{r}
+library(mapview)
+  
+# Create example data of points
+lon <- c(85.21, 80.23, 77.28)
+lat = c(25.59, 12.99, 28.56)
+names = c("Patna", "Chennai", "New Delhi")
+  
+# Create a data frame with the point data
+df = data.frame(lon, lat, names)
+```
+  
+## Convert to a spatial points data frame
+
+This is a special data frame where the location data is converted to a single point object. 
+
+```{r}
+sdf = sf::st_as_sf(
+    df, 
+    coords = c("lon", "lat"), # what are the x and y dimension names
+    crs = 4326)
+```
+
+Look at the class of the object
+```{r}
+class(sdf)
+```
+
+
+## Plot the points
+
+```{r}
+plot(sdf)
+```
+
+It plotted but it is not very useful. Let's use the helper package mapview. That's more useful.
+
+```{r}
+mapview::mapview(sdf, label = sdf$names)
+```
+
+## Read in points from a csv file
+
+```{r}
+fil <- file.path("/home", "jovyan", "shared", "2023-Hackbook", "r-notebooks", "data", "india_tide_guages.csv")
+df2 <- readr::read_csv(fil)
+```
+
+Convert to spatial data frame. **Notice, I had to change the latitude and longitude to match the columns names in the dataframe.**
+
+```{r}
+sdf = sf::st_as_sf(
+    df2, 
+    coords = c("Longitude", "Latitude"), # what are the x and y dimension names
+    crs = 4326)
+```
+
+Map. You can click on the points to get more info.
+
+```{r}
+mapview::mapview(sdf)
+```
+
+If you want state labels:
+```
+sdf2 <- sdf %>% select(geometry, State)
+mapview::mapview(sdf2, label = sdf2$State)
+```
+
+
+## Read from Excel file
+
+```{r}
+fil <- file.path("/home", "jovyan", "shared", "2023-Hackbook", "r-notebooks", "data", "india_tide_guages.xlsx")
+df3 <- readxl::read_excel(fil, sheet = "Kerala")
+```
+
+Convert to spatial points.
+
+```{r}
+sdf = sf::st_as_sf(
+    df3, 
+    coords = c("Longitude", "Latitude"), # what are the x and y dimension names
+    crs = 4326)
+```
+
+```{r}
+mapview::mapview(sdf)
+```
+
+::: {.callout-tip}
+## Your Turn!
+
+Make some maps using mapview of your own data or data you can find on-line.
+
+Try the layer feature to change the base map.
+:::
+
+## Advanced programmers
+
+Try using customizing mapview to create some pretty maps of the tide guage data!
+
+Here are some ideas
+
+* https://www.paulamoraga.com/book-spatial/making-maps-with-r.html#mapview
+* Articles tab here https://r-spatial.github.io/mapview/index.html
+* This shows a nicer example of maps with ggplot https://r-spatial.org/r/2018/10/25/ggplot2-sf.html. 
+* Here are some examples of maps I made in R. Can you adapt the globe example to show India and add the tide guage points? https://eeholmes.github.io/30Maps/
+
+Here is another way to add point to ggplot() maps:
+```{r}
+library(maps)
+library(ggplot2)
+world_map <- map_data("world", region = "India")
+p <- ggplot() + coord_fixed() +
+  xlab("") + ylab("")
+
+#Add map to base plot
+base_world <- p + geom_polygon(data=world_map, aes(x=long, y=lat, group=group), 
+                               colour="light green", fill="light green")
+map_data <- 
+  base_world +
+  geom_sf(data=sdf)
+
+map_data
+```
+
+
+
