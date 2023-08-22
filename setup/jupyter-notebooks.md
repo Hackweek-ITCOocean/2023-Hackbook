@@ -58,13 +58,12 @@ dependencies:
   - pip
 ```
 
-<!--
-And then in a terminal do
+And then in a terminal do this to activate the environment.
 ```
 conda env create -f environment.yml --name myenv
 conda activate myenv
 conda list
 ```
--->
+
 
 

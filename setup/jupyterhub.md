@@ -67,7 +67,7 @@ On the left, you will see a folder called `shared`. These are read-only shared f
 * `tutorials` The folder with tutorials
 * `2023-Hackbook` The full Git repository with the files for https://hackweek-itcoocean.github.io/2023-Hackbook
 
-You will also see `shared-user`. This is a read-write folder for you to put files for everyone to see and use. You can create a team folder here for shared data and files.  Note, everyone can see and change these so be careful to communicate with your team so multiple people don't work on the same file at the same time. You can also create folders for each team member and agree not to change other team members files.
+You will also see `shared-public`. This is a read-write folder for you to put files for everyone to see and use. You can create a team folder here for shared data and files.  Note, everyone can see and change these so be careful to communicate with your team so multiple people don't work on the same file at the same time. You can also create folders for each team member and agree not to change other team members files.
 
 ### Your files
 
@@ -81,9 +81,7 @@ You can open a Jupyter Notebook by clicking on the "Python 3" box. In the Launch
 
 ![Jupyterhub Launcher](./img/jhub-launcher.png)
 
-Jupyter notebooks are a very common way to share Python code and tutorials. Because we are focusing on R in this course, we will not use Jupyter notebooks much but we have many Juptyer notebooks that you can experiment with in the `python-tutorials` folder.
-
-Get an overview of Jupyter Lab: [Intro to Jupyter Lab](jupyter-notebooks.md)
+Jupyter notebooks are a very common way to share Python code and tutorials. Because we are focusing on R in this course, we will not use Jupyter notebooks much but we have many Juptyer notebooks that you can experiment with in the `python-tutorials` folder. Get an overview of Jupyter Lab: [Intro to Jupyter Lab](jupyter-notebooks.md)
 
 ## Open RStudio
 
@@ -91,9 +89,7 @@ Get an overview of Jupyter Lab: [Intro to Jupyter Lab](jupyter-notebooks.md)
 
 ![Jupyterhub Launcher](./img/jhub-launcher.png)
 
-We will be mainly using RStudio in this course.
-
-Get an overview of RStudio: [Intro to RStudio](rstudio.md)
+We will be mainly using RStudio in this course. Get an overview of RStudio: [Intro to RStudio](rstudio.md)
 
 ## End your session
 
@@ -113,8 +109,8 @@ Being familiar with version control (making commits as you work), Git and GitHub
 
 We will cover using Git and GitHub in separate lectures
 
-* [Git in Jupyter Lab](git-jupyter.md)
 * [Git in RStudio](git-rstudio.md)
+* [Git in Jupyter Lab](git-jupyter.md) (optional not covered in this hackweek)
 
 
 ## References

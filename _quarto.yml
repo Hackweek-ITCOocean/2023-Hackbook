@@ -40,13 +40,9 @@ website:
           - text: "Overview"
             href: index.md
           - team.md
-          - data.md
+          - schedule.md
           - support.md
-      - section: "Logistics"
-        contents:
-          - logistics/index.md
-          - logistics/schedule.md
-      - section: "Set-up"
+      - section: "Cloud Tools"
         contents:
           - setup/index.md
           - text: JupyterHub
@@ -57,19 +53,16 @@ website:
             href: setup/jupyter-notebooks.md
           - setup/git.md
           - setup/earthdata.md
+          - setup/data.md
       - section: "Week 1"
         contents:
-          - week1-tutorials/01-AM-intro-to-regional-data.md
-          - week1-tutorials/01-PM-software.md
-          - week1-tutorials/02-AM-online-databases.md
-          - week1-tutorials/02-PM-git-and-github.md
-          - week1-tutorials/03-AM-raster-and-nc-in-R.md
-          - week1-tutorials/03-PM-spatial-maps-in-R.md
-          - week1-tutorials/04-AM-spatial-maps-in-R.md
-          - week1-tutorials/04-PM-intro-to-sdms.md
-          - week1-tutorials/05-AM-guest-lectures.md
-          - week1-tutorials/05-PM-project-brainstorming.md
-      - section: "Week 2"
+          - week1-tutorials/01-AM-preparing-data.md
+          - week1-tutorials/01-PM-project-pitches.md
+          - week1-tutorials/02-AM-sdm-part1.md
+          - week1-tutorials/03-AM-sdm-part2.md
+          - week1-tutorials/04-AM-guest-lectures.md
+          - week1-tutorials/05-PM-project-presentations.md
+      - section: "Week 2 Lectures"
         contents: 
           - week2-tutorials/01-AM-preparing-data.md
           - week2-tutorials/01-PM-project-pitches.md
@@ -77,6 +70,11 @@ website:
           - week2-tutorials/03-AM-sdm-part2.md
           - week2-tutorials/04-AM-guest-lectures.md
           - week2-tutorials/05-PM-project-presentations.md
+      - section: "R Tutorials"
+        contents:
+          - r-notebooks/Lab-setup.qmd
+          - r-notebooks/geospatial-lab1.qmd
+          - r-notebooks/SDM-lab1.qmd
       - section: "Python Tutorials"
         contents:
           - section: "Data Access"

@@ -14,8 +14,6 @@ Before the course, please do the following and send us the information with the 
 1. **Earthdata Login account** 
     - Create an Earthdata Login account (if you don't already have one) at <https://urs.earthdata.nasa.gov>
     - Remember your username and password; you will need to be logged in during the workshop!
-1. **Slack**
-    - Join our Slack workspace (invite sent via email). In the `2023-general` channel, introduce yourself to the group. 
 
 
 ## Install R and RStudio Desktop
@@ -46,16 +44,7 @@ Any of these is sufficient. Note, if you already program in R, you do not need t
 
 * One of the best free R courses is [Coursera's Learn R](https://www.coursera.org/learn/r-programming). You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material.
 
-### Slack
+### GitHub Discussion Board
 
-We will use Slack as a platform for discussions and questions, since the conversations are preserved and everyone can see the answers and discussions.
-
-You will be invited to the Hackweek-ITCOocean Slack organization. New to Slack? See this [Quick Start Guide](https://zenodo.org/record/3763730#.YYkoL3mIZpQ). We have three private Slack channels for the course: 
-
-**2023-general**: General channel is for announcements and general questions and communications.
- 
-**2023-projects**: Projects channel  is for for participants to pitch project ideas and discuss projects with the whole course group. As teams form you can have direct messages with your team (and we can create new channels as needed). 
-
-**2023-help**: Help channel is the place to get troubleshooting help: please paste error messages and post screenshots and we will help you by replying to your post.
-
+We will use GitHub Discussion boards for communication during the course. If you like, you can install the GitHub app on your phone and get updates when there are announcements.
 

@@ -31,10 +31,10 @@ title: Our Team
 <div>
 ### Dr. Eli Holmes
 
-<img src="assets/images/Eli.png" alt="Eli Holmes" style="width:75%; ; border-radius: 50%;">
+<img src="images/Eli.png" alt="Eli Holmes" style="width:75%; ; border-radius: 50%;">
 
 <!--
- ![](assets/images/Eli.png){width=75% fig-alt="picture of Eli Holmes"}
+ ![](images/Eli.png){width=75% fig-alt="picture of Eli Holmes"}
 -->
 
 [NOAA Fisheries](https://www.fisheries.noaa.gov/) and [University of Washington](https://fish.uw.edu/), USA.
@@ -45,10 +45,10 @@ title: Our Team
 <div>
 ### Dr. Nimit Kumar
 
-<img src="assets/images/nimit.png" alt="Nimit Kumar" style="width:75%; ; border-radius: 50%;">
+<img src="images/nimit.png" alt="Nimit Kumar" style="width:75%; ; border-radius: 50%;">
 
 <!--
-![](assets/images/nimit.png){width=75% fig-alt="picture of Nimit Kumar"}
+![](images/nimit.png){width=75% fig-alt="picture of Nimit Kumar"}
 -->
 
 Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
@@ -59,10 +59,10 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 <div>
 ### Dr. TVS Uday Bhaskar
 
-<img src="assets/images/Uday.jpeg" alt="Udaya Bhaskar" style="width:75%; ; border-radius: 50%;">
+<img src="images/Uday.jpeg" alt="Udaya Bhaskar" style="width:75%; ; border-radius: 50%;">
 
 <!--
-![](assets/images/Uday.jpeg){width=75% fig-alt="Uday Bhaskar"}
+![](images/Uday.jpeg){width=75% fig-alt="Uday Bhaskar"}
 -->
 
 Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
@@ -75,7 +75,7 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 <div>
 ### Aditi Modi
 
-<img src="assets/images/aditi.png" alt="Aditi Modi" style="width:75%; ; border-radius: 50%;">
+<img src="images/aditi.png" alt="Aditi Modi" style="width:75%; ; border-radius: 50%;">
 
 Centre for Climate Change Research, Indian Institute of Tropical Meteorology ([CCCR](http://cccr.tropmet.res.in/home/index.jsp)), Pune, India
 
@@ -86,7 +86,7 @@ Centre for Climate Change Research, Indian Institute of Tropical Meteorology ([C
 <div>
 ### Dr. Smitha BR
 
-<img src="assets/images/smitha.jpeg" alt="Smitha BR" style="width:75%; ; border-radius: 50%;">
+<img src="images/smitha.jpeg" alt="Smitha BR" style="width:75%; ; border-radius: 50%;">
 
 Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)), Kochi, India
 
@@ -97,7 +97,7 @@ Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)
 <div>
 ### Dr. Swarnali Majumder
 
-<img src="assets/images/swarnali.jpeg" alt="Swarnali Majumder" style="width:75%; ; border-radius: 50%;">
+<img src="images/swarnali.jpeg" alt="Swarnali Majumder" style="width:75%; ; border-radius: 50%;">
 
 Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
 
@@ -114,10 +114,10 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 <div>
 ### Jiarui Yu
 
-<img src="assets/images/jiarui.jpeg" alt="Jiarui Yu" style="width:75%; ; border-radius: 50%;">
+<img src="images/jiarui.jpeg" alt="Jiarui Yu" style="width:75%; ; border-radius: 50%;">
 
 <!--
-![](assets/images/jiarui.jpeg){width=75% fig-alt="Jiarui Yu"}
+![](images/jiarui.jpeg){width=75% fig-alt="Jiarui Yu"}
 -->
 
 Machine-learning tutorials; rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern
@@ -129,10 +129,10 @@ Machine-learning tutorials; rising senior Applied & Computational Mathematical S
 <div>
 ### Minh Phan
 
-<img src="assets/images/minh.jpeg" alt="Minh Phan" style="width:75%; ; border-radius: 50%;">
+<img src="images/minh.jpeg" alt="Minh Phan" style="width:75%; ; border-radius: 50%;">
 
 <!--
-![](assets/images/minh.jpeg){width=75% fig-alt="Minh Phan"}
+![](images/minh.jpeg){width=75% fig-alt="Minh Phan"}
 -->
 
 Indian Ocean database for hackweek, data access tutorials. rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern

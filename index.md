@@ -9,10 +9,13 @@ author: "International Training Centre for Operational Oceanography (ITCOocean),
 
 Welcome to the Sept 2023 training course on **Machine Learning based Species Distribution Modelling** hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.
 
-The course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from **September 11-22, 2023.** The event is free to attend, but an application is required. *The application period for the 2023 course has closed.*
-Please see the [course announcement](https://incois.gov.in/ITCOocean/itco097.jsp).
+The course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from **September 11-22, 2023.** [course announcement](https://incois.gov.in/ITCOocean/itco097.jsp).  *The application period for the 2023 course has closed.*
 
 ![](assets/images/banner.png)
+
+Course GitHub org: <https://github.com/Hackweek-ITCOocean>
+
+Course book with tutorials: <https://github.com/Hackweek-ITCOocean/2023-Cloudbook>
 
 ## Overview
 
@@ -46,8 +49,8 @@ Hackweeks are widely used in data science to teach new skills in an immersive pe
 - NASA Cloud EarthData 2022: 
   - <https://nasa-openscapes.github.io/2021-Cloud-Hackathon/>
   
-- OceanHackWeek 2022: 
-  - <https://oceanhackweek.org/ohw-resources/>
+- OceanHackWeek 2023: 
+  - <https://oceanhackweek.org/ohw23/index.html>
 
 - ICESat-2 2022 eScience Institute, University of Washington: 
   - <https://icesat-2-2022.hackweek.io/intro.html>
@@ -56,6 +59,7 @@ Hackweeks are widely used in data science to teach new skills in an immersive pe
 ### What to expect
 
 * During the first week of the ITCOocean course, participants will work on learning how to access, visualize and manipulate remote-sensing data in R. Participants will develop familiarity with the R language, with RStudio, and with Git and GitHub for collaboration.
+* During the second week of the ITCOocean course, participants will begin focusing on species distribution modeling and will work on a team project.
 * The course is an open science event: all tutorials and examples are developed openly and will be publicly available during and following the course. Participants will strengthen their practice of open science, using open source code and collaborating on their projects with course peers.
 
 In the two to three weeks leading up to the course, participants are encouraged to review background resources that will facilitate a more effective experience. 
