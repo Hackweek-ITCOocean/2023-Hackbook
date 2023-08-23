@@ -11,6 +11,7 @@ Set the data directory.
 * Create a folder called `data` if you don't have one.
 
 ```{r}
+here::i_am("r-notebooks/SDM-lab1.qmd")
 dir_data <- here::here("data")
 ```
 
@@ -42,6 +43,7 @@ This is a classic example for Species Distribution modeling. It is a sloth found
 
 ![](https://upload.wikimedia.org/wikipedia/commons/1/18/Bradypus.jpg)
 ```{r}
+if (!file.exists(obs_csv)){
 # get species occurrence data from GBIF with coordinates
 res <- spocc::occ(
     query = 'Bradypus variegatus', 
@@ -51,6 +53,7 @@ res <- spocc::occ(
 df <- res$gbif$data[[1]] 
 # write data to a file
 readr::write_csv(df, obs_csv)
+}
 ```
   
 ::: {.callout-tip}

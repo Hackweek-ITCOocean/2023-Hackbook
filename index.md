@@ -11,7 +11,7 @@ Welcome to the Sept 2023 training course on **Machine Learning based Species Dis
 
 The course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from **September 11-22, 2023.** [course announcement](https://incois.gov.in/ITCOocean/itco097.jsp).  *The application period for the 2023 course has closed.*
 
-![](assets/images/banner.png)
+![](images/banner.png)
 
 Course GitHub org: <https://github.com/Hackweek-ITCOocean>
 

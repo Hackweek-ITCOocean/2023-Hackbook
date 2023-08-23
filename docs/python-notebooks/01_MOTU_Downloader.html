@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2023 ITCOocean Hackweek – motu_downloader</title>
+<title>2023 ITCOocean Hackweek - Download sliced data using MOTU-Client in Copernicus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -136,11 +107,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Python Tutorials</li><li class="breadcrumb-item"><a href="../python-notebooks/00_NASA_Earthdata_Authentication.html">Data Access</a></li><li class="breadcrumb-item"><a href="../python-notebooks/01_MOTU_Downloader.html">Download sliced data using MOTU-Client in Copernicus</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -148,283 +124,305 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/images/incois-logos.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../images/incois-logos.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
-    <a href="https://Hackweek-ITCOocean.github.io" title="Hackweek ITCOocean" class="sidebar-tool px-1"><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook" title="2023 Hackweek Tutorials" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <a href="https://Hackweek-ITCOocean.github.io" title="Hackweek ITCOocean" class="quarto-navigation-tool px-1" aria-label="Hackweek ITCOocean"><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook" title="2023 Hackweek Tutorials" class="quarto-navigation-tool px-1" aria-label="2023 Hackweek Tutorials"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Welcome</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Welcome</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../team.html" class="sidebar-item-text sidebar-link">Our Team</a>
+  <a href="../team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Our Team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data.html" class="sidebar-item-text sidebar-link">Data</a>
+  <a href="../schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../support.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Set-up</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Logistics</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Daily Schedule</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../logistics/index.html" class="sidebar-item-text sidebar-link">Logistics overview</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../logistics/schedule.html" class="sidebar-item-text sidebar-link">Schedule</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Set-up</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">01 Monday</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">L Indian Ocean</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">L Remote-sensing data</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/index.html" class="sidebar-item-text sidebar-link">Set-up</a>
+  <a href="../content/01-github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">H GitHub 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/jupyterhub.html" class="sidebar-item-text sidebar-link">JupyterHub</a>
+  <a href="../content/01-intro-to-cloud-geoscience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L Geoscience cloud tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/rstudio.html" class="sidebar-item-text sidebar-link">R - RStudio</a>
+  <a href="../content/01-intro-to-jupyterhub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">H Jupyter hubs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../setup/jupyter-notebooks.html" class="sidebar-item-text sidebar-link">Python - Jupyter Notebooks</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../setup/git.html" class="sidebar-item-text sidebar-link">Git - Jupyter Lab</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../setup/earthdata.html" class="sidebar-item-text sidebar-link">Earthdata Login</a>
+  <a href="../content/01-rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">H RStudio</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Lectures</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">01 Monday</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
-  week1-tutorials/Monday.md
+ <span class="menu-text">L Indian Ocean</span>
   </li>
           <li class="sidebar-item">
-  week1-tutorials/Tuesday.md
+ <span class="menu-text">L Remote-sensing data</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/01-github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">H GitHub 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/01-intro-to-cloud-geoscience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L Geoscience cloud tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/01-intro-to-jupyterhub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">H Jupyter hubs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/01-rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">H RStudio</span></a>
+  </div>
+</li>
+      </ul>
   </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Week 2 Lectures</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">R Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
-  week2-tutorials/01-AM-preparing-data.md
-  </li>
-          <li class="sidebar-item">
-  week2-tutorials/01-PM-project-pitches.md
-  </li>
-          <li class="sidebar-item">
-  week2-tutorials/02-AM-sdm-part1.md
-  </li>
-          <li class="sidebar-item">
-  week2-tutorials/03-AM-sdm-part2.md
-  </li>
-          <li class="sidebar-item">
-  week2-tutorials/04-AM-guest-lectures.md
-  </li>
-          <li class="sidebar-item">
-  week2-tutorials/05-PM-project-presentations.md
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">R Tutorials</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-notebooks/Lab-setup.html" class="sidebar-item-text sidebar-link">Labs - Set up</a>
+  <a href="../r-notebooks/Lab-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs - Set up</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-notebooks/geospatial-lab1.html" class="sidebar-item-text sidebar-link">Geospatial in R - lab 1</a>
+  <a href="../r-notebooks/geospatial-lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial in R - lab 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-notebooks/SDM-lab1.html" class="sidebar-item-text sidebar-link">SDM lab 1 - Downloading species data</a>
+  <a href="../r-notebooks/SDM-lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SDM lab 1 - Downloading species data</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">Python Tutorials</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Python Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">Data Access</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text">Data Access</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">Authentication for NASA Earthdata</a>
+  <a href="../python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Authentication for NASA Earthdata</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/01_earthaccess_Downloader.html" class="sidebar-item-text sidebar-link">NASA Earth Data</a>
+  <a href="../python-notebooks/01_earthaccess_Downloader.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NASA Earth Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/01_ERA5_S3_Downloader.html" class="sidebar-item-text sidebar-link">Download Copernicus ERA5 Data with S3 without logging in</a>
+  <a href="../python-notebooks/01_ERA5_S3_Downloader.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Download Copernicus ERA5 Data with S3 without logging in</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/01_ERDDAP_Downloader.html" class="sidebar-item-text sidebar-link">Download data from NOAA ERDDAP using GRIDDAP</a>
+  <a href="../python-notebooks/01_ERDDAP_Downloader.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Download data from NOAA ERDDAP using GRIDDAP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/01_MOTU_Downloader.html" class="sidebar-item-text sidebar-link active">Download sliced data using MOTU-Client in Copernicus</a>
+  <a href="../python-notebooks/01_MOTU_Downloader.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Download sliced data using MOTU-Client in Copernicus</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">Using Data</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Using Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/02_Using_Data.html" class="sidebar-item-text sidebar-link">IO Zarr file</a>
+  <a href="../python-notebooks/02_Using_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IO Zarr file</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/02_Graphing_Data.html" class="sidebar-item-text sidebar-link">Graphing Data from our final product</a>
+  <a href="../python-notebooks/02_Graphing_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphing Data from our final product</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/02_Zarr_Access_netCDF.html" class="sidebar-item-text sidebar-link">Zarr Access for NetCDF4 files</a>
+  <a href="../python-notebooks/02_Zarr_Access_netCDF.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zarr Access for NetCDF4 files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/02_Xarray_hvplot.html" class="sidebar-item-text sidebar-link">03. Introduction to <code>xarray</code></a>
+  <a href="../python-notebooks/02_Xarray_hvplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Introduction to <code>xarray</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/02_Xarray_hvplot.html" class="sidebar-item-text sidebar-link">03. Introduction to <code>xarray</code></a>
+  <a href="../python-notebooks/02_Xarray_hvplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Introduction to <code>xarray</code></span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">Machine Learning</span>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Machine Learning</span></span>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">Applications</span>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Applications</span></span>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">IO Zarr Database</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">IO Zarr Database</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/04_Combining_Data.html" class="sidebar-item-text sidebar-link">Combine, clean, and export the data</a>
+  <a href="../python-notebooks/04_Combining_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Combine, clean, and export the data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/04_Appending_Data.html" class="sidebar-item-text sidebar-link">Adding new data</a>
+  <a href="../python-notebooks/04_Appending_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adding new data</span></a>
   </div>
 </li>
       </ul>
@@ -433,35 +431,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">Projects</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text">Projects</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../projects/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../projects/hackathon-projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hackathon Projects</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text">Further Resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../projects/index.html" class="sidebar-item-text sidebar-link">Projects Overview</a>
+  <a href="../content/03-r-and-python-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R and Python Resources</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../projects/hackathon-projects.html" class="sidebar-item-text sidebar-link">Hackathon Projects</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">Further Resources</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../further-resources.html" class="sidebar-item-text sidebar-link">Additional resources</a>
+  <a href="../content/03-further-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional resources</span></a>
   </div>
 </li>
       </ul>
@@ -469,20 +478,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#download-sliced-data-using-motu-client-in-copernicus" id="toc-download-sliced-data-using-motu-client-in-copernicus" class="nav-link active" data-scroll-target="#download-sliced-data-using-motu-client-in-copernicus">Download sliced data using MOTU-Client in Copernicus</a>
-  <ul class="collapse">
-  <li><a href="#store-credentials-in-bash" id="toc-store-credentials-in-bash" class="nav-link" data-scroll-target="#store-credentials-in-bash">Store credentials in bash</a></li>
+  <li><a href="#store-credentials-in-bash" id="toc-store-credentials-in-bash" class="nav-link active" data-scroll-target="#store-credentials-in-bash">Store credentials in bash</a></li>
   <li><a href="#motu-download-prompt-breakdown" id="toc-motu-download-prompt-breakdown" class="nav-link" data-scroll-target="#motu-download-prompt-breakdown">MOTU download prompt breakdown</a></li>
   <li><a href="#import-necessary-libraries" id="toc-import-necessary-libraries" class="nav-link" data-scroll-target="#import-necessary-libraries">Import necessary libraries</a></li>
   <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
   <li><a href="#combine-data" id="toc-combine-data" class="nav-link" data-scroll-target="#combine-data">Combine data</a></li>
-  </ul></li>
   <li><a href="#additional-data-clean-later" id="toc-additional-data-clean-later" class="nav-link" data-scroll-target="#additional-data-clean-later">Additional data (clean later)</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/Hackweek-ITCOocean/2023-Hackbook/blob/main/python-notebooks/01_MOTU_Downloader.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -490,10 +497,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Download sliced data using MOTU-Client in Copernicus</h1>
+</div>
 
 
-<section id="download-sliced-data-using-motu-client-in-copernicus" class="level1">
-<h1>Download sliced data using MOTU-Client in Copernicus</h1>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <section id="written-by-minh-phan" class="level3">
 <h3 class="anchored" data-anchor-id="written-by-minh-phan">Written by Minh Phan</h3>
 <p>Most of our data is obtained from Copernicus, “the Earth Observation component of the European Union’s space programme, looking at our planet and its environment for the benefit of Europe’s citizens” (copernicus.eu). Copernicus data, aside from traditional download methods using ERDDAP, also offers downloading using MOTU Service, “a Web Server allowing to handle and extract oceanographic huge volumes of data, creating the connection between heterogeneous data providers and end-users” (help.marine.copernicus.eu), if available. More information on MOTU can be accessed <a href="https://help.marine.copernicus.eu/en/articles/4796533-what-are-the-motu-apis">here</a>.</p>
@@ -2182,7 +2202,7 @@ python -m motuclient –motu https://my.cmems-du.eu/motu-web/Motu –service-id 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="01_MOTU_Downloader_files/figure-html/f4e22ba6-7eb1-461f-bae3-4168bb007d8a-1-96356e5d-b6e3-417c-92ec-f050da344fb1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">image.png</figcaption><p></p>
+<figcaption class="figure-caption">image.png</figcaption>
 </figure>
 </div>
 </section>
@@ -2590,121 +2610,90 @@ Attributes: (12/45)
        73.375, 73.625, 73.875, 74.125, 74.375, 74.625, 74.875, 75.125, 75.375,
        75.625, 75.875, 76.125, 76.375, 76.625, 76.875, 77.125, 77.375, 77.625,
        77.875, 78.125, 78.375, 78.625, 78.875, 79.125, 79.375, 79.625, 79.875],
-      dtype=float32)</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-83f7b8e3-2ebd-4340-8b72-507e4e6b24ce" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-83f7b8e3-2ebd-4340-8b72-507e4e6b24ce" class="xr-section-summary">Data variables: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>adt</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(31, 81, 81), meta=np.ndarray&gt;</div><input id="attrs-2c937486-6276-4b01-a512-e74ee4b6b024" class="xr-var-attrs-in" type="checkbox"><label for="attrs-2c937486-6276-4b01-a512-e74ee4b6b024" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-9b580007-bbdc-46d7-acd4-b5bf7f1f1082" class="xr-var-data-in" type="checkbox"><label for="data-9b580007-bbdc-46d7-acd4-b5bf7f1f1082" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>comment :</span></dt><dd>The absolute dynamic topography is the sea surface height above geoid; the adt is obtained as follows: adt=sla+mdt where mdt is the mean dynamic topography; see the product user manual for details</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Absolute dynamic topography</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height_above_geoid</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>_ChunkSizes :</span></dt><dd>[ 1 50 50]</dd></dl></div><div class="xr-var-data"><table>
-    <tbody><tr>
-        <td>
-            <table style="border-collapse: collapse;">
-                <thead>
-                    <tr>
-                        <td> </td>
-                        <th> Array </th>
-                        <th> Chunk </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <th> Bytes </th>
-                        <td> 36.59 MiB </td>
-                        <td> 1.55 MiB </td>
-                    </tr>
-                    
-                    <tr>
-                        <th> Shape </th>
-                        <td> (731, 81, 81) </td>
-                        <td> (31, 81, 81) </td>
-                    </tr>
-                    <tr>
-                        <th> Dask graph </th>
-                        <td colspan="2"> 24 chunks in 49 graph layers </td>
-                    </tr>
-                    <tr>
-                        <th> Data type </th>
-                        <td colspan="2"> float64 numpy.ndarray </td>
-                    </tr>
-                </tbody>
-            </table>
-        </td>
-        <td>
-        <svg width="169" height="159" style="stroke:rgb(0,0,0);stroke-width:1">
-
-  <!-- Horizontal lines -->
-  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2"></line>
-  <line x1="10" y1="39" x2="80" y2="109" style="stroke-width:2"></line>
-
-  <!-- Vertical lines -->
-  <line x1="10" y1="0" x2="10" y2="39" style="stroke-width:2"></line>
-  <line x1="12" y1="2" x2="12" y2="42"></line>
-  <line x1="15" y1="5" x2="15" y2="44"></line>
-  <line x1="18" y1="8" x2="18" y2="47"></line>
-  <line x1="24" y1="14" x2="24" y2="53"></line>
-  <line x1="27" y1="17" x2="27" y2="56"></line>
-  <line x1="30" y1="20" x2="30" y2="59"></line>
-  <line x1="33" y1="23" x2="33" y2="62"></line>
-  <line x1="39" y1="29" x2="39" y2="68"></line>
-  <line x1="42" y1="32" x2="42" y2="71"></line>
-  <line x1="45" y1="35" x2="45" y2="74"></line>
-  <line x1="48" y1="38" x2="48" y2="77"></line>
-  <line x1="54" y1="44" x2="54" y2="83"></line>
-  <line x1="56" y1="46" x2="56" y2="86"></line>
-  <line x1="59" y1="49" x2="59" y2="89"></line>
-  <line x1="62" y1="52" x2="62" y2="91"></line>
-  <line x1="68" y1="58" x2="68" y2="97"></line>
-  <line x1="71" y1="61" x2="71" y2="100"></line>
-  <line x1="74" y1="64" x2="74" y2="103"></line>
-  <line x1="80" y1="70" x2="80" y2="109" style="stroke-width:2"></line>
-
-  <!-- Colored Rectangle -->
-  <polygon points="10.0,0.0 80.58823529411765,70.58823529411765 80.58823529411765,109.74577315357195 10.0,39.1575378594543" style="fill:#8B4903A0;stroke-width:0"></polygon>
-
-  <!-- Horizontal lines -->
-  <line x1="10" y1="0" x2="49" y2="0" style="stroke-width:2"></line>
-  <line x1="12" y1="2" x2="52" y2="2"></line>
-  <line x1="15" y1="5" x2="54" y2="5"></line>
-  <line x1="18" y1="8" x2="57" y2="8"></line>
-  <line x1="24" y1="14" x2="63" y2="14"></line>
-  <line x1="27" y1="17" x2="66" y2="17"></line>
-  <line x1="30" y1="20" x2="69" y2="20"></line>
-  <line x1="33" y1="23" x2="72" y2="23"></line>
-  <line x1="39" y1="29" x2="78" y2="29"></line>
-  <line x1="42" y1="32" x2="81" y2="32"></line>
-  <line x1="45" y1="35" x2="84" y2="35"></line>
-  <line x1="48" y1="38" x2="87" y2="38"></line>
-  <line x1="54" y1="44" x2="93" y2="44"></line>
-  <line x1="56" y1="46" x2="96" y2="46"></line>
-  <line x1="59" y1="49" x2="99" y2="49"></line>
-  <line x1="62" y1="52" x2="101" y2="52"></line>
-  <line x1="68" y1="58" x2="107" y2="58"></line>
-  <line x1="71" y1="61" x2="110" y2="61"></line>
-  <line x1="74" y1="64" x2="113" y2="64"></line>
-  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2"></line>
-
-  <!-- Vertical lines -->
-  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2"></line>
-  <line x1="49" y1="0" x2="119" y2="70" style="stroke-width:2"></line>
-
-  <!-- Colored Rectangle -->
-  <polygon points="10.0,0.0 49.1575378594543,0.0 119.74577315357195,70.58823529411765 80.58823529411765,70.58823529411765" style="fill:#8B4903A0;stroke-width:0"></polygon>
-
-  <!-- Horizontal lines -->
-  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2"></line>
-  <line x1="80" y1="109" x2="119" y2="109" style="stroke-width:2"></line>
-
-  <!-- Vertical lines -->
-  <line x1="80" y1="70" x2="80" y2="109" style="stroke-width:2"></line>
-  <line x1="119" y1="70" x2="119" y2="109" style="stroke-width:2"></line>
-
-  <!-- Colored Rectangle -->
-  <polygon points="80.58823529411765,70.58823529411765 119.74577315357195,70.58823529411765 119.74577315357195,109.74577315357195 80.58823529411765,109.74577315357195" style="fill:#ECB172A0;stroke-width:0"></polygon>
-
-  <!-- Text -->
-  <text x="100.167004" y="129.745773" font-size="1.0rem" font-weight="100" text-anchor="middle">81</text>
-  <text x="139.745773" y="90.167004" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,139.745773,90.167004)">81</text>
-  <text x="35.294118" y="94.451656" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294118,94.451656)">731</text>
-</svg>
-        </td>
-    </tr>
-</tbody></table></div></li><li class="xr-var-item"><div class="xr-var-name"><span>crs</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">-2147483647 ... -2147483647</div><input id="attrs-0acda811-60c0-4fdc-a767-446f2d07798b" class="xr-var-attrs-in" type="checkbox"><label for="attrs-0acda811-60c0-4fdc-a767-446f2d07798b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-bdb0ba36-8da7-4ccf-b997-6db091516c1e" class="xr-var-data-in" type="checkbox"><label for="data-bdb0ba36-8da7-4ccf-b997-6db091516c1e" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>comment :</span></dt><dd>This is a container variable that describes the grid_mapping used by the data in this file. This variable does not contain any data; only information about the geographic coordinate system.</dd><dt><span>inverse_flattening :</span></dt><dd>298.257</dd><dt><span>grid_mapping_name :</span></dt><dd>latitude_longitude</dd><dt><span>semi_major_axis :</span></dt><dd>6378136.3</dd><dt><span>_CoordinateTransformType :</span></dt><dd>Projection</dd><dt><span>_CoordinateAxisTypes :</span></dt><dd>GeoX GeoY</dd></dl></div><div class="xr-var-data"><pre>array([-2147483647, -2147483647, -2147483647, -2147483647, -2147483647,
+      dtype=float32)</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-83f7b8e3-2ebd-4340-8b72-507e4e6b24ce" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-83f7b8e3-2ebd-4340-8b72-507e4e6b24ce" class="xr-section-summary">Data variables: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>adt</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(31, 81, 81), meta=np.ndarray&gt;</div><input id="attrs-2c937486-6276-4b01-a512-e74ee4b6b024" class="xr-var-attrs-in" type="checkbox"><label for="attrs-2c937486-6276-4b01-a512-e74ee4b6b024" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-9b580007-bbdc-46d7-acd4-b5bf7f1f1082" class="xr-var-data-in" type="checkbox"><label for="data-9b580007-bbdc-46d7-acd4-b5bf7f1f1082" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>comment :</span></dt><dd>The absolute dynamic topography is the sea surface height above geoid; the adt is obtained as follows: adt=sla+mdt where mdt is the mean dynamic topography; see the product user manual for details</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Absolute dynamic topography</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height_above_geoid</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>_ChunkSizes :</span></dt><dd>[ 1 50 50]</dd></dl></div><div class="xr-var-data">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th></th>
+<th data-quarto-table-cell-role="th">Array</th>
+<th data-quarto-table-cell-role="th">Chunk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Bytes</td>
+<td>36.59 MiB</td>
+<td>1.55 MiB</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Shape</td>
+<td>(731, 81, 81)</td>
+<td>(31, 81, 81)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Dask graph</td>
+<td colspan="2">24 chunks in 49 graph layers</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Data type</td>
+<td colspan="2">float64 numpy.ndarray</td>
+</tr>
+</tbody>
+</table></td>
+<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTY5IiBoZWlnaHQ9IjE1OSIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSI4MCIgeTI9IjcwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIzOSIgeDI9IjgwIiB5Mj0iMTA5IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iMTAiIHkyPSIzOSIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjEyIiB5MT0iMiIgeDI9IjEyIiB5Mj0iNDIiPjwvbGluZT4KICA8bGluZSB4MT0iMTUiIHkxPSI1IiB4Mj0iMTUiIHkyPSI0NCI+PC9saW5lPgogIDxsaW5lIHgxPSIxOCIgeTE9IjgiIHgyPSIxOCIgeTI9IjQ3Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTQiIHgyPSIyNCIgeTI9IjUzIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI3IiB5MT0iMTciIHgyPSIyNyIgeTI9IjU2Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjMwIiB5MT0iMjAiIHgyPSIzMCIgeTI9IjU5Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjMzIiB5MT0iMjMiIHgyPSIzMyIgeTI9IjYyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjM5IiB5MT0iMjkiIHgyPSIzOSIgeTI9IjY4Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjQyIiB5MT0iMzIiIHgyPSI0MiIgeTI9IjcxIj48L2xpbmU+CiAgPGxpbmUgeDE9IjQ1IiB5MT0iMzUiIHgyPSI0NSIgeTI9Ijc0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjQ4IiB5MT0iMzgiIHgyPSI0OCIgeTI9Ijc3Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU0IiB5MT0iNDQiIHgyPSI1NCIgeTI9IjgzIj48L2xpbmU+CiAgPGxpbmUgeDE9IjU2IiB5MT0iNDYiIHgyPSI1NiIgeTI9Ijg2Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU5IiB5MT0iNDkiIHgyPSI1OSIgeTI9Ijg5Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjYyIiB5MT0iNTIiIHgyPSI2MiIgeTI9IjkxIj48L2xpbmU+CiAgPGxpbmUgeDE9IjY4IiB5MT0iNTgiIHgyPSI2OCIgeTI9Ijk3Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjcxIiB5MT0iNjEiIHgyPSI3MSIgeTI9IjEwMCI+PC9saW5lPgogIDxsaW5lIHgxPSI3NCIgeTE9IjY0IiB4Mj0iNzQiIHkyPSIxMDMiPjwvbGluZT4KICA8bGluZSB4MT0iODAiIHkxPSI3MCIgeDI9IjgwIiB5Mj0iMTA5IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDgwLjU4ODIzNTI5NDExNzY1LDcwLjU4ODIzNTI5NDExNzY1IDgwLjU4ODIzNTI5NDExNzY1LDEwOS43NDU3NzMxNTM1NzE5NSAxMC4wLDM5LjE1NzUzNzg1OTQ1NDMiIHN0eWxlPSJmaWxsOiM4QjQ5MDNBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIEhvcml6b250YWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjQ5IiB5Mj0iMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjEyIiB5MT0iMiIgeDI9IjUyIiB5Mj0iMiI+PC9saW5lPgogIDxsaW5lIHgxPSIxNSIgeTE9IjUiIHgyPSI1NCIgeTI9IjUiPjwvbGluZT4KICA8bGluZSB4MT0iMTgiIHkxPSI4IiB4Mj0iNTciIHkyPSI4Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTQiIHgyPSI2MyIgeTI9IjE0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjI3IiB5MT0iMTciIHgyPSI2NiIgeTI9IjE3Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjMwIiB5MT0iMjAiIHgyPSI2OSIgeTI9IjIwIj48L2xpbmU+CiAgPGxpbmUgeDE9IjMzIiB5MT0iMjMiIHgyPSI3MiIgeTI9IjIzIj48L2xpbmU+CiAgPGxpbmUgeDE9IjM5IiB5MT0iMjkiIHgyPSI3OCIgeTI9IjI5Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjQyIiB5MT0iMzIiIHgyPSI4MSIgeTI9IjMyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjQ1IiB5MT0iMzUiIHgyPSI4NCIgeTI9IjM1Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjQ4IiB5MT0iMzgiIHgyPSI4NyIgeTI9IjM4Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU0IiB5MT0iNDQiIHgyPSI5MyIgeTI9IjQ0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU2IiB5MT0iNDYiIHgyPSI5NiIgeTI9IjQ2Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU5IiB5MT0iNDkiIHgyPSI5OSIgeTI9IjQ5Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjYyIiB5MT0iNTIiIHgyPSIxMDEiIHkyPSI1MiI+PC9saW5lPgogIDxsaW5lIHgxPSI2OCIgeTE9IjU4IiB4Mj0iMTA3IiB5Mj0iNTgiPjwvbGluZT4KICA8bGluZSB4MT0iNzEiIHkxPSI2MSIgeDI9IjExMCIgeTI9IjYxIj48L2xpbmU+CiAgPGxpbmUgeDE9Ijc0IiB5MT0iNjQiIHgyPSIxMTMiIHkyPSI2NCI+PC9saW5lPgogIDxsaW5lIHgxPSI4MCIgeTE9IjcwIiB4Mj0iMTE5IiB5Mj0iNzAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSI4MCIgeTI9IjcwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iNDkiIHkxPSIwIiB4Mj0iMTE5IiB5Mj0iNzAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMTAuMCwwLjAgNDkuMTU3NTM3ODU5NDU0MywwLjAgMTE5Ljc0NTc3MzE1MzU3MTk1LDcwLjU4ODIzNTI5NDExNzY1IDgwLjU4ODIzNTI5NDExNzY1LDcwLjU4ODIzNTI5NDExNzY1IiBzdHlsZT0iZmlsbDojOEI0OTAzQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSI4MCIgeTE9IjcwIiB4Mj0iMTE5IiB5Mj0iNzAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4MCIgeTE9IjEwOSIgeDI9IjExOSIgeTI9IjEwOSIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjgwIiB5MT0iNzAiIHgyPSI4MCIgeTI9IjEwOSIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjExOSIgeTE9IjcwIiB4Mj0iMTE5IiB5Mj0iMTA5IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjgwLjU4ODIzNTI5NDExNzY1LDcwLjU4ODIzNTI5NDExNzY1IDExOS43NDU3NzMxNTM1NzE5NSw3MC41ODgyMzUyOTQxMTc2NSAxMTkuNzQ1NzczMTUzNTcxOTUsMTA5Ljc0NTc3MzE1MzU3MTk1IDgwLjU4ODIzNTI5NDExNzY1LDEwOS43NDU3NzMxNTM1NzE5NSIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gVGV4dCAtLT4KICA8dGV4dCB4PSIxMDAuMTY3MDA0IiB5PSIxMjkuNzQ1NzczIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+ODE8L3RleHQ+CiAgPHRleHQgeD0iMTM5Ljc0NTc3MyIgeT0iOTAuMTY3MDA0IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCwxMzkuNzQ1NzczLDkwLjE2NzAwNCkiPjgxPC90ZXh0PgogIDx0ZXh0IHg9IjM1LjI5NDExOCIgeT0iOTQuNDUxNjU2IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoNDUsMzUuMjk0MTE4LDk0LjQ1MTY1NikiPjczMTwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<div class="xr-var-name">
+<span>crs</span>
+</div>
+<div class="xr-var-dims">
+(time)
+</div>
+<div class="xr-var-dtype">
+int32
+</div>
+<div class="xr-var-preview xr-preview">
+-2147483647 ... -2147483647
+</div>
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<div class="xr-var-attrs">
+<dl>
+<dt><span>comment :</span></dt>
+<dd>
+This is a container variable that describes the grid_mapping used by the data in this file. This variable does not contain any data; only information about the geographic coordinate system.
+</dd>
+<dt><span>inverse_flattening :</span></dt>
+<dd>
+298.257
+</dd>
+<dt><span>grid_mapping_name :</span></dt>
+<dd>
+latitude_longitude
+</dd>
+<dt><span>semi_major_axis :</span></dt>
+<dd>
+6378136.3
+</dd>
+<dt><span>_CoordinateTransformType :</span></dt>
+<dd>
+Projection
+</dd>
+<dt><span>_CoordinateAxisTypes :</span></dt>
+<dd>
+GeoX GeoY
+</dd>
+</dl>
+</div>
+<div class="xr-var-data">
+<pre><code>array([-2147483647, -2147483647, -2147483647, -2147483647, -2147483647,
        -2147483647, -2147483647, -2147483647, -2147483647, -2147483647,
        -2147483647, -2147483647, -2147483647, -2147483647, -2147483647,
        -2147483647, -2147483647, -2147483647, -2147483647, -2147483647,
@@ -2744,131 +2733,106 @@ Attributes: (12/45)
        -2147483647, -2147483647, -2147483647, -2147483647, -2147483647,
        -2147483647, -2147483647, -2147483647, -2147483647, -2147483647,
        -2147483647, -2147483647, -2147483647, -2147483647, -2147483647,
-       -2147483647], dtype=int32)</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>sla</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(31, 81, 81), meta=np.ndarray&gt;</div><input id="attrs-364ecd9f-c52f-4f50-b5df-2914dfebfe24" class="xr-var-attrs-in" type="checkbox"><label for="attrs-364ecd9f-c52f-4f50-b5df-2914dfebfe24" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-c55c16f5-4227-4b04-8ebe-f49e4a0196ae" class="xr-var-data-in" type="checkbox"><label for="data-c55c16f5-4227-4b04-8ebe-f49e4a0196ae" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>ancillary_variables :</span></dt><dd>err_sla</dd><dt><span>comment :</span></dt><dd>The sea level anomaly is the sea surface height above mean sea surface; it is referenced to the [1993, 2012] period; see the product user manual for details</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Sea level anomaly</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height_above_sea_level</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>_ChunkSizes :</span></dt><dd>[ 1 50 50]</dd></dl></div><div class="xr-var-data"><table>
-    <tbody><tr>
-        <td>
-            <table style="border-collapse: collapse;">
-                <thead>
-                    <tr>
-                        <td> </td>
-                        <th> Array </th>
-                        <th> Chunk </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <th> Bytes </th>
-                        <td> 36.59 MiB </td>
-                        <td> 1.55 MiB </td>
-                    </tr>
-                    
-                    <tr>
-                        <th> Shape </th>
-                        <td> (731, 81, 81) </td>
-                        <td> (31, 81, 81) </td>
-                    </tr>
-                    <tr>
-                        <th> Dask graph </th>
-                        <td colspan="2"> 24 chunks in 49 graph layers </td>
-                    </tr>
-                    <tr>
-                        <th> Data type </th>
-                        <td colspan="2"> float64 numpy.ndarray </td>
-                    </tr>
-                </tbody>
-            </table>
-        </td>
-        <td>
-        <svg width="169" height="159" style="stroke:rgb(0,0,0);stroke-width:1">
+       -2147483647], dtype=int32)</code></pre>
+</div>
+<div class="xr-var-name">
+<span>sla</span>
+</div>
+<div class="xr-var-dims">
+(time, latitude, longitude)
+</div>
+<div class="xr-var-dtype">
+float64
+</div>
+<div class="xr-var-preview xr-preview">
+dask.array&lt;chunksize=(31, 81, 81), meta=np.ndarray&gt;
+</div>
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<div class="xr-var-attrs">
+<dl>
+<dt><span>ancillary_variables :</span></dt>
+<dd>
+err_sla
+</dd>
+<dt><span>comment :</span></dt>
+<dd>
+The sea level anomaly is the sea surface height above mean sea surface; it is referenced to the [1993, 2012] period; see the product user manual for details
+</dd>
+<dt><span>grid_mapping :</span></dt>
+<dd>
+crs
+</dd>
+<dt><span>long_name :</span></dt>
+<dd>
+Sea level anomaly
+</dd>
+<dt><span>standard_name :</span></dt>
+<dd>
+sea_surface_height_above_sea_level
+</dd>
+<dt><span>units :</span></dt>
+<dd>
+m
+</dd>
+<dt><span>_ChunkSizes :</span></dt>
+<dd>
+[ 1 50 50]
+</dd>
+</dl>
+</div>
+<div class="xr-var-data">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th></th>
+<th data-quarto-table-cell-role="th">Array</th>
+<th data-quarto-table-cell-role="th">Chunk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Bytes</td>
+<td>36.59 MiB</td>
+<td>1.55 MiB</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Shape</td>
+<td>(731, 81, 81)</td>
+<td>(31, 81, 81)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Dask graph</td>
+<td colspan="2">24 chunks in 49 graph layers</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Data type</td>
+<td colspan="2">float64 numpy.ndarray</td>
+</tr>
+</tbody>
+</table></td>
+<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTY5IiBoZWlnaHQ9IjE1OSIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSI4MCIgeTI9IjcwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIzOSIgeDI9IjgwIiB5Mj0iMTA5IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iMTAiIHkyPSIzOSIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjEyIiB5MT0iMiIgeDI9IjEyIiB5Mj0iNDIiPjwvbGluZT4KICA8bGluZSB4MT0iMTUiIHkxPSI1IiB4Mj0iMTUiIHkyPSI0NCI+PC9saW5lPgogIDxsaW5lIHgxPSIxOCIgeTE9IjgiIHgyPSIxOCIgeTI9IjQ3Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTQiIHgyPSIyNCIgeTI9IjUzIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI3IiB5MT0iMTciIHgyPSIyNyIgeTI9IjU2Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjMwIiB5MT0iMjAiIHgyPSIzMCIgeTI9IjU5Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjMzIiB5MT0iMjMiIHgyPSIzMyIgeTI9IjYyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjM5IiB5MT0iMjkiIHgyPSIzOSIgeTI9IjY4Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjQyIiB5MT0iMzIiIHgyPSI0MiIgeTI9IjcxIj48L2xpbmU+CiAgPGxpbmUgeDE9IjQ1IiB5MT0iMzUiIHgyPSI0NSIgeTI9Ijc0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjQ4IiB5MT0iMzgiIHgyPSI0OCIgeTI9Ijc3Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU0IiB5MT0iNDQiIHgyPSI1NCIgeTI9IjgzIj48L2xpbmU+CiAgPGxpbmUgeDE9IjU2IiB5MT0iNDYiIHgyPSI1NiIgeTI9Ijg2Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU5IiB5MT0iNDkiIHgyPSI1OSIgeTI9Ijg5Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjYyIiB5MT0iNTIiIHgyPSI2MiIgeTI9IjkxIj48L2xpbmU+CiAgPGxpbmUgeDE9IjY4IiB5MT0iNTgiIHgyPSI2OCIgeTI9Ijk3Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjcxIiB5MT0iNjEiIHgyPSI3MSIgeTI9IjEwMCI+PC9saW5lPgogIDxsaW5lIHgxPSI3NCIgeTE9IjY0IiB4Mj0iNzQiIHkyPSIxMDMiPjwvbGluZT4KICA8bGluZSB4MT0iODAiIHkxPSI3MCIgeDI9IjgwIiB5Mj0iMTA5IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDgwLjU4ODIzNTI5NDExNzY1LDcwLjU4ODIzNTI5NDExNzY1IDgwLjU4ODIzNTI5NDExNzY1LDEwOS43NDU3NzMxNTM1NzE5NSAxMC4wLDM5LjE1NzUzNzg1OTQ1NDMiIHN0eWxlPSJmaWxsOiM4QjQ5MDNBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIEhvcml6b250YWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjQ5IiB5Mj0iMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjEyIiB5MT0iMiIgeDI9IjUyIiB5Mj0iMiI+PC9saW5lPgogIDxsaW5lIHgxPSIxNSIgeTE9IjUiIHgyPSI1NCIgeTI9IjUiPjwvbGluZT4KICA8bGluZSB4MT0iMTgiIHkxPSI4IiB4Mj0iNTciIHkyPSI4Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTQiIHgyPSI2MyIgeTI9IjE0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjI3IiB5MT0iMTciIHgyPSI2NiIgeTI9IjE3Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjMwIiB5MT0iMjAiIHgyPSI2OSIgeTI9IjIwIj48L2xpbmU+CiAgPGxpbmUgeDE9IjMzIiB5MT0iMjMiIHgyPSI3MiIgeTI9IjIzIj48L2xpbmU+CiAgPGxpbmUgeDE9IjM5IiB5MT0iMjkiIHgyPSI3OCIgeTI9IjI5Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjQyIiB5MT0iMzIiIHgyPSI4MSIgeTI9IjMyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjQ1IiB5MT0iMzUiIHgyPSI4NCIgeTI9IjM1Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjQ4IiB5MT0iMzgiIHgyPSI4NyIgeTI9IjM4Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU0IiB5MT0iNDQiIHgyPSI5MyIgeTI9IjQ0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU2IiB5MT0iNDYiIHgyPSI5NiIgeTI9IjQ2Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjU5IiB5MT0iNDkiIHgyPSI5OSIgeTI9IjQ5Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjYyIiB5MT0iNTIiIHgyPSIxMDEiIHkyPSI1MiI+PC9saW5lPgogIDxsaW5lIHgxPSI2OCIgeTE9IjU4IiB4Mj0iMTA3IiB5Mj0iNTgiPjwvbGluZT4KICA8bGluZSB4MT0iNzEiIHkxPSI2MSIgeDI9IjExMCIgeTI9IjYxIj48L2xpbmU+CiAgPGxpbmUgeDE9Ijc0IiB5MT0iNjQiIHgyPSIxMTMiIHkyPSI2NCI+PC9saW5lPgogIDxsaW5lIHgxPSI4MCIgeTE9IjcwIiB4Mj0iMTE5IiB5Mj0iNzAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSI4MCIgeTI9IjcwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iNDkiIHkxPSIwIiB4Mj0iMTE5IiB5Mj0iNzAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMTAuMCwwLjAgNDkuMTU3NTM3ODU5NDU0MywwLjAgMTE5Ljc0NTc3MzE1MzU3MTk1LDcwLjU4ODIzNTI5NDExNzY1IDgwLjU4ODIzNTI5NDExNzY1LDcwLjU4ODIzNTI5NDExNzY1IiBzdHlsZT0iZmlsbDojOEI0OTAzQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSI4MCIgeTE9IjcwIiB4Mj0iMTE5IiB5Mj0iNzAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4MCIgeTE9IjEwOSIgeDI9IjExOSIgeTI9IjEwOSIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjgwIiB5MT0iNzAiIHgyPSI4MCIgeTI9IjEwOSIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjExOSIgeTE9IjcwIiB4Mj0iMTE5IiB5Mj0iMTA5IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjgwLjU4ODIzNTI5NDExNzY1LDcwLjU4ODIzNTI5NDExNzY1IDExOS43NDU3NzMxNTM1NzE5NSw3MC41ODgyMzUyOTQxMTc2NSAxMTkuNzQ1NzczMTUzNTcxOTUsMTA5Ljc0NTc3MzE1MzU3MTk1IDgwLjU4ODIzNTI5NDExNzY1LDEwOS43NDU3NzMxNTM1NzE5NSIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gVGV4dCAtLT4KICA8dGV4dCB4PSIxMDAuMTY3MDA0IiB5PSIxMjkuNzQ1NzczIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+ODE8L3RleHQ+CiAgPHRleHQgeD0iMTM5Ljc0NTc3MyIgeT0iOTAuMTY3MDA0IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCwxMzkuNzQ1NzczLDkwLjE2NzAwNCkiPjgxPC90ZXh0PgogIDx0ZXh0IHg9IjM1LjI5NDExOCIgeT0iOTQuNDUxNjU2IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoNDUsMzUuMjk0MTE4LDk0LjQ1MTY1NikiPjczMTwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</div>
 
-  <!-- Horizontal lines -->
-  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2"></line>
-  <line x1="10" y1="39" x2="80" y2="109" style="stroke-width:2"></line>
-
-  <!-- Vertical lines -->
-  <line x1="10" y1="0" x2="10" y2="39" style="stroke-width:2"></line>
-  <line x1="12" y1="2" x2="12" y2="42"></line>
-  <line x1="15" y1="5" x2="15" y2="44"></line>
-  <line x1="18" y1="8" x2="18" y2="47"></line>
-  <line x1="24" y1="14" x2="24" y2="53"></line>
-  <line x1="27" y1="17" x2="27" y2="56"></line>
-  <line x1="30" y1="20" x2="30" y2="59"></line>
-  <line x1="33" y1="23" x2="33" y2="62"></line>
-  <line x1="39" y1="29" x2="39" y2="68"></line>
-  <line x1="42" y1="32" x2="42" y2="71"></line>
-  <line x1="45" y1="35" x2="45" y2="74"></line>
-  <line x1="48" y1="38" x2="48" y2="77"></line>
-  <line x1="54" y1="44" x2="54" y2="83"></line>
-  <line x1="56" y1="46" x2="56" y2="86"></line>
-  <line x1="59" y1="49" x2="59" y2="89"></line>
-  <line x1="62" y1="52" x2="62" y2="91"></line>
-  <line x1="68" y1="58" x2="68" y2="97"></line>
-  <line x1="71" y1="61" x2="71" y2="100"></line>
-  <line x1="74" y1="64" x2="74" y2="103"></line>
-  <line x1="80" y1="70" x2="80" y2="109" style="stroke-width:2"></line>
-
-  <!-- Colored Rectangle -->
-  <polygon points="10.0,0.0 80.58823529411765,70.58823529411765 80.58823529411765,109.74577315357195 10.0,39.1575378594543" style="fill:#8B4903A0;stroke-width:0"></polygon>
-
-  <!-- Horizontal lines -->
-  <line x1="10" y1="0" x2="49" y2="0" style="stroke-width:2"></line>
-  <line x1="12" y1="2" x2="52" y2="2"></line>
-  <line x1="15" y1="5" x2="54" y2="5"></line>
-  <line x1="18" y1="8" x2="57" y2="8"></line>
-  <line x1="24" y1="14" x2="63" y2="14"></line>
-  <line x1="27" y1="17" x2="66" y2="17"></line>
-  <line x1="30" y1="20" x2="69" y2="20"></line>
-  <line x1="33" y1="23" x2="72" y2="23"></line>
-  <line x1="39" y1="29" x2="78" y2="29"></line>
-  <line x1="42" y1="32" x2="81" y2="32"></line>
-  <line x1="45" y1="35" x2="84" y2="35"></line>
-  <line x1="48" y1="38" x2="87" y2="38"></line>
-  <line x1="54" y1="44" x2="93" y2="44"></line>
-  <line x1="56" y1="46" x2="96" y2="46"></line>
-  <line x1="59" y1="49" x2="99" y2="49"></line>
-  <line x1="62" y1="52" x2="101" y2="52"></line>
-  <line x1="68" y1="58" x2="107" y2="58"></line>
-  <line x1="71" y1="61" x2="110" y2="61"></line>
-  <line x1="74" y1="64" x2="113" y2="64"></line>
-  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2"></line>
-
-  <!-- Vertical lines -->
-  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2"></line>
-  <line x1="49" y1="0" x2="119" y2="70" style="stroke-width:2"></line>
-
-  <!-- Colored Rectangle -->
-  <polygon points="10.0,0.0 49.1575378594543,0.0 119.74577315357195,70.58823529411765 80.58823529411765,70.58823529411765" style="fill:#8B4903A0;stroke-width:0"></polygon>
-
-  <!-- Horizontal lines -->
-  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2"></line>
-  <line x1="80" y1="109" x2="119" y2="109" style="stroke-width:2"></line>
-
-  <!-- Vertical lines -->
-  <line x1="80" y1="70" x2="80" y2="109" style="stroke-width:2"></line>
-  <line x1="119" y1="70" x2="119" y2="109" style="stroke-width:2"></line>
-
-  <!-- Colored Rectangle -->
-  <polygon points="80.58823529411765,70.58823529411765 119.74577315357195,70.58823529411765 119.74577315357195,109.74577315357195 80.58823529411765,109.74577315357195" style="fill:#ECB172A0;stroke-width:0"></polygon>
-
-  <!-- Text -->
-  <text x="100.167004" y="129.745773" font-size="1.0rem" font-weight="100" text-anchor="middle">81</text>
-  <text x="139.745773" y="90.167004" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,139.745773,90.167004)">81</text>
-  <text x="35.294118" y="94.451656" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294118,94.451656)">731</text>
-</svg>
-        </td>
-    </tr>
-</tbody></table></div></li></ul></div></li><li class="xr-section-item"><input id="section-c973f337-dd60-4289-bb61-c55f9e037312" class="xr-section-summary-in" type="checkbox"><label for="section-c973f337-dd60-4289-bb61-c55f9e037312" class="xr-section-summary">Attributes: <span>(45)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>FROM_ORIGINAL_FILE__Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>comment :</span></dt><dd>Sea Surface Height measured by Altimetry and derived variables</dd><dt><span>contact :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_email :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_name :</span></dt><dd>CMEMS - Sea Level Thematic Assembly Center</dd><dt><span>creator_url :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>date_created :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>date_issued :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>date_modified :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_max :</span></dt><dd>89.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_min :</span></dt><dd>-89.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_resolution :</span></dt><dd>0.25</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_max :</span></dt><dd>179.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_min :</span></dt><dd>-179.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_resolution :</span></dt><dd>0.25</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>down</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>point</dd><dt><span>geospatial_vertical_units :</span></dt><dd>m</dd><dt><span>history :</span></dt><dd>2023-03-01 17:56:27Z: Creation</dd><dt><span>institution :</span></dt><dd>CLS, CNES</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Topography &gt; Sea Surface Height</dd><dt><span>keywords_vocabulary :</span></dt><dd>NetCDF COARDS Climate and Forecast Standard Names</dd><dt><span>license :</span></dt><dd>http://marine.copernicus.eu/web/27-service-commitments-and-licence.php</dd><dt><span>FROM_ORIGINAL_FILE__platform :</span></dt><dd>Altika Drifting Phase, Cryosat-2 New Orbit, Haiyang-2B, Jason-3 Interleaved, Sentinel-3A, Sentinel-3B, Sentinel-6A</dd><dt><span>processing_level :</span></dt><dd>L4</dd><dt><span>FROM_ORIGINAL_FILE__product_version :</span></dt><dd>vDec2021</dd><dt><span>project :</span></dt><dd>COPERNICUS MARINE ENVIRONMENT MONITORING SERVICE (CMEMS)</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>FROM_ORIGINAL_FILE__software_version :</span></dt><dd>7.1_DUACS_DT2021_baseline</dd><dt><span>source :</span></dt><dd>Altimetry measurements</dd><dt><span>ssalto_duacs_comment :</span></dt><dd>The reference mission used for the altimeter inter-calibration processing is Topex/Poseidon between 1993-01-01 and 2002-04-23, Jason-1 between 2002-04-24 and 2008-10-18, OSTM/Jason-2 between 2008-10-19 and 2016-06-25, Jason-3 between 2016-06-25 and 2022-02-09, and Sentinel-6A from 2022-02-10.</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention Standard Name Table v37</dd><dt><span>summary :</span></dt><dd>SSALTO/DUACS Delayed-Time Level-4 sea surface height and derived variables measured by multi-satellite altimetry observations over Global Ocean.</dd><dt><span>time_coverage_duration :</span></dt><dd>P1D</dd><dt><span>time_coverage_end :</span></dt><dd>2022-08-04T12:00:00Z</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1D</dd><dt><span>time_coverage_start :</span></dt><dd>2022-08-03T12:00:00Z</dd><dt><span>title :</span></dt><dd>DT merged all satellites Global Ocean Gridded SSALTO/DUACS Sea Surface Height L4 product and derived variables</dd><dt><span>_CoordSysBuilder :</span></dt><dd>ucar.nc2.dataset.conv.CF1Convention</dd></dl></div></li></ul></div></div>
+</div></li></ul></div></li><li class="xr-section-item"><input id="section-c973f337-dd60-4289-bb61-c55f9e037312" class="xr-section-summary-in" type="checkbox"><label for="section-c973f337-dd60-4289-bb61-c55f9e037312" class="xr-section-summary">Attributes: <span>(45)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>FROM_ORIGINAL_FILE__Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>comment :</span></dt><dd>Sea Surface Height measured by Altimetry and derived variables</dd><dt><span>contact :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_email :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_name :</span></dt><dd>CMEMS - Sea Level Thematic Assembly Center</dd><dt><span>creator_url :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>date_created :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>date_issued :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>date_modified :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_max :</span></dt><dd>89.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_min :</span></dt><dd>-89.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_resolution :</span></dt><dd>0.25</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_max :</span></dt><dd>179.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_min :</span></dt><dd>-179.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_resolution :</span></dt><dd>0.25</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>down</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>point</dd><dt><span>geospatial_vertical_units :</span></dt><dd>m</dd><dt><span>history :</span></dt><dd>2023-03-01 17:56:27Z: Creation</dd><dt><span>institution :</span></dt><dd>CLS, CNES</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Topography &gt; Sea Surface Height</dd><dt><span>keywords_vocabulary :</span></dt><dd>NetCDF COARDS Climate and Forecast Standard Names</dd><dt><span>license :</span></dt><dd>http://marine.copernicus.eu/web/27-service-commitments-and-licence.php</dd><dt><span>FROM_ORIGINAL_FILE__platform :</span></dt><dd>Altika Drifting Phase, Cryosat-2 New Orbit, Haiyang-2B, Jason-3 Interleaved, Sentinel-3A, Sentinel-3B, Sentinel-6A</dd><dt><span>processing_level :</span></dt><dd>L4</dd><dt><span>FROM_ORIGINAL_FILE__product_version :</span></dt><dd>vDec2021</dd><dt><span>project :</span></dt><dd>COPERNICUS MARINE ENVIRONMENT MONITORING SERVICE (CMEMS)</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>FROM_ORIGINAL_FILE__software_version :</span></dt><dd>7.1_DUACS_DT2021_baseline</dd><dt><span>source :</span></dt><dd>Altimetry measurements</dd><dt><span>ssalto_duacs_comment :</span></dt><dd>The reference mission used for the altimeter inter-calibration processing is Topex/Poseidon between 1993-01-01 and 2002-04-23, Jason-1 between 2002-04-24 and 2008-10-18, OSTM/Jason-2 between 2008-10-19 and 2016-06-25, Jason-3 between 2016-06-25 and 2022-02-09, and Sentinel-6A from 2022-02-10.</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention Standard Name Table v37</dd><dt><span>summary :</span></dt><dd>SSALTO/DUACS Delayed-Time Level-4 sea surface height and derived variables measured by multi-satellite altimetry observations over Global Ocean.</dd><dt><span>time_coverage_duration :</span></dt><dd>P1D</dd><dt><span>time_coverage_end :</span></dt><dd>2022-08-04T12:00:00Z</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1D</dd><dt><span>time_coverage_start :</span></dt><dd>2022-08-03T12:00:00Z</dd><dt><span>title :</span></dt><dd>DT merged all satellites Global Ocean Gridded SSALTO/DUACS Sea Surface Height L4 product and derived variables</dd><dt><span>_CoordSysBuilder :</span></dt><dd>ucar.nc2.dataset.conv.CF1Convention</dd></dl></div></li></ul></div></div>
 </div>
 </div>
-</section>
 </section>
 <section id="additional-data-clean-later" class="level1">
 <h1>Additional data (clean later)</h1>
 <div class="cell" data-tags="[]" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">8</span>))</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">10</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">8</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">10</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>&lt;matplotlib.image.AxesImage at 0x7fbfea436e50&gt;</code></pre>
 </div>
@@ -2877,11 +2841,11 @@ Attributes: (12/45)
 </div>
 </div>
 <div class="cell" data-tags="[]" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>][<span class="dv">0</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">120</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>][<span class="dv">1</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">240</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>][<span class="dv">0</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">360</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>][<span class="dv">1</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>][<span class="dv">0</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">120</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>][<span class="dv">1</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">240</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>][<span class="dv">0</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">360</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>][<span class="dv">1</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>&lt;matplotlib.image.AxesImage at 0x7fbfe05db790&gt;</code></pre>
 </div>
@@ -3036,9 +3000,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -3103,6 +3081,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -3157,7 +3221,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">ITCOocean (2023). 2023 Hackweek</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">ITCOocean (2023). 2023 Hackweek</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

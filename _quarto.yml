@@ -19,7 +19,7 @@ website:
   page-footer: "ITCOocean (2023). 2023 Hackweek" 
  
   sidebar:
-    logo: assets/images/incois-logos.png
+    logo: images/incois-logos.png
     pinned: true
     align: center
     tools: 
@@ -41,35 +41,34 @@ website:
             href: index.md
           - team.md
           - schedule.md
+          - setup.md
           - support.md
-      - section: "Cloud Tools"
+      - section: "Daily Schedule"
         contents:
-          - setup/index.md
-          - text: JupyterHub
-            href: setup/jupyterhub.md
-          - text: R - RStudio
-            href: setup/rstudio.md
-          - text: Python - Jupyter Notebooks
-            href: setup/jupyter-notebooks.md
-          - setup/git.md
-          - setup/earthdata.md
-          - setup/data.md
-      - section: "Week 1"
-        contents:
-          - week1-tutorials/01-AM-preparing-data.md
-          - week1-tutorials/01-PM-project-pitches.md
-          - week1-tutorials/02-AM-sdm-part1.md
-          - week1-tutorials/03-AM-sdm-part2.md
-          - week1-tutorials/04-AM-guest-lectures.md
-          - week1-tutorials/05-PM-project-presentations.md
-      - section: "Week 2 Lectures"
-        contents: 
-          - week2-tutorials/01-AM-preparing-data.md
-          - week2-tutorials/01-PM-project-pitches.md
-          - week2-tutorials/02-AM-sdm-part1.md
-          - week2-tutorials/03-AM-sdm-part2.md
-          - week2-tutorials/04-AM-guest-lectures.md
-          - week2-tutorials/05-PM-project-presentations.md
+          - section: "01 Monday"
+            contents:
+              - text: L Indian Ocean
+              - text: L Remote-sensing data
+              - text: H GitHub 1
+                href: content/01-github.md
+              - text: L Geoscience cloud tools
+                href: content/01-intro-to-cloud-geoscience.qmd
+              - text: H Jupyter hubs
+                href: content/01-intro-to-jupyterhub.qmd
+              - text: H RStudio
+                href: content/01-rstudio.html
+          - section: "01 Monday"
+            contents:
+              - text: L Indian Ocean
+              - text: L Remote-sensing data
+              - text: H GitHub 1
+                href: content/01-github.md
+              - text: L Geoscience cloud tools
+                href: content/01-intro-to-cloud-geoscience.qmd
+              - text: H Jupyter hubs
+                href: content/01-intro-to-jupyterhub.qmd
+              - text: H RStudio
+                href: content/01-rstudio.html
       - section: "R Tutorials"
         contents:
           - r-notebooks/Lab-setup.qmd
@@ -105,7 +104,8 @@ website:
           - projects/hackathon-projects.md
       - section: "Further Resources"
         contents:
-          - further-resources.md
+          - content/03-r-and-python-resources.md
+          - content/03-further-resources.md
 
 format:
   html:
