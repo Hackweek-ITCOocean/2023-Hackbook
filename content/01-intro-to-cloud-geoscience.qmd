@@ -16,7 +16,7 @@ title: Geoscience in the Cloud
 
 ## Open infrastructure for geoscience
 
-Let's start by watch a short video by James Colliander, founder of 2i2c which is supporting the ITCOocean JupyterHub. 2i2c is working to open access to cloud computing, especially to the global south.
+Let's start by watch a short video by James Colliander, founder of 2i2c which is supporting the ITCOocean JupyterHub. 2i2c is working to open access to cloud computing. ITCOocean is the first 2i2c JupyterHub in India (actually first in the global south).
 
 {{< video https://www.youtube.com/watch?v=9itR-_EXa5c >}}
 

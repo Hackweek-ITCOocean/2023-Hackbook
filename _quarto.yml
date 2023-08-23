@@ -57,7 +57,7 @@ website:
                 href: content/01-intro-to-jupyterhub.qmd
               - text: H RStudio
                 href: content/01-rstudio.html
-          - section: "01 Monday"
+          - section: "01 Tuesday"
             contents:
               - text: L Indian Ocean
               - text: L Remote-sensing data
