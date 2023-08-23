@@ -1,7 +1,7 @@
 
 ## ITCOocean Hackweeks: Machine learning and ocean remote-sensing data
 
-![banner](assets/images/readme-header.png)
+![banner](images/readme-header.png)
 
 ### Welcome
 
