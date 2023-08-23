@@ -57,18 +57,6 @@ website:
                 href: content/01-intro-to-jupyterhub.qmd
               - text: H RStudio
                 href: content/01-rstudio.html
-          - section: "01 Tuesday"
-            contents:
-              - text: L Indian Ocean
-              - text: L Remote-sensing data
-              - text: H GitHub 1
-                href: content/01-github.md
-              - text: L Geoscience cloud tools
-                href: content/01-intro-to-cloud-geoscience.qmd
-              - text: H Jupyter hubs
-                href: content/01-intro-to-jupyterhub.qmd
-              - text: H RStudio
-                href: content/01-rstudio.html
       - section: "R Tutorials"
         contents:
           - r-notebooks/Lab-setup.qmd
