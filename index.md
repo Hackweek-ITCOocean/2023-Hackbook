@@ -15,8 +15,6 @@ The course and hackweek will take place at the ITCOocean training centre in Hyde
 
 Course GitHub org: <https://github.com/Hackweek-ITCOocean>
 
-Course book with tutorials: <https://github.com/Hackweek-ITCOocean/2023-Cloudbook>
-
 ## Overview
 
 The the era of big data in the earth sciences is here and learning how to effectively use oceanographic remote-sensing data, both in the cloud and on your computer, is a core skill for modern fisheries science and management. Learning how to access cloud-based data, visualize these data, use these data in models, and use the tools of modern reproducible and collaborative science is the main goal of this course. Through the course, participants will gain experience with assessing remote-sensing data in the cloud, R and RStudio, and collaborating with Git and GitHub. *Python users: Python is also very heavily used in big data geosciences. The course tutorials will focus on R, however you are welcome to use Python during the course if you are more comfortable with that.*

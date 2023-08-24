@@ -6,5 +6,4 @@ title: Schedule
 
 ## Draft schedule
 
-![](images/draft-schedule.png){width=80% fig-alt="schedule"}
-
+<iframe  width=800 height=600 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXd93LMFEqpPbqHLTigapdHdNYxGZTHlxe_I1UofGEVLE6OyTeGp_G1T2xodqGBOCi9p1jxvLGWE0b/pubhtml?widget=true&amp;headers=false"></iframe>

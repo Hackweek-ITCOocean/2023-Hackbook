@@ -1,8 +1,5 @@
 ---
 title: SDM lab 1 - Downloading species data
-editor: 
-  markdown: 
-    wrap: 72
 ---
 
 Set the data directory.
@@ -11,7 +8,7 @@ Set the data directory.
 * Create a folder called `data` if you don't have one.
 
 ```{r}
-here::i_am("r-notebooks/SDM-lab1.qmd")
+here::i_am("SDM-lab1.qmd")
 dir_data <- here::here("data")
 ```
 
@@ -53,6 +50,8 @@ res <- spocc::occ(
 df <- res$gbif$data[[1]] 
 # write data to a file
 readr::write_csv(df, obs_csv)
+}else{
+  df <- readr::read_csv(obs_csv)
 }
 ```
   
@@ -62,9 +61,9 @@ readr::write_csv(df, obs_csv)
 Type `names(res)` and then `names(res$gbif)`. Then type `df` to see what is in the dataframe.
 :::
 
-Make a table of the dataframe.
+Make a table of the first few lines of the dataframe.
 ```{r}
-knitr::kable(df)
+knitr::kable(df %>% head)
 ```
 
 Convert to points of observation from lon/lat columns in data frame. This part is using the sf R package to make our dataframe into a geospatial object. This way the mapping functions will be able to plot the points easily.

@@ -101,21 +101,16 @@ You will also see `shared-public`. This is a read-write folder for you to put fi
 You will also see other folders of Python content for the Python users. We will have a separate introduction to Jupyter Notebooks.
 
 
-## Python users
+## **Python users
 
 You can open a Jupyter Notebook by clicking on the "Python 3" box. In the Launcher tab:
 
 ![Jupyterhub Launcher](./img/jhub-launcher.png)
 
-Jupyter notebooks are a very common way to share Python code and tutorials. Because we are focusing on R in this course, we will not use Jupyter notebooks much but we have many Juptyer notebooks that you can experiment with in the `python-tutorials` folder. Get an overview of Jupyter Lab: [Intro to Jupyter Lab](./content/jupyter-notebooks.html)
+Jupyter notebooks are a very common way to share Python code and tutorials. Because we are focusing on R in this course, we will not use Jupyter notebooks much but we have many Juptyer notebooks that you can experiment with in the `python-tutorials` folder. Get an overview of Jupyter Lab: [Intro to Jupyter Lab](./content/jupyter-notebooks.html) Learn about the [geosciences tools in Python](https://foundations.projectpythia.org)
 
 *Note: Python users can run Python in RStudio and R users can run R in Jupyter Notebooks.*
 
-## References
-
- * [Project Pythia](https://foundations.projectpythia.org)
- * [Why Jupyter is data scientists’ computational notebook of choice](https://www.nature.com/articles/d41586-018-07196-1)
- * [Closed Platforms vs. Open Architectures for Cloud-Native Earth System Analytics](https://medium.com/pangeo/closed-platforms-vs-open-architectures-for-cloud-native-earth-system-analytics-1ad88708ebb6)
 
 ## FAQ
 
@@ -127,7 +122,7 @@ Jupyter notebooks are a very common way to share Python code and tutorials. Beca
 **Can other users see the files in my /home/jovyan folder?** No, other users can not see your credentials.
 
 
-## Acknowledgements
+### Acknowledgements
 
 Some sections of this document have been taken from  hackweeks organized by the University of Washington eScience Institute and Openscapes.
 

@@ -6,7 +6,7 @@ project:
     - "!nasa-tutorials/*.ipynb"
 
 execute:
-  freeze: true
+  freeze: auto
   
 website:
   page-navigation: true  
@@ -55,13 +55,38 @@ website:
                 href: content/01-intro-to-cloud-geoscience.qmd
               - text: H Jupyter hubs
                 href: content/01-intro-to-jupyterhub.qmd
+          - section: "01 Tuesday"
+            contents:
+              - text: L Online RS data
+              - text: L EarthData and Copernicus
               - text: H RStudio
-                href: content/01-rstudio.html
-      - section: "R Tutorials"
-        contents:
-          - r-notebooks/Lab-setup.qmd
-          - r-notebooks/geospatial-lab1.qmd
-          - r-notebooks/SDM-lab1.qmd
+                href: content/02-rstudio.md
+              - text: H GitHub 2
+                href: content/02-github-2.md
+              - text: H Quarto
+          - section: "01 Wednesday"
+            contents:
+              - text: L Climate change
+              - text: L IndOBIS
+              - text: H Programming with AI
+                href: content/02-rstudio.md
+              - text: H Git
+                href: content/03-git-rstudio.md
+              - text: H Loading data in R
+          - section: "01 Thursday"
+            contents:
+              - text: L SDMs
+              - text: L SDM examples
+              - text: L Statistics 1
+              - text: H Lab Setup
+                href: r-notebooks/Lab-setup.qmd
+              - text: H Geospatial Lab 1
+                href: r-notebooks/geospatial-lab1.qmd
+          - section: "01 Friday"
+            contents:
+              - text: L How to sprint
+              - text: L Statistics 2
+              - text: H Geospatial Lab 2
       - section: "Python Tutorials"
         contents:
           - section: "Data Access"
@@ -92,8 +117,8 @@ website:
           - projects/hackathon-projects.md
       - section: "Further Resources"
         contents:
-          - content/03-r-and-python-resources.md
-          - content/03-further-resources.md
+          - content/XX-r-and-python-resources.md
+          - content/XX-further-resources.md
 
 format:
   html:

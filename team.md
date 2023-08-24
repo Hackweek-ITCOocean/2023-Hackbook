@@ -107,6 +107,10 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 
 </div>
 
+## Speakers
+
+<div class="columns-3">
+
 ## Support
 
 <div class="columns-3">
