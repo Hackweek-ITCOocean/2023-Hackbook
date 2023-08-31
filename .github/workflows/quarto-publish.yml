@@ -23,7 +23,7 @@ jobs:
       
       # add software dependencies here
       - name: Install packages (needed for Rmd)
-        run: Rscript -e 'install.packages(c("rmarkdown", "knitr", "jsonlite", "here")'
+        run: Rscript -e 'install.packages(c("rmarkdown", "knitr", "jsonlite", "here"))'
 
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
