@@ -24,7 +24,7 @@ title: Our Team
 }
 </style>
 
-## Instructors
+## Organizers and Instructors
 
 <div class="columns-3">
 
@@ -110,6 +110,21 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 ## Speakers
 
 <div class="columns-3">
+
+<div>
+
+<div>
+### Johnny Konjarla
+
+<img src="images/johnny.jpeg" alt="Johnny Konjarla" style="width:75%; ; border-radius: 50%;">
+
+Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)), Kochi, India
+
+**Links:** [webpage](https://oceanexpert.org/expert/33322) &#x2022;  [Linkedin](https://www.linkedin.com/in/johnny-konjarla-59b37152/) &#x2022; [ORCID](https://orcid.org/0000-0003-3181-0498)
+
+</div>
+
+</div>
 
 ## Support
 

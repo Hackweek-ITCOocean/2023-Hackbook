@@ -74,7 +74,7 @@
     "href": "content/01-intro-to-cloud-geoscience.html#why-are-we-using-a-cloud-environment",
     "title": "Geoscience in the Cloud",
     "section": "Why are we using a cloud environment?",
-    "text": "Why are we using a cloud environment?\n“Anyone working with large-scale Earth System data today faces the same general problems:\n\nThe data we want to work with are huge (typical analyses involve several TB at least)\nThe data we need are produced and distributed by many different organizations (NASA, NOAA, ESGF, Copernicus, etc.)\nWe want to apply a wide range of different analysis methodologies to the data, from simple statistics to signal processing to machine learning.\n\nThe community is waking up to the idea that we can’t simply expect scientists to download all this data to their personal computers for processing.”\nRyan Abernathey, Pangeo Project.\n\n\n\nDownload-based workflow. From Abernathey, Ryan (2020): Data Access Modes in Science"
+    "text": "Why are we using a cloud environment?\n“Anyone working with large-scale Earth System data today faces the same general problems:\n\nThe data we want to work with are huge (typical analyses involve several TB at least)\nThe data we need are produced and distributed by many different organizations (NASA, NOAA, ESGF, Copernicus, etc.)\nWe want to apply a wide range of different analysis methodologies to the data, from simple statistics to signal processing to machine learning.\n\nThe community is waking up to the idea that we can’t simply expect scientists to download all this data to their personal computers for processing.”\nRyan Abernathey, Pangeo Project.\n\n\n\nDownload-based workflow. From Abernathey, Ryan (2020): Data Access Modes in Science\n\n\n\nPangeo Link to tutorial on Pangeo ecosystem"
   },
   {
     "objectID": "content/01-intro-to-cloud-geoscience.html#references",
@@ -1393,8 +1393,8 @@
     "text": "NOAA Fisheries and University of Washington, USA.\nLinks: webpage • GitHub • ORCID\n\n\n\n\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nLinks: webpage • ORCID\n\n\n\n\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nLinks: ResearchGate • ORCID\n\n\n\n\n\n\nCentre for Climate Change Research, Indian Institute of Tropical Meteorology (CCCR), Pune, India\nLinks: webpage • GitHub • ORCID\n\n\n\n\nCentre for Marine Living Resources & Ecology (CMLRE), Kochi, India\nLinks: webpage • ORCID\n\n\n\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nLinks: webpage • ORCID"
   },
   {
-    "objectID": "team.html#instructors",
-    "href": "team.html#instructors",
+    "objectID": "team.html#organizers-and-instructors",
+    "href": "team.html#organizers-and-instructors",
     "title": "Our Team",
     "section": "",
     "text": "NOAA Fisheries and University of Washington, USA.\nLinks: webpage • GitHub • ORCID\n\n\n\n\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nLinks: webpage • ORCID\n\n\n\n\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nLinks: ResearchGate • ORCID\n\n\n\n\n\n\nCentre for Climate Change Research, Indian Institute of Tropical Meteorology (CCCR), Pune, India\nLinks: webpage • GitHub • ORCID\n\n\n\n\nCentre for Marine Living Resources & Ecology (CMLRE), Kochi, India\nLinks: webpage • ORCID\n\n\n\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nLinks: webpage • ORCID"
@@ -1404,7 +1404,7 @@
     "href": "team.html#speakers",
     "title": "Our Team",
     "section": "Speakers",
-    "text": "Speakers"
+    "text": "Speakers\n\n\n\n\nJohnny Konjarla\n\nCentre for Marine Living Resources & Ecology (CMLRE), Kochi, India\nLinks: webpage • Linkedin • ORCID"
   },
   {
     "objectID": "team.html#support",

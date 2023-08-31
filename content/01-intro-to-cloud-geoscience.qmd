@@ -34,6 +34,10 @@ The community is waking up to the idea that we can’t simply expect scientists 
 
 ![Download-based workflow. From Abernathey, Ryan (2020): Data Access Modes in Science](https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/22017009/preview.jpg)
 
+![](https://training.galaxyproject.org/training-material/topics/climate/images/pangeo-ecosystem-2020.png)
+
+[Pangeo](https://pangeo.io/index.html) [Link to tutorial on Pangeo ecosystem](https://training.galaxyproject.org/training-material/topics/climate/tutorials/pangeo-notebook/slides.html#1)
+
 ## References
 
 * [Closed Platforms vs. Open Architectures for Cloud-Native Earth System Analytics](https://medium.com/pangeo/closed-platforms-vs-open-architectures-for-cloud-native-earth-system-analytics-1ad88708ebb6)
