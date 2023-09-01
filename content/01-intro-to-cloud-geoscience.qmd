@@ -38,8 +38,14 @@ The community is waking up to the idea that we can’t simply expect scientists 
 
 [Pangeo](https://pangeo.io/index.html) [Link to tutorial on Pangeo ecosystem](https://training.galaxyproject.org/training-material/topics/climate/tutorials/pangeo-notebook/slides.html#1)
 
+
+## Cloud optimized geospatial data
+
+* [Methods for Generating and Testing Cloud-Optimized Geospatial Formats](https://developmentseed.org/cloud-optimized-geospatial-formats-guide/)
+
 ## References
 
 * [Closed Platforms vs. Open Architectures for Cloud-Native Earth System Analytics](https://medium.com/pangeo/closed-platforms-vs-open-architectures-for-cloud-native-earth-system-analytics-1ad88708ebb6)
 * [Why Jupyter is data scientists’ computational notebook of choice](https://www.nature.com/articles/d41586-018-07196-1)
+* [NASA MAAP Project](https://docs.maap-project.org/en/latest/getting_started/about_maap.html)
 

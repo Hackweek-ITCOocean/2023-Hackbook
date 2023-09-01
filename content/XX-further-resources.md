@@ -10,7 +10,7 @@ title: Additional resources
 - [OceanHackWeek](https://oceanhackweek.org)
 - ICESat-2 2023 eScience Institute, University of Washington [website](https://icesat-2-2023.hackweek.io/)
 - [PO.DAAC Github Repository](https://github.com/podaac)
-
+- [NASA MAAP Notebooks](https://docs.maap-project.org/en/latest/science_examples.html) Click the GitHub link in top right to get to the Jupyter Notebooks
 
 ## How to
 
