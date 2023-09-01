@@ -26,6 +26,7 @@ require(sf)
 require(spocc)
 require(knitr)
 require(dplyr)
+require(readr)
 ```
 
 ## spocc R package
