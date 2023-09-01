@@ -7,9 +7,13 @@
 
 Welcome to **Machine Learning based Species Distribution Modelling** hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India and supported by [NOAA Fisheries, NWFSC Mathematetical Biology Program](https://nwfsc-math-bio.github.io/) via a NOAA International Fellowship.
 
-The Cloud Hackathon will take place at the ITCOocean training centre in Hyderabad, India from **September 11-22, 2023.** The event is free to attend, but an [application](https://incois.gov.in/ITCOocean/itco097.jsp) is required. 
+The course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from **September 11-22, 2023.** [course announcement](https://incois.gov.in/ITCOocean/itco097.jsp).  *The application period for the 2023 course has closed.*
 
-Please see the [course announcement](https://incois.gov.in/ITCOocean/itco097.jsp) for details on the course and application.
+![](images/banner.png)
+
+Course GitHub org: <https://github.com/Hackweek-ITCOocean>
+
+Course Website: <https://Hackweek-ITCOocean.github.io/2023-Hackbook>
 
 ### Overview
 
