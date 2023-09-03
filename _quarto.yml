@@ -139,6 +139,7 @@ format:
     css: styles.css
     toc: true
     toc-depth: 2
+    include-before-body: translate.html
 
 filters:
   - include-files.lua
