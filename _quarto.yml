@@ -40,6 +40,8 @@ website:
         contents:
           - section: "01 Monday"
             contents:
+              - text: Welcome
+                href: https://docs.google.com/presentation/d/1aTFqbtuedzKYHwflu9XVo_impSjKZoSzHEznGAIJnPw/edit?usp=sharing
               - text: L Indian Ocean
               - text: L Remote-sensing data
               - text: H GitHub 1
