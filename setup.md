@@ -11,6 +11,7 @@ Before the course, please do the following and send us the information with the 
 1. **GitHub username**
     - Create a GitHub account (if you don’t already have one) at <https://github.com>. Advice for choosing a GitHub username: this is a professional username that you will use in work/academic communities. GitHub accounts are not anonymous; this is for sharing work. Using your real name is common.
     - Remember your username and password; you will need to be logged in during the course!
+    - Here is [a video](https://www.youtube.com/watch?v=nHXw4mGoqiE) showing the whole process
 1. **Earthdata Login account** 
     - Create an Earthdata Login account (if you don't already have one) at <https://urs.earthdata.nasa.gov>
     - Remember your username and password; you will need to be logged in during the course!

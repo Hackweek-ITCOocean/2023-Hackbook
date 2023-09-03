@@ -77,11 +77,18 @@
     "text": "Why are we using a cloud environment?\n“Anyone working with large-scale Earth System data today faces the same general problems:\n\nThe data we want to work with are huge (typical analyses involve several TB at least)\nThe data we need are produced and distributed by many different organizations (NASA, NOAA, ESGF, Copernicus, etc.)\nWe want to apply a wide range of different analysis methodologies to the data, from simple statistics to signal processing to machine learning.\n\nThe community is waking up to the idea that we can’t simply expect scientists to download all this data to their personal computers for processing.”\nRyan Abernathey, Pangeo Project.\n\n\n\nDownload-based workflow. From Abernathey, Ryan (2020): Data Access Modes in Science\n\n\n\nPangeo Link to tutorial on Pangeo ecosystem"
   },
   {
+    "objectID": "content/01-intro-to-cloud-geoscience.html#cloud-optimized-geospatial-data",
+    "href": "content/01-intro-to-cloud-geoscience.html#cloud-optimized-geospatial-data",
+    "title": "Geoscience in the Cloud",
+    "section": "Cloud optimized geospatial data",
+    "text": "Cloud optimized geospatial data\n\nMethods for Generating and Testing Cloud-Optimized Geospatial Formats"
+  },
+  {
     "objectID": "content/01-intro-to-cloud-geoscience.html#references",
     "href": "content/01-intro-to-cloud-geoscience.html#references",
     "title": "Geoscience in the Cloud",
     "section": "References",
-    "text": "References\n\nClosed Platforms vs. Open Architectures for Cloud-Native Earth System Analytics\nWhy Jupyter is data scientists’ computational notebook of choice"
+    "text": "References\n\nClosed Platforms vs. Open Architectures for Cloud-Native Earth System Analytics\nWhy Jupyter is data scientists’ computational notebook of choice\nNASA MAAP Project"
   },
   {
     "objectID": "content/01-intro-to-jupyterhub.html",
@@ -291,14 +298,14 @@
     "href": "content/XX-further-resources.html",
     "title": "Additional resources",
     "section": "",
-    "text": "Pangeo at Ocean Sciences 2020\nNASA Openscapes EarthData Cloud Book\nNASA Openscapes 2021 Hackweek\nOceanHackWeek\nICESat-2 2023 eScience Institute, University of Washington website\nPO.DAAC Github Repository"
+    "text": "Pangeo at Ocean Sciences 2020\nNASA Openscapes EarthData Cloud Book\nNASA Openscapes 2021 Hackweek\nOceanHackWeek\nICESat-2 2023 eScience Institute, University of Washington website\nPO.DAAC Github Repository\nNASA MAAP Notebooks Click the GitHub link in top right to get to the Jupyter Notebooks\nUW eScience Geoscience Hackweek"
   },
   {
     "objectID": "content/XX-further-resources.html#notebooks-and-hackweeks-with-tutorials",
     "href": "content/XX-further-resources.html#notebooks-and-hackweeks-with-tutorials",
     "title": "Additional resources",
     "section": "",
-    "text": "Pangeo at Ocean Sciences 2020\nNASA Openscapes EarthData Cloud Book\nNASA Openscapes 2021 Hackweek\nOceanHackWeek\nICESat-2 2023 eScience Institute, University of Washington website\nPO.DAAC Github Repository"
+    "text": "Pangeo at Ocean Sciences 2020\nNASA Openscapes EarthData Cloud Book\nNASA Openscapes 2021 Hackweek\nOceanHackWeek\nICESat-2 2023 eScience Institute, University of Washington website\nPO.DAAC Github Repository\nNASA MAAP Notebooks Click the GitHub link in top right to get to the Jupyter Notebooks\nUW eScience Geoscience Hackweek"
   },
   {
     "objectID": "content/XX-further-resources.html#how-to",
@@ -705,6 +712,13 @@
     "title": "Tutorials Overview",
     "section": "Jupyter Notebook",
     "text": "Jupyter Notebook\n\nOpen in Jupyter Notebook\nRun code by clicking on the code and clicking the little arrow at the top or by typing shift-return."
+  },
+  {
+    "objectID": "participants.html",
+    "href": "participants.html",
+    "title": "2023 Participants",
+    "section": "",
+    "text": "Hackweeks are collaborative and immersive peer-learning experience. Introduce yourself and identify if you have a skill in R or Python, remote-sensing data, or other subject matter expertise. Add your name, GitHub username,\nTo edit, click the “Edit” link on left and follow instructions to create a pull-request.\nName, affiliation, GitHub username, skills, website link, ORCID link\n\n\n\nName          \nGitHu\nSkills\nLinks\n\n\n\n\nEli Holmes\n@eeholmes\nR expert, Python intermediate, assessing remote-sensing data via cloud, geospatial analysis in R, multivariate statistics, coastal upwelling dynamics and metrics\nwebsite, ORCID\n\n\nYour Name\n@yourgithub\nList skills\ntext"
   },
   {
     "objectID": "projects/hackathon-projects.html",
@@ -1271,7 +1285,7 @@
     "href": "r-notebooks/SDM-lab1.html",
     "title": "SDM lab 1 - Downloading species data",
     "section": "",
-    "text": "Set the data directory.\nhere::i_am(\"SDM-lab1.qmd\")\n\nhere() starts at /Users/eli.holmes/Documents/GitHub/2023-Cloudbook/r-notebooks\n\ndir_data &lt;- here::here(\"data\")\nSet the file paths.\n# data as csv file\nobs_csv &lt;- file.path(dir_data, \"obs.csv\")\n# data as geojson\nobs_geo &lt;- file.path(dir_data, \"obs.geojson\")\nLoad libraries.\nrequire(sf)\nrequire(spocc)\nrequire(knitr)\nrequire(dplyr)"
+    "text": "Set the data directory.\nhere::i_am(\"SDM-lab1.qmd\")\n\nhere() starts at /Users/eli.holmes/Documents/GitHub/2023-Cloudbook/r-notebooks\n\ndir_data &lt;- here::here(\"data\")\nSet the file paths.\n# data as csv file\nobs_csv &lt;- file.path(dir_data, \"obs.csv\")\n# data as geojson\nobs_geo &lt;- file.path(dir_data, \"obs.geojson\")\nLoad libraries.\nrequire(sf)\nrequire(spocc)\nrequire(knitr)\nrequire(dplyr)\nrequire(readr)"
   },
   {
     "objectID": "r-notebooks/SDM-lab1.html#spocc-r-package",
@@ -1355,7 +1369,7 @@
     "href": "setup.html#user-accounts",
     "title": "Set-up",
     "section": "User accounts",
-    "text": "User accounts\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Advice for choosing a GitHub username: this is a professional username that you will use in work/academic communities. GitHub accounts are not anonymous; this is for sharing work. Using your real name is common.\nRemember your username and password; you will need to be logged in during the course!\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the course!"
+    "text": "User accounts\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Advice for choosing a GitHub username: this is a professional username that you will use in work/academic communities. GitHub accounts are not anonymous; this is for sharing work. Using your real name is common.\nRemember your username and password; you will need to be logged in during the course!\nHere is a video showing the whole process\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the course!"
   },
   {
     "objectID": "setup.html#install-r-and-rstudio-desktop",

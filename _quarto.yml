@@ -12,9 +12,8 @@ website:
   page-navigation: true  
   title: "2023 ITCOocean Hackweek"
   site-url: https://Hackweek-ITCOocean.github.io/2023-Hackbook
-  
   repo-url: https://github.com/Hackweek-ITCOocean/2023-Hackbook
-  repo-actions: [edit, issue]
+  repo-actions: [edit, issue, source]
   
   page-footer: "ITCOocean (2023). 2023 Hackweek" 
  
@@ -22,13 +21,6 @@ website:
     logo: images/incois-logos.png
     pinned: true
     align: center
-    tools: 
-      - icon: globe
-        href: https://Hackweek-ITCOocean.github.io
-        text: "Hackweek ITCOocean"
-      - icon: github
-        href: https://github.com/Hackweek-ITCOocean/2023-Hackbook
-        text: "2023 Hackweek Tutorials"
     
     style: "docked"
     search: true
@@ -43,6 +35,7 @@ website:
           - schedule.md
           - setup.md
           - support.md
+          - participants.md
       - section: "Daily Schedule"
         contents:
           - section: "01 Monday"
@@ -119,6 +112,22 @@ website:
         contents:
           - content/XX-r-and-python-resources.md
           - content/XX-further-resources.md
+  navbar:
+    background: primary
+    search: true
+    right: 
+      - icon: server
+        href: https://itcoocean.2i2c.cloud/
+        text: "JupyterHub"
+      - icon: wechat
+        href: https://github.com/orgs/Hackweek-ITCOocean/discussions
+        text: "Discussions"
+      - icon: globe
+        href: https://github.com/Hackweek-ITCOocean
+        text: "GitHub org"
+      - icon: github
+        href: https://github.com/Hackweek-ITCOocean/2023-Hackbook
+        text: "Hackbook repo"
 
 format:
   html:
