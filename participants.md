@@ -10,8 +10,8 @@ Name, affiliation, GitHub username, skills, website link, ORCID link
 
 
 
-| Name | GitHub | Skills
-|----|----|----|
+| Name | GitHub | Some things you are bringing to the hack2week | Links |
+|----|----|----|---|
 | Eli Holmes | [@eeholmes](https://github.com/eeholmes) | R expert, Python intermediate, assessing remote-sensing data via cloud, geospatial analysis in R, multivariate statistics, coastal upwelling dynamics and metrics | [website](https://eeholmes.github.io/), [ORCID](https://orcid.org/0000-0001-9128-8393) |
-| Your Name | [@yourgithub](https://github.com/yourgithub) | List skills | [text](link) |
+| Your Name | [@yourgithub](https://github.com/yourgithub) | Everyone brings different knowledge, experience and skills! What are some of yours? | [text](link) |
 
