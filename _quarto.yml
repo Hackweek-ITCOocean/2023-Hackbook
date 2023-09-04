@@ -11,6 +11,7 @@ execute:
 website:
   page-navigation: true  
   title: "2023 ITCOocean Hackweek"
+  favicon: images/incois-icon.png
   site-url: https://Hackweek-ITCOocean.github.io/2023-Hackbook
   repo-url: https://github.com/Hackweek-ITCOocean/2023-Hackbook
   repo-actions: [edit, issue, source]
