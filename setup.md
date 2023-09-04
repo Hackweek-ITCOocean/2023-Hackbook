@@ -2,9 +2,7 @@
 title: Set-up
 ---
 
-[Google Form with Participant Information](https://docs.google.com/forms/d/e/1FAIpQLSdW9uH1GmEd4vzZ9Ny8nTNtXRL8SZp4_ZHKrauHKnV8RxtSzw/viewform?usp=sf_link)
-
-Before the course, please do the following and send us the information with the link above. All software and accounts are free.
+Before the course, please do the following set-up and send us the information in the [pre-course survey](https://docs.google.com/forms/d/e/1FAIpQLSdW9uH1GmEd4vzZ9Ny8nTNtXRL8SZp4_ZHKrauHKnV8RxtSzw/viewform?usp=sf_link).
 
 ## User accounts
 
@@ -15,6 +13,10 @@ Before the course, please do the following and send us the information with the 
 1. **Earthdata Login account** 
     - Create an Earthdata Login account (if you don't already have one) at <https://urs.earthdata.nasa.gov>
     - Remember your username and password; you will need to be logged in during the course!
+1. **Slack account**
+    - We will use Slack as our messaging platform during the course. Feel free to use to communicate and coordinate with the fellow course participants.
+    - The link to join our Slack workspace was sent on Sept 4th in the course info email.
+    - Reach out to the organizers if you can't find the email.
 
 
 ## Install R and RStudio Desktop

@@ -10,13 +10,13 @@ execute:
   
 website:
   page-navigation: true  
-  title: "2023 ITCOocean Hackweek"
+  title: "2023 ITCOocean Hack2week"
   favicon: images/incois-icon.png
   site-url: https://Hackweek-ITCOocean.github.io/2023-Hackbook
   repo-url: https://github.com/Hackweek-ITCOocean/2023-Hackbook
   repo-actions: [edit, issue, source]
   
-  page-footer: "ITCOocean (2023). 2023 Hackweek" 
+  page-footer: <img src="images/incois.png" alt="INCOIS logo" style="width:150px"><br />ITCOocean Hack2week (2023)
  
   sidebar:
     logo: images/incois-logos.png
@@ -115,6 +115,17 @@ website:
             contents:
               - python-notebooks/04_Combining_Data.ipynb
               - python-notebooks/04_Appending_Data.ipynb
+      - text: <img width=100px>
+      - text: <img src="images/ecsn.png" width=100px>
+        href: https://iioe-2.incois.gov.in/ecsn/index.html
+      - text: <img src="images/ocean-decade.png" width=150px>
+        href: https://oceandecade.org/
+      - text: <img src="images/ecop.png" width=150px>
+        href: https://www.ecopdecade.org/
+      - text: <img src="images/dcc-ior.png" width=150px>
+        href: https://incois.gov.in/dcc-ior/index.jsp
+#      - text: DECCaD-IO
+#        href: https://oceandecade.org/actions/devising-early-career-capacity-development-indocn-deccad-io/
   navbar:
     background: primary
     search: true
@@ -131,10 +142,7 @@ website:
       - icon: globe
         href: https://github.com/Hackweek-ITCOocean
         text: "GH org"
-      - icon: people
-        href: https://iioe-2.incois.gov.in/ecsn/index.html
-        text: "ECSN"
-        
+
 
 format:
   html:

@@ -14,7 +14,8 @@ Thank you to the open science community that has created software, teaching reso
 [Pangeo Project](https://pangeo.io/) &bullet; 
 [CryoCloud](https://cryointhecloud.com/)
 </center>
-
+<br/><br/>
+Thanks to the SDM team at OceanHackWeek 2023 who helped test and develop SDM tutorials for the ITCOocean Hack2week 2023: Catherine Courtier, [Mackenzie Fiss](https://github.com/mackenziefiss), [Denisse Fierro Arcos](https://github.com/lidefi87), [Paulo Freire](https://github.com/Pfreire29), Jade Hong, Caitlin O’Brien, Mary Solokas, Laura Tsang, [Tylar Murray](https://github.com/7yl4r), [Ben Tupper](https://github.com/btupper)! [OHW23 SDM team project](https://oceanhackweek.org/ohw23_proj_marinesdms/).
 
 ## Financial support
 

@@ -543,7 +543,14 @@
     "href": "index.html",
     "title": "Machine Learning based Species Distribution Modelling",
     "section": "",
-    "text": "Welcome to the Sept 2023 training course on Machine Learning based Species Distribution Modelling hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.\nThe course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from September 11-22, 2023. course announcement. The application period for the 2023 course has closed.\n\n\nCourse GitHub org: https://github.com/Hackweek-ITCOocean\nJupyterHub: https://itcoocean.2i2c.cloud/\nDiscussions: https://github.com/orgs/Hackweek-ITCOocean/discussions\nSlack: https://app.slack.com/client/T05PV2USY56/C05P7QP47UL"
+    "text": "Welcome to the Sept 2023 training course on Machine Learning based Species Distribution Modelling hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.\nThe course and hackweek will take place at the ITCOocean Training Centre in Hyderabad, India from September 11-22, 2023. course announcement. The application period for the 2023 course has closed."
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "Machine Learning based Species Distribution Modelling",
+    "section": "Links",
+    "text": "Links\n\nCourse GitHub org: https://github.com/Hackweek-ITCOocean\nJupyterHub: https://itcoocean.2i2c.cloud/\nDiscussions: https://github.com/orgs/Hackweek-ITCOocean/discussions\nSlack: https://app.slack.com/client/T05PV2USY56/C05P7QP47UL"
   },
   {
     "objectID": "nasa-tutorials/00_Setup.html",
@@ -1243,14 +1250,14 @@
     "href": "setup.html",
     "title": "Set-up",
     "section": "",
-    "text": "Google Form with Participant Information\nBefore the course, please do the following and send us the information with the link above. All software and accounts are free."
+    "text": "Before the course, please do the following set-up and send us the information in the pre-course survey."
   },
   {
     "objectID": "setup.html#user-accounts",
     "href": "setup.html#user-accounts",
     "title": "Set-up",
     "section": "User accounts",
-    "text": "User accounts\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Advice for choosing a GitHub username: this is a professional username that you will use in work/academic communities. GitHub accounts are not anonymous; this is for sharing work. Using your real name is common.\nRemember your username and password; you will need to be logged in during the course!\nHere is a video showing the whole process\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the course!"
+    "text": "User accounts\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Advice for choosing a GitHub username: this is a professional username that you will use in work/academic communities. GitHub accounts are not anonymous; this is for sharing work. Using your real name is common.\nRemember your username and password; you will need to be logged in during the course!\nHere is a video showing the whole process\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the course!\n\nSlack account\n\nWe will use Slack as our messaging platform during the course. Feel free to use to communicate and coordinate with the fellow course participants.\nThe link to join our Slack workspace was sent on Sept 4th in the course info email.\nReach out to the organizers if you can’t find the email."
   },
   {
     "objectID": "setup.html#install-r-and-rstudio-desktop",
@@ -1271,7 +1278,7 @@
     "href": "support.html",
     "title": "Acknowledgements",
     "section": "",
-    "text": "Thank you to the open science community that has created software, teaching resources, and workflows that we have been able to build off of and be inspired by. These include:"
+    "text": "Thank you to the open science community that has created software, teaching resources, and workflows that we have been able to build off of and be inspired by. These include:\nThanks to the SDM team at OceanHackWeek 2023 who helped test and develop SDM tutorials for the ITCOocean Hack2week 2023: Catherine Courtier, Mackenzie Fiss, Denisse Fierro Arcos, Paulo Freire, Jade Hong, Caitlin O’Brien, Mary Solokas, Laura Tsang, Tylar Murray, Ben Tupper! OHW23 SDM team project."
   },
   {
     "objectID": "support.html#financial-support",
