@@ -2,7 +2,7 @@
 title: Schedule
 ---
 
-**11-22 September 11-22 2023**
+**11-22 September 2023**
 
 ## Draft schedule
 
