@@ -125,9 +125,12 @@ website:
       - icon: wechat
         href: https://github.com/orgs/Hackweek-ITCOocean/discussions
         text: "Discussions"
+      - icon: slack
+        href: https://app.slack.com/client/T05PV2USY56/C05P7QP47UL
+        text: "Slack"
       - icon: globe
         href: https://github.com/Hackweek-ITCOocean
-        text: "GitHub org"
+        text: "GH org"
       - icon: github
         href: https://github.com/Hackweek-ITCOocean/2023-Hackbook
         text: "Hackbook repo"
