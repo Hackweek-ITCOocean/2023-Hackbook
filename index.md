@@ -1,11 +1,7 @@
 ---
 title: "Machine Learning based Species Distribution Modelling"
-subtitle: "2023 ITCOocean training course: 11-22 September 2023"
- 
-author: "International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India"
+subtitle: "2023 ITCOocean training course: 11-22 September 2023, INCOIS, Hyderabad, India"
 ---
-
-## Welcome
 
 Welcome to the Sept 2023 training course on **Machine Learning based Species Distribution Modelling** hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.
 
@@ -13,56 +9,8 @@ The course and hackweek will take place at the ITCOocean training centre in Hyde
 
 ![](images/banner.png)
 
-Course GitHub org: <https://github.com/Hackweek-ITCOocean>
-
-## Overview
-
-The the era of big data in the earth sciences is here and learning how to effectively use oceanographic remote-sensing data, both in the cloud and on your computer, is a core skill for modern fisheries science and management. Learning how to access cloud-based data, visualize these data, use these data in models, and use the tools of modern reproducible and collaborative science is the main goal of this course. Through the course, participants will gain experience with assessing remote-sensing data in the cloud, R and RStudio, and collaborating with Git and GitHub. *Python users: Python is also very heavily used in big data geosciences. The course tutorials will focus on R, however you are welcome to use Python during the course if you are more comfortable with that.*
-
-### Hackweek focus: species distribution modelling
-
-In depth understanding of machine learning for species (macrofauna) distribution modelling (SDM) is needed by many young ecosystem researchers. SDMs are an important class of models used to understand species association with the environment. SDMs are widely used to understand how species distributions are changing with ocean climate change and are also used to estimate abundance over large ocean regions from fisheries survey data. This course is devised to familiarize the young professionals in the Indian Ocean-rim (IOR) countries with the latest developments in this field.
-
-*This course does not aim to teach ecology and habitat to the oceanographers/modellers/machine learning experts, rather it aims to teach machine learning and coding (and its relevance to fisheries) to fishery professionals.* 
-
-## Aims and Objectives
-
-* Learn how to discover and use oceanographic remote-sensing data for species distribution modeling and other fisheries applications
-* Familiarize participants with using remote-sensing data in R within models. Note participants who are more familiar with Python are welcome to use Python also.
-* Introduce the participants to machine learning models used in species distribution modelling.
-* Obtain hands-on experience in using species distribution modelling and machine-learning with remote-sensing data.
-* Work on a group project using species distribution modelling to estimate habitat associations or obtain a stock estimate using a species distribution model. 
-
-*Note, there are many ways that participants can study aspects of species distribution using remote-sensing data. During the hackweek portion of the course, participants will jointly develop project to work on and in order to learn by diving into a specific project. Species location will not be specifically required in order to engage in the projects.*
-
-
-### What is a hackweek?
-
-Hackweeks are widely used in data science to teach new skills in an immersive peer-learning format. From the [eScience Institute](https://escience.washington.edu/using-data-science/hackweeks/) at the University of Washington, Seattle USA:
-
-*A hackweek is a participant-driven workshop that blends data science education, community building, and project work over a short period of time (one to two weeks). The events are highly immersive and allow participants to work directly with data science professionals to co-shape projects and educational outcomes. Hackweeks often help individuals and teams engage more effectively in open and reproducible science.* - eScience Institute, University of Washington
-
-**Examples of recent hackweeks:**
-
-- NASA Cloud EarthData 2022: 
-  - <https://nasa-openscapes.github.io/2021-Cloud-Hackathon/>
-  
-- OceanHackWeek 2023: 
-  - <https://oceanhackweek.org/ohw23/index.html>
-
-- ICESat-2 2022 eScience Institute, University of Washington: 
-  - <https://icesat-2-2022.hackweek.io/intro.html>
-
-
-### What to expect
-
-* During the first week of the ITCOocean course, participants will work on learning how to access, visualize and manipulate remote-sensing data in R. Participants will develop familiarity with the R language, with RStudio, and with Git and GitHub for collaboration.
-* During the second week of the ITCOocean course, participants will begin focusing on species distribution modeling and will work on a team project.
-* The course is an open science event: all tutorials and examples are developed openly and will be publicly available during and following the course. Participants will strengthen their practice of open science, using open source code and collaborating on their projects with course peers.
-
-In the two to three weeks leading up to the course, participants are encouraged to review background resources that will facilitate a more effective experience. 
-
-## Code of Conduct 
-
-The 2023 ITCOocean Hackweek is a safe learning space and all participants are required to abide by our [Code of Conduct]().
+* Course GitHub org: <https://github.com/Hackweek-ITCOocean>
+* JupyterHub: <https://itcoocean.2i2c.cloud/>
+* Discussions: <https://github.com/orgs/Hackweek-ITCOocean/discussions>
+* Slack: <https://app.slack.com/client/T05PV2USY56/C05P7QP47UL>
 

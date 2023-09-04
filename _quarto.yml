@@ -23,25 +23,25 @@ website:
     align: center
     
     style: "docked"
-    search: true
     collapse-level: 1
     toc-expand: false
     contents:
       - section: "Welcome"
+        href: index.md
         contents:
-          - text: "Overview"
-            href: index.md
+          - overview.md
           - team.md
           - schedule.md
           - setup.md
           - support.md
           - participants.md
+          - coc.md
       - section: "Daily Schedule"
         contents:
           - section: "01 Monday"
             contents:
               - text: Welcome
-                href: https://docs.google.com/presentation/d/1aTFqbtuedzKYHwflu9XVo_impSjKZoSzHEznGAIJnPw/edit?usp=sharing
+                href: content/01-welcome.md
               - text: L Indian Ocean
               - text: L Remote-sensing data
               - text: H GitHub 1
@@ -82,6 +82,14 @@ website:
               - text: L How to sprint
               - text: L Statistics 2
               - text: H Geospatial Lab 2
+      - section: "Projects"
+        contents:
+          - projects/index.md
+          - projects/hackathon-projects.md
+      - section: "Further Resources"
+        contents:
+          - content/XX-r-and-python-resources.md
+          - content/XX-further-resources.md
       - section: "Python Tutorials"
         contents:
           - section: "Data Access"
@@ -106,14 +114,6 @@ website:
             contents:
               - python-notebooks/04_Combining_Data.ipynb
               - python-notebooks/04_Appending_Data.ipynb
-      - section: "Projects"
-        contents:
-          - projects/index.md
-          - projects/hackathon-projects.md
-      - section: "Further Resources"
-        contents:
-          - content/XX-r-and-python-resources.md
-          - content/XX-further-resources.md
   navbar:
     background: primary
     search: true

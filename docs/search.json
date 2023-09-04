@@ -7,6 +7,34 @@
     "text": "Slides that introduce NASA Earthdata Cloud & the Cloud Paradigm."
   },
   {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "The ITCOocean Hack2week is dedicated to providing a harassment-free learning experience for everyone regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion. We do not tolerate harassment of participants in any form. Sexual language and imagery is not appropriate either in-person or virtual form, including the Discussion boards and Slack workspace. Participants (including event volunteers and organizers) violating these rules may be sanctioned or expelled from the event at the discretion of the organizers."
+  },
+  {
+    "objectID": "coc.html#definition-of-harassment",
+    "href": "coc.html#definition-of-harassment",
+    "title": "Code of Conduct",
+    "section": "Definition of Harassment",
+    "text": "Definition of Harassment\nHarassment includes, but is not limited to:\n\nVerbal comments that reinforce social structures of domination related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, religion.\nSexual images in public spaces\nDeliberate intimidation, stalking, or following\nHarassing photography or recording\nSustained disruption of talks or other events\nInappropriate physical contact\nUnwelcome sexual attention\nAdvocating for, or encouraging, any of the above behavior"
+  },
+  {
+    "objectID": "coc.html#expectations",
+    "href": "coc.html#expectations",
+    "title": "Code of Conduct",
+    "section": "Expectations",
+    "text": "Expectations\nParticipants asked to stop any harassing behavior are expected to comply immediately. If a participant engages in harassing behavior, the organizers retain the right to take any actions to keep the event a welcoming environment for all participants. This includes warning the offender or expulsion from the event.\nThe organizers may take action to redress anything designed to, or with the clear impact of, disrupting the event or making the environment hostile for any participants. We expect participants to follow these rules at all the event venues and event-related social activities."
+  },
+  {
+    "objectID": "coc.html#reporting-a-violation",
+    "href": "coc.html#reporting-a-violation",
+    "title": "Code of Conduct",
+    "section": "Reporting a violation",
+    "text": "Reporting a violation\nHarassment and other code of conduct violations reduce the value of the event for everyone. If someone makes you or anyone else feel unsafe or unwelcome, please report it as soon as possible.\nIf you feel comfortable contacting someone associated with our event, you may speak with one of the event organizers in person or contact an organizer on a private Slack channel."
+  },
+  {
     "objectID": "content/01-github.html#what-is-github",
     "href": "content/01-github.html#what-is-github",
     "title": "GitHub - Lecture 1",
@@ -131,6 +159,13 @@
     "title": "Intro to JupyterHubs",
     "section": "FAQ",
     "text": "FAQ\nCan we use Matlab with JupyterHub? You can use Octave kernel as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so jupyter-matlab-proxy\nWhy do we have the same home directory as /home/jovyan? /home/jovyan is the default home directory for ‘jupyter’ based images/dockers. It is the historic home directory for Jupyter deployments.\nCan other users see the files in my /home/jovyan folder? No, other users can not see your credentials.\n\nAcknowledgements\nSome sections of this document have been taken from hackweeks organized by the University of Washington eScience Institute and Openscapes."
+  },
+  {
+    "objectID": "content/01-welcome.html",
+    "href": "content/01-welcome.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Link to slides"
   },
   {
     "objectID": "content/02-git-jupyter.html#summary",
@@ -504,32 +539,11 @@
     "text": "Step 3:\nConfigure git with your name and email address.\n``` bash\ngit config --global user.name \"Makhan Virdi\"\ngit config --global user.email \"Makhan.Virdi@gmail.com\"\n```\n\n**Note:** This name and email could be different from your github.com credentials. Remember `git` is a program that keeps track of your changes locally (on 2i2c JupyterHub or your own computer) and github.com is a platform to host your repositories. However, since your changes are tracked by `git`, the email/name used in git configuration will show up next to your contributions on github.com when you `push` your repository to github.com (`git push` is discussed in a later step).\n\nConfigure git to store your github credentials to avoid having to enter your github username and token each time you push changes to your repository(in Step 5, we will describe how to use github token instead of a password)\ngit config --global credential.helper store\nCopy link for the demo repository from your github account. Click the green “Code” button and copy the link as shown.\n\nClone the repository using git clone command in the terminal\nTo clone a repository from github, copy the link for the repository (previous step) and use git clone:\ngit clone https://github.com/YOUR-GITHUB-USERNAME/check_github_setup\nNote: Replace YOUR-GITHUB-USERNAME here with your github.com username. For example, it is virdi for my github.com account as seen in this image.\n\nUse ls (list files) to verify the existence of the repository that you just cloned\n\nChange directory to the cloned repository using cd check_github_setup and check the current directory using pwd command (present working directory)\n\nCheck status of your git repository to confirm git set up using git status\n\nYou are all set with using git on your 2i2c JupyterHub! But the collaborative power of git through github needs some additional setup.\nIn the next step, we will create a new file in this repository, track changes to this file, and link it with your github.com account.\n\n\nStep 4. Creating new file and tracking changes\n\nIn the left panel on your 2i2c JupyterHub, click on the “directory” icon and then double click on “check_github_setup” directory.\n\n\nOnce you are in the check_github_setup directory, create a new file using the text editor in your 2i2c JupyterHub (File &gt;&gt; New &gt;&gt; Text File).\n\nName the file lastname.txt. For example, virdi.txt for me (use your last name). Add some content to this file (for example, I added this to my virdi.txt file: my last name is virdi).\n\nNow you should have a new file (lastname.txt) in the git repository directory check_github_setup\nCheck if git can see that you have added a new file using git status. Git reports that you have a new file that is not tracked by git yet, and suggests adding that file to the git tracking system.\n\nAs seen in this image, git suggests adding that file so it can be tracked for changes. You can add file to git for tracking changes using git add. Then, you can commit changes to this file’s content using git commit as shown in the image.\ngit add virdi.txt\ngit status\ngit commit -m \"adding a new file\"\ngit status\n\nAs seen in the image above, git is suggesting to push the change that you just committed to the remote server at github.com (so that your collaborators can also see what changes you made).\nNote: DO NOT execute push yet. Before we push to github.com, let’s configure git further and store our github.com credentials to avoid entering the credentials every time we invoke git push. For doing so, we need to create a token on github.com to be used in place of your github.com password.\n\n\n\nStep 5. Create access token on github.com\n\nGo to your github account and create a new “personal access token”: https://github.com/settings/tokens/new\n\n\n\nGenerate Personal Access Token on github.com\n\n\nEnter a description in “Note” field as seen above, select “repo” checkbox, and scroll to the bottom and click the green button “Generate Token”. Once generated, copy the token (or save it in a text file for reference).\nIMPORTANT: You will see this token only once, so be sure to copy this. If you do not copy your token at this stage, you will need to generate a new token.\n\nTo push (transfer) your changes to github, use git push in terminal. It requires you to enter your github credentials. You will be prompted to enter your github username and “password”. When prompted for your “password”, DO NOT use your github password, use the github token that was copied in the previous step.\ngit push\n\nNote: When you paste your token in the terminal window, windows users will press Ctrl+V and mac os users will press Cmd+V. If it does not work, try generating another token and use the copy icon next to the token to copy the token. Then, paste using your computer’s keyboard shortcut for paste.\nNow your password is stored in ~/.git-credentials and you will not be prompted again unless the Github token expires. You can check the presence of this git-credentials file using Terminal. Here the ~ character represents your home directory (/home/jovyan/).\nls -la ~\nThe output looks like this:\ndrwxr-xr-x 13 jovyan jovyan 6144 Oct 22 17:35 .\ndrwxr-xr-x  1 root   root   4096 Oct  4 16:21 ..\n-rw-------  1 jovyan jovyan 1754 Oct 29 18:30 .bash_history\ndrwxr-xr-x  4 jovyan jovyan 6144 Oct 29 16:38 .config\n-rw-------  1 jovyan jovyan   66 Oct 22 17:35 .git-credentials\n-rw-r--r--  1 jovyan jovyan   84 Oct 22 17:14 .gitconfig\ndrwxr-xr-x 10 jovyan jovyan 6144 Oct 21 16:19 2021-Cloud-Hackathon\nYou can also verify your git configuration\n(notebook) jovyan@jupyter-virdi:~$ git config -l\nThe output should have credential.helper = store:\nuser.email        = Makhan.Virdi@gmail.com\nuser.name         = Makhan Virdi\ncredential.helper = store\n\nNow we are all set to collaborate with github on the JupyterHub during the Cloud Hackathon!\n\n\nSummary: Git Commands\n\nCommonly used git commands (modified from source)\n\n\nGit Command\nDescription\n\n\n\n\ngit status\nShows the current state of the repository: the current working branch, files in the staging area, etc.\n\n\ngit add\nAdds a new, previously untracked file to version control and marks already tracked files to be committed with the next commit\n\n\ngit commit\nSaves the current state of the repository and creates an entry in the log\n\n\ngit log\nShows the history for the repository\n\n\ngit diff\nShows content differences between commits, branches, individual files and more\n\n\ngit clone\nCopies a repository to your local environment, including all the history\n\n\ngit pull\nGets the latest changes of a previously cloned repository\n\n\ngit push\nPushes your local changes to the remote repository, sharing them with others\n\n\n\n\n\nGit: More Details\nLesson: For a more detailed self-paced lesson on git, visit Git Lesson from Software Carpentry\nCheatsheet: Frequently used git commands\nDangit, Git!?!: If you are stuck after a git mishap, there are ready-made solutions to common problems at Dangit, Git!?!\n\n\nCloning our repository using the git Jupyter lab extension.\nIf we’re already familiar with git commands and feel more confortable using a GUI our Jupyterhub deployment comes with a git extension. This plugin allows us to operate with git using a simple user interface.\nFor example we can clone our repository using the extension.\n\n\n\ngit extension"
   },
   {
-    "objectID": "index.html#welcome",
-    "href": "index.html#welcome",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Machine Learning based Species Distribution Modelling",
-    "section": "Welcome",
-    "text": "Welcome\nWelcome to the Sept 2023 training course on Machine Learning based Species Distribution Modelling hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.\nThe course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from September 11-22, 2023. course announcement. The application period for the 2023 course has closed.\n\nCourse GitHub org: https://github.com/Hackweek-ITCOocean"
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Machine Learning based Species Distribution Modelling",
-    "section": "Overview",
-    "text": "Overview\nThe the era of big data in the earth sciences is here and learning how to effectively use oceanographic remote-sensing data, both in the cloud and on your computer, is a core skill for modern fisheries science and management. Learning how to access cloud-based data, visualize these data, use these data in models, and use the tools of modern reproducible and collaborative science is the main goal of this course. Through the course, participants will gain experience with assessing remote-sensing data in the cloud, R and RStudio, and collaborating with Git and GitHub. Python users: Python is also very heavily used in big data geosciences. The course tutorials will focus on R, however you are welcome to use Python during the course if you are more comfortable with that.\n\nHackweek focus: species distribution modelling\nIn depth understanding of machine learning for species (macrofauna) distribution modelling (SDM) is needed by many young ecosystem researchers. SDMs are an important class of models used to understand species association with the environment. SDMs are widely used to understand how species distributions are changing with ocean climate change and are also used to estimate abundance over large ocean regions from fisheries survey data. This course is devised to familiarize the young professionals in the Indian Ocean-rim (IOR) countries with the latest developments in this field.\nThis course does not aim to teach ecology and habitat to the oceanographers/modellers/machine learning experts, rather it aims to teach machine learning and coding (and its relevance to fisheries) to fishery professionals."
-  },
-  {
-    "objectID": "index.html#aims-and-objectives",
-    "href": "index.html#aims-and-objectives",
-    "title": "Machine Learning based Species Distribution Modelling",
-    "section": "Aims and Objectives",
-    "text": "Aims and Objectives\n\nLearn how to discover and use oceanographic remote-sensing data for species distribution modeling and other fisheries applications\nFamiliarize participants with using remote-sensing data in R within models. Note participants who are more familiar with Python are welcome to use Python also.\nIntroduce the participants to machine learning models used in species distribution modelling.\nObtain hands-on experience in using species distribution modelling and machine-learning with remote-sensing data.\nWork on a group project using species distribution modelling to estimate habitat associations or obtain a stock estimate using a species distribution model.\n\nNote, there are many ways that participants can study aspects of species distribution using remote-sensing data. During the hackweek portion of the course, participants will jointly develop project to work on and in order to learn by diving into a specific project. Species location will not be specifically required in order to engage in the projects.\n\nWhat is a hackweek?\nHackweeks are widely used in data science to teach new skills in an immersive peer-learning format. From the eScience Institute at the University of Washington, Seattle USA:\nA hackweek is a participant-driven workshop that blends data science education, community building, and project work over a short period of time (one to two weeks). The events are highly immersive and allow participants to work directly with data science professionals to co-shape projects and educational outcomes. Hackweeks often help individuals and teams engage more effectively in open and reproducible science. - eScience Institute, University of Washington\nExamples of recent hackweeks:\n\nNASA Cloud EarthData 2022:\n\nhttps://nasa-openscapes.github.io/2021-Cloud-Hackathon/\n\nOceanHackWeek 2023:\n\nhttps://oceanhackweek.org/ohw23/index.html\n\nICESat-2 2022 eScience Institute, University of Washington:\n\nhttps://icesat-2-2022.hackweek.io/intro.html\n\n\n\n\nWhat to expect\n\nDuring the first week of the ITCOocean course, participants will work on learning how to access, visualize and manipulate remote-sensing data in R. Participants will develop familiarity with the R language, with RStudio, and with Git and GitHub for collaboration.\nDuring the second week of the ITCOocean course, participants will begin focusing on species distribution modeling and will work on a team project.\nThe course is an open science event: all tutorials and examples are developed openly and will be publicly available during and following the course. Participants will strengthen their practice of open science, using open source code and collaborating on their projects with course peers.\n\nIn the two to three weeks leading up to the course, participants are encouraged to review background resources that will facilitate a more effective experience."
-  },
-  {
-    "objectID": "index.html#code-of-conduct",
-    "href": "index.html#code-of-conduct",
-    "title": "Machine Learning based Species Distribution Modelling",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\nThe 2023 ITCOocean Hackweek is a safe learning space and all participants are required to abide by our Code of Conduct."
+    "section": "",
+    "text": "Welcome to the Sept 2023 training course on Machine Learning based Species Distribution Modelling hosted by the International Training Centre for Operational Oceanography (ITCOocean), ESSO-INCOIS, Hyderabad, India.\nThe course and hackweek will take place at the ITCOocean training centre in Hyderabad, India from September 11-22, 2023. course announcement. The application period for the 2023 course has closed.\n\n\nCourse GitHub org: https://github.com/Hackweek-ITCOocean\nJupyterHub: https://itcoocean.2i2c.cloud/\nDiscussions: https://github.com/orgs/Hackweek-ITCOocean/discussions\nSlack: https://app.slack.com/client/T05PV2USY56/C05P7QP47UL"
   },
   {
     "objectID": "nasa-tutorials/00_Setup.html",
@@ -628,6 +642,48 @@
     "title": "Tutorials Overview",
     "section": "Jupyter Notebook",
     "text": "Jupyter Notebook\n\nOpen in Jupyter Notebook\nRun code by clicking on the code and clicking the little arrow at the top or by typing shift-return."
+  },
+  {
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "Overview",
+    "section": "",
+    "text": "The the era of big data in the earth sciences is here and learning how to effectively use oceanographic remote-sensing data, both in the cloud and on your computer, is a core skill for modern fisheries science and management. Learning how to access cloud-based data, visualize these data, use these data in models, and use the tools of modern reproducible and collaborative science is the main goal of this course. Through the course, participants will gain experience with assessing remote-sensing data in the cloud, R and RStudio, and collaborating with Git and GitHub. Python users: Python is also very heavily used in big data geosciences. The course tutorials will focus on R, however you are welcome to use Python during the course if you are more comfortable with that."
+  },
+  {
+    "objectID": "overview.html#hackweek-focus-species-distribution-modelling",
+    "href": "overview.html#hackweek-focus-species-distribution-modelling",
+    "title": "Overview",
+    "section": "Hackweek focus: species distribution modelling",
+    "text": "Hackweek focus: species distribution modelling\nIn depth understanding of machine learning for species (macrofauna) distribution modelling (SDM) is needed by many young ecosystem researchers. SDMs are an important class of models used to understand species association with the environment. SDMs are widely used to understand how species distributions are changing with ocean climate change and are also used to estimate abundance over large ocean regions from fisheries survey data. This course is devised to familiarize the young professionals in the Indian Ocean-rim (IOR) countries with the latest developments in this field.\nThis course does not aim to teach ecology and habitat to the oceanographers/modellers/machine learning experts, rather it aims to teach machine learning and coding (and its relevance to fisheries) to fishery professionals."
+  },
+  {
+    "objectID": "overview.html#aims-and-objectives",
+    "href": "overview.html#aims-and-objectives",
+    "title": "Overview",
+    "section": "Aims and Objectives",
+    "text": "Aims and Objectives\n\nLearn how to discover and use oceanographic remote-sensing data for species distribution modeling and other fisheries applications\nFamiliarize participants with using remote-sensing data in R within models. Note participants who are more familiar with Python are welcome to use Python also.\nIntroduce the participants to machine learning models used in species distribution modelling.\nObtain hands-on experience in using species distribution modelling and machine-learning with remote-sensing data.\nWork on a group project using species distribution modelling to estimate habitat associations or obtain a stock estimate using a species distribution model.\n\nNote, there are many ways that participants can study aspects of species distribution using remote-sensing data. During the hackweek portion of the course, participants will jointly develop project to work on and in order to learn by diving into a specific project. Species location data will not be specifically required in order to engage in the projects."
+  },
+  {
+    "objectID": "overview.html#what-is-a-hackweek",
+    "href": "overview.html#what-is-a-hackweek",
+    "title": "Overview",
+    "section": "What is a hackweek?",
+    "text": "What is a hackweek?\nA hackweek is a participant-driven workshop that blends data science education, community building, and project work over a short period of time (one to two weeks). The events are highly immersive and allow participants to work directly with data science professionals to co-shape projects and educational outcomes. Hackweeks help individuals and teams engage more effectively in open and reproducible science. - eScience Institute, University of Washington, Seattle USA\nThe hackweek model has become a vital tool in the data science community, fostering idea exchange through modern data analysis workflow training. Unlike traditional academic events, hackweeks offer intensive, interactive learning, including tutorials on cutting-edge methods, peer-based learning, and collaborative on-site projects. Unlike hackathons, which emphasize software development, hackweeks prioritize education and open-ended projects, benefiting fields needing both expertise and efficient computational workflows for idea exchange and discovery. The hackweek model is now widely used in many fields: Astrohackweek, Neurohackweek, Geohackweek, OceanHackWeek, ICESat-2 Hackweek, SnowEx Hackweek, NASA Cloud Hackathon. The ITCOocean Hack2week is modeled off the University of Washington eScience Hackweek model."
+  },
+  {
+    "objectID": "overview.html#what-to-expect",
+    "href": "overview.html#what-to-expect",
+    "title": "Overview",
+    "section": "What to expect",
+    "text": "What to expect\n\nDuring the first week of the ITCOocean hack2week, participants will work on learning how to access, visualize and manipulate remote-sensing data in R. Participants will develop familiarity with the R language, with RStudio, and with Git and GitHub for collaboration.\nDuring the second week, participants will begin focusing on species distribution modeling and will work on a team project.\nThe course is an open science event: all tutorials and examples are developed openly and will be publicly available during and following the course. Participants will strengthen their practice of open science, using open source code and collaborating on their projects with course peers.\n\nIn the two to three weeks leading up to the course, participants are encouraged to review background resources that will facilitate a more effective experience."
+  },
+  {
+    "objectID": "overview.html#code-of-conduct",
+    "href": "overview.html#code-of-conduct",
+    "title": "Overview",
+    "section": "Code of Conduct",
+    "text": "Code of Conduct\nThe 2023 ITCOocean Hackweek is a safe learning space and all participants are required to abide by our Code of Conduct."
   },
   {
     "objectID": "participants.html",
