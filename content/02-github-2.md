@@ -72,6 +72,8 @@ git config --global credential.helper store
 ### Step 3: Push changes up to GitHub
 
 1. Click the Git tab (upper right panel)
-2. 
+2. Click the checkboxes next to what changes you want to push
+3. Click "Commit"
+4. Fill out a comment 
 
 [Full instructions with ways to do this from R](https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/set-up.html#Git_from_RStudio_Desktop)
