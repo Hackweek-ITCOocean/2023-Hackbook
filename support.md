@@ -21,3 +21,4 @@ Thank you! A NOAA International Fellowship supported Eli Holmes' visit. 2i2c pro
 ![](https://www.fisheries.noaa.gov/themes/custom/noaa_components/images/NOAA_FISHERIES_logoH.png){height=100px}
 [![](https://2i2c.org/media/logo.svg){height=100px}](https://2i2c.org)
 [![](https://www.esipfed.org/wp-content/uploads/2019/09/esip-logo-uptodate.transparent-background.png){height=100px}](https://www.esipfed.org)
+![](images/incois.png)
