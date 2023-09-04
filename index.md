@@ -14,3 +14,41 @@ The course and hackweek will take place at the ITCOocean training centre in Hyde
 * Discussions: <https://github.com/orgs/Hackweek-ITCOocean/discussions>
 * Slack: <https://app.slack.com/client/T05PV2USY56/C05P7QP47UL>
 
+<style>
+/* container */
+.columns-3 {
+    width: 100%;
+    display:flex;
+}
+/* columns */
+.columns-3 > * {
+    width: calc(100% / 3);
+}
+/* Optional */
+.bg-red {
+  background-color: red;
+}
+.bg-pink {
+    background-color: pink;
+}
+.bg-orange {
+    background-color: orange;
+}
+</style>
+
+
+<div class="columns-3">
+
+<div>
+<img src="images/incois.png" alt="INCOIS" style="width:75%;">
+</div>
+
+<div>
+<img src="images/ocean-decade.jpeg" alt="Ocean Decade" style="width:75%">
+</div>
+
+<div>
+<img src="images/ecsn.png" alt="ECSN" style="width:75%;">
+</div>
+</div>
+

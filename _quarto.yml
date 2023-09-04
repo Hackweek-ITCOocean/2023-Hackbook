@@ -131,9 +131,10 @@ website:
       - icon: globe
         href: https://github.com/Hackweek-ITCOocean
         text: "GH org"
-      - icon: github
-        href: https://github.com/Hackweek-ITCOocean/2023-Hackbook
-        text: "Hackbook repo"
+      - icon: people
+        href: https://iioe-2.incois.gov.in/ecsn/index.html
+        text: "ECSN"
+        
 
 format:
   html:

@@ -57,22 +57,6 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 </div>
 
 <div>
-### Dr. TVS Uday Bhaskar
-
-<img src="images/Uday.jpeg" alt="Udaya Bhaskar" style="width:75%; ; border-radius: 50%;">
-
-<!--
-![](images/Uday.jpeg){width=75% fig-alt="Uday Bhaskar"}
--->
-
-Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
-
-**Links:** [ResearchGate](https://www.researchgate.net/profile/Tvs-Udaya-Bhaskar)   &#x2022; [ORCID](https://orcid.org/0000-0001-6438-5016)
-</div>
-</div>
-
-<div class="columns-3">
-<div>
 ### Aditi Modi
 
 <img src="images/aditi.png" alt="Aditi Modi" style="width:75%; ; border-radius: 50%;">
@@ -82,6 +66,10 @@ Centre for Climate Change Research, Indian Institute of Tropical Meteorology ([C
 **Links:** [webpage](https://aditimodi.github.io/)  &#x2022; [GitHub](https://github.com/aditimodi)  &#x2022; [ORCID](https://orcid.org/0000-0002-2044-5256)
 
 </div>
+</div>
+
+<div class="columns-3">
+
 
 <div>
 ### Dr. Smitha BR
@@ -104,7 +92,19 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 **Links:** [webpage](https://www.researchgate.net/profile/Swarnali-Majumder)  &#x2022; [ORCID](https://orcid.org/0000-0001-9917-4454)
 
 </div>
+<div>
+### Dr. TVS Uday Bhaskar
 
+<img src="images/Uday.jpeg" alt="Udaya Bhaskar" style="width:75%; ; border-radius: 50%;">
+
+<!--
+![](images/Uday.jpeg){width=75% fig-alt="Uday Bhaskar"}
+-->
+
+Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
+
+**Links:** [ResearchGate](https://www.researchgate.net/profile/Tvs-Udaya-Bhaskar)   &#x2022; [ORCID](https://orcid.org/0000-0001-6438-5016)
+</div>
 </div>
 
 ## Speakers
