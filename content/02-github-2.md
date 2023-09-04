@@ -66,6 +66,7 @@ We are going to generate a **classic** token.
 ```
 git config --global user.email "<your email>"
 git config --global user.name "<your name>"
+git config --global pull.rebase false
 git config --global credential.helper store
 ```
 
@@ -74,6 +75,19 @@ git config --global credential.helper store
 1. Click the Git tab (upper right panel)
 2. Click the checkboxes next to what changes you want to push
 3. Click "Commit"
-4. Fill out a comment 
+4. Fill out a comment and click "Commit"
+5. Close the pop-ups
+6. Click **Push**
 
 [Full instructions with ways to do this from R](https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/set-up.html#Git_from_RStudio_Desktop)
+
+## Optional: Make your website live!
+
+1. Go to your Quarto Website repository on Github
+2. Go to Settings > Pages (in left navbar)
+3. You need to select the branch and the folder where the webpage files are. In this case, they are in `docs`
+![GitHub Pages](./img/github-pages.png)
+4. The URL where your website will appear is shown.
+
+*Have you noticed that people have personal websites at username.github.io? How did they do that? If you create a repo named username.github.io in GitHub, it will automatically appear with that URL. Look for a repo with that name in someone's GitHub account if you see that they use that as their personal website.*
+

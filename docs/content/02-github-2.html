@@ -557,7 +557,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#import-a-github-repository" id="toc-import-a-github-repository" class="nav-link active" data-scroll-target="#import-a-github-repository">Import a GitHub repository</a></li>
+  <li><a href="#clone-a-github-repository-into-rstudio" id="toc-clone-a-github-repository-into-rstudio" class="nav-link" data-scroll-target="#clone-a-github-repository-into-rstudio">Clone a GitHub repository into RStudio</a></li>
+  <li><a href="#lets-explore-the-files" id="toc-lets-explore-the-files" class="nav-link" data-scroll-target="#lets-explore-the-files">Let’s explore the files</a></li>
+  <li><a href="#set-up-authentication" id="toc-set-up-authentication" class="nav-link" data-scroll-target="#set-up-authentication">Set up authentication</a></li>
+  <li><a href="#optional-make-your-website-live" id="toc-optional-make-your-website-live" class="nav-link" data-scroll-target="#optional-make-your-website-live">Optional: Make your website live!</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/edit/main/content/02-github-2.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/blob/main/content/02-github-2.md" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -600,14 +610,101 @@ Goals
 <div class="callout-body-container callout-body">
 <p>In this lab, you will learn how to</p>
 <ul>
-<li>fork a GitHub repository</li>
-<li>clone GitHub repositories to RStudio</li>
+<li>import a GitHub repository = make a copy of a repository in your own account</li>
+<li>clone GitHub repositories to RStudio = get the repo into RStudio</li>
 <li>set up authentication so you can push up changes</li>
 </ul>
 </div>
 </div>
+<section id="import-a-github-repository" class="level2">
+<h2 class="anchored" data-anchor-id="import-a-github-repository">Import a GitHub repository</h2>
+<ol type="1">
+<li>In your browser, navigate to <a href="https://github.com/Hackweek-ITCOocean/Quarto-Website" class="uri">https://github.com/Hackweek-ITCOocean/Quarto-Website</a></li>
+<li>Copy the URL</li>
+<li>Click on the “+” in the top right (on GitHub) and select “import repository”</li>
+<li>Follow instructions to import to your GitHub account</li>
+<li>Now you have your OWN copy of <code>Quarto-Website</code></li>
+<li>Copy the URL for your OWN copy. It will look like this</li>
+</ol>
+<pre><code>https://github.com/yourgithubusername/Quarto-Website</code></pre>
+</section>
+<section id="clone-a-github-repository-into-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="clone-a-github-repository-into-rstudio">Clone a GitHub repository into RStudio</h2>
+<ol type="1">
+<li>Login the JupyterHub</li>
+<li>Click on the RStudio button when the Launcher appears <img src="./img/jhub-launcher.png" class="img-fluid" alt="Jupyterhub Launcher"></li>
+<li>Click File &gt; New Project &gt; Version Control &gt; Git</li>
+<li>Paste the URL into the box</li>
+<li>Click “Create Project”</li>
+<li>The project is created and the Git tab appears in the upper right panel.</li>
+</ol>
+<p>Congratulations! You <strong>pulled</strong> changes from GitHub into the JupyterHub!</p>
+</section>
+<section id="lets-explore-the-files" class="level2">
+<h2 class="anchored" data-anchor-id="lets-explore-the-files">Let’s explore the files</h2>
+<ol type="1">
+<li>This happens to be a website. Let’s <strong>build</strong> it using the Build tab in the upper right.</li>
+<li>Click “Render Website”. The website should build and appear.</li>
+</ol>
+<ul>
+<li>If it doesn’t open automatically, go to docs &gt; index.html, right click and open that in a browser.</li>
+</ul>
+<ol start="3" type="1">
+<li>Open the <code>about.qmd</code> file. Let’s edit that! You can use the “Source” or “Visual” editor.</li>
+<li>When you have made some edits, click “Render” to see how it looks.</li>
+<li>You can also click Build &gt; Render Website to re-create the whole website.</li>
+</ol>
+</section>
+<section id="set-up-authentication" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-authentication">Set up authentication</h2>
+<p>You need to tell GitHub who you are so you can <strong>push</strong> your local changes up to GitHub. There are a few ways to do this. I am going to show you a way that works on any computer, including a virtual computer like the JupyterHub.</p>
+<section id="step-1-generate-a-personal-access-token" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-generate-a-personal-access-token">Step 1: Generate a Personal Access Token</h3>
+<p>We are going to generate a <strong>classic</strong> token.</p>
+<ol type="1">
+<li>Go to https://github.com/settings/tokens</li>
+<li>Click Generate new token &gt; Generate new token (classic)</li>
+<li>When the pop-up shows up, fill in a description, click the “repo” checkbox, and then scroll to bottom to click “Generate”.</li>
+<li>SAVE the token. You need it for the next step.</li>
+</ol>
+</section>
+<section id="step-2-tell-git-who-your-are" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-tell-git-who-your-are">Step 2: Tell Git who your are</h3>
+<ol type="1">
+<li>Return to RStudio</li>
+<li>Click the terminal tab in the bottom right panel</li>
+<li>Paste these 3 lines of code into the terminal</li>
+</ol>
+<pre><code>git config --global user.email "&lt;your email&gt;"
+git config --global user.name "&lt;your name&gt;"
+git config --global pull.rebase false
+git config --global credential.helper store</code></pre>
+</section>
+<section id="step-3-push-changes-up-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-push-changes-up-to-github">Step 3: Push changes up to GitHub</h3>
+<ol type="1">
+<li>Click the Git tab (upper right panel)</li>
+<li>Click the checkboxes next to what changes you want to push</li>
+<li>Click “Commit”</li>
+<li>Fill out a comment and click “Commit”</li>
+<li>Close the pop-ups</li>
+<li>Click <strong>Push</strong></li>
+</ol>
+<p><a href="https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/set-up.html#Git_from_RStudio_Desktop">Full instructions with ways to do this from R</a></p>
+</section>
+</section>
+<section id="optional-make-your-website-live" class="level2">
+<h2 class="anchored" data-anchor-id="optional-make-your-website-live">Optional: Make your website live!</h2>
+<ol type="1">
+<li>Go to your Quarto Website repository on Github</li>
+<li>Go to Settings &gt; Pages (in left navbar)</li>
+<li>You need to select the branch and the folder where the webpage files are. In this case, they are in <code>docs</code> <img src="./img/github-pages.png" class="img-fluid" alt="GitHub Pages"></li>
+<li>The URL where your website will appear is shown.</li>
+</ol>
+<p><em>Have you noticed that people have personal websites at username.github.io? How did they do that? If you create a repo named username.github.io in GitHub, it will automatically appear with that URL. Look for a repo with that name in someone’s GitHub account if you see that they use that as their personal website.</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -976,7 +1073,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><img src="images/incois.png" alt="INCOIS logo" style="width:150px"><br>ITCOocean Hack2week (2023)<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/edit/main/content/02-github-2.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/blob/main/content/02-github-2.md" class="toc-action">View source</a></p></div></div></div>
+    <div class="nav-footer-center"><img src="images/incois.png" alt="INCOIS logo" style="width:150px"><br>ITCOocean Hack2week (2023)</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
