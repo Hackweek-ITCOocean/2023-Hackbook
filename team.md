@@ -123,13 +123,19 @@ Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)
 **Links:** [webpage](https://oceanexpert.org/expert/33322) &#x2022;  [Linkedin](https://www.linkedin.com/in/johnny-konjarla-59b37152/) &#x2022; [ORCID](https://orcid.org/0000-0003-3181-0498)
 
 </div>
+<div>
+### Minh Phan
 
+<img src="images/minh.jpeg" alt="Minh Phan" style="width:75%; ; border-radius: 50%;">
+
+<!--
+![](images/minh.jpeg){width=75% fig-alt="Minh Phan"}
+-->
+
+Indian Ocean database for hackweek, data access tutorials. rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern
+
+**Links:** [GitHub](https://github.com/minhphan03) &#x2022;  [Linkedin](https://www.linkedin.com/in/minhphan0612/)
 </div>
-
-## Support
-
-<div class="columns-3">
-
 <div>
 ### Jiarui Yu
 
@@ -144,22 +150,9 @@ Machine-learning tutorials; rising senior Applied & Computational Mathematical S
 **Links:** [GitHub](https://github.com/NaNa7Miiii) &#x2022;  [Linkedin](https://www.linkedin.com/in/jiarui-yu-0b0ab522b/)
 
 </div>
-
-<div>
-### Minh Phan
-
-<img src="images/minh.jpeg" alt="Minh Phan" style="width:75%; ; border-radius: 50%;">
-
-<!--
-![](images/minh.jpeg){width=75% fig-alt="Minh Phan"}
--->
-
-Indian Ocean database for hackweek, data access tutorials. rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern
-
-**Links:** [GitHub](https://github.com/minhphan03) &#x2022;  [Linkedin](https://www.linkedin.com/in/minhphan0612/)
 </div>
 
-</div>
+
 
 
 
