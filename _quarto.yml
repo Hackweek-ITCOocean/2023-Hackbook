@@ -37,38 +37,33 @@ website:
           - support.md
           - participants.md
           - coc.md
-      - section: "Daily Schedule"
+      - section: "Tutorials"
         contents:
           - section: "01 Monday"
             contents:
               - text: Welcome
                 href: content/01-welcome.md
-              - text: L Indian Ocean
-              - text: L Remote-sensing data
-              - text: H GitHub 1
+              - text: GitHub 1
                 href: content/01-github.md
-              - text: L Geoscience cloud tools
+              - text: Geoscience cloud tools
                 href: content/01-intro-to-cloud-geoscience.qmd
-              - text: H Jupyter hubs
+              - text: Jupyter hubs
                 href: content/01-intro-to-jupyterhub.qmd
           - section: "01 Tuesday"
             contents:
-              - text: L Online RS data
-              - text: L EarthData and Copernicus
-              - text: H RStudio
+              - text: RStudio
                 href: content/02-rstudio.md
-              - text: H GitHub 2
+              - text: GitHub 2
                 href: content/02-github-2.md
-              - text: H Quarto
+              - text: Quarto
+                href: content/02-quarto.qmd
           - section: "01 Wednesday"
             contents:
-              - text: L Climate change
-              - text: L IndOBIS
-              - text: H Programming with AI
+              - text: Programming with AI
                 href: content/02-rstudio.md
-              - text: H Git
+              - text: Git
                 href: content/03-git-rstudio.md
-              - text: H Loading data in R
+              - text: Loading data in R
           - section: "01 Thursday"
             contents:
               - text: L SDMs

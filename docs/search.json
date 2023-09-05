@@ -245,6 +245,34 @@
     "text": "Optional: Make your website live!\n\nGo to your Quarto Website repository on Github\nGo to Settings &gt; Pages (in left navbar)\nYou need to select the branch and the folder where the webpage files are. In this case, they are in docs \nThe URL where your website will appear is shown.\n\nHave you noticed that people have personal websites at username.github.io? How did they do that? If you create a repo named username.github.io in GitHub, it will automatically appear with that URL. Look for a repo with that name in someone’s GitHub account if you see that they use that as their personal website."
   },
   {
+    "objectID": "content/02-quarto.html",
+    "href": "content/02-quarto.html",
+    "title": "Intro to Quarto",
+    "section": "",
+    "text": "Quarto was announced at the 2022 RStudio Conference in this great keynote talk: Mine Çetinkaya-Rundel & Julia Stewart Lowndes | Hello Quarto. I am going to start by showing you 2 clips from this keynote."
+  },
+  {
+    "objectID": "content/02-quarto.html#what-does-quarto-and-rmarkdown-do",
+    "href": "content/02-quarto.html#what-does-quarto-and-rmarkdown-do",
+    "title": "Intro to Quarto",
+    "section": "What does Quarto (and RMarkdown) do?",
+    "text": "What does Quarto (and RMarkdown) do?\n\nQuarto is bundled and comes pre-installed with RStudio v2022.07.1 and beyond!"
+  },
+  {
+    "objectID": "content/02-quarto.html#lets-learn-by-creating",
+    "href": "content/02-quarto.html#lets-learn-by-creating",
+    "title": "Intro to Quarto",
+    "section": "Let’s learn by creating!",
+    "text": "Let’s learn by creating!\n\nOpen up the JupyterHub and navigate to RStudio.\nPlan B. You can open up RStudio on your laptop.\n\n\nCreate a basic Quarto document\nFile &gt; New File &gt; Quarto document\n\n\nCreate a basic Quarto presentation\nFile &gt; New File &gt; Quarto presentation\n\n\nCreate a basic Quarto book\nFile &gt; New Project &gt; Quarto book\n\n\nMake a bit more fancy Quarto book\nActivity for advanced R/GitHub users\n\nGo here https://github.com/nmfs-opensci/NOAA-quarto-book\nClick the “Use this template” button and make copy in your GitHub account and give it a different name. Make sure to click the checkbox to copy all branches. Change owner to your account. \nCopy YOUR repo URL. It’ll look like https://github.com/yourusername/my-quarto-book\nFile &gt; New Project &gt; Version Control and paste in your URL\nClick Create and then you can click the Build tab and render the book.\nMake some changes and push back to GitHub.\nTurn on GitHub Pages via Settings &gt; Pages and selecting the gh-pages branch. \nYour book will automatically be published to the web."
+  },
+  {
+    "objectID": "content/02-quarto.html#intro-to-quarto-workshops",
+    "href": "content/02-quarto.html#intro-to-quarto-workshops",
+    "title": "Intro to Quarto",
+    "section": "Intro to Quarto Workshops",
+    "text": "Intro to Quarto Workshops\nThomas Mocke (Posit) has great videos on Quarto. I am using material from a 2-hour online workshop.\n\nContent\nVideo\nGitHub repo\n\nHe also gave a 2-day workshop if you want to learn Quarto indepth.\n\n2 day workshop\n\nMore workshop that you can watch and join on Posit YouTube"
+  },
+  {
     "objectID": "content/02-rstudio.html#summary",
     "href": "content/02-rstudio.html#summary",
     "title": "RStudio - R",
