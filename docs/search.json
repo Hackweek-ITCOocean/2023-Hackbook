@@ -779,9 +779,9 @@
   {
     "objectID": "participants.html",
     "href": "participants.html",
-    "title": "2023 Participants",
+    "title": "Participants",
     "section": "",
-    "text": "Hackweeks are collaborative and immersive peer-learning experience. Introduce yourself and identify if you have a skill in R or Python, remote-sensing data, or other subject matter expertise. Add your name, GitHub username,\nTo edit, click the “Edit” link on left and follow instructions to create a pull-request.\nName, affiliation, GitHub username, skills, website link, ORCID link\n\n\n\nName\nGitHub\nSome things you are bringing to the hack2week\nLinks\n\n\n\n\nEli Holmes\n@eeholmes\nR expert, Python intermediate, assessing remote-sensing data via cloud, geospatial analysis in R, multivariate statistics, coastal upwelling dynamics and metrics\nwebsite, ORCID\n\n\nYour Name\n@yourgithub\nEveryone brings different knowledge, experience and skills! What are some of yours?\ntext"
+    "text": "Our hack2week participants, organizers and helpers come from across the Indian Ocean Rim and beyond.\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nCentre for Climate Change Research, Indian Institute of Tropical Meteorology (CCCR), Pune, India\nCentre for Marine Living Resources and Ecology (CMLRE), Ministry of Earth Sciences (MoES), Kochi, India.\nNOAA Fisheries, Seattle, WA USA\nNational Centre for Coastal Research (NCCR), Ministry of Earth Sciences (MoES), Chennai, India"
   },
   {
     "objectID": "projects/hackathon-projects.html",

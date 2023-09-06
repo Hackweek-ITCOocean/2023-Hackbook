@@ -1,17 +1,11 @@
 ---
-title: 2023 Participants
+title: Participants
 ---
 
-Hackweeks are collaborative and immersive peer-learning experience. Introduce yourself and identify if you have a skill in R or Python, remote-sensing data, or other subject matter expertise. Add your name, GitHub username,
+Our hack2week participants, organizers and helpers come from across the Indian Ocean Rim and beyond.
 
-To edit, click the "Edit" link on left and follow instructions to create a pull-request.
-
-Name, affiliation, GitHub username, skills, website link, ORCID link
-
-
-
-| Name | GitHub | Some things you are bringing to the hack2week | Links |
-|----|----|----|---|
-| Eli Holmes | [@eeholmes](https://github.com/eeholmes) | R expert, Python intermediate, assessing remote-sensing data via cloud, geospatial analysis in R, multivariate statistics, coastal upwelling dynamics and metrics | [website](https://eeholmes.github.io/), [ORCID](https://orcid.org/0000-0001-9128-8393) |
-| Your Name | [@yourgithub](https://github.com/yourgithub) | Everyone brings different knowledge, experience and skills! What are some of yours? | [text](link) |
-
+* Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
+* Centre for Climate Change Research, Indian Institute of Tropical Meteorology ([CCCR](http://cccr.tropmet.res.in/home/index.jsp)), Pune, India
+* Centre for Marine Living Resources and Ecology (CMLRE), Ministry of Earth Sciences (MoES), Kochi, India.
+* NOAA Fisheries, Seattle, WA USA
+* National Centre for Coastal Research (NCCR), Ministry of Earth Sciences (MoES), Chennai, India
