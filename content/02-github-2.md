@@ -26,9 +26,11 @@ https://github.com/yourgithubusername/Quarto-Website
 
 ## Clone a GitHub repository into RStudio
 
-1. Login the JupyterHub
+1. Login to the JupyterHub. **You might have to wait awhile** for the page to load.
 2. Click on the RStudio button when the Launcher appears
 ![Jupyterhub Launcher](./img/jhub-launcher.png)
+3. Click on the tab that opens with the R in a circle. You should see this
+![RStudio](./img/rstudio.png)
 3. Click File > New Project > Version Control > Git
 4. Paste the URL into the box
 5. Click "Create Project"
@@ -38,7 +40,7 @@ Congratulations! You **pulled** changes from GitHub into the JupyterHub!
 
 ## Let's explore the files
 
-1. This happens to be a website. Let's **build** it using the Build tab in the upper right.
+1. This happens to be a website. Let's **build** it using the Build tab in the upper right panel.
 2. Click "Render Website". The website should build and appear.
   - If it doesn't open automatically, go to docs > index.html, right click and open that in a browser.
 3. Open the `about.qmd` file. Let's edit that! You can use the "Source" or "Visual" editor.
@@ -82,6 +84,8 @@ git config --global credential.helper store
 [Full instructions with ways to do this from R](https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/set-up.html#Git_from_RStudio_Desktop)
 
 ## Optional: Make your website live!
+
+*For those who get through all the steps and want to play around more.*
 
 1. Go to your Quarto Website repository on Github
 2. Go to Settings > Pages (in left navbar)

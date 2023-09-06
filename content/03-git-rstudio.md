@@ -13,10 +13,6 @@ title: Basic Git/GitHub Skills Using RStudio
 :::
 
 
-Before we go over this tutorial we expect that you have already gone through this preparation material
-[Intro to the JupyterHub](jupyterhub.md).
-
-
 ## What is Git and GitHub?
 
 **Git** A program to track your file changes and create a history of those changes. Creates a 'container' for a set of files called a repository.
@@ -38,7 +34,7 @@ Before we go over this tutorial we expect that you have already gone through thi
 
 ## Overview
 
-Today I will cover the four basic Git/GitHub skills. We will not work with branches today and I won't cover much about merge conflicts. The goal for today is to first get you comfortable with the basic skills and terminology---and also get you set up on the JupyterHub. We will use what is called a  "trunk-based workflow".
+Today I will cover the four basic Git/GitHub skills. The goal for today is to first get you comfortable with the basic skills and terminology. We will use what is called a  "trunk-based workflow".
 
 ### Simple Trunk-based Workflow:
 
@@ -48,50 +44,57 @@ Today I will cover the four basic Git/GitHub skills. We will not work with branc
 
 We'll do this
 
-![](../../img/git-linear-flow-2.png)
+![](./img/git-linear-flow-2.png)
 
 ## Setting up Git
 
-Before we can work with Git in JupyterLab, we need to do some set up.
+**You should have gotten this done on Tuesday but if not here are the instructions**
 
-[First time `git` setup](../../preliminary/git)
+Before we can work with Git in the JupyterHub, we need to do some set up.
 
 1. Tell Git who you are and to store your credentials (GitHub login info)
 
-[Show me](https://youtu.be/3CLuOCJMfK0)
+[Show me](https://youtu.be/F0jsBeMcU24)
+
+Paste this into a terminal window:
+```
+git config --global user.email "<your email>"
+git config --global user.name "<your name>"
+git config --global pull.rebase false
+git config --global credential.helper store
+```
 
 2. Get a Personal Access Token from GitHub
 
 Copy the token! You will need it in the next step.
 
-[Show me](https://youtu.be/tkioJhF_gO8)
+[Show me](https://youtu.be/tkioJhF_gO8) Note, one change to this video is that you need to specify that you want a **classic** token.
 
 3. Trigger Git to ask for your password (that personal access token)
 
-You will do this by cloning a private repo. Open a shell and issue this command
+You can do this by cloning a private repo. In the Terminal, issue this command
 
 ```shell
-git clone https://github.com/snowex-hackweek/github_setup_check.git
+git clone https://github.com/Hackweek-ITCOocean/github_setup_check
 ```
 
 It will ask for your GitHub username and password. At the password part, paste in the Personal Access Token.
 
 
-## `jupyterlab-git`
+## Git tab
 
-When the instructions say to use or open or click on `jupyterlag-git`, click the icon in the left navbar marked by the red arrow.
+When the instructions say to use or open or click the Git tab, 
 
-![](../../img/jupyterlab-git.jpg)
+![](./img/rstudio-git-tab.jpg)
 
 ## The Key Skills
 
 * Skill 1: Create a blank repo on GitHub
-* Skill 2: Clone your **GitHub** repo onto the JupyterHub
-* Skill 0: Open your repository in the JupyterLab.
+* Skill 2: Clone your **GitHub** repo to RStudio
 * Skill 3: Make some changes and commit those local changes
 * Skill 4: Push the changes to GitHub
 
-* Skill 1b: Fork someone else's GitHub repository
+* Skill 1b: Copy someone else's GitHub repository
 
 ## Let's see it done!
 
@@ -102,50 +105,48 @@ When the instructions say to use or open or click on `jupyterlag-git`, click the
 3. Click new and check checkbox to add the Readme file and `.gitignore`
 4. Copy the URL of your new repo. It's in the browser where you normally see a URL.
 
-[Show me](https://youtu.be/1uV_7iGVu3o)
+[Show me](https://youtu.be/_QszqhWW_Mg)
 
-### Skill 2: Clone your repo to the JupyterHub
+### Skill 2: Clone your repo to the RStudio
+
+In RStudio we do this by making a new project.
 
 1. Copy the URL of your repo. `https://www.github.com/yourname/Test`
-2. Click on the `jupyterlab-git` icon in the left navbar.
-3. You'll see 3 boxes<sup>*</sub>, click on Clone Repository.
-3. Paste the URL from  in the box that pops up and paste in the URL from Step #1.
-4. Your repo now appears in the list of folders.
+2. File > New Project > Version Control > Git
+3. Past in the URL of your repo from Step 1
+3. Check that it is being created in your Home directory which will be denoted `~` in the JupyterHub.
+4. Click Create.
 
-[Show me](https://youtu.be/7HDheHE05jc) -- [Show me with the shell](https://youtu.be/GpYycSpwYQk) -- [Show me with Visual Studio Code](https://youtu.be/aMPGKMRjl8A)
-
-* I don't see those boxes. You are in a repository. Click on the little folder icon at top to get out of the current folder. See video (at the end).
+[Show me](https://youtu.be/GObjzx6v6rU)
 
 
 ### Skill 3: Make some changes and commit your changes
 
+This writes a note about what changes you have made. It also marks a 'point' in time that you can go back to if you need to.
+
 1. Make some changes to the README.md file in the Test repo.
-2. Click the `jupyterlab-git` icon, and stage the change(s) by rolling over the modified file and clicking the +.
-2. Open GitHub Desktop, click the little checkboxes next to the changes.
+2. Click the Git tab, and stage the change(s) by checking the checkboxes next to the files listed.
+2. Click the Commit button.
 3. Add a commit comment, click commit.
 
-[Show me](https://youtu.be/2stgvvKer-k) -- [Show me from the shell](https://youtu.be/jXxWvjPYgDI) -- [Show me with Visual Studio Code](https://youtu.be/jMWvLk9iuFw)
+[Show me](https://youtu.be/9XfChAPpVm4)
 
 ### Skill 4: Push changes to GitHub / Pull changes from GitHub
 
 To push changes you committed in Skill #3
 
-1. From jupyterlab-git, click on the little cloud with up arrow at the top (it's kind of small).
+1. From Git tab, click on the Green up arrow that says Push.
 
-[Show me](https://youtu.be/-D_Kk3ia36c) -- [Show me in the shell](https://youtu.be/XFdvHn_Q-1o)
+2. To pull changes on GitHub that are not on your local computer:
 
-To pull changes on GitHub that are not on your local computer:
+1. Make some changes directly on GitHub (not in RStudio)
+2. From Git tab, click on the down arrow that says Pull.
 
-1. Make some changes directly on GitHub
-1. From jupyterlab-git, click on the little cloud with down arrow at the top (it's kind of small).
-
-[Show me](https://youtu.be/XjsuaDHAAZg)
-
-* Note in the shell, the command is `git pull`.
+[Show me](https://youtu.be/wcQNQH0matE)
 
 ### Pair-activity 1
 
-In JupyterLab,
+In RStudio,
 
 1. Make a copy of README.md
 2. Rename it to <youname>.md
@@ -153,52 +154,30 @@ In JupyterLab,
 4. Stage and commit the added file.
 5. Push to GitHub.
 
-Do this from `jupyterlab-git`. You can also try from the shell if you watched the shell videos too.
+Try before watching.
 
-Try before watching. [Show me](https://youtu.be/ejmkkjWJ_Es) -- [Show me in the shell](https://youtu.be/tvmX41b5pTU)
+[Show me in RStudio](https://youtu.be/xUbxqzp7Rss) -- [Show me in the shell](https://youtu.be/tvmX41b5pTU) -- [Show me in jupyter-git](https://youtu.be/ejmkkjWJ_Es)
 
 ### Pair-activity 2
 
-All of this activity is in JupyterLab.
+All of this activity is in RStudio.
 
-1. Clone this repo: https://github.com/snowex-hackweek/git-basics
-2. Navigate to the repo, copy `Copyme.md` and rename to `<yourname>.md`
+1. Clone this repo <https://github.com/Hackweek-ITCOocean/git-basics> to RStudio and create a new project
+2. Navigate to the files in your new project, create a filed called to `<yourname>.md`. Use your actual name so the filename is different from everyone elses.
 3. Stage and then commit that new file.
 4. Push to GitHub.
 5. Make some more changes and push to GitHub.
 6. Pull in your partner's (and everyone elses) changes
 
-[Show me](https://youtu.be/w0ub1hBZh70)
+[Show me in RStudio](https://youtu.be/y8YWuPHC60g) -- [Show me in JupyterLab](https://youtu.be/w0ub1hBZh70)
 
-### Skill 1b: Fork a repo on GitHub
-
-You can copy other people's repos but maintain a connection to the original (upstream) repo. In the hackweek, you will use this to get the tutorials and update them each morning.
-
-1. In a browser, go to the GitHub repository you want to fork.
-2. Click the little fork icon in the upper right corner.
-3. Use Skill #1 to clone the forked repo to your computer.
-
-Fetch changes from the original (upstream) using `jupyterlab-git`
-
-1. From GitHub, click "Fetch upstream"
-2. From JupyterLab, click on the `jupyterlab-git` icon and click the cloud with down arrow, to pull in the changes to JupyterLab.
-
-Fetch changes from the original (upstream) using the shell
-
-See instructions [here](jupyter)
-
-
-### Skill 1c: Copy a repo on GitHub
+### Pair-activity 3
 
 You can copy your own or other people's repos^[This is different from forking. There is no connection to the original repository.].
 
-1. In a browser, go to the GitHub repository you want to copy.
-2. Copy its url.
+1. In a browser, go to the GitHub repository <https://github.com/RWorkflow-Workshops/Week5>
+2. Copy its URL.
 3. Navigate to your GitHub page: click your icon in the upper right and then 'your repositories'
-4. Click the `+` in top right and click `import repository`. Paste in the url and give your repo a name.
-5. Use Skill #1 to clone your new repo to your computer
+4. Click the `+` in top right and click `import repository`. Paste in the URL and give your repo a name.
+5. Use Skill #1 to clone your new repo to RStudio and create a new project
 
-### Pair-activity 2
-
-1. Fork https://github.com/snowex-hackweek/website2022 (GitHub)
-2. Clone to JupyterHub (Skill #2)

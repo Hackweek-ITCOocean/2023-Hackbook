@@ -221,14 +221,14 @@
     "href": "content/02-github-2.html#clone-a-github-repository-into-rstudio",
     "title": "GitHub - Lecture 2",
     "section": "Clone a GitHub repository into RStudio",
-    "text": "Clone a GitHub repository into RStudio\n\nLogin the JupyterHub\nClick on the RStudio button when the Launcher appears \nClick File &gt; New Project &gt; Version Control &gt; Git\nPaste the URL into the box\nClick “Create Project”\nThe project is created and the Git tab appears in the upper right panel.\n\nCongratulations! You pulled changes from GitHub into the JupyterHub!"
+    "text": "Clone a GitHub repository into RStudio\n\nLogin to the JupyterHub. You might have to wait awhile for the page to load.\nClick on the RStudio button when the Launcher appears \nClick on the tab that opens with the R in a circle. You should see this \nClick File &gt; New Project &gt; Version Control &gt; Git\nPaste the URL into the box\nClick “Create Project”\nThe project is created and the Git tab appears in the upper right panel.\n\nCongratulations! You pulled changes from GitHub into the JupyterHub!"
   },
   {
     "objectID": "content/02-github-2.html#lets-explore-the-files",
     "href": "content/02-github-2.html#lets-explore-the-files",
     "title": "GitHub - Lecture 2",
     "section": "Let’s explore the files",
-    "text": "Let’s explore the files\n\nThis happens to be a website. Let’s build it using the Build tab in the upper right.\nClick “Render Website”. The website should build and appear.\n\n\nIf it doesn’t open automatically, go to docs &gt; index.html, right click and open that in a browser.\n\n\nOpen the about.qmd file. Let’s edit that! You can use the “Source” or “Visual” editor.\nWhen you have made some edits, click “Render” to see how it looks.\nYou can also click Build &gt; Render Website to re-create the whole website."
+    "text": "Let’s explore the files\n\nThis happens to be a website. Let’s build it using the Build tab in the upper right panel.\nClick “Render Website”. The website should build and appear.\n\n\nIf it doesn’t open automatically, go to docs &gt; index.html, right click and open that in a browser.\n\n\nOpen the about.qmd file. Let’s edit that! You can use the “Source” or “Visual” editor.\nWhen you have made some edits, click “Render” to see how it looks.\nYou can also click Build &gt; Render Website to re-create the whole website."
   },
   {
     "objectID": "content/02-github-2.html#set-up-authentication",
@@ -242,7 +242,7 @@
     "href": "content/02-github-2.html#optional-make-your-website-live",
     "title": "GitHub - Lecture 2",
     "section": "Optional: Make your website live!",
-    "text": "Optional: Make your website live!\n\nGo to your Quarto Website repository on Github\nGo to Settings &gt; Pages (in left navbar)\nYou need to select the branch and the folder where the webpage files are. In this case, they are in docs \nThe URL where your website will appear is shown.\n\nHave you noticed that people have personal websites at username.github.io? How did they do that? If you create a repo named username.github.io in GitHub, it will automatically appear with that URL. Look for a repo with that name in someone’s GitHub account if you see that they use that as their personal website."
+    "text": "Optional: Make your website live!\nFor those who get through all the steps and want to play around more.\n\nGo to your Quarto Website repository on Github\nGo to Settings &gt; Pages (in left navbar)\nYou need to select the branch and the folder where the webpage files are. In this case, they are in docs \nThe URL where your website will appear is shown.\n\nHave you noticed that people have personal websites at username.github.io? How did they do that? If you create a repo named username.github.io in GitHub, it will automatically appear with that URL. Look for a repo with that name in someone’s GitHub account if you see that they use that as their personal website."
   },
   {
     "objectID": "content/02-quarto.html",
@@ -315,13 +315,6 @@
     "text": "More tips\nLearn some tips and tricks from these\n\nhttps://colorado.posit.co/rsc/the-unknown/into-the-unknown.html\nhttps://www.dataquest.io/blog/rstudio-tips-tricks-shortcuts/"
   },
   {
-    "objectID": "content/03-git-rstudio.html",
-    "href": "content/03-git-rstudio.html",
-    "title": "Basic Git/GitHub Skills Using RStudio",
-    "section": "",
-    "text": "Before we go over this tutorial we expect that you have already gone through this preparation material Intro to the JupyterHub."
-  },
-  {
     "objectID": "content/03-git-rstudio.html#what-is-git-and-github",
     "href": "content/03-git-rstudio.html#what-is-git-and-github",
     "title": "Basic Git/GitHub Skills Using RStudio",
@@ -340,35 +333,35 @@
     "href": "content/03-git-rstudio.html#overview",
     "title": "Basic Git/GitHub Skills Using RStudio",
     "section": "Overview",
-    "text": "Overview\nToday I will cover the four basic Git/GitHub skills. We will not work with branches today and I won’t cover much about merge conflicts. The goal for today is to first get you comfortable with the basic skills and terminology—and also get you set up on the JupyterHub. We will use what is called a “trunk-based workflow”.\n\nSimple Trunk-based Workflow:\n\nMake local (on your computer) changes to code.\nRecord what those changes were about and commit to the code change record (history).\nPush those changes to your remote repository (aka origin)\n\nWe’ll do this"
+    "text": "Overview\nToday I will cover the four basic Git/GitHub skills. The goal for today is to first get you comfortable with the basic skills and terminology. We will use what is called a “trunk-based workflow”.\n\nSimple Trunk-based Workflow:\n\nMake local (on your computer) changes to code.\nRecord what those changes were about and commit to the code change record (history).\nPush those changes to your remote repository (aka origin)\n\nWe’ll do this"
   },
   {
     "objectID": "content/03-git-rstudio.html#setting-up-git",
     "href": "content/03-git-rstudio.html#setting-up-git",
     "title": "Basic Git/GitHub Skills Using RStudio",
     "section": "Setting up Git",
-    "text": "Setting up Git\nBefore we can work with Git in JupyterLab, we need to do some set up.\nFirst time git setup\n\nTell Git who you are and to store your credentials (GitHub login info)\n\nShow me\n\nGet a Personal Access Token from GitHub\n\nCopy the token! You will need it in the next step.\nShow me\n\nTrigger Git to ask for your password (that personal access token)\n\nYou will do this by cloning a private repo. Open a shell and issue this command\ngit clone https://github.com/snowex-hackweek/github_setup_check.git\nIt will ask for your GitHub username and password. At the password part, paste in the Personal Access Token."
+    "text": "Setting up Git\nYou should have gotten this done on Tuesday but if not here are the instructions\nBefore we can work with Git in the JupyterHub, we need to do some set up.\n\nTell Git who you are and to store your credentials (GitHub login info)\n\nShow me\nPaste this into a terminal window:\ngit config --global user.email \"&lt;your email&gt;\"\ngit config --global user.name \"&lt;your name&gt;\"\ngit config --global pull.rebase false\ngit config --global credential.helper store\n\nGet a Personal Access Token from GitHub\n\nCopy the token! You will need it in the next step.\nShow me Note, one change to this video is that you need to specify that you want a classic token.\n\nTrigger Git to ask for your password (that personal access token)\n\nYou can do this by cloning a private repo. In the Terminal, issue this command\ngit clone https://github.com/Hackweek-ITCOocean/github_setup_check\nIt will ask for your GitHub username and password. At the password part, paste in the Personal Access Token."
   },
   {
-    "objectID": "content/03-git-rstudio.html#jupyterlab-git",
-    "href": "content/03-git-rstudio.html#jupyterlab-git",
+    "objectID": "content/03-git-rstudio.html#git-tab",
+    "href": "content/03-git-rstudio.html#git-tab",
     "title": "Basic Git/GitHub Skills Using RStudio",
-    "section": "jupyterlab-git",
-    "text": "jupyterlab-git\nWhen the instructions say to use or open or click on jupyterlag-git, click the icon in the left navbar marked by the red arrow."
+    "section": "Git tab",
+    "text": "Git tab\nWhen the instructions say to use or open or click the Git tab,"
   },
   {
     "objectID": "content/03-git-rstudio.html#the-key-skills",
     "href": "content/03-git-rstudio.html#the-key-skills",
     "title": "Basic Git/GitHub Skills Using RStudio",
     "section": "The Key Skills",
-    "text": "The Key Skills\n\nSkill 1: Create a blank repo on GitHub\nSkill 2: Clone your GitHub repo onto the JupyterHub\nSkill 0: Open your repository in the JupyterLab.\nSkill 3: Make some changes and commit those local changes\nSkill 4: Push the changes to GitHub\nSkill 1b: Fork someone else’s GitHub repository"
+    "text": "The Key Skills\n\nSkill 1: Create a blank repo on GitHub\nSkill 2: Clone your GitHub repo to RStudio\nSkill 3: Make some changes and commit those local changes\nSkill 4: Push the changes to GitHub\nSkill 1b: Copy someone else’s GitHub repository"
   },
   {
     "objectID": "content/03-git-rstudio.html#lets-see-it-done",
     "href": "content/03-git-rstudio.html#lets-see-it-done",
     "title": "Basic Git/GitHub Skills Using RStudio",
     "section": "Let’s see it done!",
-    "text": "Let’s see it done!\n\nSkill 1: Create a blank repo on GitHub\n\nClick the + in the upper left from YOUR GitHub page.\nGive your repo the name Test and make sure it is public.\nClick new and check checkbox to add the Readme file and .gitignore\nCopy the URL of your new repo. It’s in the browser where you normally see a URL.\n\nShow me\n\n\nSkill 2: Clone your repo to the JupyterHub\n\nCopy the URL of your repo. https://www.github.com/yourname/Test\nClick on the jupyterlab-git icon in the left navbar.\nYou’ll see 3 boxes*, click on Clone Repository.\nPaste the URL from in the box that pops up and paste in the URL from Step #1.\nYour repo now appears in the list of folders.\n\nShow me – Show me with the shell – Show me with Visual Studio Code\n\nI don’t see those boxes. You are in a repository. Click on the little folder icon at top to get out of the current folder. See video (at the end).\n\n\n\nSkill 3: Make some changes and commit your changes\n\nMake some changes to the README.md file in the Test repo.\nClick the jupyterlab-git icon, and stage the change(s) by rolling over the modified file and clicking the +.\nOpen GitHub Desktop, click the little checkboxes next to the changes.\nAdd a commit comment, click commit.\n\nShow me – Show me from the shell – Show me with Visual Studio Code\n\n\nSkill 4: Push changes to GitHub / Pull changes from GitHub\nTo push changes you committed in Skill #3\n\nFrom jupyterlab-git, click on the little cloud with up arrow at the top (it’s kind of small).\n\nShow me – Show me in the shell\nTo pull changes on GitHub that are not on your local computer:\n\nMake some changes directly on GitHub\nFrom jupyterlab-git, click on the little cloud with down arrow at the top (it’s kind of small).\n\nShow me\n\nNote in the shell, the command is git pull.\n\n\n\nPair-activity 1\nIn JupyterLab,\n\nMake a copy of README.md\nRename it to .md\nAdd some text.\nStage and commit the added file.\nPush to GitHub.\n\nDo this from jupyterlab-git. You can also try from the shell if you watched the shell videos too.\nTry before watching. Show me – Show me in the shell\n\n\nPair-activity 2\nAll of this activity is in JupyterLab.\n\nClone this repo: https://github.com/snowex-hackweek/git-basics\nNavigate to the repo, copy Copyme.md and rename to &lt;yourname&gt;.md\nStage and then commit that new file.\nPush to GitHub.\nMake some more changes and push to GitHub.\nPull in your partner’s (and everyone elses) changes\n\nShow me\n\n\nSkill 1b: Fork a repo on GitHub\nYou can copy other people’s repos but maintain a connection to the original (upstream) repo. In the hackweek, you will use this to get the tutorials and update them each morning.\n\nIn a browser, go to the GitHub repository you want to fork.\nClick the little fork icon in the upper right corner.\nUse Skill #1 to clone the forked repo to your computer.\n\nFetch changes from the original (upstream) using jupyterlab-git\n\nFrom GitHub, click “Fetch upstream”\nFrom JupyterLab, click on the jupyterlab-git icon and click the cloud with down arrow, to pull in the changes to JupyterLab.\n\nFetch changes from the original (upstream) using the shell\nSee instructions here\n\n\nSkill 1c: Copy a repo on GitHub\nYou can copy your own or other people’s repos1.\n\nIn a browser, go to the GitHub repository you want to copy.\nCopy its url.\nNavigate to your GitHub page: click your icon in the upper right and then ‘your repositories’\nClick the + in top right and click import repository. Paste in the url and give your repo a name.\nUse Skill #1 to clone your new repo to your computer\n\n\n\nPair-activity 2\n\nFork https://github.com/snowex-hackweek/website2022 (GitHub)\nClone to JupyterHub (Skill #2)"
+    "text": "Let’s see it done!\n\nSkill 1: Create a blank repo on GitHub\n\nClick the + in the upper left from YOUR GitHub page.\nGive your repo the name Test and make sure it is public.\nClick new and check checkbox to add the Readme file and .gitignore\nCopy the URL of your new repo. It’s in the browser where you normally see a URL.\n\nShow me\n\n\nSkill 2: Clone your repo to the RStudio\nIn RStudio we do this by making a new project.\n\nCopy the URL of your repo. https://www.github.com/yourname/Test\nFile &gt; New Project &gt; Version Control &gt; Git\nPast in the URL of your repo from Step 1\nCheck that it is being created in your Home directory which will be denoted ~ in the JupyterHub.\nClick Create.\n\nShow me\n\n\nSkill 3: Make some changes and commit your changes\nThis writes a note about what changes you have made. It also marks a ‘point’ in time that you can go back to if you need to.\n\nMake some changes to the README.md file in the Test repo.\nClick the Git tab, and stage the change(s) by checking the checkboxes next to the files listed.\nClick the Commit button.\nAdd a commit comment, click commit.\n\nShow me\n\n\nSkill 4: Push changes to GitHub / Pull changes from GitHub\nTo push changes you committed in Skill #3\n\nFrom Git tab, click on the Green up arrow that says Push.\nTo pull changes on GitHub that are not on your local computer:\nMake some changes directly on GitHub (not in RStudio)\nFrom Git tab, click on the down arrow that says Pull.\n\nShow me\n\n\nPair-activity 1\nIn RStudio,\n\nMake a copy of README.md\nRename it to .md\nAdd some text.\nStage and commit the added file.\nPush to GitHub.\n\nTry before watching.\nShow me in RStudio – Show me in the shell – Show me in jupyter-git\n\n\nPair-activity 2\nAll of this activity is in RStudio.\n\nClone this repo https://github.com/Hackweek-ITCOocean/git-basics to RStudio and create a new project\nNavigate to the files in your new project, create a filed called to &lt;yourname&gt;.md. Use your actual name so the filename is different from everyone elses.\nStage and then commit that new file.\nPush to GitHub.\nMake some more changes and push to GitHub.\nPull in your partner’s (and everyone elses) changes\n\nShow me in RStudio – Show me in JupyterLab\n\n\nPair-activity 3\nYou can copy your own or other people’s repos1.\n\nIn a browser, go to the GitHub repository https://github.com/RWorkflow-Workshops/Week5\nCopy its URL.\nNavigate to your GitHub page: click your icon in the upper right and then ‘your repositories’\nClick the + in top right and click import repository. Paste in the URL and give your repo a name.\nUse Skill #1 to clone your new repo to RStudio and create a new project"
   },
   {
     "objectID": "content/03-git-rstudio.html#footnotes",
