@@ -115,10 +115,10 @@ website:
         href: https://iioe-2.incois.gov.in/ecsn/index.html
       - text: <img src="images/ocean-decade.png" width=150px>
         href: https://oceandecade.org/
-      - text: <img src="images/ecop.png" width=150px>
-        href: https://www.ecopdecade.org/
       - text: <img src="images/dcc-ior.png" width=150px>
         href: https://incois.gov.in/dcc-ior/index.jsp
+      - text: <img src="images/ecop.png" width=150px>
+        href: https://www.ecopdecade.org/
 #      - text: DECCaD-IO
 #        href: https://oceandecade.org/actions/devising-early-career-capacity-development-indocn-deccad-io/
   navbar:
