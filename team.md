@@ -112,8 +112,6 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 <div class="columns-3">
 
 <div>
-
-<div>
 ### Johnny Konjarla
 
 <img src="images/johnny.jpeg" alt="Johnny Konjarla" style="width:75%; ; border-radius: 50%;">
@@ -121,6 +119,16 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)), Kochi, India
 
 **Links:** [webpage](https://oceanexpert.org/expert/33322) &#x2022;  [Linkedin](https://www.linkedin.com/in/johnny-konjarla-59b37152/) &#x2022; [ORCID](https://orcid.org/0000-0003-3181-0498)
+
+</div>
+<div>
+### Ben Best
+
+<img src="images/bbest.jpeg" alt="Ben Best" style="width:75%; ; border-radius: 50%;">
+
+[EcoQuants.com](https://ecoquants.com/), UC Santa Barbara’s Bren School of Environmental Science & Management, Santa Barbara, CA
+
+**Links:** [webpage](https://bbest.github.io/about.html) &#x2022;  [GitHub](https://github.com/bbest) &#x2022; [ORCID](https://orcid.org/0000-0002-2686-0784)
 
 </div>
 <div>
@@ -136,6 +144,10 @@ Indian Ocean database for hackweek, data access tutorials. rising senior Applied
 
 **Links:** [GitHub](https://github.com/minhphan03) &#x2022;  [Linkedin](https://www.linkedin.com/in/minhphan0612/)
 </div>
+</div>
+
+<div class="columns-3">
+
 <div>
 ### Jiarui Yu
 
