@@ -2,16 +2,20 @@
 title: RStudio - R
 ---
 
-## Summary
+::: {.callout-note icon=false}
 
 In this tutorial, we will provide a brief introduction to:
 
-1.  RStudio in the JupyterHub
+1.  Open RStudio in the JupyterHub
 2.  Basic navigation around  **RStudio**: the 4 main panels and menus
 3.  The help panel
 4.  Create a RStudio project
+6.  Installing packages
+7.  Uploading and downloading files
 4.  Creating files and creating files with templates
 5.  Command line (**terminal**/shell) in RStudio
+
+:::
 
 ## Open RStudio in the JupyterHub
 
@@ -33,6 +37,43 @@ In this tutorial, we will provide a brief introduction to:
 3. Name it `sandbox`
 4. Click on the dropdown in the upper right corner to select your `sandbox` project
 5. Click on Tools > Project Options > General and change the first 2 options about saving and restoring the workspace to "No"
+
+## Installing packages
+
+In the bottom right panel, select the Packages tab, click install and then start typing the name of the package. Then click Install.
+
+The JupyterHub comes with many packages already installed so you shouldn't have to install many packages.
+
+When you want to use a package, you first need to load it with
+
+```
+library(hello)
+```
+
+You will see this in the tutorials. You might also see something like
+
+```
+hello::thefunction()
+```
+
+This is using `thefunction()` from the `hello` package.
+
+::: {.callout-note}
+Python users. In R, you will always call a function like `funtion(object)` and **never** like `object.function()`. The exception is something called 'piping' in R, which I have never seen in Python. In this case you pass objects left to right. Like `object %>% function()`. Piping is very common in modern R but you won't see it much in R from 10 years ago.
+:::
+
+## Uploading and downloading files
+
+*Note, Upload and download is only for the JupyterHub not on RStudio on your computer.*
+
+### Uploading is easy. 
+
+Look for the Upload button in the Files tab of the bottom right panel. 
+
+### Download is less intuitive. 
+
+1. Click the checkbox next to the file you want to download. One only.
+2. Click the "cog" icon in the Files tab of the bottom right panel. Then click Export.
 
 ## Creating files
 

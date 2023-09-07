@@ -275,8 +275,11 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">Loading data in R</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../r-tutorials/03-r-read-in-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Loading data in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -299,13 +302,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-notebooks/Lab-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../r-tutorials/Lab-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">H Lab Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-notebooks/geospatial-lab1.html" class="sidebar-item-text sidebar-link">
+  <a href="../r-tutorials/04-geospatial-lab1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">H Geospatial Lab 1</span></a>
   </div>
 </li>
@@ -540,10 +543,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#open-rstudio-in-the-jupyterhub" id="toc-open-rstudio-in-the-jupyterhub" class="nav-link" data-scroll-target="#open-rstudio-in-the-jupyterhub">Open RStudio in the JupyterHub</a></li>
+  <li><a href="#open-rstudio-in-the-jupyterhub" id="toc-open-rstudio-in-the-jupyterhub" class="nav-link active" data-scroll-target="#open-rstudio-in-the-jupyterhub">Open RStudio in the JupyterHub</a></li>
   <li><a href="#basic-navigation" id="toc-basic-navigation" class="nav-link" data-scroll-target="#basic-navigation">Basic Navigation</a></li>
   <li><a href="#create-an-rstudio-project" id="toc-create-an-rstudio-project" class="nav-link" data-scroll-target="#create-an-rstudio-project">Create an RStudio project</a></li>
+  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages">Installing packages</a></li>
+  <li><a href="#uploading-and-downloading-files" id="toc-uploading-and-downloading-files" class="nav-link" data-scroll-target="#uploading-and-downloading-files">Uploading and downloading files</a></li>
   <li><a href="#creating-files" id="toc-creating-files" class="nav-link" data-scroll-target="#creating-files">Creating files</a></li>
   <li><a href="#more-tips" id="toc-more-tips" class="nav-link" data-scroll-target="#more-tips">More tips</a></li>
   </ul>
@@ -578,18 +582,29 @@ function googleTranslateElementInit() {
 
 </header>
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>In this tutorial, we will provide a brief introduction to:</p>
 <ol type="1">
-<li>RStudio in the JupyterHub</li>
+<li>Open RStudio in the JupyterHub</li>
 <li>Basic navigation around <strong>RStudio</strong>: the 4 main panels and menus</li>
 <li>The help panel</li>
 <li>Create a RStudio project</li>
+<li>Installing packages</li>
+<li>Uploading and downloading files</li>
 <li>Creating files and creating files with templates</li>
 <li>Command line (<strong>terminal</strong>/shell) in RStudio</li>
 </ol>
-</section>
+</div>
+</div>
 <section id="open-rstudio-in-the-jupyterhub" class="level2">
 <h2 class="anchored" data-anchor-id="open-rstudio-in-the-jupyterhub">Open RStudio in the JupyterHub</h2>
 <ol type="1">
@@ -618,6 +633,44 @@ function googleTranslateElementInit() {
 <li>Click on the dropdown in the upper right corner to select your <code>sandbox</code> project</li>
 <li>Click on Tools &gt; Project Options &gt; General and change the first 2 options about saving and restoring the workspace to “No”</li>
 </ol>
+</section>
+<section id="installing-packages" class="level2">
+<h2 class="anchored" data-anchor-id="installing-packages">Installing packages</h2>
+<p>In the bottom right panel, select the Packages tab, click install and then start typing the name of the package. Then click Install.</p>
+<p>The JupyterHub comes with many packages already installed so you shouldn’t have to install many packages.</p>
+<p>When you want to use a package, you first need to load it with</p>
+<pre><code>library(hello)</code></pre>
+<p>You will see this in the tutorials. You might also see something like</p>
+<pre><code>hello::thefunction()</code></pre>
+<p>This is using <code>thefunction()</code> from the <code>hello</code> package.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Python users. In R, you will always call a function like <code>funtion(object)</code> and <strong>never</strong> like <code>object.function()</code>. The exception is something called ‘piping’ in R, which I have never seen in Python. In this case you pass objects left to right. Like <code>object %&gt;% function()</code>. Piping is very common in modern R but you won’t see it much in R from 10 years ago.</p>
+</div>
+</div>
+</section>
+<section id="uploading-and-downloading-files" class="level2">
+<h2 class="anchored" data-anchor-id="uploading-and-downloading-files">Uploading and downloading files</h2>
+<p><em>Note, Upload and download is only for the JupyterHub not on RStudio on your computer.</em></p>
+<section id="uploading-is-easy." class="level3">
+<h3 class="anchored" data-anchor-id="uploading-is-easy.">Uploading is easy.</h3>
+<p>Look for the Upload button in the Files tab of the bottom right panel.</p>
+</section>
+<section id="download-is-less-intuitive." class="level3">
+<h3 class="anchored" data-anchor-id="download-is-less-intuitive.">Download is less intuitive.</h3>
+<ol type="1">
+<li>Click the checkbox next to the file you want to download. One only.</li>
+<li>Click the “cog” icon in the Files tab of the bottom right panel. Then click Export.</li>
+</ol>
+</section>
 </section>
 <section id="creating-files" class="level2">
 <h2 class="anchored" data-anchor-id="creating-files">Creating files</h2>

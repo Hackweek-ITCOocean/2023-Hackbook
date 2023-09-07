@@ -64,15 +64,16 @@ website:
               - text: Git
                 href: content/03-git-rstudio.md
               - text: Loading data in R
+                href: r-tutorials/03-r-read-in-data.qmd
           - section: "01 Thursday"
             contents:
               - text: L SDMs
               - text: L SDM examples
               - text: L Statistics 1
               - text: H Lab Setup
-                href: r-notebooks/Lab-setup.qmd
+                href: r-tutorials/Lab-setup.qmd
               - text: H Geospatial Lab 1
-                href: r-notebooks/geospatial-lab1.qmd
+                href: r-tutorials/04-geospatial-lab1.qmd
           - section: "01 Friday"
             contents:
               - text: L How to sprint
