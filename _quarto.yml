@@ -112,13 +112,13 @@ website:
               - python-notebooks/04_Combining_Data.ipynb
               - python-notebooks/04_Appending_Data.ipynb
       - text: <img width=100px>
-      - text: <img src="https://hackweek-itcoocean.github.io/2023-Hackbook/images/ecsn.png" width=100px>
+      - text: <img src="/images/ecsn.png" width=100px>
         href: https://iioe-2.incois.gov.in/ecsn/index.html
-      - text: <img src="https://hackweek-itcoocean.github.io/2023-Hackbook/images/ocean-decade.png" width=150px>
+      - text: <img src="/images/ocean-decade.png" width=150px>
         href: https://oceandecade.org/
-      - text: <img src="https://hackweek-itcoocean.github.io/2023-Hackbook/images/dcc-ior.png" width=150px>
+      - text: <img src="/images/dcc-ior.png" width=150px>
         href: https://incois.gov.in/dcc-ior/index.jsp
-      - text: <img src="https://hackweek-itcoocean.github.io/2023-Hackbook/images/ecop.png" width=150px>
+      - text: <img src="/images/ecop.png" width=150px>
         href: https://www.ecopdecade.org/
 #      - text: DECCaD-IO
 #        href: https://oceandecade.org/actions/devising-early-career-capacity-development-indocn-deccad-io/
