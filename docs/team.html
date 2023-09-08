@@ -292,24 +292,15 @@ ul.task-list li input[type="checkbox"] {
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
- <span class="menu-text">L SDMs</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">L SDM examples</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">L Statistics 1</span>
-  </li>
-          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-tutorials/Lab-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">H Lab Setup</span></a>
+ <span class="menu-text">Lab Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tutorials/04-geospatial-lab1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">H Geospatial Lab 1</span></a>
+  <a href="./r-tutorials/04-r-ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ggplot2</span></a>
   </div>
 </li>
       </ul>
@@ -324,13 +315,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
- <span class="menu-text">L How to sprint</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">L Statistics 2</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">H Geospatial Lab 2</span>
+ <span class="menu-text">Maps!</span>
   </li>
       </ul>
   </li>
@@ -587,20 +572,22 @@ function googleTranslateElementInit() {
 .columns-3 > * {
     width: calc(100% / 3);
 }
-/* Optional */
-.bg-red {
-  background-color: red;
+.columns-4 {
+    width: 100%;
+    display:flex;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+
 }
-.bg-pink {
-    background-color: pink;
-}
-.bg-orange {
-    background-color: orange;
+/* columns */
+.columns-4 > * {
+    width: calc(100% / 4);
 }
 </style>
 <section id="organizers-and-instructors" class="level2">
 <h2 class="anchored" data-anchor-id="organizers-and-instructors">Organizers and Instructors</h2>
-<div class="columns-3">
+<div class="columns-4">
 <section id="dr.-eli-holmes" class="level3">
 <h3 class="anchored" data-anchor-id="dr.-eli-holmes">Dr.&nbsp;Eli Holmes</h3>
 <p><img src="images/Eli.png" alt="Eli Holmes" style="width:75%; ; border-radius: 50%;"></p>
@@ -608,7 +595,7 @@ function googleTranslateElementInit() {
  ![](images/Eli.png){width=75% fig-alt="picture of Eli Holmes"}
 -->
 <p><a href="https://www.fisheries.noaa.gov/">NOAA Fisheries</a> and <a href="https://fish.uw.edu/">University of Washington</a>, USA.</p>
-<p><strong>Links:</strong> <a href="https://eeholmes.github.io/">webpage</a> • <a href="https://github.com/eeholmes">GitHub</a> • <a href="https://orcid.org/0000-0001-9128-8393">ORCID</a></p>
+<p><a href="https://eeholmes.github.io/">webpage</a> • <a href="https://github.com/eeholmes">GitHub</a> • <a href="https://orcid.org/0000-0001-9128-8393">ORCID</a></p>
 </section>
 <section id="dr.-nimit-kumar" class="level3">
 <h3 class="anchored" data-anchor-id="dr.-nimit-kumar">Dr.&nbsp;Nimit Kumar</h3>
@@ -623,30 +610,33 @@ function googleTranslateElementInit() {
 <h3 class="anchored" data-anchor-id="aditi-modi">Aditi Modi</h3>
 <p><img src="images/aditi.png" alt="Aditi Modi" style="width:75%; ; border-radius: 50%;"></p>
 <p>Centre for Climate Change Research, Indian Institute of Tropical Meteorology (<a href="http://cccr.tropmet.res.in/home/index.jsp">CCCR</a>), Pune, India</p>
-<p><strong>Links:</strong> <a href="https://aditimodi.github.io/">webpage</a> • <a href="https://github.com/aditimodi">GitHub</a> • <a href="https://orcid.org/0000-0002-2044-5256">ORCID</a></p>
+<p><a href="https://aditimodi.github.io/">webpage</a> • <a href="https://github.com/aditimodi">GitHub</a> • <a href="https://orcid.org/0000-0002-2044-5256">ORCID</a></p>
 </section>
-</div>
-<div class="columns-3">
 <section id="dr.-smitha-br" class="level3">
 <h3 class="anchored" data-anchor-id="dr.-smitha-br">Dr.&nbsp;Smitha BR</h3>
 <p><img src="images/smitha.jpeg" alt="Smitha BR" style="width:75%; ; border-radius: 50%;"></p>
 <p>Centre for Marine Living Resources &amp; Ecology (<a href="https://www.cmlre.gov.in/">CMLRE</a>), Kochi, India</p>
-<p><strong>Links:</strong> <a href="https://www.researchgate.net/profile/Smitha-Br">webpage</a> • <a href="https://orcid.org/0000-0003-3470-9272">ORCID</a></p>
+<p><a href="https://www.researchgate.net/profile/Smitha-Br">webpage</a> • <a href="https://orcid.org/0000-0003-3470-9272">ORCID</a></p>
 </section>
+</div>
+<div class="columns-4">
 <section id="dr.-swarnali-majumder" class="level3">
 <h3 class="anchored" data-anchor-id="dr.-swarnali-majumder">Dr.&nbsp;Swarnali Majumder</h3>
 <p><img src="images/swarnali.jpeg" alt="Swarnali Majumder" style="width:75%; ; border-radius: 50%;"></p>
 <p>Indian National Centre for Ocean Information Services (<a href="https://incois.gov.in/">INCOIS</a>), Hyderabad, India</p>
-<p><strong>Links:</strong> <a href="https://www.researchgate.net/profile/Swarnali-Majumder">webpage</a> • <a href="https://orcid.org/0000-0001-9917-4454">ORCID</a></p>
+<p><a href="https://www.researchgate.net/profile/Swarnali-Majumder">webpage</a> • <a href="https://orcid.org/0000-0001-9917-4454">ORCID</a></p>
 </section>
 <section id="dr.-tvs-uday-bhaskar" class="level3">
 <h3 class="anchored" data-anchor-id="dr.-tvs-uday-bhaskar">Dr.&nbsp;TVS Uday Bhaskar</h3>
 <p><img src="images/Uday.jpeg" alt="Udaya Bhaskar" style="width:75%; ; border-radius: 50%;"></p>
-<!--
-![](images/Uday.jpeg){width=75% fig-alt="Uday Bhaskar"}
--->
 <p>Indian National Centre for Ocean Information Services (<a href="https://incois.gov.in/">INCOIS</a>), Hyderabad, India</p>
-<p><strong>Links:</strong> <a href="https://www.researchgate.net/profile/Tvs-Udaya-Bhaskar">ResearchGate</a> • <a href="https://orcid.org/0000-0001-6438-5016">ORCID</a></p>
+<p><a href="https://www.researchgate.net/profile/Tvs-Udaya-Bhaskar">ResearchGate</a> • <a href="https://orcid.org/0000-0001-6438-5016">ORCID</a></p>
+</section>
+<section id="dr.-sourav-maity" class="level3">
+<h3 class="anchored" data-anchor-id="dr.-sourav-maity">Dr.&nbsp;Sourav Maity</h3>
+<p><img src="images/sourav.jpeg" alt="Sourav Maity" style="width:75%; ; border-radius: 50%;"></p>
+<p>Indian National Centre for Ocean Information Services (<a href="https://incois.gov.in/">INCOIS</a>), Hyderabad, India</p>
+<p><a href="https://www.researchgate.net/profile/Sourav-Maity-2">ResearchGate</a> • <a href="https://orcid.org/0000-0003-2337-5457">ORCID</a></p>
 </section>
 </div>
 </section>

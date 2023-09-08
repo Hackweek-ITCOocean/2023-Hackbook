@@ -67,18 +67,13 @@ website:
                 href: r-tutorials/03-r-read-in-data.qmd
           - section: "01 Thursday"
             contents:
-              - text: L SDMs
-              - text: L SDM examples
-              - text: L Statistics 1
-              - text: H Lab Setup
+              - text: Lab Setup
                 href: r-tutorials/Lab-setup.qmd
-              - text: H Geospatial Lab 1
-                href: r-tutorials/04-geospatial-lab1.qmd
+              - text: ggplot2
+                href: r-tutorials/04-r-ggplot2.qmd
           - section: "01 Friday"
             contents:
-              - text: L How to sprint
-              - text: L Statistics 2
-              - text: H Geospatial Lab 2
+              - text: Maps!
       - section: "Projects"
         contents:
           - projects/index.md

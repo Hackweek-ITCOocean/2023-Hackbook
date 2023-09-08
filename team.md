@@ -12,21 +12,23 @@ title: Our Team
 .columns-3 > * {
     width: calc(100% / 3);
 }
-/* Optional */
-.bg-red {
-  background-color: red;
+.columns-4 {
+    width: 100%;
+    display:flex;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+
 }
-.bg-pink {
-    background-color: pink;
-}
-.bg-orange {
-    background-color: orange;
+/* columns */
+.columns-4 > * {
+    width: calc(100% / 4);
 }
 </style>
 
 ## Organizers and Instructors
 
-<div class="columns-3">
+<div class="columns-4">
 
 <div>
 ### Dr. Eli Holmes
@@ -39,7 +41,7 @@ title: Our Team
 
 [NOAA Fisheries](https://www.fisheries.noaa.gov/) and [University of Washington](https://fish.uw.edu/), USA.
 
-**Links:** [webpage](https://eeholmes.github.io/) &#x2022;  [GitHub](https://github.com/eeholmes)  &#x2022; [ORCID](https://orcid.org/0000-0001-9128-8393)
+[webpage](https://eeholmes.github.io/) &#x2022;  [GitHub](https://github.com/eeholmes)  &#x2022; [ORCID](https://orcid.org/0000-0001-9128-8393)
 </div>
 
 <div>
@@ -63,14 +65,9 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 
 Centre for Climate Change Research, Indian Institute of Tropical Meteorology ([CCCR](http://cccr.tropmet.res.in/home/index.jsp)), Pune, India
 
-**Links:** [webpage](https://aditimodi.github.io/)  &#x2022; [GitHub](https://github.com/aditimodi)  &#x2022; [ORCID](https://orcid.org/0000-0002-2044-5256)
+[webpage](https://aditimodi.github.io/)  &#x2022; [GitHub](https://github.com/aditimodi)  &#x2022; [ORCID](https://orcid.org/0000-0002-2044-5256)
 
 </div>
-</div>
-
-<div class="columns-3">
-
-
 <div>
 ### Dr. Smitha BR
 
@@ -78,9 +75,12 @@ Centre for Climate Change Research, Indian Institute of Tropical Meteorology ([C
 
 Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)), Kochi, India
 
-**Links:** [webpage](https://www.researchgate.net/profile/Smitha-Br)  &#x2022; [ORCID](https://orcid.org/0000-0003-3470-9272)
+[webpage](https://www.researchgate.net/profile/Smitha-Br)  &#x2022; [ORCID](https://orcid.org/0000-0003-3470-9272)
 
 </div>
+</div>
+
+<div class="columns-4">
 
 <div>
 ### Dr. Swarnali Majumder
@@ -89,7 +89,7 @@ Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)
 
 Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
 
-**Links:** [webpage](https://www.researchgate.net/profile/Swarnali-Majumder)  &#x2022; [ORCID](https://orcid.org/0000-0001-9917-4454)
+[webpage](https://www.researchgate.net/profile/Swarnali-Majumder)  &#x2022; [ORCID](https://orcid.org/0000-0001-9917-4454)
 
 </div>
 <div>
@@ -97,13 +97,18 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 
 <img src="images/Uday.jpeg" alt="Udaya Bhaskar" style="width:75%; ; border-radius: 50%;">
 
-<!--
-![](images/Uday.jpeg){width=75% fig-alt="Uday Bhaskar"}
--->
+Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
+
+[ResearchGate](https://www.researchgate.net/profile/Tvs-Udaya-Bhaskar)   &#x2022; [ORCID](https://orcid.org/0000-0001-6438-5016)
+</div>
+<div>
+### Dr. Sourav Maity
+
+<img src="images/sourav.jpeg" alt="Sourav Maity" style="width:75%; ; border-radius: 50%;">
 
 Indian National Centre for Ocean Information Services ([INCOIS](https://incois.gov.in/)), Hyderabad, India
 
-**Links:** [ResearchGate](https://www.researchgate.net/profile/Tvs-Udaya-Bhaskar)   &#x2022; [ORCID](https://orcid.org/0000-0001-6438-5016)
+[ResearchGate](https://www.researchgate.net/profile/Sourav-Maity-2)   &#x2022; [ORCID](https://orcid.org/0000-0003-2337-5457)
 </div>
 </div>
 
