@@ -1461,5 +1461,19 @@
     "title": "Our Team",
     "section": "Speakers",
     "text": "Speakers\n\n\nJohnny Konjarla\n\nCentre for Marine Living Resources & Ecology (CMLRE), Kochi, India\nLinks: webpage • Linkedin • ORCID\n\n\nBen Best\n\nEcoQuants.com, UC Santa Barbara’s Bren School of Environmental Science & Management, Santa Barbara, CA\nLinks: webpage • GitHub • ORCID\n\n\nMinh Phan\n\n\nIndian Ocean database for hackweek, data access tutorials. rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern\nLinks: GitHub • Linkedin\n\n\n\n\nJiarui Yu\n\n\nMachine-learning tutorials; rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern\nLinks: GitHub • Linkedin"
+  },
+  {
+    "objectID": "support.html#thank-you-for-inspiration-and-content",
+    "href": "support.html#thank-you-for-inspiration-and-content",
+    "title": "Acknowledgements",
+    "section": "Thank you for inspiration and content!",
+    "text": "Thank you for inspiration and content!\nThank you to the open science community that has created software, teaching resources, and workflows that we have been able to build off of and be inspired by. These include: NASA Openscapes • OceanHackWeek • SnowEx Hackweek • eScience Institute, University of Washington • ICESat-2 Hackweek • Project Jupyter • Pangeo Project • CryoCloud   Thanks to OceanHackWeek for content, inspiration, and the opportunity to test out ideas. A big thanks to the SDM team at OceanHackWeek 2023 who helped test and develop SDM tutorials for the ITCOocean Hack2week 2023: Catherine Courtier, Mackenzie Fiss, Denisse Fierro Arcos, Paulo Freire, Jade Hong, Caitlin O’Brien, Mary Solokas, Laura Tsang, Tylar Murray, Ben Tupper! OHW23 SDM team project."
+  },
+  {
+    "objectID": "content/03-ai.html",
+    "href": "content/03-ai.html",
+    "title": "2023 ITCOocean Hack2week",
+    "section": "",
+    "text": "2023 has seen an dramatic shift toward a new workflow for programming and learning to program: AI-Assisted Programming. Using AI as your personal coding buddy and coach is the new way to work. But you need to learn how to interact with your AI helper and ask it questions.\nWe are going to watch a presentation given by Myranda Shirk, Senior Data Scientist, Vanderbilt University, Knoxville, US. This presentation was given at OceanHackWeek 2023 at the University of Washington in August 2023. Myranda will give you an overview of the current AI platforms and then demo how to interact with them. During this hackweek, you get a lot of practice with AI assisted programming and AI assisted brainstorming.\nVideo: https://youtu.be/JCHa-yGgtr4?si=WV956qZkSEVvy-CQ\nLecture Notes: https://oceanhackweek.org/ohw23/tutorials/02-Wed/ai_assisted_programming_ohw.html"
   }
 ]
