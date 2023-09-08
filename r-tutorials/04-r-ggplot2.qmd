@@ -314,3 +314,8 @@ If you want to see some examples of what ggplot2 can do, look at some galleries.
 * <https://r-graph-gallery.com/ggplot2-package.html>
 * <http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html>
 
+There are also many tutorials on ggplot2
+
+* <https://www.tutorialspoint.com/ggplot2/ggplot2_introduction.htm>
+* <https://datacarpentry.org/dc_zurich/R-ecology/05-visualisation-ggplot2>
+
