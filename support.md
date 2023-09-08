@@ -17,10 +17,10 @@ Thank you to the open science community that has created software, teaching reso
 <br/><br/>
 Thanks to the SDM team at OceanHackWeek 2023 who helped test and develop SDM tutorials for the ITCOocean Hack2week 2023: Catherine Courtier, [Mackenzie Fiss](https://github.com/mackenziefiss), [Denisse Fierro Arcos](https://github.com/lidefi87), [Paulo Freire](https://github.com/Pfreire29), Jade Hong, Caitlin O’Brien, Mary Solokas, Laura Tsang, [Tylar Murray](https://github.com/7yl4r), [Ben Tupper](https://github.com/btupper)! [OHW23 SDM team project](https://oceanhackweek.org/ohw23_proj_marinesdms/).
 
-## Financial and salary support
+## Thank you for support!
 
 <center>
-Thank you! A NOAA International Fellowship supported Eli Holmes' visit. 2i2c provided the JupyterHub infrastructure. ESIPfed provided funding for the JupyterHub via their ESIP Lab funds.
+Thank you! INCOIS and ITCOocean provided all the logistical support and supported Nimit Kumar, TVS Uday Bhaskar and Swarnali Majumder's participation. CMLRE supported Smitha BR's participation and IITM supported Aditi Modi. A NOAA International Fellowship supported Eli Holmes' visit. [2i2c](https://2i2c.org/) provided the JupyterHub infrastructure. [ESIPfed](https://www.esipfed.org/) provided funding for the JupyterHub via their ESIP Lab fund. [Drs. Rao and Usha Varanasi](https://www.aa.washington.edu/giving/varanasis) support the Varanasi Summer Internship at the University of Washington (Seattle, WA) which supported the undergraduate interns Minh Phan and Jiarui Yu, who developed the datasets and machine learning tutorials used at the hack2week.
 
 ![](images/incois.png){height=100px}<img width="20px">
 ![](https://www.fisheries.noaa.gov/themes/custom/noaa_components/images/NOAA_FISHERIES_logoH.png){height=100px}<img width="20px">

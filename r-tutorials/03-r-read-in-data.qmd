@@ -16,17 +16,66 @@ title: R - Read in data
 
 :::
 
-## Where am I?
+## Syntax tips
 
-You want to make sure you know where you are in the file system before you start. All file locations will be relative to this. Run this.
+`xyz::fun()` means function `fun()` in the `xyz` package. I will often use this when I don't want to call `library()` to load the whole `xyz` package. Why? Because remembering to call `library()` slows me down and when I forget I get errors. Instead I tend to load the major packages (like `library(tidyverse)` and `library(sf)`) for which I need many functions.
 
+## File not found
+
+The top error for new users is "File not found." You know they file is there, but R says "File not found."  File locations are relative to your current location. **Your current location if you are in a Quarto or Rmarkdown file is the folder with that file!** This means that code that works on the command line, fails in a Quarto or RMarkdown document. Oh no!
+
+Try this in the Quarto document versus in the Console tab.
 ```{r eval=FALSE}
 getwd()
 ```
 
-Once you get used to R, you won't need to do this but if you are a novice, it is good to make sure you know where you are. Note, what you see in the File panel has nothing to do with "where you are".
+This means that a normal file location can break:
 
-Tip: Do not get into the habit of using `setwd()` to change your working directory. Use RStudio projects.
+
+* `.` Current location
+* `..` Back one folder
+* `folder name` Enter this folder
+* `~` Home directory
+
+```
+./data/myfile.csv
+```
+means current location > data folder > myfile.csv in that folder. But if your current location changes, that code breaks.
+
+
+### Solution 1 - full file path
+
+Always use the full file path:
+
+```
+~/r-tutorials/data/myfile.csv
+```
+Home > r-tutorials folder > data folder > myfile.csv
+
+This works until you move the `r-tutorials` folder somewhere else.
+
+### Solution 2: the here package
+
+This is the what experienced R users use. `here()` is the location of the base of your project. As long as you are in an RStudio project, it will return the base of that project.
+
+This is what mine shows (I am on my laptop). It is the same inside a Quarto document, at the console and in scripts.
+```{r}
+here::i_am("r-tutorials/03-r-read-in-data.qmd")
+here::here()
+```
+
+Now to specify a data file, I use
+```{r}
+fil <- here::here("r-tutorials", "data", "myfile.csv")
+fil
+```
+This fully specifies the file location.
+
+
+### Don't use `setwd()`
+
+This changes your working directory and although it seems to help in the short-run, it causes all kinds of problems later.
+
 
 ## Import a csv file
 
@@ -43,10 +92,29 @@ Ok first thing we see is that we have 2 lines at the top of our data file. Put 2
 
 Notice that it also shows us the R code. We can copy that and run it directly if we wanted. But we can also just click the Import button.
 
+### R Code
+
+The import box helpfully shows us the R code to use. But this will break inside a Quarto file because the file path is wrong. This works in the Console or a script but not in a Quarto or RMarkdown file.
+
+```
+library(readr)
+obis_seamap_green <- read_csv("r-tutorials/data/obis_seamap_green.csv", 
+    skip = 2)
+```
+
+Let's make this code more robust:
+
 ```{r}
 library(readr)
-obis_seamap_green <- read_csv("data/obis_seamap_green.csv", 
+fil <- here::here("r-tutorials", "data", "obis_seamap_green.csv")
+obis_seamap_green <- read_csv(fil, 
     skip = 2)
+```
+
+### Show the data
+
+```{r}
+obis_seamap_green
 ```
 
 ## Get the columns
