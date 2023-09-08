@@ -114,7 +114,7 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 
 ## Speakers
 
-<div class="columns-3">
+<div class="columns-4">
 
 <div>
 ### Johnny Konjarla
@@ -123,7 +123,7 @@ Indian National Centre for Ocean Information Services ([INCOIS](https://incois.g
 
 Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)), Kochi, India
 
-**Links:** [webpage](https://oceanexpert.org/expert/33322) &#x2022;  [Linkedin](https://www.linkedin.com/in/johnny-konjarla-59b37152/) &#x2022; [ORCID](https://orcid.org/0000-0003-3181-0498)
+[webpage](https://oceanexpert.org/expert/33322) &#x2022;  [Linkedin](https://www.linkedin.com/in/johnny-konjarla-59b37152/) &#x2022; [ORCID](https://orcid.org/0000-0003-3181-0498)
 
 </div>
 <div>
@@ -133,7 +133,7 @@ Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)
 
 [EcoQuants.com](https://ecoquants.com/), UC Santa Barbara’s Bren School of Environmental Science & Management, Santa Barbara, CA
 
-**Links:** [webpage](https://bbest.github.io/about.html) &#x2022;  [GitHub](https://github.com/bbest) &#x2022; [ORCID](https://orcid.org/0000-0002-2686-0784)
+[webpage](https://bbest.github.io/about.html) &#x2022;  [GitHub](https://github.com/bbest) &#x2022; [ORCID](https://orcid.org/0000-0002-2686-0784)
 
 </div>
 <div>
@@ -141,30 +141,19 @@ Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)
 
 <img src="images/minh.jpeg" alt="Minh Phan" style="width:75%; ; border-radius: 50%;">
 
-<!--
-![](images/minh.jpeg){width=75% fig-alt="Minh Phan"}
--->
-
 Indian Ocean database for hackweek, data access tutorials. rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern
 
-**Links:** [GitHub](https://github.com/minhphan03) &#x2022;  [Linkedin](https://www.linkedin.com/in/minhphan0612/)
+[GitHub](https://github.com/minhphan03) &#x2022;  [Linkedin](https://www.linkedin.com/in/minhphan0612/)
 </div>
-</div>
-
-<div class="columns-3">
 
 <div>
 ### Jiarui Yu
 
 <img src="images/jiarui.jpeg" alt="Jiarui Yu" style="width:75%; ; border-radius: 50%;">
 
-<!--
-![](images/jiarui.jpeg){width=75% fig-alt="Jiarui Yu"}
--->
-
 Machine-learning tutorials; rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern
 
-**Links:** [GitHub](https://github.com/NaNa7Miiii) &#x2022;  [Linkedin](https://www.linkedin.com/in/jiarui-yu-0b0ab522b/)
+[GitHub](https://github.com/NaNa7Miiii) &#x2022;  [Linkedin](https://www.linkedin.com/in/jiarui-yu-0b0ab522b/)
 
 </div>
 </div>

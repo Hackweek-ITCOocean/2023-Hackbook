@@ -10,7 +10,7 @@ title: R - ggplot2
 * Learn to make a x versus y plot
 * Learn how to add elements to your plot
 * Learn to make a boxplot
-* Ask ChatGPT for help
+* Learn how to ask ChatGPT for ggplot2
 
 :::
 
@@ -18,55 +18,47 @@ title: R - ggplot2
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This tutorial will give an introduction to plotting with the **ggplot2** package. Getting a basic familiarity with **ggplot2** will really save you **a lot of time**. 
+This tutorial will give an introduction to plotting with the **ggplot2** package, which is the modern way to make general plots with R. I will talk tomorrow about plots of spatial data.
 
-This is oriented to those with little or no experience using **ggplot2** or those who have tried it and gotten frustrated. The goal is to get you started. Once you have the basics, there are a so many ggplot tutorials online -- though personally the basics are all I need.
+This is oriented to those with little or no experience using ggplot2 or those who have tried it and gotten frustrated. The goal is to get you started. Once you have the basics, there are a many many ggplot tutorials online -- though personally the basics are all I need.
+
+The goal is to give you enough of an understanding of ggplot2 so that you can create prompts for ChatGPT. You need to know the basics of ggplot2 to understand ChatGPT's code and know what sort of things to ask ChatGPT. But if you are lost, you can always tell it what you want and ask it to ask you questions.
 
 
-## Load the libraries
+## Load the library
 
 ```{r message=FALSE, warning=FALSE}
 library(ggplot2)
-library(gridExtra)
 ```
 
-## Basic structure of a 
 ## Basic x versus y plot
 
 ### Workflow
 
-Let's say you wanted to make a simple xy plot with `plot()`. Here's your workflow.
+Let's say you wanted to make a simple x versus y plot. Here's your `ggplot()` workflow.
 
-* Decide on `x` or use the default (1 to the number of data points).
-* Decide on `y`.
-* Plot with `plot(x,y)`
-
-```{r}
-val <- mtcars$mpg
-x <- mtcars$hp
-plot(x, val, type="p")
-```
-
-
-Here's your `ggplot()` workflow.
-
-* Decide on `x` or use the default (1 to the number of data points).
+* Decide on `x`.
 * Decide on `y`.
 * **Make a data frame** with `x` and `y`.
 * Create the plot object with a call to `ggplot()` to tell it the data frame and then what the `x` and `y` to use: `aes(x=..., y=...)`.
 * Add points or lines to the plot with `geom_line()` or `geom_point()`.
 
+### Create data frame
+
 ```{r}
-df <- data.frame(x=mtcars$hp, val=mtcars$mpg)
-p1 <- ggplot(df, aes(x=x, y=val)) + # set up
+val <- mtcars$mpg
+x <- mtcars$hp
+df <- data.frame(x=x, val=val)
+```
+
+### ggplot call
+
+```{r}
+p1 <- ggplot(df, aes(x=x, y=val)) + 
         geom_point() # plot a line
 p1 # plot it
 ```
 
-Typically you'd just write the call like so
-```
-ggplot(df, aes(x=x, y=val)) + geom_point()
-```
 
 `p1` is a ggplot object.
 ```{r}
@@ -89,79 +81,6 @@ ggplot(df, aes(x=x, y=val)) +
 
 :::
 
-## Modifying your plot
-
-There are two different workflows that you need to decide on.
-
-1. *Dynamic colors etc*: Let `ggplot()` pick your colors, points, line widths etc.
-2. *Fixed colors etc*: Manually choose your colors, points, line widths etc, aka use a fixed value.
-
-Gravitating to option 1 will make your life with `ggplot()` easier, but let's start with option 2.
-
-::: {.callout-important}
-
-*Fixed* lines, points attributes go *outside* of `aes()` in a `geom_...()` call. *Dynamic* attributes go *inside* of `aes()`.
-
-:::
-
-Look at `?geom_point` to see the attributes that you can pass in.
-```{r}
-ggplot(df, aes(x=x, y=val)) + geom_point(col="blue")
-```
-
-The length of the fixed attribute must be 1 or the length of the data.
-```{r}
-ggplot(df, aes(x=x, y=val)) + 
-  geom_point(shape=21, col="blue", fill=mtcars$carb, size=6, alpha=.5, stroke=2)
-```
-
-Ways to set attributes that won't work as you think:
-
-Putting color outside of `aes()` in `ggplot()` does nothing. `ggplot()` sets up the data to use, but information outside `aes()` doesn't flow to the plotting functions like `geom_point()`.
-```{r}
-ggplot(df, aes(x=x, y=val), col="blue") + geom_point()
-```
-
-Putting color inside of `aes()` in `ggplot()` has a non-intuitive effect. Plot attributes, like color, in `aes()` are converted to factors and the colors (etc) will be chosen dynamically. The name "blue" is not a color is the a factor and `ggplot()` gives the first factor the color red in this case. Information in `aes()` will *flow* to the rest of the plot unless you tell the `geom_point()` otherwise).
-
-```{r}
-ggplot(df, aes(x=x, y=val, color="blue")) + geom_point()
-```
-
-How do we *tell* `geom_point()` not to use the color value in `aes()` in `ggplot()`?  Tell it to use a fixed value by putting `col="blue"` outside of an `aes()` call in `geom_point()`.
-```{r}
-ggplot(df, aes(x=x, y=val)) + geom_point(col="blue")
-```
-
-What happens if we put the color in `aes()` in `geom_point()`?
-```{r}
-ggplot(df, aes(x=x, y=val)) + geom_point(aes(color="blue"))
-```
-
-Let's make a plot with big red points and a thick blue line.
-```{r}
-p1 <- ggplot(df, aes(x=x, y=val)) + 
-  geom_line(col="blue", size=2) +
-  geom_point(col="red", size=3)
-p1
-```
-
-Let's add a column plot to that. I pass in `alpha` to add some transparency to the columns so they don't wipe out the line.
-```{r}
-p1 + geom_col(alpha=0.5, position="dodge")
-```
-
-### Labels and limits
-
-With `ggplot`, use `xlab()` `ylab()` and `xlim()` `ylim()`. Ignore the NA warning. I'll show how to stop that later. 
-```{r}
-ggplot(df, aes(x=x, y=val)) +
-  geom_point() +
-  xlab("time") + ylab("value") +
-  ggtitle("ggplot plot") +
-  xlim(c(100,200)) + ylim(c(0,40))
-```
-
 ## Changing the whole look
 
 ggplot uses themes to set the look of your plot and you can change the whole look by setting a different theme. You can also just tweak one element of the plot's existing theme. Note because we fixed the line and point colors, we override some theme elements (eg, line colors). See `?theme_bw` to see all the themes. See `?theme` to learn how to change one element of your plot design.
@@ -170,184 +89,113 @@ ggplot uses themes to set the look of your plot and you can change the whole loo
 p1 + theme_classic()
 ```
 
-## Adding lines or points
+## Using ChatGPT
 
-Let's say you want to plot 2 lines.
+### Boxplots
 
-### Workflow
+Now that you see the basic structure of a simple x versus y plot, let's use ChatGPT to help us make plots.
 
-In `ggplot()` you have two possible workflows. 
+::: {.callout-note icon=false}
 
-Option 1. This workflow is kind of bad but often easier for beginners.
+## Prompt
 
-* Make a data frame for each line: `df` and `df2`.
-* Call `geom_line()` with `data=df` or `data=df` and a `aes()`
-
-```{r}
-df <- data.frame(x=mtcars$hp, val=mtcars$mpg)
-df2 <- data.frame(x=df$x, val2=df$val+10)
-ggplot() +
-  geom_point(data=df, aes(x=x, y=val)) +
-  geom_line(data=df2, aes(x=x, y=val2))
-```
-
-One issue with `aes()` and data is that it is inherited rightward. This inheriting feature is usually very handy, but when working with multiple data frames, it is often clearer if you keep the data and `aes()` with the points and lines. 
-
-
-Here is another example of plotting data from two different data frames:
-```{r}
-ggplot() +
-  geom_line(data=iris, aes(x = Sepal.Length, y=Petal.Length)) +
-  geom_bar(data=mtcars, aes(x=cyl), alpha=0.3) +
-  ylab("y") + xlab("x")
-```
-
-
-### Adding a legend
-
-ggplot makes it rather hard to modify your legend if you create a plot this way. Creating a manual legend, as opposed to dynamically as ggplot is supposed to work, can be quite hard. First thing to know is that the color, linestyle, and/or shape must be in `aes()` to appear in the legend. If it's not there you can't control it in the legend. 
-
-Note: What I am about to show *is really hacky and not the way ggplot is intended to be used,* but it comes up so often for new ggplot users that I want you to see a solution so you don't give up on ggplot because of legends. Jump ahead to the correct ggplot workflow with long-form data frames to see how to avoid this.
-
-This works. Ignore the warning about unknown aesthetics.
-```{r}
-ggplot() +
-  geom_point(data=df, aes(x=x, y=val, col="df", linetype="df")) +
-  geom_line(data=df2, aes(x=x, y=val2, col="df2", linetype="df2")) +
-  scale_color_manual("name", values=c("blue", "black")) +
-  scale_linetype_manual("name",values=c(0,1))
-```
-
-## Correct ggplot workflow
-
-This is how `ggplot()` is intended to be used: one long data frame.
-
-* Make data frames with `df` and `df2` data and a "name" column.
-* Set up the plot with `ggplot()`
-* Make points or line different using the "name" column
-
-```{r}
-df1 <- data.frame(x=x, val=val, name="df1")
-df2 <- data.frame(x=x, val=val+10, name="df2")
-df3 <- rbind(df1, df2)
-ggplot(df3, aes(x=x, y=val, col=name, shape=name)) + 
-  geom_line() +
-  geom_point()
-```
-
-:::{callout-notes}
-
-* If the color, shape, linetype is not in an `aes()` it won't appear in the legend. 
-* If the color, shape, or linetype is in an `aes()` it will appear in the legend. 
-* `aes()` info in `ggplot()` flows to the other elements. Put the `aes()` info in the individual `geom_...()` calls if you don't want that. Use `inherit.aes=FALSE` to stop this inheriting behavior.
-* Want to mix points and lines? You need to use `scale_..._manual()` to manually turn-off points or lines for some of the data.
-* You can always force colors, shapes, linetypes by passing in color, shape, size etc outside of `aes()` but it won't appear in the legend. Only colors, shapes, etc, that appear in `aes()` will appear in a legend.
-
-Example, points are all black since the `aes(col=name)` only appears in the `geom_line()` call.
-```{r}
-ggplot(df3, aes(x=x, y=val)) + 
-  geom_line(aes(col=name)) +
-  geom_point(aes(shape=name))
-```
+I have a data frame with species, gender and bill length. I want to make a boxplot by species with ggplot2 where the genders are separate and side by side.
 
 :::
 
-### Modifying the legend
+This what ChatGPT gave me. Try using this prompt and adding more info until you get a plot you like.
 
-You can control all aspects of the legend. Read up on it [here](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/).
+```{r message=FALSE, warning=FALSE}
+# Load the ggplot2 library
+library(ggplot2)
 
-Manually changing data points and other lines will require `scale_...()` and gets hacky.
+# Sample data frame (replace with your actual data)
+data <- data.frame(
+  species = c("Species A", "Species A", "Species B", "Species B", "Species C", "Species C"),
+  gender = c("Male", "Female", "Male", "Female", "Male", "Female"),
+  bill_length = c(10.2, 9.8, 11.5, 10.7, 9.3, 9.9)
+)
 
-```{r}
-ggplot(df3, aes(x=x, y=val)) + 
-  geom_line(aes(col=name, linetype=name)) +
-  geom_point(aes(shape=name)) +
-  scale_color_manual("name", values=c("blue", "black")) +
-  scale_shape_manual("name",values=c(NA,1)) +
-  scale_linetype_manual("name",values=c(1,0))
+# Create the side-by-side boxplot
+ggplot(data, aes(x = species, y = bill_length, fill = gender)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  labs(title = "Boxplot of Bill Length by Species and Gender",
+       x = "Species",
+       y = "Bill Length") +
+  scale_fill_manual(values = c("Male" = "blue", "Female" = "red"))
 ```
 
-### NA warnings
+### Adding trends
 
-Ack all those NA warnings!
-```{r}
-df4 <- data.frame(x=1:10, y=c(1,NA,NA,4:10), name=rep(c("a","b"),5))
-ggplot(df4, aes(x=x, y=y, col=name)) + 
-  geom_point()
+::: {.callout-note icon=false}
+
+## Prompt
+
+I have a data frame with value and time for 3 regions. I want to make a scatter plot of time versus value for each region and add a linear regression to each. I would like each region to be in a separate panel. Show only the code. Please make a sample data frame that I can use to run the code.
+
+:::
+
+ChatGPT gives:
+```{r message=FALSE, warning=FALSE}
+# Load the required libraries
+library(ggplot2)
+library(dplyr)
+
+# Create a sample data frame
+df <- data.frame(
+  Region = rep(c("Region A", "Region B", "Region C"), each = 100),
+  Time = rep(seq(1, 100), times = 3),
+  Value = c(rnorm(100, mean = 50, sd = 10),
+            rnorm(100, mean = 70, sd = 12),
+            rnorm(100, mean = 60, sd = 15))
+)
+
+# Create the scatter plot with separate panels for each region
+ggplot(df, aes(x = Time, y = Value, color = Region)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Scatter Plot with Linear Regression Lines",
+       x = "Time",
+       y = "Value") +
+  facet_wrap(~Region)
+
 ```
 
-Get rid of them using `na.rm=TRUE`.
-```{r}
-ggplot(df4, aes(x=x, y=y, col=name)) + 
-  geom_point(na.rm=TRUE)
-```
 
-## Making a boxplot
+### Giving your data to ChatGPT
 
-Let's look at the mpg data frame.
-```{r}
-mpg
-```
+You can paste in the top of your data (if it is csv) and ChatGPT can figure out the structure. Then you can say what you want to do with this data.
 
-```{r}
-ggplot(mpg, aes(x=drv, y=hwy)) +
-  geom_boxplot()
-```
-
-```{r}
-ggplot(mpg, aes(x=drv, y=hwy)) +
-  geom_boxplot() +
-  facet_wrap(~class) +
-  xlab("") + ylab("mpg") +
-  ggtitle("highway miles per gallon by class")
-```
-
+**Demo**
 
 ## Arranging plots into grids
 
-## Dynamically
+### Dynamically
 
-`ggplot()` will also dynamically break your data into plots for you.
+`ggplot()` will dynamically break your data into plots for you using `facet_wrap()`.
 
 ```{r}
 df1 <- data.frame(t=1:10, val=10:1, name="df1")
-df2 <- data.frame(t=1:20, val=1:20+1, name="df2")
+df2 <- data.frame(t=1:20, val=1:20+100, name="df2")
 df <- rbind(df1, df2)
-p1 <- ggplot(df, aes(x=t, y=val, col=name)) + geom_line()
+p1 <- ggplot(df, aes(x=t, y=val, col=name)) + 
+  geom_line() +
+  facet_wrap(~name)
 p1
 ```
 
-```{r}
-p1 + facet_wrap(~name)
-```
+
+We can "free" the scales.
 
 ```{r}
-head(mpg)
-```
-
-Let's plot city mpg versus number of cylinders.
-```{r}
-pc <- ggplot(mpg, aes(x=cyl, y=cty)) + geom_point()
-pc
-```
-
-Now we can divide this up by different factors in our the mpg data frame.
-
-```{r}
-pc + facet_wrap(~class)
-```
-
-We can add some things to our plot and free the scales.
-
-```{r}
-pc + facet_wrap(~class, scales="free") + geom_smooth(method="lm")
+p1 + facet_wrap(~name, scales="free")
 ```
 
 ### Manually
 
-Now let's do this in with `ggplot()` in a similar workflow. The difference with `ggplot()` is that we save the plots and then arrange them into a grid with `gridExtra::grid.arrange()` (from the gridExtra package).
+We can arrange plots into a grid manually with `gridExtra::grid.arrange()` (from the gridExtra package).
 
-```{r warning=FALSE}
+```{r message=FALSE, warning=FALSE}
 library(gridExtra)
 df <- data.frame(t = 1:10, val = rnorm(10))
 p1 <- ggplot(df, aes(x=t, y=val)) + geom_line() + geom_point()
@@ -367,43 +215,72 @@ gridExtra::grid.arrange(p1+geom_smooth(method="lm"),
                         p4+geom_errorbar(aes(ymin=val-se, ymax=val+se), width=0.3), ncol=1)
 ```
 
-When you don't know how many plots you'll be arranging. You can assemble ggplot objects into a list and pass that to `grid.arrange()`.
+## Getting your data in the right format
+
+You need your data in **long** format. 
+
+Let's say you had temperature data for 3 rivers. It would be common to have your data like this. This is **wide** format.
+
+```
+Date, River1, River2, River3
+1, 45, 35, 20
+2, 25, 30, 21
+```
+
+You need to get this in **long** format like so.
+
+```
+Date, River, Temperature
+1, River1, 45
+1, River2, 35
+1. River3, 20
+2, River1, 25
+2, River2, 30
+2, River3, 21
+```
+
+You do this with code not manually! This is hard to remember how to do, so just ask ChatGPT. Pass the data into ChatGPT and ask it how to put it in long format.
+
+::: {.callout-note icon=false}
+
+## Prompt
+
+how can I read a text string of my data in
+:::
 
 ```{r}
-df <- data.frame(t = 1:10, val = rnorm(10))
-plist <- list()
-n <- 3
-for(i in 1:n) plist[[i]] <- ggplot(df, aes(x=t, y=val)) + geom_line() + geom_point()
-df2 <- data.frame(t = 1:4, val = 1:4, se=.1*(1:4))
-plist[[n+1]] <- ggplot(df2, aes(x=t, y=val)) + geom_col()
-gridExtra::grid.arrange(grobs=plist)
+# Your data as a text string
+data_string <- "Date, River1, River2, River3
+1, 45, 35, 20
+2, 25, 30, 21"
+
+# Use read.table() to read the data from the text string
+df <- read.table(text = data_string, header = TRUE, sep = ",")
+
+# Print the resulting data frame
+print(df)
 ```
 
-The **patchwork** package gives you the same functionality.
+::: {.callout-note icon=false}
+
+## Prompt
+
+How do I convert that to long format
+:::
+
+```{r message=FALSE, warning=FALSE}
+library(tidyr)
+df_long <- gather(df, key = "River", value = "Value", -Date)
+df_long
 ```
-patchwork::wrap_plots(plist)
-```
-
-We can combine these facet wrapped figures into a grid because they are ggplot objects. Making this plot in base R would take you forever and another 2 forevers if you wanted to change it around or if the number of classes in your data changed.
-
-```{r}
-pf <- pc + facet_wrap(~class)
-grid.arrange( p1, pf, ncol=2)
-```
 
 
-## Notes
-
-* `facet_wrap()` often balks if you use different data frames in your plot construction, i.e. you doing something kind of hacky.
-    * needs a column in your data frame factors (or characters it can coerce into factors). Might work with multiple data frames in your plot as long as each data frame has the same "name" column.
-    * wants all the data frame to be the same length. This is only when you use different data frames. Fine if you have all data in one data frame.
-
-# Creating plot templates
+## Creating plot templates
 
 If you are creating plots with the same features over and over, you can hold the features in a list and add that on to your plot.
 
 Example where I want all my plots to have red points and a regression line:
-```{r}
+```{r message=FALSE, warning=FALSE}
 p3 <- geom_point(col="red")
 p2 <- geom_smooth(method="lm")
 p4 <- xlab("MPG")
@@ -432,7 +309,8 @@ A good set of basic ggplot commands when you are starting:
 * `facet_wrap()`
 * Changing the color, line, and points manually is a bit painful, but often unavoidable. Get to know the `scale_xyz_manual()` functions when you need to do that. `?scale_color_manual` to find them all.
 
-If you want to see some examples of what ggplot2 can do. look at some galleries:
+If you want to see some examples of what ggplot2 can do, look at some galleries. Knowing what ggplot2 can do will give you ideas for what you can ask ChatGPT to create for you.
 
-* https://r-graph-gallery.com/ggplot2-package.html
-* http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
+* <https://r-graph-gallery.com/ggplot2-package.html>
+* <http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html>
+

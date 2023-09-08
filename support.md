@@ -19,7 +19,7 @@ Thank you to the open science community that has created software, teaching reso
 ## Thank you for support!
 
 <center>
-Thank you! INCOIS and ITCOocean provided all the logistical support and supported Nimit Kumar, TVS Uday Bhaskar and Swarnali Majumder's participation. CMLRE supported Smitha BR's participation and IITM supported Aditi Modi. A NOAA International Fellowship supported Eli Holmes' visit. [2i2c](https://2i2c.org/) provided the JupyterHub infrastructure. [ESIPfed](https://www.esipfed.org/) provided funding for the JupyterHub via their ESIP Lab fund. [Drs. Rao and Usha Varanasi](https://www.aa.washington.edu/giving/varanasis) support the Varanasi Summer Internship at the University of Washington (Seattle, WA) which supported the undergraduate interns Minh Phan and Jiarui Yu, who developed the datasets and machine learning tutorials used at the hack2week.
+Thank you! INCOIS and ITCOocean provided all the logistical support and supported Nimit Kumar, TVS Uday Bhaskar and Swarnali Majumder's participation. CMLRE supported Smitha BR's participation and IITM supported Aditi Modi. A NOAA International Fellowship supported Eli Holmes' visit. [2i2c](https://2i2c.org/) provided the JupyterHub infrastructure. [ESIPfed](https://www.esipfed.org/) provided funding for the JupyterHub via their ESIP Lab fund. Undergraduate summer interns, Minh Phan and Jiarui Yu, were supported by the [Usha and S. Rao Varanasi](https://www.aa.washington.edu/giving/varanasis) endowment for Math-Fish student support at the University of Washington (Seattle, WA).
 
 ![](images/incois.png){height=100px}<img width="20px">
 ![](https://www.fisheries.noaa.gov/themes/custom/noaa_components/images/NOAA_FISHERIES_logoH.png){height=100px}<img width="20px">
