@@ -16,7 +16,7 @@ website:
   repo-url: https://github.com/Hackweek-ITCOocean/2023-Hackbook
   repo-actions: [edit, issue, source]
   
-  page-footer: <img src="images/incois.png" alt="INCOIS logo" style="width:150px"><br />ITCOocean Hack2week (2023)
+  page-footer: <img src="/images/incois.png" alt="INCOIS logo" style="width:150px"><br />ITCOocean Hack2week (2023)
  
   sidebar:
     logo: images/incois-logos.png
@@ -60,7 +60,7 @@ website:
           - section: "01 Wednesday"
             contents:
               - text: Programming with AI
-                href: content/02-rstudio.md
+                href: content/03-ai.md
               - text: Git
                 href: content/03-git-rstudio.md
               - text: Loading data in R
@@ -69,7 +69,7 @@ website:
             contents:
               - text: Lab Setup
                 href: r-tutorials/Lab-setup.qmd
-              - text: ggplot2
+              - text: Plotting with ggplot2
                 href: r-tutorials/04-r-ggplot2.qmd
           - section: "01 Friday"
             contents:
