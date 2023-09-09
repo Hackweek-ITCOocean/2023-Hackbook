@@ -74,6 +74,7 @@ website:
           - section: "01 Friday"
             contents:
               - text: Maps!
+                href: r-tutorials/05-r-geospatial.qmd
       - section: "Projects"
         contents:
           - projects/index.md

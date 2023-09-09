@@ -8,8 +8,8 @@ Set the data directory.
 * Create a folder called `data` if you don't have one.
 
 ```{r}
-here::i_am("SDM-lab1.qmd")
-dir_data <- here::here("data")
+here::i_am("r-tutorials/SDM-lab1.qmd")
+dir_data <- here::here("r-tutorials", "data")
 ```
 
 Set the file paths.
