@@ -1,7 +1,7 @@
 ---
 title: R - Read in data
 ---
-
+Eli's change this should conflict.
 ::: {.callout-note icon=false}
 
 ## Goals
@@ -70,7 +70,6 @@ fil <- here::here("r-tutorials", "data", "myfile.csv")
 fil
 ```
 This fully specifies the file location.
-
 
 ### Don't use `setwd()`
 
