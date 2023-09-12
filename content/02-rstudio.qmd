@@ -77,7 +77,9 @@ Look for the Upload button in the Files tab of the bottom right panel.
 
 ## Creating files
 
-When you start your server, you will have access to your own virtual drive space. No other users will be able to see or access your files. You can upload files to your virtual drive space and save files here. You can create folders to organize your files. You personal directory is `home/jovyan`. Everyone has the same home directory but your files are separate and cannot be seen by others.
+When you start your server, you will have access to your own virtual drive space. No other users will be able to see or access your files. You can upload files to your virtual drive space and save files here. You can create folders to organize your files. You personal directory is `home/rstudio`. Everyone has the same home directory but your files are separate and cannot be seen by others.
+
+*Python users: If you open a Python image instead of the R image, your home is `home/jovyan`.*
 
 There are a number of different ways to create new files. Let's practice making new files in RStudio.
 
@@ -106,6 +108,7 @@ A, 1, 2
 B, 10, 20
 C, 100, 200
 ```
+
 3. Click the save icon (above your new file) to save your csv file
 
 ### A Rmarkdown document
@@ -128,7 +131,7 @@ Now let's create some more complicated files using the RStudio template feature.
 4. It will ask for a name. Give it one and save.
 5. You file will render into html.
 
-### An interactive application
+### (advanced) An interactive application
 
 1. From the upper left, click File -> New File -> Shiny Web App
 2. In the popup, give the app a name and make sure the app is saved to `my-files`
@@ -144,3 +147,41 @@ Learn some tips and tricks from these
 
 * https://colorado.posit.co/rsc/the-unknown/into-the-unknown.html
 * https://www.dataquest.io/blog/rstudio-tips-tricks-shortcuts/
+
+## Plotting a netCDF file
+
+* https://pjbartlein.github.io/REarthSysSci/netCDF.html
+* https://r-spatial.github.io/sf/articles/sf1.html
+
+webpage:
+```
+https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21Agg.graph?sst%5B(2023-08-27T12:00:00Z)%5D%5B(0.0)%5D%5B(-7.8):(44.8)%5D%5B(39.7):(92.3)%5D&.draw=surface&.vars=longitude%7Clatitude%7Csst&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
+```
+
+url from the dropdown on that page
+```
+url <- https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21Agg.nc?sst%5B(2023-08-27T12:00:00Z)%5D%5B(0.0)%5D%5B(-7.875):(44.875)%5D%5B(39.625):(92.375)%5D&.draw=surface&.vars=longitude%7Clatitude%7Csst&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
+```
+
+1. Open an R script
+
+Add this code.
+
+```{r}
+library(ggplot2) # package for plotting
+library(sf)
+library(stars)
+library(dplyr)
+
+url <- "https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21Agg.nc?sst%5B(2023-08-27T12:00:00Z)%5D%5B(0.0)%5D%5B(-7.875):(44.875)%5D%5B(39.625):(92.375)%5D&.draw=surface&.vars=longitude%7Clatitude%7Csst&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff"
+
+fil <- "sst.nc"
+if(!exists(fil)){
+  download.file(url=url, destfile=fil)
+}
+
+stars_object <- raster::raster(fil) %>% st_as_stars()
+ggplot() + geom_stars(data = stars_object)
+```
+
+

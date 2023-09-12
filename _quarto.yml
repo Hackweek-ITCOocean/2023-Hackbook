@@ -52,7 +52,7 @@ website:
           - section: "01 Tuesday"
             contents:
               - text: RStudio
-                href: content/02-rstudio.md
+                href: content/02-rstudio.qmd
               - text: GitHub 2
                 href: content/02-github-2.md
               - text: Quarto
