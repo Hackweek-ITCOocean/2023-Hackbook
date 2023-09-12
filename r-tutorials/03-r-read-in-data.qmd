@@ -4,7 +4,7 @@ title: R - Read in data
 Eli's change this should conflict.
 ::: {.callout-note icon=false}
 
-## Goals
+## Goals for today
 
 * Read in a csv or Excel file and create a "data.frame"
 * Get column names and select a column
