@@ -167,7 +167,7 @@ url <- https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21Agg.nc?sst%5B(
 
 Add this code.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(ggplot2) # package for plotting
 library(sf)
 library(stars)
