@@ -1260,6 +1260,20 @@
     "text": "Export data\n\nfinal_ds.to_zarr('demonstrated data/final-sample.zarr')\n\n&lt;xarray.backends.zarr.ZarrStore at 0x7f6285f2ec10&gt;"
   },
   {
+    "objectID": "r-tutorials/03-r-read-in-data.html",
+    "href": "r-tutorials/03-r-read-in-data.html",
+    "title": "R - Read in data",
+    "section": "",
+    "text": "Eli’s change this should conflict. ::: {.callout-note icon=false}"
+  },
+  {
+    "objectID": "r-tutorials/03-r-read-in-data.html#goals-for-today",
+    "href": "r-tutorials/03-r-read-in-data.html#goals-for-today",
+    "title": "R - Read in data",
+    "section": "Goals for today",
+    "text": "Goals for today\n\nRead in a csv or Excel file and create a “data.frame”\nGet column names and select a column\nGet size of the data frame\nFind the class of the data frame\nSave the data frame\nAsk ChatGPT how to plot\nAsk ChatGPT how to clean up the date\n\n:::"
+  },
+  {
     "objectID": "r-tutorials/03-r-read-in-data.html#syntax-tips",
     "href": "r-tutorials/03-r-read-in-data.html#syntax-tips",
     "title": "R - Read in data",
@@ -1306,7 +1320,7 @@
     "href": "r-tutorials/03-r-read-in-data.html#ask-chatgpt",
     "title": "R - Read in data",
     "section": "Ask ChatGPT",
-    "text": "Ask ChatGPT\nWhen you are starting to code, you will not know how to do things. Obviously I can tell you but that won’t help you when I am not here. Instead I’ll have you ask a bot because the bot will be here when I am not. Also this is how people code now that AI is here to be our personal coding assistant.\nOpen https://chat.openai.com/ and login. It’s free.\nPaste this into the Chat box.\nI have a data.frame named obis_seamap_green with columns scientific, latitude, longitude, and platform. How do I make a histogram of the platform types? Only show the code. I want to use tidyverse.\nChatGPT returns this (or something similar)\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ purrr     1.0.1\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nobis_seamap_green %&gt;%\n  ggplot(aes(x = platform)) +\n  geom_bar() +\n  labs(title = \"Histogram of Platform Types\", x = \"Platform Type\", y = \"Frequency\")\n\n\n\n\nHmm that look weird? How many platform types are there? Let’s ask ChatGPT.\nHow do I find out the values for platform in my file\nChatGPT will return something like\n\nunique_platforms &lt;- unique(obis_seamap_green$platform)\n\nand we have to type\n\nunique_platforms\n\n[1] \"tag\"\n\n\nto see the values. Oh, there is only one value."
+    "text": "Ask ChatGPT\nWhen you are starting to code, you will not know how to do things. Obviously I can tell you but that won’t help you when I am not here. Instead I’ll have you ask a bot because the bot will be here when I am not. Also this is how people code now that AI is here to be our personal coding assistant.\nOpen https://chat.openai.com/ and login. It’s free.\nPaste this into the Chat box.\nI have a data.frame named obis_seamap_green with columns scientific, latitude, longitude, and platform. How do I make a histogram of the platform types? Only show the code. I want to use tidyverse.\nChatGPT returns this (or something similar)\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.3     ✔ purrr     1.0.1\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nobis_seamap_green %&gt;%\n  ggplot(aes(x = platform)) +\n  geom_bar() +\n  labs(title = \"Histogram of Platform Types\", x = \"Platform Type\", y = \"Frequency\")\n\n\n\n\nHmm that look weird? How many platform types are there? Let’s ask ChatGPT.\nHow do I find out the values for platform in my file\nChatGPT will return something like\n\nunique_platforms &lt;- unique(obis_seamap_green$platform)\n\nand we have to type\n\nunique_platforms\n\n[1] \"tag\"\n\n\nto see the values. Oh, there is only one value."
   },
   {
     "objectID": "r-tutorials/03-r-read-in-data.html#make-a-map",
@@ -1596,6 +1610,13 @@
     "text": "https://biodiversityinformatics.amnh.org/open_source/maxent/\n\nJane Elith, Steven J. Phillips, Trevor Hastie, Miroslav Dudík, Yung En Chee, and Colin J. Yates. 2011. A statistical explanation of MaxEnt for ecologists. Diversity and Distributions, 17:43-57. PDF\nCorey Merow, Matthew J. Smith, and John A. Silander, Jr. 2013. A practical guide to MaxEnt for modeling species’ distributions: what it does, and why inputs and settings matter. Ecography, 36: 1058–1069. PDF\nAleksandar Radosavljevic and Robert P. Anderson. 2014. Making better Maxent models of species distributions: complexity, overfitting, and evaluation. Journal of Biogeography, 41: 629–643. PDF"
   },
   {
+    "objectID": "r-tutorials/newfile.html#hi",
+    "href": "r-tutorials/newfile.html#hi",
+    "title": "2023 ITCOocean Hack2week",
+    "section": "Hi",
+    "text": "Hi\nThis is a new file."
+  },
+  {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Schedule",
@@ -1656,6 +1677,6 @@
     "href": "team.html#speakers",
     "title": "Our Team",
     "section": "Speakers",
-    "text": "Speakers\n\n\nJohnny Konjarla\n\nCentre for Marine Living Resources & Ecology (CMLRE), Kochi, India\nwebpage • Linkedin • ORCID\n\n\nBen Best\n\nEcoQuants.com, UC Santa Barbara’s Bren School of Environmental Science & Management, Santa Barbara, CA\nwebpage • GitHub • ORCID\n\n\nMinh Phan\n\nIndian Ocean database for hackweek, data access tutorials. rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern\nGitHub • Linkedin\n\n\nJiarui Yu\n\nMachine-learning tutorials; rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern\nGitHub • Linkedin"
+    "text": "Speakers\n\n\nJohnny Konjarla\n\nCentre for Marine Living Resources & Ecology (CMLRE), Kochi, India\nwebpage • Linkedin • ORCID\n\n\nMyranda Shirk\n\nSenior Data Scientist, Vanderbilt University Data Science Institute\nLinkedin\n\n\nBen Best\n\nEcoQuants.com, UC Santa Barbara’s Bren School of Environmental Science & Management, Santa Barbara, CA\nwebpage • GitHub • ORCID\n\n\nMinh Phan\n\nIndian Ocean database for hackweek, data access tutorials. rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern\nGitHub • Linkedin\n\n\nJiarui Yu\n\nMachine-learning tutorials; rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern\nGitHub • Linkedin"
   }
 ]

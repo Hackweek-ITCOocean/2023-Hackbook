@@ -127,6 +127,15 @@ Centre for Marine Living Resources & Ecology ([CMLRE](https://www.cmlre.gov.in/)
 
 </div>
 <div>
+### Myranda Shirk
+
+<img src="images/myranda.jpeg" alt="Myranda Shirk" style="width:75%; ; border-radius: 50%;">
+
+Senior Data Scientist, Vanderbilt University Data Science Institute
+
+[Linkedin](https://www.linkedin.com/in/myranda-uselton-shirk/)  
+</div>
+<div>
 ### Ben Best
 
 <img src="images/bbest.jpeg" alt="Ben Best" style="width:75%; ; border-radius: 50%;">
