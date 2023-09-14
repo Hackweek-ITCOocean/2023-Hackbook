@@ -185,7 +185,7 @@ Now we can explore what kind of shark data we have for these species found in th
 library(mapview)
 require(dplyr)
 library(sf)
-obs_sf <- obs %>% as_tibble() %>% 
+obs_sf <- obs[1:100,] %>% as_tibble() %>% 
   st_as_sf(coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
 mapview(obs_sf, col.regions = "gray") + mapview(extent_polygon)
 ```
