@@ -1,7 +1,6 @@
 ---
 title: R - Read in data
 ---
-Eli's change this should conflict.
 ::: {.callout-note icon=false}
 
 ## Goals for today
@@ -11,6 +10,7 @@ Eli's change this should conflict.
 * Get size of the data frame
 * Find the class of the data frame
 * Save the data frame
+* Read in some occurence data from robis
 * Ask ChatGPT how to plot
 * Ask ChatGPT how to clean up the date
 
@@ -152,6 +152,43 @@ obis_seamap_green <- obis_seamap_green[1:500,]
 head(obis_seamap_green)
 ```
 
+## Let's load new data from robis
+
+Specify a bounding box.
+```{r message=FALSE}
+library(dplyr)
+library(sf)
+extent_polygon <- sf::st_bbox(c(xmin = 41.875, xmax = 65.125, 
+                            ymax = -0.125, ymin = 32.125), 
+                          #Assign reference system
+                          crs = sf::st_crs(4326)) %>% st_as_sfc()
+pol_geometry <- sf::st_as_text(extent_polygon[[1]])
+pol_geometry
+```
+
+Let's get some sharks and rays data. Sharks and rays in Bay of Bengal [ref1](https://www.tbsnews.net/environment/nature/studying-sharks-and-rays-bay-bengal-340471) [ref2](https://www.researchgate.net/publication/276460309_Sharks_and_rays_fisheries_of_the_Bay_of_Bengal_at_the_landing_centers_of_Chittagong_and_Cox's_Bazar_Bangladesh) [ref3](https://www.researchgate.net/publication/276460309_Sharks_and_rays_fisheries_of_the_Bay_of_Bengal_at_the_landing_centers_of_Chittagong_and_Cox's_Bazar_Bangladesh)
+
+```{r}
+fil <- here::here("r-tutorials", "data", "sharks.csv")
+if(!exists(fil)){
+sharks <- c("Scoliodon laticaudus", "Sphrna lewin", "Rhizoprionodon acutus", "Chiloscyllium indicum", "Galeocerdo cuvier", "Carcharhinus melanopterus", "Carcharhinus falciformis", "Rhizoprionodon acutus", "Carcharhinus leucas", "Carcharhinus  sorrah")
+obs <- robis::occurrence(sharks, geometry = pol_geometry)
+readr::write_csv(obs, file=here::here("r-tutorials", "data", "sharks.csv"))
+}else{
+  obs <- readr::read_csv(fil)
+}
+```
+
+Now we can explore what kind of shark data we have for these species found in the Bay of Bengal study.
+
+```{r}
+library(mapview)
+require(dplyr)
+library(sf)
+obs_sf <- obs %>% as_tibble() %>% 
+  st_as_sf(coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
+mapview(obs_sf, col.regions = "gray") + mapview(extent_polygon)
+```
 
 ## Ask ChatGPT
 
