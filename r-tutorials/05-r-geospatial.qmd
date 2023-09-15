@@ -108,7 +108,7 @@ df2 <- readr::read_csv(fil, show_col_types = FALSE)
 Convert to spatial data frame. **Notice, I had to change the latitude and longitude to match the columns names in the dataframe.**
 
 ```{r}
-sdf = sf::st_as_sf(
+sdf <- sf::st_as_sf(
     df2, 
     coords = c("Longitude", "Latitude"), # what are the x and y dimension names
     crs = 4326)
@@ -121,7 +121,7 @@ mapview::mapview(sdf)
 ```
 
 If you want state labels, you need to only have the geometry and label columns in the dataframe.
-```
+```{r eval=FALSE}
 sdf2 <- sdf %>% select(geometry, State)
 mapview::mapview(sdf2, label = sdf2$State)
 ```
@@ -172,8 +172,13 @@ library(rnaturalearth)
 india_sf <- ne_countries(country = "India", scale = "medium", returnclass = "sf")
 basemap <- ggplot() + 
   geom_sf(data = india_sf, color = "black", size = 2, fill="green") +
-  coord_sf(xlim = c(58, 98), ylim = c(6, 36))
+  coord_sf(xlim = c(58, 98), ylim = c(6, 30))
 basemap
+```
+
+```{r}
+fil <- here::here("r-tutorials", "data", "india.jpeg")
+ggsave(filename = fil, plot = basemap, device = "jpeg")
 ```
 
 ::: {.callout-important}
@@ -188,7 +193,8 @@ Add points
 
 ```{r}
 basemap + 
-  geom_sf(data = cities3, aes(color = names), size = 3)
+  geom_sf(data = cities3, aes(color = names), size = 3) +
+  theme_void()
 ```
 
 ### The world
@@ -219,7 +225,7 @@ library(rnaturalearth)
 world_sf <- ne_countries(scale = "medium", returnclass = "sf")
 basemap <- ggplot() + 
   geom_sf(data = world_sf, color = "black", size = 0.2, fill="lightblue") +
-  coord_sf(xlim = c(58, 98), ylim = c(0, 36))
+  coord_sf(xlim = c(58, 98), ylim = c(0, 30))
 basemap
 ```
 
@@ -228,7 +234,7 @@ Add points
 ```{r}
 basemap + 
   geom_sf(data = cities3, aes(color = names), size = 2) +
-  coord_sf(xlim = c(58, 98), ylim = c(0, 36))
+  coord_sf(xlim = c(58, 98), ylim = c(0, 30))
 ```
 
 ## Change the projection
@@ -260,13 +266,14 @@ world_crs <- st_transform(world_sf, crs=crs)
 basemap <- ggplot() +
   geom_sf(data = world_crs, color = "black", size = 0.2, fill="lightblue") +
   theme_minimal()
+basemap
 ```
 
 Add points.
 ```{r}
-cities3_crs <- st_transform(cities3, crs=crs)
+cities3_robin <- st_transform(cities3, crs=crs)
 basemap + 
-  geom_sf(data = cities3_crs, aes(color = names), size = 2)
+  geom_sf(data = cities3_robin, aes(color = names), size = 2)
 ```
 
 Make a globe.
@@ -281,6 +288,7 @@ world_crs <- sf::st_transform(world_sf, crs)
 basemap <- ggplot() +
   geom_sf(data = world_crs, color = "black", size = 0.2, fill="lightblue") +
   theme_minimal()
+basemap
 ```
 
 Add points.
