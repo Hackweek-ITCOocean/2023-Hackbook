@@ -75,6 +75,10 @@ website:
             contents:
               - text: Maps!
                 href: r-tutorials/05-r-geospatial.qmd
+          - section: "02 Monday"
+            contents:
+              - text: SDM 1
+                href: r-tutorials/SDM-Lab1.qmd
       - section: "Projects"
         contents:
           - projects/index.md
