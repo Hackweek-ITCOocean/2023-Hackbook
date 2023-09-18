@@ -488,11 +488,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python-notebooks/02_Graphing_Data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Graphing Data from our final product</span></a>
-  </div>
-</li>
+ <span class="menu-text">python-notebooks/02_Graphing_Data.ipynb</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/02_Zarr_Access_netCDF.html" class="sidebar-item-text sidebar-link">
@@ -615,7 +612,7 @@ function googleTranslateElementInit() {
 <li>You have a xarray dataset from reading in the zarr file</li>
 <li>Goal is a pandas data from with time, lat, lon, values for all the environmental varables at that time, lat, lon</li>
 </ul>
-<div class="cell" data-tags="[]" data-execution_count="2">
+<div class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -708,12 +705,12 @@ function googleTranslateElementInit() {
     } else {
       root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
     }    if (((window['GridStack'] !== undefined) && (!(window['GridStack'] instanceof HTMLElement))) || window.requirejs) {
-      var urls = ['https://cdn.holoviz.org/panel/0.14.3/dist/bundled/gridstack/gridstack@4.2.5/dist/gridstack-h5.js'];
+      var urls = ['https://cdn.holoviz.org/panel/0.14.4/dist/bundled/gridstack/gridstack@4.2.5/dist/gridstack-h5.js'];
       for (var i = 0; i < urls.length; i++) {
         skip.push(urls[i])
       }
     }    if (((window['Notyf'] !== undefined) && (!(window['Notyf'] instanceof HTMLElement))) || window.requirejs) {
-      var urls = ['https://cdn.holoviz.org/panel/0.14.3/dist/bundled/notificationarea/notyf@3/notyf.min.js'];
+      var urls = ['https://cdn.holoviz.org/panel/0.14.4/dist/bundled/notificationarea/notyf@3/notyf.min.js'];
       for (var i = 0; i < urls.length; i++) {
         skip.push(urls[i])
       }
@@ -2540,18 +2537,174 @@ if (window.Jupyter !== undefined) {
 </style>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="3">
+<div class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the file path accordingly</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> xr.open_zarr(<span class="st">'/home/jovyan/shared/data/INDIAN_OCEAN_025GRID_DAILY.zarr/'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create some points to select.  These have to be DataArray objects to do vectorized subsetting</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ptime <span class="op">=</span> xr.DataArray([<span class="st">'2023-08-09'</span>], dims<span class="op">=</span>[<span class="st">'time'</span>]) <span class="co"># data is from 1979-01-01 to 2022-12-31</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plat <span class="op">=</span> xr.DataArray([<span class="fl">51.5072</span>, <span class="fl">48.8566</span>, <span class="fl">40.7128</span>, <span class="fl">35.6762</span>], dims<span class="op">=</span>[<span class="st">'point'</span>])  <span class="co"># Points to select need common dimensions</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plon <span class="op">=</span> xr.DataArray([<span class="fl">0.1276</span>, <span class="fl">2.3522</span>, <span class="fl">74.0060</span>, <span class="fl">139.6503</span>], dims<span class="op">=</span>[<span class="st">'point'</span>])</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>da.sel(time<span class="op">=</span>ptime, lat<span class="op">=</span>plat, lon<span class="op">=</span>plon, method<span class="op">=</span><span class="st">'nearest'</span>).squeeze().to_pandas()  <span class="co"># Squeeze to drop single time export as pandas series</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'/home/jovyan/shared/data/species_occ/io-sea-turtles.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">occurrenceID</th>
+<th data-quarto-table-cell-role="th">scientificName</th>
+<th data-quarto-table-cell-role="th">dateIdentified</th>
+<th data-quarto-table-cell-role="th">eventDate</th>
+<th data-quarto-table-cell-role="th">decimalLatitude</th>
+<th data-quarto-table-cell-role="th">decimalLongitude</th>
+<th data-quarto-table-cell-role="th">coordinateUncertaintyInMeters</th>
+<th data-quarto-table-cell-role="th">individualCount</th>
+<th data-quarto-table-cell-role="th">lifeStage</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">bathymetry</th>
+<th data-quarto-table-cell-role="th">shoredistance</th>
+<th data-quarto-table-cell-role="th">sst</th>
+<th data-quarto-table-cell-role="th">sss</th>
+<th data-quarto-table-cell-role="th">date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1014_8853</td>
+<td>Caretta caretta</td>
+<td>2012-03-30T08:55:10</td>
+<td>2012-03-30T08:55:10</td>
+<td>9.14804</td>
+<td>50.69448</td>
+<td>0.11</td>
+<td>1.0</td>
+<td>Juvenile</td>
+<td>NaN</td>
+<td>35</td>
+<td>4680</td>
+<td>26.21</td>
+<td>35.63</td>
+<td>2012-03-30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1014_9766</td>
+<td>Caretta caretta</td>
+<td>2011-04-12T19:12:41</td>
+<td>2011-04-12T19:12:41</td>
+<td>6.40193</td>
+<td>59.87883</td>
+<td>0.11</td>
+<td>1.0</td>
+<td>Juvenile</td>
+<td>NaN</td>
+<td>3051</td>
+<td>899682</td>
+<td>28.67</td>
+<td>35.74</td>
+<td>2011-04-12</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2069_333</td>
+<td>Chelonia mydas</td>
+<td>2016-07-24T15:18:00</td>
+<td>2016-07-24T15:18:00</td>
+<td>25.69900</td>
+<td>55.78900</td>
+<td>111.32</td>
+<td>1.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>8</td>
+<td>-67</td>
+<td>28.19</td>
+<td>38.72</td>
+<td>2016-07-24</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1014_8861</td>
+<td>Caretta caretta</td>
+<td>2012-03-31T02:43:31</td>
+<td>2012-03-31T02:43:31</td>
+<td>9.21307</td>
+<td>50.82211</td>
+<td>0.11</td>
+<td>1.0</td>
+<td>Juvenile</td>
+<td>NaN</td>
+<td>136</td>
+<td>12208</td>
+<td>26.21</td>
+<td>35.65</td>
+<td>2012-03-31</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1014_15706</td>
+<td>Caretta caretta</td>
+<td>2011-05-14T17:53:55</td>
+<td>2011-05-14T17:53:55</td>
+<td>15.39172</td>
+<td>55.71303</td>
+<td>0.11</td>
+<td>1.0</td>
+<td>Juvenile</td>
+<td>NaN</td>
+<td>2784</td>
+<td>193567</td>
+<td>27.00</td>
+<td>36.09</td>
+<td>2011-05-14</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[:<span class="dv">20</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'occurrenceID'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>0      1014_8853
+1      1014_9766
+2       2069_333
+3      1014_8861
+4     1014_15706
+5      2069_4254
+6      2069_3631
+7      2069_4910
+8     1014_16785
+9      2069_3419
+10     2069_5265
+11      2069_442
+12     2069_4668
+13    1014_15473
+14    1014_16862
+15    1014_16860
+16     1014_2087
+17    1014_16484
+18    1014_16899
+19    1014_16669
+Name: occurrenceID, dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ptime <span class="op">=</span> xr.DataArray(df[<span class="st">'date'</span>], dims<span class="op">=</span>[<span class="st">'point'</span>]) <span class="co"># data is from 1979-01-01 to 2022-12-31</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plat <span class="op">=</span> xr.DataArray(df[<span class="st">'decimalLatitude'</span>], dims<span class="op">=</span>[<span class="st">'point'</span>])  <span class="co"># Points to select need common dimensions</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plon <span class="op">=</span> xr.DataArray(df[<span class="st">'decimalLongitude'</span>], dims<span class="op">=</span>[<span class="st">'point'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>da.sel(time<span class="op">=</span>ptime, lat<span class="op">=</span>plat, lon<span class="op">=</span>plon, method<span class="op">=</span><span class="st">'nearest'</span>).squeeze().to_pandas()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -2609,115 +2762,811 @@ if (window.Jupyter !== undefined) {
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
+<td>0.077778</td>
+<td>53.305443</td>
+<td>NaN</td>
+<td>299.421875</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>280.632812</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>32.0</td>
-<td>42.0</td>
-<td>NaN</td>
+<td>9.25</td>
+<td>50.75</td>
+<td>13.046663</td>
 <td>NaN</td>
 <td>...</td>
-<td>2022-12-31</td>
-<td>349.0</td>
+<td>2012-03-30</td>
+<td>-32.0</td>
+<td>NaN</td>
+<td>-2.179688</td>
 <td>NaN</td>
 <td>NaN</td>
+<td>1.361979</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1.909171</td>
+<td>148.000763</td>
+<td>2.570219</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>280.632812</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>32.0</td>
-<td>42.0</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>0.087336</td>
+<td>38.892536</td>
+<td>0.842800</td>
+<td>301.322906</td>
+<td>164.178543</td>
+<td>0.183589</td>
+<td>6.50</td>
+<td>60.00</td>
+<td>21.820736</td>
+<td>0.097500</td>
 <td>...</td>
-<td>2022-12-31</td>
-<td>349.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1.909171</td>
+<td>2011-04-12</td>
+<td>-2685.0</td>
+<td>-0.176634</td>
+<td>-4.575521</td>
+<td>-0.114507</td>
+<td>0.050054</td>
+<td>-2.950521</td>
+<td>0.011828</td>
+<td>-147.184082</td>
+<td>5.444352</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
+<td>1.637924</td>
+<td>53.872570</td>
+<td>NaN</td>
+<td>306.830719</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>285.416656</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>32.0</td>
-<td>74.0</td>
-<td>NaN</td>
+<td>25.75</td>
+<td>55.75</td>
+<td>11.291849</td>
 <td>NaN</td>
 <td>...</td>
-<td>2022-12-31</td>
-<td>213.0</td>
+<td>2016-07-24</td>
+<td>-9.0</td>
+<td>NaN</td>
+<td>-6.393229</td>
 <td>NaN</td>
 <td>NaN</td>
+<td>2.523438</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>2.412539</td>
+<td>158.460617</td>
+<td>6.873217</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
+<td>0.201034</td>
+<td>43.664085</td>
+<td>NaN</td>
+<td>299.718750</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>9.25</td>
+<td>50.75</td>
+<td>12.817775</td>
+<td>NaN</td>
+<td>...</td>
+<td>2012-03-31</td>
+<td>-32.0</td>
+<td>NaN</td>
+<td>-2.481771</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.101562</td>
+<td>NaN</td>
+<td>156.065399</td>
+<td>2.715258</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.099818</td>
+<td>38.205021</td>
+<td>0.754650</td>
+<td>301.520844</td>
+<td>49.900036</td>
+<td>0.530751</td>
+<td>15.50</td>
+<td>55.75</td>
+<td>11.520738</td>
+<td>0.164175</td>
+<td>...</td>
+<td>2011-05-14</td>
+<td>-3001.0</td>
+<td>0.341869</td>
+<td>-1.447917</td>
+<td>0.343384</td>
+<td>0.405983</td>
+<td>2.841146</td>
+<td>0.416438</td>
+<td>117.004478</td>
+<td>3.188820</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>0.689319</td>
+<td>28.379957</td>
+<td>0.462725</td>
+<td>298.252594</td>
+<td>70.057045</td>
+<td>0.139277</td>
+<td>24.50</td>
+<td>53.00</td>
+<td>7.171850</td>
+<td>-0.046750</td>
+<td>...</td>
+<td>2018-03-31</td>
+<td>-8.0</td>
+<td>0.047505</td>
+<td>3.419271</td>
+<td>0.053919</td>
+<td>0.130925</td>
+<td>-4.880208</td>
+<td>0.138531</td>
+<td>-54.983360</td>
+<td>5.958846</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0.738169</td>
+<td>35.419315</td>
+<td>0.472050</td>
+<td>298.463531</td>
+<td>82.680542</td>
+<td>0.163747</td>
+<td>24.50</td>
+<td>53.25</td>
+<td>7.782220</td>
+<td>-0.038450</td>
+<td>...</td>
+<td>2018-03-31</td>
+<td>-10.0</td>
+<td>0.020862</td>
+<td>3.609375</td>
+<td>0.032643</td>
+<td>0.162413</td>
+<td>-4.356771</td>
+<td>0.158398</td>
+<td>-50.359882</td>
+<td>5.657653</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>2.898179</td>
+<td>48.014732</td>
+<td>0.678450</td>
+<td>306.979156</td>
+<td>83.276283</td>
+<td>0.146953</td>
+<td>24.75</td>
+<td>53.00</td>
+<td>11.978516</td>
+<td>0.166025</td>
+<td>...</td>
+<td>2019-08-16</td>
+<td>-14.0</td>
+<td>0.017206</td>
+<td>0.359375</td>
+<td>0.028725</td>
+<td>0.145943</td>
+<td>-2.687500</td>
+<td>0.140182</td>
+<td>-82.383530</td>
+<td>2.711421</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>0.139877</td>
+<td>31.482536</td>
+<td>0.752725</td>
+<td>298.158844</td>
+<td>132.076324</td>
+<td>0.093470</td>
+<td>15.50</td>
+<td>53.75</td>
+<td>11.291849</td>
+<td>0.220450</td>
+<td>...</td>
+<td>2011-04-05</td>
+<td>-2440.0</td>
+<td>-0.062636</td>
+<td>-0.677083</td>
+<td>-0.059925</td>
+<td>0.069378</td>
+<td>2.070312</td>
+<td>0.064436</td>
+<td>108.110016</td>
+<td>2.178218</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>0.922149</td>
+<td>21.962460</td>
+<td>0.450300</td>
+<td>300.229156</td>
+<td>-94.786385</td>
+<td>0.117982</td>
+<td>24.50</td>
+<td>53.00</td>
+<td>7.171850</td>
+<td>-0.059225</td>
+<td>...</td>
+<td>2017-04-27</td>
+<td>-8.0</td>
+<td>-0.009845</td>
+<td>2.500000</td>
+<td>0.023389</td>
+<td>-0.117570</td>
+<td>-2.994792</td>
+<td>-0.083020</td>
+<td>-50.145458</td>
+<td>3.901125</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>262.005219</td>
+<td>305.799469</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>32.0</td>
-<td>102.0</td>
+<td>24.25</td>
+<td>51.75</td>
+<td>NaN</td>
+<td>0.209875</td>
+<td>...</td>
+<td>2019-10-07</td>
+<td>20.0</td>
+<td>NaN</td>
+<td>-5.515625</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>-0.151042</td>
+<td>NaN</td>
+<td>-178.431381</td>
+<td>5.517693</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>304.533844</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>25.75</td>
+<td>56.00</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>...</td>
-<td>2022-12-31</td>
-<td>2786.0</td>
+<td>2016-09-24</td>
+<td>15.0</td>
+<td>NaN</td>
+<td>1.070312</td>
 <td>NaN</td>
 <td>NaN</td>
+<td>0.791667</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1.095335</td>
+<td>36.488827</td>
+<td>1.331280</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>2.525344</td>
+<td>40.379536</td>
+<td>0.554250</td>
+<td>304.059906</td>
+<td>-166.844086</td>
+<td>0.089691</td>
+<td>24.50</td>
+<td>53.00</td>
+<td>7.171850</td>
+<td>0.044725</td>
+<td>...</td>
+<td>2019-05-28</td>
+<td>-8.0</td>
+<td>-0.087337</td>
+<td>-1.195312</td>
+<td>-0.069366</td>
+<td>-0.020414</td>
+<td>-1.648438</td>
+<td>-0.018889</td>
+<td>-125.946548</td>
+<td>2.036202</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>0.131018</td>
+<td>31.812517</td>
+<td>0.766250</td>
+<td>299.195312</td>
+<td>-24.765293</td>
+<td>0.264651</td>
+<td>16.00</td>
+<td>54.25</td>
+<td>19.074070</td>
+<td>0.230625</td>
+<td>...</td>
+<td>2011-04-11</td>
+<td>-2732.0</td>
+<td>0.240311</td>
+<td>1.335938</td>
+<td>0.209158</td>
+<td>-0.110863</td>
+<td>4.286458</td>
+<td>-0.100357</td>
+<td>72.689590</td>
+<td>4.489817</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>0.153894</td>
+<td>35.990002</td>
+<td>0.736325</td>
+<td>299.567719</td>
+<td>-132.773819</td>
+<td>0.464942</td>
+<td>14.50</td>
+<td>53.50</td>
+<td>15.182960</td>
+<td>0.152625</td>
+<td>...</td>
+<td>2011-04-13</td>
+<td>-2407.0</td>
+<td>-0.315745</td>
+<td>-1.312500</td>
+<td>-0.326198</td>
+<td>-0.341286</td>
+<td>2.192708</td>
+<td>-0.356120</td>
+<td>120.903671</td>
+<td>2.555509</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">15</td>
+<td>0.153894</td>
+<td>35.990002</td>
+<td>0.736325</td>
+<td>299.567719</td>
+<td>-132.773819</td>
+<td>0.464942</td>
+<td>14.50</td>
+<td>53.50</td>
+<td>15.182960</td>
+<td>0.152625</td>
+<td>...</td>
+<td>2011-04-13</td>
+<td>-2407.0</td>
+<td>-0.315745</td>
+<td>-1.312500</td>
+<td>-0.326198</td>
+<td>-0.341286</td>
+<td>2.192708</td>
+<td>-0.356120</td>
+<td>120.903671</td>
+<td>2.555509</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16</td>
+<td>0.164712</td>
+<td>40.660110</td>
+<td>0.642800</td>
+<td>301.687500</td>
+<td>-17.193645</td>
+<td>0.117679</td>
+<td>16.75</td>
+<td>54.75</td>
+<td>12.588886</td>
+<td>0.092950</td>
+<td>...</td>
+<td>2012-05-13</td>
+<td>-2268.0</td>
+<td>0.112420</td>
+<td>6.015625</td>
+<td>0.092263</td>
+<td>-0.034786</td>
+<td>2.247396</td>
+<td>-0.001633</td>
+<td>20.485338</td>
+<td>6.421723</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>0.164154</td>
+<td>30.657511</td>
+<td>0.639750</td>
+<td>298.781250</td>
+<td>91.528801</td>
+<td>0.122125</td>
+<td>5.25</td>
+<td>54.00</td>
+<td>22.049625</td>
+<td>-0.079750</td>
+<td>...</td>
+<td>2011-02-10</td>
+<td>-4884.0</td>
+<td>-0.003258</td>
+<td>-4.299479</td>
+<td>0.094443</td>
+<td>0.122081</td>
+<td>-1.971354</td>
+<td>0.049081</td>
+<td>-155.368073</td>
+<td>4.729879</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18</td>
+<td>0.140080</td>
+<td>31.470005</td>
+<td>0.657150</td>
+<td>300.768219</td>
+<td>-103.054863</td>
+<td>0.217463</td>
+<td>13.50</td>
+<td>52.75</td>
+<td>13.809626</td>
+<td>0.037550</td>
+<td>...</td>
+<td>2011-04-16</td>
+<td>-2609.0</td>
+<td>-0.049121</td>
+<td>-2.177083</td>
+<td>-0.053068</td>
+<td>-0.211842</td>
+<td>0.380208</td>
+<td>-0.216044</td>
+<td>170.093689</td>
+<td>2.210034</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">19</td>
+<td>0.182036</td>
+<td>30.130001</td>
+<td>0.736275</td>
+<td>298.018219</td>
+<td>151.549240</td>
+<td>0.114068</td>
+<td>16.50</td>
+<td>53.75</td>
+<td>16.174812</td>
+<td>0.193825</td>
+<td>...</td>
+<td>2011-03-24</td>
+<td>-2329.0</td>
+<td>-0.100291</td>
+<td>2.276042</td>
+<td>-0.100962</td>
+<td>0.054342</td>
+<td>2.364583</td>
+<td>0.063244</td>
+<td>46.093052</td>
+<td>3.282015</td>
 </tr>
 </tbody>
 </table>
 
-<p>4 rows × 22 columns</p>
+<p>20 rows × 22 columns</p>
 </div>
 </div>
 </div>
-<p>Problems</p>
-<ul>
-<li>The points will be a pandas data frame with columns time, lat, lon. How to get the xr.DataArrays that his solution needs.</li>
-<li>Something off with his code. Probably columns have different names for lat and lon</li>
-</ul>
-<p>Experiment with this point csv.</p>
-<p>/home/jovyan/shared/data/species_occ/io-sea-turtles.csv</p>
-<p>Note that the lat and lon column names are weird: decimalLatitude</p>
+<div class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># side check</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># add occurence ID for points (database)</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> pd.read_csv(<span class="st">'/home/jovyan/shared-readwrite/data/species_occ/result.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>points</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">CHL</th>
+<th data-quarto-table-cell-role="th">CHL_uncertainty</th>
+<th data-quarto-table-cell-role="th">adt</th>
+<th data-quarto-table-cell-role="th">air_temp</th>
+<th data-quarto-table-cell-role="th">curr_dir</th>
+<th data-quarto-table-cell-role="th">curr_speed</th>
+<th data-quarto-table-cell-role="th">lat</th>
+<th data-quarto-table-cell-role="th">lon</th>
+<th data-quarto-table-cell-role="th">mlotst</th>
+<th data-quarto-table-cell-role="th">sla</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">topo</th>
+<th data-quarto-table-cell-role="th">u_curr</th>
+<th data-quarto-table-cell-role="th">u_wind</th>
+<th data-quarto-table-cell-role="th">ug_curr</th>
+<th data-quarto-table-cell-role="th">v_curr</th>
+<th data-quarto-table-cell-role="th">v_wind</th>
+<th data-quarto-table-cell-role="th">vg_curr</th>
+<th data-quarto-table-cell-role="th">wind_dir</th>
+<th data-quarto-table-cell-role="th">wind_speed</th>
+<th data-quarto-table-cell-role="th">occurrenceID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0.077778</td>
+<td>53.305443</td>
+<td>NaN</td>
+<td>299.42188</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>9.25</td>
+<td>50.75</td>
+<td>13.046663</td>
+<td>NaN</td>
+<td>...</td>
+<td>-32.0</td>
+<td>NaN</td>
+<td>-2.179688</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.361979</td>
+<td>NaN</td>
+<td>148.000760</td>
+<td>2.570219</td>
+<td>1014_8853</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.087336</td>
+<td>38.892536</td>
+<td>0.842800</td>
+<td>301.32290</td>
+<td>164.178540</td>
+<td>0.183589</td>
+<td>6.50</td>
+<td>60.00</td>
+<td>21.820736</td>
+<td>0.097500</td>
+<td>...</td>
+<td>-2685.0</td>
+<td>-0.176634</td>
+<td>-4.575521</td>
+<td>-0.114507</td>
+<td>0.050054</td>
+<td>-2.950521</td>
+<td>0.011828</td>
+<td>-147.184080</td>
+<td>5.444352</td>
+<td>1014_9766</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.637924</td>
+<td>53.872570</td>
+<td>NaN</td>
+<td>306.83072</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>25.75</td>
+<td>55.75</td>
+<td>11.291849</td>
+<td>NaN</td>
+<td>...</td>
+<td>-9.0</td>
+<td>NaN</td>
+<td>-6.393229</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.523438</td>
+<td>NaN</td>
+<td>158.460620</td>
+<td>6.873217</td>
+<td>2069_333</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.201034</td>
+<td>43.664085</td>
+<td>NaN</td>
+<td>299.71875</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>9.25</td>
+<td>50.75</td>
+<td>12.817775</td>
+<td>NaN</td>
+<td>...</td>
+<td>-32.0</td>
+<td>NaN</td>
+<td>-2.481771</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.101562</td>
+<td>NaN</td>
+<td>156.065400</td>
+<td>2.715258</td>
+<td>1014_8861</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.099818</td>
+<td>38.205020</td>
+<td>0.754650</td>
+<td>301.52084</td>
+<td>49.900036</td>
+<td>0.530751</td>
+<td>15.50</td>
+<td>55.75</td>
+<td>11.520738</td>
+<td>0.164175</td>
+<td>...</td>
+<td>-3001.0</td>
+<td>0.341869</td>
+<td>-1.447917</td>
+<td>0.343384</td>
+<td>0.405983</td>
+<td>2.841146</td>
+<td>0.416438</td>
+<td>117.004480</td>
+<td>3.188820</td>
+<td>1014_15706</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">13205</td>
+<td>0.134301</td>
+<td>74.170000</td>
+<td>0.717500</td>
+<td>301.84116</td>
+<td>-91.168960</td>
+<td>0.037919</td>
+<td>19.75</td>
+<td>61.50</td>
+<td>36.469620</td>
+<td>0.063825</td>
+<td>...</td>
+<td>-3553.0</td>
+<td>-0.000774</td>
+<td>9.335938</td>
+<td>-0.130193</td>
+<td>-0.037911</td>
+<td>9.286458</td>
+<td>0.006756</td>
+<td>44.847763</td>
+<td>13.168069</td>
+<td>1014_2555</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13206</td>
+<td>0.705127</td>
+<td>28.212389</td>
+<td>0.620425</td>
+<td>300.71094</td>
+<td>108.626130</td>
+<td>0.072745</td>
+<td>24.75</td>
+<td>53.00</td>
+<td>11.139257</td>
+<td>0.108000</td>
+<td>...</td>
+<td>-14.0</td>
+<td>-0.023234</td>
+<td>2.289062</td>
+<td>-0.026993</td>
+<td>0.068935</td>
+<td>-2.375000</td>
+<td>0.052721</td>
+<td>-46.055580</td>
+<td>3.298550</td>
+<td>2069_7427</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">13207</td>
+<td>0.974497</td>
+<td>32.285313</td>
+<td>NaN</td>
+<td>305.82553</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>25.75</td>
+<td>55.75</td>
+<td>11.673330</td>
+<td>NaN</td>
+<td>...</td>
+<td>-9.0</td>
+<td>NaN</td>
+<td>1.078125</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>-0.213542</td>
+<td>NaN</td>
+<td>-11.203434</td>
+<td>1.099069</td>
+<td>2069_587</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13208</td>
+<td>0.411613</td>
+<td>36.068120</td>
+<td>0.597650</td>
+<td>304.20572</td>
+<td>-107.023180</td>
+<td>0.112533</td>
+<td>24.75</td>
+<td>53.00</td>
+<td>12.741478</td>
+<td>0.085250</td>
+<td>...</td>
+<td>-14.0</td>
+<td>-0.032945</td>
+<td>2.906250</td>
+<td>-0.009166</td>
+<td>-0.107603</td>
+<td>-1.510417</td>
+<td>-0.094187</td>
+<td>-27.461494</td>
+<td>3.275309</td>
+<td>2069_272</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">13209</td>
+<td>0.254070</td>
+<td>43.014880</td>
+<td>0.697400</td>
+<td>299.09897</td>
+<td>-94.746110</td>
+<td>0.627941</td>
+<td>15.50</td>
+<td>55.50</td>
+<td>12.207404</td>
+<td>0.109350</td>
+<td>...</td>
+<td>-2929.0</td>
+<td>-0.051956</td>
+<td>-1.369792</td>
+<td>-0.054724</td>
+<td>-0.625787</td>
+<td>0.901042</td>
+<td>-0.642169</td>
+<td>146.663280</td>
+<td>1.639575</td>
+<td>1014_1635</td>
+</tr>
+</tbody>
+</table>
+
+<p>13210 rows × 23 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>points[<span class="st">'occurrenceID'</span>] <span class="op">=</span> df[<span class="st">'occurrenceID'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>points.to_csv(<span class="st">'/home/jovyan/shared-readwrite/data/species_occ/result2.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> points.drop(columns<span class="op">=</span>[<span class="st">'point'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 
