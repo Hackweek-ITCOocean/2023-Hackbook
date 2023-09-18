@@ -662,7 +662,7 @@
     "href": "hackweek-links.html",
     "title": "Hackweek Links",
     "section": "",
-    "text": "Slack link: tinyurl.com/itcoocean-slack\nThe spreadsheet with all the sdmpredictors variables\nWhere are the scripts? Home/shared/incois-scripts\nHow do I get them into my directory? Navigate to the script you want, click the little “cog” in the File panel, Copy to your directory."
+    "text": "Slack link: tinyurl.com/itcoocean-slack\nThe spreadsheet with all the sdmpredictors variables\nTeam members\nWhere are the scripts? Home/shared/incois-scripts\nHow do I get them into my directory? Navigate to the script you want, click the little “cog” in the File panel, Copy to your directory."
   },
   {
     "objectID": "index.html",
@@ -1719,13 +1719,20 @@
     "href": "team.html#organizers-and-instructors",
     "title": "Our Team",
     "section": "Organizers and Instructors",
-    "text": "Organizers and Instructors\n\n\nDr. Eli Holmes\n\n\nNOAA Fisheries and University of Washington, USA.\nwebpage • GitHub • ORCID\n\n\nDr. Nimit Kumar\n\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nLinks: webpage • ORCID\n\n\nAditi Modi\n\nCentre for Climate Change Research, Indian Institute of Tropical Meteorology (CCCR), Pune, India\nwebpage • GitHub • ORCID\n\n\nDr. Smitha BR\n\nCentre for Marine Living Resources & Ecology (CMLRE), Kochi, India\nwebpage • ORCID\n\n\n\n\nDr. Swarnali Majumder\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nwebpage • ORCID\n\n\nDr. TVS Uday Bhaskar\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nResearchGate • ORCID\n\n\nDr. Sourav Maity\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nResearchGate • ORCID"
+    "text": "Organizers and Instructors\n\n\nDr. Eli Holmes\n\n\nNOAA Fisheries and University of Washington, Seattle, USA.\nwebpage • GitHub • ORCID\n\n\nDr. Nimit Kumar\n\n\nIndian National Centre for Ocean Information Services (INCOIS), Hyderabad, India\nLinks: webpage • ORCID\n\n\nAditi Modi\n\nCentre for Climate Change Research, Indian Institute of Tropical Meteorology, Pune, India\nwebpage • GitHub • ORCID\n\n\nDr. Smitha BR\n\nCentre for Marine Living Resources & Ecology, Kochi, India\nwebpage • ORCID\n\n\n\n\nDr. Swarnali Majumder\n\nIndian National Centre for Ocean Information Services, Hyderabad, India\nwebpage • ORCID\n\n\nDr. TVS Uday Bhaskar\n\nIndian National Centre for Ocean Information Services, Hyderabad, India\nResearchGate • ORCID\n\n\nDr. Sourav Maity\n\nIndian National Centre for Ocean Information Services, Hyderabad, India\nResearchGate • ORCID"
   },
   {
     "objectID": "team.html#speakers",
     "href": "team.html#speakers",
     "title": "Our Team",
     "section": "Speakers",
-    "text": "Speakers\n\n\nJohnny Konjarla\n\nCentre for Marine Living Resources & Ecology (CMLRE), Kochi, India\nwebpage • Linkedin • ORCID\n\n\nMyranda Shirk\n\nSenior Data Scientist, Vanderbilt University Data Science Institute\nLinkedin\n\n\nBen Best\n\nEcoQuants.com, UC Santa Barbara’s Bren School of Environmental Science & Management, Santa Barbara, CA\nwebpage • GitHub • ORCID\n\n\nMinh Phan\n\nIndian Ocean database for hackweek, data access tutorials. rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern\nGitHub • Linkedin\n\n\nJiarui Yu\n\nMachine-learning tutorials; rising senior Applied & Computational Mathematical Sciences (ACMS), University of Washington (UW), Seattle WA, USA; 2023 UW Varanasi Intern\nGitHub • Linkedin"
+    "text": "Speakers\n\n\nJohnny Konjarla\n\nCentre for Marine Living Resources & Ecology, Kochi, India\nwebpage • Linkedin • ORCID\n\n\nMyranda Shirk\n\nSenior Data Scientist, Vanderbilt University Data Science Institute\nLinkedin\n\n\nDr. Ben Best\n\nEcoQuants.com, Santa Barbara, CA\nwebpage • GitHub • ORCID\n\n\nMinh Phan\n\nApplied & Computational Mathematical Sciences, University of Washington, Seattle WA, USA\nGitHub • Linkedin\n\n\n\n\nDr. Sanitha K. Sivadas\n\nNational Centre for Coastal Research, Chennai, India\nOcean Expert • ORCID\n\n\nJiarui Yu\n\nApplied & Computational Mathematical Sciences, University of Washington, Seattle WA, USA\nGitHub • Linkedin"
+  },
+  {
+    "objectID": "team.html#virtual-helpers",
+    "href": "team.html#virtual-helpers",
+    "title": "Our Team",
+    "section": "Virtual Helpers",
+    "text": "Virtual Helpers\n\n\nBen Tupper\n\nTandy Center for Ocean Forecasting, Bigelow Laboratory for Ocean Sciences, East Boothbay, Maine, USA.\nResearchGate\n\n\nDr. Julie Lowndes\n\nOpenscapes, Santa Barbara, California, USA\nWebsite • ORCID\n\n\nAdam Kemberling\n\nGulf of Maine Research Institute, Portland, Maine, USA.\nWebsite\n\n\nDr. Rachael Blake\n\nDirector of Data Science, Intertidal Agency, USA.\nWebsite • ORCID\n\n\n\n\nSuman Shekhar\n\nRutgers University, New Brunswick, NJ, USA.\nWebsite • GitHub\n\n\nSeungyeon Jade Hong\n\nGitHub"
   }
 ]
