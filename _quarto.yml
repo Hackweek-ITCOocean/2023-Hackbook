@@ -35,7 +35,7 @@ website:
           - schedule.md
           - setup.md
           - support.md
-#          - participants.md
+          - hackweek-links.md
           - coc.md
       - section: "Tutorials"
         contents:
@@ -78,7 +78,7 @@ website:
           - section: "02 Monday"
             contents:
               - text: SDM 1
-                href: r-tutorials/SDM-Lab1.qmd
+                href: r-tutorials/SDM-lab1.qmd
       - section: "Projects"
         contents:
           - projects/index.md
