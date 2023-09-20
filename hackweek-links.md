@@ -25,5 +25,6 @@ title: Hackweek Links
 
 * https://rspatial.org/raster/sdm/5_sdm_models.html
 * BRTs with dismo https://rspatial.org/raster/sdm/9_sdm_brt.html
+* New link
 
 
