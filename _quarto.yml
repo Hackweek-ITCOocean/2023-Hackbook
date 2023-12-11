@@ -120,8 +120,11 @@ website:
         href: https://incois.gov.in/dcc-ior/index.jsp
       - text: <img src="/images/ecop.png" width=150px>
         href: https://www.ecopdecade.org/
-#      - text: DECCaD-IO
-#        href: https://oceandecade.org/actions/devising-early-career-capacity-development-indocn-deccad-io/
+      - text: DECCaD-IO
+        href: https://oceandecade.org/actions/devising-early-career-capacity-development-indocn-deccad-io/
+      - text: <img src="/images/ohw.png" width=150px>
+        href: https://www.oceanhackweek.org/
+
   navbar:
     background: primary
     search: true
